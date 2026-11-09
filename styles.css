@@ -122,6 +122,11 @@ img { display: block; max-width: 100%; height: auto; }
 .theme-btn:hover { color: var(--ink); background: var(--paper-2); }
 .theme-btn svg { width: 17px; height: 17px; }
 
+.topnav a.dl { display: inline-flex; align-items: center; gap: 6px; color: var(--accent); }
+.topnav a.dl svg { width: 15px; height: 15px; }
+.topnav a.dl:hover { color: var(--ink); }
+@media (max-width: 600px) { .topnav a.dl span { display: none; } .topnav a.dl { padding: 6px 8px; } }
+
 /* Line-hover links (VengeanceUI line-hover-link, "slide") */
 .lh { position: relative; text-decoration: none; }
 .lh::after {
@@ -213,7 +218,8 @@ img { display: block; max-width: 100%; height: auto; }
   .lb-stage { padding: 0 8px; }
   .lb .nav { top: auto; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); transform: none; }
 }
-@media (max-width: 420px) { .topnav a[href="#skills"] { display: none; } }
+.topnav a { white-space: nowrap; }
+@media (max-width: 420px) { .topnav a[href="#skills"], .topnav a[href="#contact"] { display: none; } }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
