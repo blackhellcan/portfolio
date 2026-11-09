@@ -27,7 +27,7 @@
   var isDark = function () {
     var t = root.getAttribute("data-theme");
     if (t) return t === "dark";
-    return window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches;
+    return false; /* light is the default; dark only when chosen */
   };
 
   if (!reduce) root.classList.add("motion");
