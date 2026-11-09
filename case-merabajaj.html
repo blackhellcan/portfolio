@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mera Bajaj App · Azhar Shaikh</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233346e0'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='16' fill='white' text-anchor='middle'%3EAS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="case.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <a class="wordmark" href="index.html">Azhar Shaikh<span>.</span></a>
+    <nav class="topnav" aria-label="Site"><a href="index.html#journey">← Work journey</a></nav>
+  </header>
+
+  <section class="cs-hero">
+    <p class="label">Case study · Automotive · Bajaj 1 of 3</p>
+    <h1>An owner app that puts the rider’s bike first</h1>
+    <p class="sub">Mera Bajaj connects Pulsar owners to their bike: pairing, trips, navigation and service. Bajaj had a working prototype that felt dated. I led the redesign into the app that has now been live on the App Store and Google Play for about two years.</p>
+    <dl class="meta">
+      <div><dt>Client</dt><dd>Bajaj Auto, via PeepalDesign</dd></div>
+      <div><dt>My role</dt><dd>Lead UX Designer, with one junior designer</dd></div>
+      <div><dt>Timeline</dt><dd>Mar – Jun 2023</dd></div>
+      <div><dt>Platform</dt><dd>iOS, Android · light and dark</dd></div>
+    </dl>
+    <div class="impact">
+      <div><strong>4 tabs</strong><span>Home, Navigate, Trips and Services, in place of the prototype’s scattered screens</span></div>
+      <div><strong>4 competitors</strong><span>torn down, including KTM, to find what riders were struggling with</span></div>
+      <div><strong>~2 years live</strong><span>as Mera Bajaj on the App Store and Google Play</span></div>
+    </div>
+    <div class="hero-img"><img src="img/merabajaj-hero.jpg" alt="Mera Bajaj app home screens showing a Bajaj Pulsar N160"></div>
+  </section>
+
+  <div class="cs-body">
+    <nav class="toc" aria-label="On this page">
+      <span class="label">On this page</span>
+      <a href="#problem">The problem</a>
+      <a href="#role">My role</a>
+      <a href="#learned">What we learned</a>
+      <a href="#stories">User stories and flows</a>
+      <a href="#decisions">Key decisions</a>
+      <a href="#direction">Visual directions</a>
+      <a href="#solution">The solution</a>
+      <a href="#impact">Validation and impact</a>
+      <a href="#reflection">Reflection</a>
+      <a href="#appendix">Process appendix</a>
+    </nav>
+
+    <main class="cs-main">
+      <section class="cs-sec" id="problem">
+        <h2>The problem</h2>
+        <div class="prose">
+          <p><strong>Bajaj’s owner app worked as a prototype but didn’t feel like a premium motorcycle brand.</strong> It covered after-sales and riding: profile, vehicles, trips, service bookings and FAQs, but the screens were plain and the flows inconsistent.</p>
+          <p>The brief was to turn it into a modern, polished app with smooth interactions and an upmarket feel, before it reached owners.</p>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="role">
+        <h2>My role</h2>
+        <div class="prose">
+          <ul>
+            <li><strong>Led a two-person team</strong> from kick-off to asset delivery, mentoring a newly joined junior designer.</li>
+            <li><strong>Ran user research</strong> and read reviews of Bajaj’s existing apps to understand riders’ day-to-day use.</li>
+            <li><strong>Ran a competitor study</strong> of four motorcycle apps, including KTM, covering visual design and app flows.</li>
+            <li><strong>Built proto-personas and user stories</strong> for trips and riding.</li>
+            <li><strong>Designed the information architecture</strong>, low-fidelity wireframes and visual direction.</li>
+            <li><strong>Delivered hi-fi screens</strong> in light and dark modes, a style guide and a component library.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="learned">
+        <h2>What we learned</h2>
+        <div class="insights">
+          <div class="insight">
+            <div><b>Bluetooth is where competitor apps fail.</b><p>In the teardown, pairing often failed, took too long or dropped, and trip data wasn’t recorded.</p></div>
+            <span class="arrow" aria-hidden="true">→</span>
+            <p class="impl">Put the bike and its connection status at the top of the home screen, one tap to connect.</p>
+          </div>
+          <div class="insight">
+            <div><b>Feature-rich apps were hard to navigate.</b><p>Competitors had over-complicated navigation and too much data crammed into a few modules.</p></div>
+            <span class="arrow" aria-hidden="true">→</span>
+            <p class="impl">A small set of top-level destinations, each with one job.</p>
+          </div>
+          <div class="insight">
+            <div><b>Errors and permissions left riders guessing.</b><p>Error messages weren’t informative, and some apps captured the wrong location.</p></div>
+            <span class="arrow" aria-hidden="true">→</span>
+            <p class="impl">Explain every permission in plain words before asking for it.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="stories">
+        <h2>From user stories to task flows</h2>
+        <div class="prose"><p>Research and app-store reviews became user stories for each persona. Each story then became a task flow with the fewest steps that still collected what Bajaj needed.</p></div>
+        <div class="stories"><article class="story"><span class="who">Amit · first use</span><dl><dt>When</dt><dd>I use the app for the first time</dd><dt>I want to</dt><dd>add my vehicle details easily</dd><dt>So that</dt><dd>all the necessary information is entered only once</dd></dl></article><article class="story"><span class="who">Amit · linking the bike</span><dl><dt>When</dt><dd>I am ready for a ride</dd><dt>I want to</dt><dd>connect the app to my bike in a single step, the first time</dd><dt>So that</dt><dd>it pairs automatically whenever I ride</dd></dl></article><article class="story"><span class="who">Alok · linking the phone</span><dl><dt>When</dt><dd>I connect my phone to the app</dd><dt>I want to</dt><dd>link my phone to get accurate information and notifications</dd><dt>So that</dt><dd>I don’t have to check my phone while riding</dd></dl></article><article class="story"><span class="who">Amit · planning</span><dl><dt>When</dt><dd>I am ready for a trip</dd><dt>I want to</dt><dd>set my destination in the app</dd><dt>So that</dt><dd>the bike shows the route on its dashboard</dd></dl></article><article class="story"><span class="who">Amit · on the road</span><dl><dt>When</dt><dd>I am already on a trip</dd><dt>I want to</dt><dd>add or change my destination mid-trip</dd><dt>So that</dt><dd>I have flexibility while travelling</dd></dl></article><article class="story"><span class="who">Amit · servicing</span><dl><dt>When</dt><dd>there is a problem with my bike</dd><dt>I want to</dt><dd>see nearby service centres</dd><dt>So that</dt><dd>I can contact one or book an appointment</dd></dl></article></div>
+        <figure>
+          <div class="ia-wrap" tabindex="0" aria-label="Task flows, scroll sideways"><div class="ia"><div class="ia-col"><h4>Login / Sign up</h4><span>Email and password, or Google / Facebook</span><span>Enter OTP</span><span class="note">Notification: signed in</span></div><div class="ia-col"><h4>Add vehicle</h4><span>Mobile number</span><span>Registration number</span><span>VIN</span><span>Photo of RC</span></div><div class="ia-col"><h4>Switch / delete vehicle</h4><span>Vehicle list</span><span>Switch or delete</span></div><div class="ia-col"><h4>Connect Bluetooth</h4><span>Tap Bluetooth icon</span><span>Scan for vehicle</span><span>List of vehicles found</span><span>Select one</span><span class="note">Notification: registration completed</span></div><div class="ia-col"><h4>Trips / rides</h4><span>My trips list</span><span>Switch: My trips / All trips</span><span>Trip insights</span></div><div class="ia-col"><h4>Navigation</h4><span>Source</span><span>Destination</span><span>Guided route</span></div><div class="ia-col"><h4>Service coupons</h4><span>Coupons and status</span><span>Select coupon</span></div><div class="ia-col"><h4>Book a service</h4><span>Book service</span><span>Choose service centre</span><span>Date</span><span>Time</span><span>Comment (optional)</span><span class="note">Notification: appointment booked</span></div><div class="ia-col"><h4>Cancel a booking</h4><span>Booking status</span><span>Booking history</span><span>Cancel appointment</span><span>Choose a reason</span><span class="note">Confirm, then: cancelled</span></div><div class="ia-col"><h4>Profile</h4><span>View / edit profile</span><span>Incoming calls, DND and SMS</span><span class="note">Saved or discarded</span></div><div class="ia-col"><h4>Notifications</h4><span>Notification list</span><span>Delete</span></div><div class="ia-col"><h4>FAQ · Riding tips · App tour</h4><span>List</span><span>Detail in a collapsible</span></div><div class="ia-col"><h4>License and privacy</h4><span>View</span></div></div></div>
+          <figcaption><b>Information architecture as task flows.</b> Thirteen jobs, each read top to bottom. Dashed steps are the confirmation the app sends at the end. Scroll sideways to see them all.</figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-sec" id="decisions">
+        <h2>Key decisions</h2>
+        <article class="decision">
+          <span class="num">Decision 1</span>
+          <h3>Four tabs, each with one job</h3>
+          <dl>
+                        <dt>Chose</dt><dd>A bottom bar with Home, Navigate, Trips and Services. Everything else, such as reminders, community, riding tips, FAQs and settings, sits in one secondary menu. An early version had a fifth tab for Music; it was cut to keep the bar to the four jobs riders named.</dd>
+            <dt>Why</dt><dd>User research, personas, user stories and app-store reviews all pointed to the same few daily jobs: check the bike, plan a route, look back at a trip, book a service.</dd>
+            <dt>Trade-off</dt><dd>Less-used features are one level deeper.</dd>
+          </dl>
+        </article>
+        <article class="decision">
+          <span class="num">Decision 2</span>
+          <h3>The bike is the home screen</h3>
+          <dl>
+            <dt>Chose</dt><dd>Home opens on the owner’s bike: photo, model and registration, with a Bluetooth button on the card, followed by upcoming service and recent trips.</dd>
+            <dt>Why</dt><dd>Connecting the bike is the first thing a rider does, and the step competitors handled worst. The user story was clear: connect “in a single step, the first time”, then pair automatically on every ride.</dd>
+            <dt>Trade-off</dt><dd>Only one bike is on screen at a time. Owners with more than one switch by tapping the bike name at the top, marked with a down arrow. The connection screen lists every bike with its status and a “Connect Another Bike” button.</dd>
+          </dl>
+        </article>
+        <article class="decision">
+          <span class="num">Decision 3</span>
+          <h3>Ask for permissions with a reason</h3>
+          <dl>
+            <dt>Chose</dt><dd>Each permission prompt says what it is for. For location: it shows where you are on the map and powers directions, nearby search and travel-time estimates.</dd>
+            <dt>Why</dt><dd>Riders refuse permissions they don’t understand, and without location and Bluetooth the app can’t do its main job.</dd>
+            <dt>Trade-off</dt><dd>More words on screen at the moment users want to get going.</dd>
+          </dl>
+        </article>
+        <article class="decision">
+          <span class="num">Decision 4</span>
+          <h3>Design the failures, not just the happy path</h3>
+          <dl>
+            <dt>Chose</dt><dd>Bluetooth pairing, navigation and adding a vehicle each have a designed “connection failed” screen, alongside searching, found and connected states. The search screen also prevents the most common failure with one line: “Make sure your bike’s ignition is switched on”.</dd>
+            <dt>Why</dt><dd>Competitor reviews were full of pairing that failed silently. Telling riders what went wrong, and what to do next, was as important as the success screen.</dd>
+            <dt>Trade-off</dt><dd>More screens to design and hand off for every flow.</dd>
+          </dl>
+        </article>
+      </section>
+
+      <section class="cs-sec" id="direction">
+        <h2>Four visual directions, one brand</h2>
+        <div class="prose"><p><strong>We explored widely before settling.</strong> Each persona got a moodboard, and from those we built four visual routes, Solid, Dark, Glassmorphic and Gradient, each tried on the same home screen. Bajaj’s brand rules then set the final palette: Bajaj blue, in light and dark.</p></div>
+        <div class="figs">
+          <figure>
+            <div class="frame"><img src="img/mb-dir-solid-dark.jpg" alt="Solid and Dark visual directions with their palettes" loading="lazy"></div>
+            <figcaption><b>Solid and Dark.</b> Warm neutrals with a calm blue, and a dark route with an orange accent.</figcaption>
+          </figure>
+          <figure>
+            <div class="frame"><img src="img/mb-dir-glass-gradient.jpg" alt="Glassmorphic and Gradient visual directions with their palettes" loading="lazy"></div>
+            <figcaption><b>Glassmorphic and Gradient.</b> Translucent purple layers, and a lighter lavender gradient.</figcaption>
+          </figure>
+          <figure>
+            <div class="frame"><img src="img/mb-home-variants-a.jpg" alt="Home screen tried in solid, light and dark orange styles" loading="lazy"></div>
+            <figcaption>The same home screen in the Solid and Dark routes.</figcaption>
+          </figure>
+          <figure>
+            <div class="frame"><img src="img/mb-home-variants-b.jpg" alt="Home screen tried in glassmorphic and gradient styles" loading="lazy"></div>
+            <figcaption>The same home screen in the Glassmorphic and Gradient routes.</figcaption>
+          </figure>
+        </div>
+        <figure>
+          <div class="frame tall"><img src="img/mb-iterations.jpg" alt="Rows of home screen iterations moving from the explored routes to the final Bajaj blue" loading="lazy"></div>
+          <figcaption><b>Iterations.</b> Rows of home-screen rounds, moving from the four routes toward the final Bajaj blue and a full-width bike. Scroll inside the frame.</figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-sec" id="solution">
+        <h2>The solution</h2>
+        <div class="phones">
+          <figure><div class="frame"><img src="img/mb-home-light.jpg" alt="Home screen in light mode with the Pulsar N160, reminders and the four-tab bar" loading="lazy"></div><figcaption><b>Bike-first home.</b> The bike, its registration and a Bluetooth button fill the top. Tapping the name, marked with a down arrow, switches or adds bikes.</figcaption></figure>
+          <figure><div class="frame"><img src="img/mb-home-dark.jpg" alt="Home screen in dark mode" loading="lazy"></div><figcaption><b>Dark mode.</b> The same layout and component library on a deep navy ground.</figcaption></figure>
+          <figure><div class="frame"><img src="img/mb-bike-details.jpg" alt="Bike details with VIN, registration number and model" loading="lazy"></div><figcaption><b>Bike details.</b> The VIN field has a scan button, so riders don’t type a 17-character number.</figcaption></figure>
+        </div>
+        <h3 style="font-size:20px">Pairing, including when it fails</h3>
+        <div class="phones four">
+          <figure><div class="frame"><img src="img/mb-bt-found.jpg" alt="Connecting Bike: my bikes and bikes found" loading="lazy"></div><figcaption><b>1. Scan.</b> Your bikes on top, nearby bikes below.</figcaption></figure>
+          <figure><div class="frame"><img src="img/mb-bt-success.jpg" alt="Bajaj Dominar connected successfully" loading="lazy"></div><figcaption><b>2. Connected.</b> A plain confirmation naming the bike.</figcaption></figure>
+          <figure><div class="frame"><img src="img/mb-bt-multi.jpg" alt="Two bikes with connected and disconnected status, and Connect Another Bike" loading="lazy"></div><figcaption><b>3. More bikes.</b> Each shows its status; adding another is one button.</figcaption></figure>
+          <figure><div class="frame"><img src="img/mb-bt-failed.jpg" alt="Connection Failed screen with a Back button" loading="lazy"></div><figcaption><b>Failure.</b> A clear message and one way out, instead of silence.</figcaption></figure>
+        </div>
+        <div class="phones">
+          <figure><div class="frame"><img src="img/mb-directions.jpg" alt="Turn-by-turn direction list with time, distance and arrival" loading="lazy"></div><figcaption><b>Navigate.</b> Next turn on top; time, distance and arrival at the bottom with End Trip.</figcaption></figure>
+          <figure><div class="frame"><img src="img/mb-trips.jpg" alt="My Trips cards with photos and distance" loading="lazy"></div><figcaption><b>Trips.</b> Each ride becomes a card with a photo the rider can add.</figcaption></figure>
+          <figure><div class="frame"><img src="img/mb-workshop.jpg" alt="Select Workshop list sorted by distance" loading="lazy"></div><figcaption><b>Book a service.</b> Nearby workshops with distance first, and a map toggle.</figcaption></figure>
+        </div>
+        <h3 style="font-size:20px">From wireframe to final</h3>
+        <div class="pairs">
+          <figure><div class="pair"><div><span class="label">Wireframe</span><img src="img/mb-wf-home.jpg" alt="Wireframe: home screen" loading="lazy"></div><div><span class="label">Final</span><img src="img/mb-home-light.jpg" alt="Final: home screen" loading="lazy"></div></div><figcaption><b>Home.</b> A small bike card with carousel arrows became a full-width bike with a name switcher, so the rider’s own bike leads the screen.</figcaption></figure>
+          <figure><div class="pair"><div><span class="label">Wireframe</span><img src="img/mb-wf-workshop.jpg" alt="Wireframe: select workshop" loading="lazy"></div><div><span class="label">Final</span><img src="img/mb-workshop.jpg" alt="Final: select workshop" loading="lazy"></div></div><figcaption><b>Workshops.</b> The early tab bar had five tabs including Music; the final has four. The final list adds a nearby count and a map toggle, and leads with distance.</figcaption></figure>
+          <figure><div class="pair"><div><span class="label">Wireframe</span><img src="img/mb-wf-trips.jpg" alt="Wireframe: trips" loading="lazy"></div><div><span class="label">Final</span><img src="img/mb-trips.jpg" alt="Final: trips" loading="lazy"></div></div><figcaption><b>Trips.</b> A plain list of rides became photo cards, so past trips feel like memories, not records.</figcaption></figure>
+        </div>
+        <h3 style="font-size:20px">Style guide and components</h3>
+        <div class="figs">
+          <figure>
+            <div class="frame tall"><img src="img/mb-styleguide.jpg" alt="Bajaj Connect style guide: colour styles and typography styles" loading="lazy"></div>
+            <figcaption><b>Style guide.</b> Named colour styles for light and dark, plus status colours, and a type scale from display to button text. Scroll inside the frame to see it all.</figcaption>
+          </figure>
+          <figure>
+            <div class="frame"><img src="img/merabajaj-components.jpg" alt="Component library: headers, tab bar, bike cards, trip cards, buttons and permission dialogs" loading="lazy"></div>
+            <figcaption><b>Component library.</b> Tab bar, bike and trip cards, buttons and permission dialogs, each in light and dark, built on the style guide.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="impact">
+        <h2>Validation and impact</h2>
+        <ul class="results">
+          <li><strong>Live for about two years</strong> as Mera Bajaj on the App Store and Google Play, for Pulsar owners.</li>
+          <li>Delivered hi-fi designs in light and dark themes, a style guide and a component library for development.</li>
+          <li>Bajaj ran no formal usability testing on the design.</li>
+          <li>Followed by the <a href="case-chetak.html">Chetak EV display</a>, and later Bajaj’s 5” TFT cluster, whose menu system now ships on the Pulsar N160 SS.</li>
+        </ul>
+      </section>
+
+      <section class="cs-sec" id="reflection">
+        <h2>Reflection</h2>
+        <div class="prose">
+          <p><strong>I would push the UI further.</strong> Bajaj’s brand rules limited how far the visual design could go, and I worked within them. With what I know now, I would make a stronger case for a more distinctive UI inside those rules.</p>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="appendix">
+        <details class="appendix">
+          <summary>Process appendix: moodboards, the old prototype, competitors and wireframes</summary>
+          <div class="inner">
+            <div class="figs">
+              <figure><div class="frame"><img src="img/mb-mood-a.jpg" alt="Moodboards and inspiration for the persona Alok" loading="lazy"></div><figcaption>Moodboards and app inspiration for Alok.</figcaption></figure>
+              <figure><div class="frame"><img src="img/mb-mood-b.jpg" alt="Moodboards and inspiration for the persona Amit" loading="lazy"></div><figcaption>Moodboards and app inspiration for Amit.</figcaption></figure>
+            </div>
+            <figure><div class="frame"><img src="img/merabajaj-existing.jpg" alt="The existing Mera Bajaj prototype screens" loading="lazy"></div><figcaption>The prototype Bajaj provided.</figcaption></figure>
+            <figure><div class="frame tall"><img src="img/merabajaj-competitors.jpg" alt="Competitor app teardown" loading="lazy"></div><figcaption>Competitor teardown, with the problems found in each app.</figcaption></figure>
+            <div class="figs">
+              
+              <figure><div class="frame tall"><img src="img/merabajaj-lofi.jpg" alt="Low-fidelity wireframes" loading="lazy"></div><figcaption>Low-fidelity wireframes.</figcaption></figure>
+            </div>
+          </div>
+        </details>
+      </section>
+    </main>
+  </div>
+
+  <nav class="next" aria-label="Next case study">
+    <a href="index.html#journey">← Back to work journey</a>
+    <a class="btn" href="case-chetak.html">Next: Chetak EV display <span class="arr">→</span></a>
+  </nav>
+</div>
+<script src="ui.js" defer></script>
+</body>
+</html>

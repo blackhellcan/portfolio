@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Azhar Shaikh, Senior UX Designer in Mumbai. Case studies in automotive HMI, healthcare, fintech and B2B SaaS.">
+<meta property="og:title" content="Azhar Shaikh · Senior UX Designer">
+<meta property="og:description" content="Azhar Shaikh, Senior UX Designer in Mumbai. Case studies in automotive HMI, healthcare, fintech and B2B SaaS.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/dominar-menu-day.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233346e0'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='16' fill='white' text-anchor='middle'%3EAS%3C/text%3E%3C/svg%3E">
+<title>Azhar Shaikh Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Intro: dot-grid field (VengeanceUI highlight-grid), staggered headline, contact card with a border beam */
+  .intro { position: relative; display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 48px; padding-block: 56px 48px; align-items: end; }
+  .intro::before { content: ""; position: absolute; inset: -20px 0 0; z-index: -1; pointer-events: none;
+    background-image: radial-gradient(var(--dot) 1.2px, transparent 1.3px); background-size: 22px 22px;
+    -webkit-mask: radial-gradient(70% 80% at 30% 40%, #000, transparent 75%); mask: radial-gradient(70% 80% at 30% 40%, #000, transparent 75%); }
+  .intro .label { display: inline-flex; align-items: center; gap: 10px; }
+  .intro .label::before { content: ""; width: 22px; height: 1px; background: currentColor; }
+  .intro h1 { font-size: clamp(42px, 6.6vw, 76px); font-weight: 700; letter-spacing: -0.035em; line-height: 1.02; }
+  .intro h1 em { font-style: normal; background: linear-gradient(100deg, var(--accent) 10%, var(--accent-2) 90%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .intro h1 em .st-w > span { background: inherit; -webkit-background-clip: text; background-clip: text; }
+  .intro .thesis { margin-top: 24px; font-size: 18.5px; line-height: 1.6; max-width: 52ch; color: var(--ink-2); }
+  .hero-cta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 28px; }
+  .card-contact { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 22px; display: grid; gap: 14px; box-shadow: var(--sh-2); }
+  .card-contact dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 10px 16px; margin: 0; }
+  .card-contact dt { font-family: var(--f-mono); font-size: 11.5px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; padding-top: 3px; }
+  .card-contact dd { margin: 0; overflow-wrap: anywhere; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .card-contact dd > span.v { user-select: all; }
+  .copy { font: 500 11.5px/1 var(--f-mono); color: var(--muted); background: var(--paper-2); border: 1px solid var(--line); border-radius: 999px; padding: 5px 9px; cursor: pointer; transition: color .2s, border-color .2s; }
+  .copy:hover { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 40%, var(--line)); }
+  .status { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; justify-self: start; padding: 6px 12px 6px 10px; border-radius: 999px; background: color-mix(in srgb, var(--ok) 10%, var(--surface)); color: var(--ink); }
+  .status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 0 color-mix(in srgb, var(--ok) 50%, transparent); animation: ping 2.2s var(--ease) infinite; }
+  @keyframes ping { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--ok) 55%, transparent); } 80%, 100% { box-shadow: 0 0 0 9px transparent; } }
+
+  /* Case-study rail */
+  .rail-sec { margin-top: 8px; }
+  .rail-head { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 16px; }
+  .rail-head h2 { font-size: 15px; font-family: var(--f-mono); font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .rail-ctrl { display: flex; gap: 6px; }
+  .rail-ctrl button { width: 38px; height: 38px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink); cursor: pointer; display: grid; place-items: center; transition: background .2s, opacity .2s; }
+  .rail-ctrl button:hover { background: var(--paper-2); }
+  .rail-ctrl button:disabled { opacity: .35; cursor: default; }
+  .rail-ctrl svg { width: 16px; height: 16px; }
+  .rail { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(260px, 300px); gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 4px 18px; margin: -4px -4px 0; scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent; }
+  .rail a { scroll-snap-align: start; display: grid; grid-template-rows: auto 1fr; text-decoration: none; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--sh-1); transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .3s; }
+  .rail a:hover, .rail a:focus-visible { transform: translateY(-4px); box-shadow: var(--sh-3); border-color: color-mix(in srgb, var(--accent) 35%, var(--line)); }
+  .rail .ri { aspect-ratio: 16 / 10; overflow: hidden; background: var(--paper-2); }
+  .rail .ri img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease); }
+  .rail a:hover .ri img { transform: scale(1.05); }
+  .rail .rt { padding: 14px 16px 16px; display: grid; gap: 6px; align-content: start; }
+  .rail .rt span { font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+  .rail .rt b { font: 600 16.5px/1.28 var(--f-display); letter-spacing: -0.01em; }
+
+  /* Section heads */
+  .sec-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap; padding-top: 72px; margin-bottom: 32px; }
+  .sec-head h2 { font-size: clamp(30px, 4vw, 44px); letter-spacing: -0.03em; }
+  .legend { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; color: var(--muted); font-family: var(--f-mono); font-size: 11.5px; }
+  .legend span { display: inline-flex; align-items: center; gap: 7px; padding: 5px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
+  .lg { display: inline-block; width: 16px; height: 10px; border: 1.5px solid var(--ink-2); }
+  .lg.term { border-radius: 999px; }
+  .lg.proc { border-radius: 3px; }
+  .lg.sub { border-radius: 3px; box-shadow: inset 3px 0 0 -1.5px var(--ink-2), inset -3px 0 0 -1.5px var(--ink-2); }
+  .lg.ann { border: none; border-left: 1.5px solid var(--ink-2); border-top: 1.5px solid var(--ink-2); border-bottom: 1.5px solid var(--ink-2); width: 7px; }
+
+  /* Flow: one spine that fills as you scroll */
+  .flow { --spine: 28px; position: relative; }
+  .spine { position: absolute; left: calc(var(--spine) - 1px); top: 30px; bottom: 30px; width: 2px; background: var(--line); border-radius: 2px; z-index: -1; }
+  .spine i { position: absolute; inset: 0 0 auto; height: calc(var(--fill, 0) * 100%); border-radius: inherit; background: linear-gradient(180deg, var(--accent), var(--accent-2)); box-shadow: 0 0 12px var(--accent); }
+  .row { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 32px; align-items: start; }
+  .row > .side { padding-top: 12px; }
+  .edge { position: relative; min-height: 70px; margin-left: var(--spine); padding: 16px 0 24px 22px; display: flex; align-items: center; }
+  .edge::after { content: ""; position: absolute; left: -5px; bottom: 2px; border: 5px solid transparent; border-top: 7px solid var(--line-strong); border-bottom: 0; }
+  .edge .mono { color: var(--muted); font-size: 12px; background: var(--paper); padding: 2px 0; }
+  .edge.short { min-height: 46px; padding-block: 8px 16px; }
+  .subflow .edge::before { content: ""; position: absolute; left: -1px; top: 0; bottom: 8px; width: 2px; background: var(--line); }
+  .subflow .edge .mono { background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; font-size: 11.5px; }
+
+  .term { justify-self: start; display: inline-flex; flex-direction: column; gap: 2px; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 999px; padding: 14px 28px; box-shadow: var(--sh-2); max-width: 100%; }
+  .term .mono { color: var(--muted); }
+  .term strong { font-family: var(--f-display); font-size: 18px; font-weight: 600; letter-spacing: -0.01em; }
+  /* "Now": glow border card (VengeanceUI glow-border-card) */
+  .term.end { position: relative; isolation: isolate; background: var(--ink); color: var(--paper); border-color: transparent; }
+  .term.end::before { content: ""; position: absolute; inset: -3px; z-index: -1; border-radius: inherit; background: conic-gradient(from var(--ang), var(--accent), var(--accent-2), #39c6ff, var(--accent)); filter: blur(10px); opacity: .7; animation: spin 5s linear infinite; }
+  .term.end::after { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: var(--ink); }
+  .term.end .mono { color: color-mix(in srgb, var(--paper) 70%, transparent); }
+
+  .node { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 22px 24px; box-shadow: var(--sh-2); display: grid; gap: 10px; min-width: 0; transition: box-shadow .4s var(--ease), transform .4s var(--ease); }
+  .node:hover { transform: translateY(-2px); box-shadow: var(--sh-3); }
+  .node-top { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+  .node h3 { font-size: 23px; font-weight: 600; }
+  .node .where { color: var(--muted); font-size: 15px; }
+  .node ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; color: var(--ink-2); }
+  .node li::marker { color: var(--accent); }
+  .when { font-family: var(--f-mono); font-size: 12px; color: var(--muted); white-space: nowrap; background: var(--paper-2); padding: 3px 9px; border-radius: 999px; }
+
+  /* Sub-process group (keeps the flowchart symbol: two inner rails) */
+  .group { position: relative; background: color-mix(in srgb, var(--paper-2) 70%, var(--surface)); border: 1px solid var(--line-strong); border-radius: 24px; padding: 28px 38px 30px; box-shadow: var(--sh-2); }
+  .group::before, .group::after { content: ""; position: absolute; top: 18px; bottom: 18px; width: 1px; background: var(--line-strong); }
+  .group::before { left: 14px; } .group::after { right: 14px; }
+  .group > .node-top h3 { font-size: 30px; letter-spacing: -0.02em; }
+  .group .lede { margin-top: 8px; color: var(--muted); max-width: var(--measure); }
+
+  /* Filters */
+  .filters { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 22px; }
+  .filters button { font: 500 13px/1 var(--f-body); color: var(--ink-2); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 9px 14px; cursor: pointer; display: inline-flex; gap: 7px; align-items: center; transition: background .2s, color .2s, border-color .2s; }
+  .filters button i { font: 500 11px/1 var(--f-mono); font-style: normal; color: var(--muted); }
+  .filters button:hover { border-color: var(--line-strong); }
+  .filters button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .filters button[aria-pressed="true"] i { color: color-mix(in srgb, var(--paper) 65%, transparent); }
+  .subflow { margin-top: 18px; }
+  .subflow .edge { --spine: 22px; }
+  .subflow.filtered .edge { display: none; }
+  .subflow.filtered .proj { margin-bottom: 14px; }
+  .proj.off { display: none !important; }
+
+  /* Project cards */
+  .proj { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 18px 20px; display: grid; gap: 8px; min-width: 0; box-shadow: var(--sh-1); }
+  .proj .client { font-family: var(--f-mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+  .proj h4 { margin: 0; font: 600 19px/1.25 var(--f-display); letter-spacing: -0.01em; }
+  .proj p { color: var(--muted); font-size: 15px; max-width: var(--measure); }
+  .proj p.mono { justify-self: start; display: inline-flex; align-items: center; gap: 6px; opacity: 1 !important; font-size: 11.5px !important; color: var(--muted); background: var(--paper-2); border: 1px dashed var(--line-strong); border-radius: 999px; padding: 4px 10px; margin-top: 6px !important; }
+  .proj p.mono::before { content: ""; width: 10px; height: 10px; background: currentColor; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 10V7a5 5 0 0 1 10 0v3h1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V11a1 1 0 0 1 1-1zm2 0h6V7a3 3 0 0 0-6 0z'/%3E%3C/svg%3E") center/contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 10V7a5 5 0 0 1 10 0v3h1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V11a1 1 0 0 1 1-1zm2 0h6V7a3 3 0 0 0-6 0z'/%3E%3C/svg%3E") center/contain no-repeat; }
+  .proj.has-case { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 0; padding: 0; overflow: hidden; box-shadow: var(--sh-2); cursor: pointer; transition: transform .45s var(--ease), box-shadow .45s var(--ease); }
+  .proj.has-case:hover { transform: translateY(-3px); box-shadow: var(--sh-3); }
+  .proj.has-case::after { opacity: 0; transition: opacity .4s; }
+  .proj.has-case:hover::after, .proj.has-case:focus-within::after { opacity: 1; }
+  .proj.has-case .body { padding: 22px; display: grid; gap: 9px; align-content: start; }
+  .proj.has-case .thumb { background: var(--paper-2); overflow: hidden; min-height: 100%; }
+  .proj.has-case .thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+  .proj.has-case:hover .thumb img { transform: scale(1.05); }
+  .proj .cta { margin-top: 8px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { font-family: var(--f-mono); font-size: 11px; padding: 4px 9px; border-radius: 999px; background: var(--accent-soft); color: var(--ink-2); }
+
+  .ann { border-left: 1.5px solid var(--line-strong); padding: 6px 0 6px 16px; position: relative; color: var(--muted); font-size: 14px; display: grid; gap: 3px; }
+  .ann::before, .ann::after { content: ""; position: absolute; left: -1.5px; width: 10px; height: 1.5px; background: var(--line-strong); }
+  .ann::before { top: 0; } .ann::after { bottom: 0; }
+  .ann strong { color: var(--ink); font-weight: 600; font-size: 15px; }
+  .ann .dash { position: absolute; left: -32px; top: 50%; width: 30px; border-top: 1.5px dashed var(--line-strong); }
+
+  /* Skills + education */
+  .two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 88px; }
+  .panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 26px; display: grid; gap: 18px; align-content: start; box-shadow: var(--sh-2); }
+  .panel h2 { font-size: 24px; letter-spacing: -0.02em; }
+  .skills { display: grid; gap: 0; margin: 0; }
+  .skills div { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 14px; padding: 12px 0; border-top: 1px solid var(--line); }
+  .skills dt, .edu dt { font-family: var(--f-mono); font-size: 11.5px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; padding-top: 3px; }
+  .skills dd, .edu dd { margin: 0; color: var(--ink-2); }
+  .edu { display: grid; gap: 0; margin: 0; }
+  .edu div { display: grid; gap: 2px; padding: 12px 0 12px 18px; border-left: 2px solid var(--line); position: relative; }
+  .edu div::before { content: ""; position: absolute; left: -6px; top: 17px; width: 10px; height: 10px; border-radius: 50%; background: var(--surface); border: 2px solid var(--accent); }
+  footer.foot { margin-top: 72px; border-top: 1px solid var(--line); padding-top: 24px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; color: var(--muted); font-size: 14px; }
+
+  @media (max-width: 900px) {
+    .intro { grid-template-columns: 1fr; gap: 28px; padding-block: 32px 36px; }
+    .row { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+    .row > .side { padding: 0 0 0 calc(var(--spine) + 22px); }
+    .row > .side:empty { display: none; }
+    .ann .dash { display: none; }
+    .two { grid-template-columns: 1fr; }
+    .proj.has-case { grid-template-columns: minmax(0, 1fr) 220px; }
+  }
+  @media (max-width: 640px) {
+    .sec-head { padding-top: 56px; }
+    .legend { display: none; }
+    .group { padding: 22px 18px 22px; border-radius: 20px; }
+    .group::before, .group::after { display: none; }
+    .proj.has-case { grid-template-columns: 1fr; }
+    .proj.has-case .thumb { order: -1; aspect-ratio: 16 / 8; }
+    .proj.has-case .body { padding: 18px; }
+    .proj.has-case .cta { display: none; }
+    .proj.has-case .body::after { content: "Read case study →"; font: 600 14px/1 var(--f-body); color: var(--accent); margin-top: 4px; }
+    .skills div { grid-template-columns: 1fr; gap: 2px; }
+    .edge { min-height: 54px; }
+    .filters { flex-wrap: nowrap; overflow-x: auto; margin-inline: -18px; padding-inline: 18px; scrollbar-width: none; }
+    .filters button { flex: none; }
+    .rail { grid-auto-columns: 78%; }
+    .rail-ctrl { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <a class="wordmark" href="index.html">Azhar Shaikh<span>.</span></a>
+    <nav class="topnav" aria-label="Sections">
+      <a href="#journey">Work journey</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="intro" aria-labelledby="name">
+    <div>
+      <p class="label">Senior UX Designer · Mumbai</p>
+      <h1 id="name" style="margin-top:14px">I design screens people <em>can’t afford to misread.</em></h1>
+      <p class="thesis">Motorcycle clusters read at speed, clinical devices used by paramedics, legal help for street vendors who can’t read English. 8 years in UX across automotive HMI, healthcare, fintech and B2B SaaS, after 3 years as an engineer at Infosys.</p>
+      <div class="hero-cta"><a class="btn solid" href="#work">See case studies <span class="arr">→</span></a><a class="btn" href="mailto:mazhar.shaikh91@outlook.in">Email me <span class="arr">↗</span></a></div>
+    </div>
+    <aside class="card-contact beam" id="contact" aria-label="Contact">
+      <span class="status">Open to Senior and Lead UX roles</span>
+      <dl>
+        <dt>Email</dt><dd><span class="v">mazhar.shaikh91@outlook.in</span><button class="copy" type="button" data-copy="mazhar.shaikh91@outlook.in">Copy</button></dd>
+        <dt>Phone</dt><dd><span class="v">+91 97692 11554</span><button class="copy" type="button" data-copy="+91 97692 11554">Copy</button></dd>
+        <dt>LinkedIn</dt><dd class="nosel"><a href="https://www.linkedin.com/in/mazharshaikh91" target="_blank" rel="noopener">linkedin.com/in/mazharshaikh91</a></dd>
+        <dt>Based</dt><dd class="nosel">Mumbai · open to Pune, Remote, Dubai</dd>
+      </dl>
+    </aside>
+  </section>
+
+  <section class="rail-sec" id="work" aria-labelledby="work-h" hidden>
+    <div class="rail-head"><h2 id="work-h">Case studies, newest first</h2><div class="rail-ctrl"><button type="button" class="rp" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" class="rn" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button></div></div>
+    <div class="rail" tabindex="0" aria-label="Case studies"></div>
+  </section>
+
+  <section id="journey" aria-labelledby="journey-h">
+    <div class="sec-head">
+      <h2 id="journey-h">Work journey</h2>
+      <div class="legend" aria-label="Diagram legend">
+        <span><i class="lg term"></i>Start / now</span>
+        <span><i class="lg proc"></i>Role</span>
+        <span><i class="lg sub"></i>Consultancy, with projects</span>
+        <span><i class="lg ann"></i>Alongside</span>
+      </div>
+    </div>
+
+    <div class="flow">
+      <div class="spine" aria-hidden="true"><i></i></div>
+      <div class="row">
+        <div class="term"><span class="mono">2012 – 2015 · Start</span><strong>B.Sc. Computer Science, University of Mumbai</strong></div>
+        <div class="side"></div>
+      </div>
+
+      <div class="edge"><span class="mono">first job, as an engineer</span></div>
+
+      <div class="row">
+        <article class="node">
+          <div class="node-top"><h3>System Engineer</h3><span class="when">Oct 2015 – Oct 2018</span></div>
+          <p class="where">Infosys · Bengaluru</p>
+          <ul><li>Designed network configurations for client environments: connectivity, performance and security.</li></ul>
+        </article>
+        <div class="side"></div>
+      </div>
+
+      <div class="edge"><span class="mono">moved into design, same company</span></div>
+
+      <div class="row">
+        <article class="node">
+          <div class="node-top"><h3>UX Designer</h3><span class="when">Nov 2018 – Dec 2019</span></div>
+          <p class="where">Infosys · Bengaluru</p>
+          <ul>
+            <li>Designed a machine-learning product that reduced dispatcher workload in IT service management.</li>
+            <li>Led design of a gamification platform for internal idea-sharing.</li>
+            <li>Built a client-management portal for gathering automation requirements.</li>
+          </ul>
+        </article>
+        <div class="side">
+          <div class="ann"><i class="dash"></i><strong>MS, Information Technology</strong><span>University of Mumbai · 2019 – 2021</span></div>
+        </div>
+      </div>
+
+      <div class="edge"><span class="mono">led a team at an agency</span></div>
+
+      <div class="row">
+        <article class="node">
+          <div class="node-top"><h3>UX Designer</h3><span class="when">Feb 2020 – Mar 2021</span></div>
+          <p class="where">White Digital · Mumbai</p>
+          <ul>
+            <li>Led the design team at a digital marketing agency, running market research and shaping UX for clients.</li>
+            <li>Designed responsive websites and web apps across several industries.</li>
+          </ul>
+        </article>
+        <div class="side"></div>
+      </div>
+
+      <div class="edge"><span class="mono">joined a UX consultancy</span></div>
+
+      <div class="row">
+        <article class="group" aria-labelledby="peepal-h">
+          <div class="node-top"><h3 id="peepal-h">Senior UX Designer</h3><span class="when">Jun 2021 – Present</span></div>
+          <p class="where" style="color:var(--muted)">PeepalDesign · Mumbai (remote)</p>
+          <p class="lede">UX lead on client products in automotive, healthcare, fintech and SaaS. Each project below follows the last.</p>
+
+          <div class="filters" role="group" aria-label="Filter projects"></div>
+          <div class="subflow">
+            <article data-domain="fin" class="proj has-case">
+              <div class="body">
+                <span class="client">Fintech · Jun – Sep 2021</span>
+                <h4>Mutual funds inside a stock-trading app</h4>
+                <p>Research-led design of a mutual fund module for new and seasoned investors. Led a team of two; paused before development when the client froze outside work.</p>
+                <div class="tags"><span class="tag">Fintech</span><span class="tag">Job stories</span><span class="tag">Mobile</span></div>
+                <div class="cta"><a class="btn" href="case-fintech.html">Read case study <span class="arr">→</span></a></div>
+              </div>
+              <div class="thumb"><img src="img/fintech-wires.jpg" alt="Angled mutual fund app screens" loading="lazy"></div>
+            </article>
+
+            <div class="edge short"><span class="mono">2021</span></div>
+
+            <article data-domain="fin" class="proj has-case">
+              <div class="body">
+                <span class="client">Portico · Oct 2021 – Apr 2022</span>
+                <h4>Rebuilding a legacy HR and payroll suite</h4>
+                <p>Turned an organically grown HRMS into a consistent web and mobile SaaS product. 30% fewer steps on core admin tasks.</p>
+                <div class="tags"><span class="tag">B2B SaaS</span><span class="tag">Web + mobile</span><span class="tag">Design system</span></div>
+                <div class="cta"><a class="btn" href="case-portico.html">Read case study <span class="arr">→</span></a></div>
+              </div>
+              <div class="thumb"><img src="img/portico-hero.jpg" alt="Portico dashboard on laptop and phone" loading="lazy"></div>
+            </article>
+
+            <div class="edge short"><span class="mono">2022</span></div>
+
+            <article data-domain="social" class="proj has-case">
+              <div class="body">
+                <span class="client">Centre for Civil Society · May – Oct 2022</span>
+                <h4>Jeevika: legal help for street vendors</h4>
+                <p>A Hindi-first app and NGO dashboard for low-literacy vendors to know their rights, call for help and track legal cases, followed by an admin panel for CCS and vendor associations. Both are live.</p>
+                <div class="tags"><span class="tag">Social impact</span><span class="tag">Field research</span><span class="tag">Low literacy</span></div>
+                <div class="cta"><a class="btn" href="case-jeevika.html">Read case study <span class="arr">→</span></a></div>
+              </div>
+              <div class="thumb"><img src="img/jeevika-hero.jpg" alt="Jeevika app screens in Hindi" loading="lazy"></div>
+            </article>
+
+            <div class="edge short"><span class="mono">2022 – 23</span></div>
+
+            <article data-domain="social" class="proj has-case">
+              <div class="body">
+                <span class="client">YoungArtiste · Nov 2022 – Mar 2023</span>
+                <h4>Keeping music and dance learners practising</h4>
+                <p>A learning app for music, dance and instruments, built around learning paths and motivation. Led a team of two; put on hold by the client before launch.</p>
+                <div class="tags"><span class="tag">EdTech</span><span class="tag">Mobile</span><span class="tag">Research</span></div>
+                <div class="cta"><a class="btn" href="case-youngartiste.html">Read case study <span class="arr">→</span></a></div>
+              </div>
+              <div class="thumb"><img src="img/ya-hero.jpg" alt="YoungArtiste app screens" loading="lazy"></div>
+            </article>
+
+            <div class="edge short"><span class="mono">2023</span></div>
+
+            <article data-domain="auto" class="proj has-case">
+              <div class="body">
+                <span class="client">Bajaj Auto · Mar – Jun 2023 · 1 of 3</span>
+                <h4>Mera Bajaj: an owner app that puts the bike first</h4>
+                <p>Redesigned Bajaj’s owner app for Pulsar riders: pairing, trips, navigation and service. Live on the App Store and Google Play for about two years.</p>
+                <div class="tags"><span class="tag">Automotive</span><span class="tag">Mobile</span><span class="tag">Design system</span></div>
+                <div class="cta"><a class="btn" href="case-merabajaj.html">Read case study <span class="arr">→</span></a></div>
+              </div>
+              <div class="thumb"><img src="img/merabajaj-hero.jpg" alt="Mera Bajaj app screens" loading="lazy"></div>
+            </article>
+
+            <div class="edge short"><span class="mono">then, for Chetak</span></div>
+
+            <article data-domain="auto" class="proj has-case">
+              <div class="body">
+                <span class="client">Bajaj Auto · 2023</span>
+                <h4>Chetak EV display: navigation and menus</h4>
+                <p>Worked with another designer on the scooter’s 5” display. My part: the menu structure and how navigation behaves while riding and when stopped. Shipped on Chetak EV scooters.</p>
+                <div class="tags"><span class="tag">Automotive HMI</span><span class="tag">Navigation</span><span class="tag">Menus</span></div>
+                <div class="cta"><a class="btn" href="case-chetak.html">Read case study <span class="arr">→</span></a></div>
+              </div>
+              <div class="thumb"><img src="img/chetak-hero.jpg" alt="Chetak EV and its 5 inch display" loading="lazy"></div>
+            </article>
+
+            <div class="edge short"><span class="mono">2023 – 24</span></div>
+
+            <article data-domain="health" class="proj">
+              <span class="client">Philips · Dec 2023 – May 2024</span>
+              <h4>Emergency care and monitoring (Tempus Pro)</h4>
+              <p>Companion app for remote vitals and a modernised device UI. 100% regulatory compliance; a cross-device UI system that cut development effort by an estimated 15%. Tested with paramedics.</p>
+              <p class="mono" style="font-size:12px;opacity:.7;margin-top:8px">Under NDA · happy to walk through it in an interview</p>
+            </article>
+
+            <div class="edge short"><span class="mono">2024</span></div>
+
+            <article data-domain="health" class="proj">
+              <span class="client">HealthAssyst · Jan – Mar 2024</span>
+              <h4>Clinical management module</h4>
+              <p>Reduced task friction and data-entry errors by 20%.</p>
+              <p class="mono" style="font-size:12px;opacity:.7;margin-top:8px">Under NDA · happy to walk through it in an interview</p>
+            </article>
+
+            <div class="edge short"><span class="mono">2024</span></div>
+
+            <article data-domain="social" class="proj has-case"><div class="body"><span class="client">PockIT · Apr – Dec 2024</span><h4>Booking IT repairs for people who can’t name the problem</h4><p>Live with 1,000+ users. Led the customer and technician apps: plain-language booking, upfront pricing, part approvals and a happy code to close every job.</p><div class="tags"><span class="tag">Marketplace</span><span class="tag">Two-sided</span><span class="tag">Trust</span></div><div class="cta"><a class="btn" href="case-pockit.html">Read case study <span class="arr">→</span></a></div></div><div class="thumb"><img src="img/pk-hero.jpg" alt="PockIT customer and technician app screens" loading="lazy"></div></article>
+
+            <div class="edge short"><span class="mono">2025</span></div>
+
+            <article data-domain="auto" class="proj has-case">
+              <div class="body">
+                <span class="client">Bajaj Auto · Jan – Oct 2025 · 2 of 3</span>
+                <h4>From LCD to a 5” TFT cluster: menu system now on the Pulsar N160 SS</h4>
+                <p>Led a team of 4 on the cluster’s information architecture, menus and navigation. Chosen over a competing team’s design; shipped first on the Pulsar N160 SS in 2026.</p>
+                <div class="tags"><span class="tag">Automotive HMI</span><span class="tag">Safety-critical</span><span class="tag">Team lead</span></div>
+                <div class="cta"><a class="btn" href="case-hmi.html">Read case study <span class="arr">→</span></a></div>
+              </div>
+              <div class="thumb"><img src="img/dominar-menu-day.jpg" alt="TFT cluster menu screens" loading="lazy"></div>
+            </article>
+
+            <div class="edge short"><span class="mono">2025 – 26</span></div>
+
+            <article data-domain="auto" class="proj">
+              <span class="client">Bajaj Auto · Dec 2025 – Jan 2026 · 3 of 3</span>
+              <h4>Chetak EV owner app UI revamp</h4>
+              <p>A focused 2–4 week visual refresh of the Chetak owner app.</p>
+            </article>
+
+            <div class="edge short"><span class="mono">2026</span></div>
+
+            <article data-domain="fin" class="proj">
+              <span class="client">Philips · Nov 2025 – May 2026</span>
+              <h4>Philips Displays global website</h4>
+              <p>Restructured navigation and IA across regional sites, with a modular pattern library.</p>
+            </article>
+          </div>
+        </article>
+        <div class="side">
+          <div class="ann"><i class="dash"></i><strong>Board of Studies Member</strong><span>Royal Higher Education Society’s College, Thane · Jun 2024 – Present</span></div>
+        </div>
+      </div>
+
+      <div class="edge"><span class="mono">next</span></div>
+
+      <div class="row">
+        <div class="term end"><span class="mono">Now</span><strong>Looking for a Senior or Lead UX role</strong></div>
+        <div class="side"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="two" id="skills">
+    <section class="panel" aria-labelledby="skills-h">
+      <h2 id="skills-h">Skills</h2>
+      <dl class="skills">
+        <div><dt>Design</dt><dd>Interaction design, information architecture, design systems, HMI / cluster design, mobile and responsive web</dd></div>
+        <div><dt>Research</dt><dd>Field research, usability testing, stakeholder workshops, journey mapping</dd></div>
+        <div><dt>Quality</dt><dd>Accessibility, medical and homologation standards, low-literacy design</dd></div>
+        <div><dt>Tools</dt><dd>Figma, FigJam, Axure RP, Adobe XD, prototyping</dd></div>
+        <div><dt>Code</dt><dd>HTML, CSS, JavaScript, Python</dd></div>
+      </dl>
+    </section>
+    <section class="panel" aria-labelledby="edu-h">
+      <h2 id="edu-h">Education and certifications</h2>
+      <dl class="edu">
+        <div><dt>2019 – 2021</dt><dd>MS, Information Technology, University of Mumbai</dd></div>
+        <div><dt>2012 – 2015</dt><dd>B.Sc., Computer Science, University of Mumbai</dd></div>
+        <div><dt>2022</dt><dd>Google UX Design Professional Certificate</dd></div>
+        <div><dt>2021 – 2022</dt><dd>UXPM Level 1 and 2, UX Alliance</dd></div>
+      </dl>
+    </section>
+  </div>
+
+  <footer class="foot">
+    <span>Azhar Shaikh · Senior UX Designer</span>
+    <span>mazhar.shaikh91@outlook.in · +91 97692 11554</span>
+  </footer>
+</div>
+<script src="ui.js" defer></script>
+</body>
+</html>

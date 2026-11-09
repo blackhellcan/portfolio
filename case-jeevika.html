@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jeevika · Azhar Shaikh</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233346e0'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='16' fill='white' text-anchor='middle'%3EAS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="case.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <a class="wordmark" href="index.html">Azhar Shaikh<span>.</span></a>
+    <nav class="topnav" aria-label="Site"><a href="index.html#journey">← Work journey</a></nav>
+  </header>
+
+  <section class="cs-hero">
+    <p class="label">Case study · Social impact</p>
+    <h1>Legal help that street vendors can use without reading English</h1>
+    <p class="sub">Jeevika helps Delhi’s street vendors learn their rights, reach a lawyer and call for help when they are harassed. It is Hindi-first and built for people who are new to smartphones.</p>
+    <dl class="meta">
+      <div><dt>Client</dt><dd>Centre for Civil Society (CCS), via PeepalDesign</dd></div>
+      <div><dt>My role</dt><dd>Lead UX Designer, with one junior designer</dd></div>
+      <div><dt>Timeline</dt><dd>May – Oct 2022</dd></div>
+      <div><dt>Platform</dt><dd>Android app, NGO dashboard</dd></div>
+    </dl>
+    <div class="impact">
+      <div><strong>Hindi first</strong><span>with English, illustrations and icons for low-literacy users</span></div>
+      <div><strong>3 sides</strong><span>vendors, volunteer lawyers and CCS admins in one service</span></div>
+      <div><strong>Live</strong><span>and in use by street vendors, who are growing more confident with it</span></div>
+    </div>
+    <div class="hero-img"><img src="img/jeevika-hero.jpg" alt="Jeevika app screens in Hindi with illustrated lawyer characters"></div>
+  </section>
+
+  <div class="cs-body">
+    <nav class="toc" aria-label="On this page">
+      <span class="label">On this page</span>
+      <a href="#problem">The problem</a>
+      <a href="#role">My role</a>
+      <a href="#learned">What we learned</a>
+      <a href="#decisions">Key decisions</a>
+      <a href="#solution">The solution</a>
+      <a href="#impact">Validation and impact</a>
+      <a href="#admin">Phase 2: admin panel</a>
+      <a href="#reflection">Reflection</a>
+      <a href="#appendix">Process appendix</a>
+    </nav>
+
+    <main class="cs-main">
+      <section class="cs-sec" id="problem">
+        <h2>The problem</h2>
+        <div class="prose">
+          <p><strong>Street vendors have legal rights under the 2014 Street Vendors Act, but most don’t know them and can’t get help when they’re harassed or evicted.</strong> CCS wanted an app that tells vendors their rights, connects them to law students and lawyers, offers emergency SOS, and geo-tags vending spots as proof.</p>
+          <p>The users are vendors with varied literacy and little smartphone experience, working in Hindi. The service also had to reach vendors without a smartphone, and scale to other Indian cities.</p>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="role">
+        <h2>My role</h2>
+        <div class="prose">
+          <ul>
+            <li><strong>Led UX</strong> for the vendor app and the NGO dashboard, with one junior designer.</li>
+            <li><strong>Turned CCS’s field research into personas.</strong> CCS interviewed vendors and shared the results as a large spreadsheet; we distilled it into personas and user needs.</li>
+            <li><strong>Worked closely with CCS’s team and volunteers</strong>, who were in frequent contact with vendors throughout.</li>
+            <li><strong>Ran the stakeholder alignment workshop</strong> with CCS to agree goals, success measures and scope.</li>
+            <li><strong>Benchmarked</strong> legal-help apps (Hawkers, Nyaya Bandhu, Talika, LegalKart) and public services (NASVI, PM SVANidhi, DigiLocker).</li>
+            <li><strong>Turned six “How might we” questions into a prioritised feature set</strong> using importance and feasibility.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="learned">
+        <h2>What we learned</h2>
+        <div class="insights">
+          <div class="insight">
+            <div><b>Reading is the barrier, not willingness.</b><p>The brief called for vernacular language, low cognitive load and support for vendors who can’t read or don’t own a smartphone.</p></div>
+            <span class="arrow" aria-hidden="true">→</span>
+            <p class="impl">Hindi by default, a picture and icon for every action, and a toll-free number for anyone without the app.</p>
+          </div>
+          <div class="insight">
+            <div><b>Public apps felt cold and closed.</b><p>Benchmarked government services had little language support, low visual appeal and no way to raise a query.</p></div>
+            <span class="arrow" aria-hidden="true">→</span>
+            <p class="impl">A warm, illustrated look with familiar characters (vendors, lawyers, police) instead of forms.</p>
+          </div>
+          <div class="insight">
+            <div><b>Two kinds of vendor, two reasons to open the app.</b><p>An experienced vendor-activist wants to help others; a newer vendor, a working mother, wants to avoid trouble and protect her income.</p></div>
+            <span class="arrow" aria-hidden="true">→</span>
+            <p class="impl">Self-help (rights, SOS, my cases) comes first; community and lawyer features sit one level down.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="decisions">
+        <h2>Key decisions</h2>
+        <article class="decision">
+          <span class="num">Decision 1</span>
+          <h3>Hindi-first, illustration-led screens</h3>
+          <dl>
+            <dt>Options</dt><dd>Standard Hindi, which fits most of north India, or Hindi in the everyday Delhi register vendors actually speak.</dd>
+            <dt>Chose</dt><dd>Delhi-flavoured Hindi as the default, with English available. Each section is introduced by an illustrated character, and every action pairs an icon with a short label.</dd>
+            <dt>Why</dt><dd>We started with standard Hindi, then moved to the local register: words vendors use daily read faster than formal ones, and a picture plus a familiar word beats a sentence.</dd>
+            <dt>Trade-off</dt><dd>Every screen and illustration would need localising before the app could scale to other cities.</dd>
+          </dl>
+        </article>
+        <article class="decision">
+          <span class="num">Decision 2</span>
+          <h3>SOS is always one tap away</h3>
+          <dl>
+            <dt>Chose</dt><dd>SOS takes two taps: the button on the home screen, then a full-page SOS screen to confirm. A toll-free number covers vendors without the app.</dd>
+            <dt>Why</dt><dd>Harassment happens in the moment; a vendor shouldn’t have to navigate to get help.</dd>
+            <dt>Trade-off</dt><dd>One extra tap in an emergency, in exchange for no accidental alerts from a phone in a pocket or a stray touch.</dd>
+          </dl>
+        </article>
+        <article class="decision">
+          <span class="num">Decision 3</span>
+          <h3>Build what is important and feasible first</h3>
+          <dl>
+            <dt>Chose</dt><dd>Ranked every idea from the How-might-we questions by importance and feasibility. Rights information, legal-aid requests, SOS and geo-tagging came first.</dd>
+            <dt>Why</dt><dd>These protect a vendor at the moment of harassment and build the record they need later.</dd>
+            <dt>Trade-off</dt><dd>Broader monitoring and community features came later.</dd>
+          </dl>
+        </article>
+      </section>
+
+      <section class="cs-sec" id="solution">
+        <h2>The solution</h2>
+        <figure>
+          <div class="frame tall"><img src="img/jeevika-keyscreens.jpg" alt="Jeevika key screens in Hindi: welcome, registration, OTP, home, SOS, profile and documents" loading="lazy"></div>
+          <figcaption><b>Vendor app.</b> Registration with OTP, a home of large illustrated tiles, the SOS button, and the vendor’s documents and cases. <span class="todo">Add English callouts on 3–4 screens so non-Hindi readers can follow</span></figcaption>
+        </figure>
+        <figure>
+          <div class="frame"><img src="img/jeevika-illus.jpg" alt="Illustrated characters: vendors, a police officer and lawyers" loading="lazy"></div>
+          <figcaption><b>The cast.</b> Vendors, police and lawyers, drawn to look like the people users meet every day.</figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-sec" id="impact">
+        <h2>Validation and impact</h2>
+        <ul class="results">
+          <li><strong>Live and working.</strong> Street vendors are using the app, and they are slowly getting comfortable with it.</li>
+          <li><strong>The hardest problem isn’t the interface.</strong> Pressure from officials makes some vendors afraid to use it. The next challenge is motivating them to use it to stand up for their rights.</li>
+        </ul>
+      </section>
+
+      <section class="cs-sec" id="admin">
+        <h2>Phase 2: the admin panel</h2>
+        <div class="prose">
+          <p><strong>A live app creates a second user: the people who run it.</strong> Right after the app was delivered, the same two-person team took on a follow-on engagement: dashboards for CCS’s management and for vendor associations, so they could see where harassment happens, act on complaints and run the programme across zones.</p>
+          <p>We mapped every job for two admin roles, a CCS admin and an association admin, as a story map, and marked what belonged in release 1. The admin panel is now live.</p>
+        </div>
+        <figure>
+          <div class="ia-wrap" tabindex="0" aria-label="Admin story map, scroll sideways"><div class="ia"><div class="ia-col"><h4>Onboard users</h4><span>Onboard association admins, CCS admins and lawyers</span><span>Verify submitted data</span><span>Enable or disable access</span><span>Help recover accounts</span><span>Assign law volunteers to zones</span></div><div class="ia-col"><h4>Users and locations</h4><span>Overview of all users and their latest updates</span><span>Vendor, lawyer and association records</span><span>Top-performing leaders</span><span>Active users</span><span>Zones, wards and markets</span></div><div class="ia-col"><h4>Analytics</h4><span>Harassment heatmaps</span><span>Geo-tagged vendor hotspots</span><span>COV / LOR status</span><span>Third-party survey data</span><span>Poll results</span></div><div class="ia-col"><h4>Reports</h4><span>Filter data into reports</span><span>Harassment reports</span><span>Share data</span></div><div class="ia-col"><h4>Complaints</h4><span>All complaints, SOS or direct</span><span>SOS incidents only</span><span>Complaints from leaders or POCs</span><span>Filter and track status</span></div><div class="ia-col"><h4>Actions</h4><span>Escalate to law volunteers</span><span>Escalate to associations</span></div><div class="ia-col"><h4>Product settings</h4><span>Daily or weekly polls for vendors</span><span>Onboarding questions</span><span>About, terms, privacy, FAQs, support</span><span>Trending videos</span><span>Emergency contacts per zone</span><span>Zone and access management</span><span>White-label logo, theme and content</span></div><div class="ia-col"><h4>Complaint rules</h4><span>Report reminders</span><span>When an escalation triggers</span><span>Who receives it, and at which level</span></div></div></div>
+          <figcaption><b>Story map for the CCS admin.</b> Eight activities, each broken into tasks. The association admin gets a subset: their own vendors, analytics, reports and complaints, with escalation up to CCS and their own branding. Scroll sideways to see it all.</figcaption>
+        </figure>
+        <figure>
+          <div class="frame tall"><img src="img/jv-admin-dashboard.jpg" alt="Admin dashboard: user counts, complaints and SOS by month, zone and market counts, harassment by official, ratings, harassment types and a complaint heatmap of Delhi" loading="lazy"></div>
+          <figcaption><b>CCS admin dashboard.</b> Users by role, complaints and SOS by month, zone, market and pradhan counts, and geo-tagged vendors. Below: which officials harass most, the types of harassment, app ratings and a complaint heatmap across Delhi. Shown with sample data.</figcaption>
+        </figure>
+        <div class="figs">
+          <figure>
+            <div class="frame"><img src="img/jv-admin-complaints.jpg" alt="Complaints and requests by source with pending, resolved and rejected counts, and an escalated complaints table" loading="lazy"></div>
+            <figcaption><b>Complaints.</b> One card per source (vendors, SOS, leaders, lawyers, associations) with pending, resolved and rejected counts, then the escalated complaints that need action first.</figcaption>
+          </figure>
+          <figure>
+            <div class="frame"><img src="img/jv-admin-analytics.jpg" alt="Analytics with filters and a heatmap of complaints by area" loading="lazy"></div>
+            <figcaption><b>Analytics.</b> Filter by complaint type, who it is against, harassment type, status and location, see the result as a heatmap, then email or download it as a report.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="reflection">
+        <h2>Reflection</h2>
+        <div class="prose"><p><strong>One of the most meaningful projects I have worked on.</strong> I kept everything as simple as I could for vendors new to smartphones. Next, I would run usability tests with vendors on the live app and revamp the UI around what we learn, especially around building the confidence to use it.</p></div>
+      </section>
+
+      <section class="cs-sec" id="appendix">
+        <details class="appendix">
+          <summary>Process appendix: ecosystem and How-might-we questions</summary>
+          <div class="inner">
+            <div class="figs">
+              <figure><div class="frame"><img src="img/jeevika-eco.jpg" alt="Ecosystem map: vendor, Jeevika, CCS, lawyers, NGOs and law enforcement" loading="lazy"></div><figcaption>Who Jeevika connects a vendor to.</figcaption></figure>
+              <figure><div class="frame"><img src="img/jeevika-hmw.jpg" alt="Six How might we questions" loading="lazy"></div><figcaption>The six How-might-we questions.</figcaption></figure>
+            </div>
+          </div>
+        </details>
+      </section>
+    </main>
+  </div>
+
+  <nav class="next" aria-label="Next case study">
+    <a href="case-fintech.html">← Mutual funds app</a>
+    <a class="btn" href="case-hmi.html">Next: Bajaj clusters <span class="arr">→</span></a>
+  </nav>
+</div>
+<script src="ui.js" defer></script>
+</body>
+</html>

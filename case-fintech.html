@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mutual Funds App · Azhar Shaikh</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233346e0'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='16' fill='white' text-anchor='middle'%3EAS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="case.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <a class="wordmark" href="index.html">Azhar Shaikh<span>.</span></a>
+    <nav class="topnav" aria-label="Site"><a href="index.html#journey">← Work journey</a></nav>
+  </header>
+
+  <section class="cs-hero">
+    <p class="label">Case study · Fintech</p>
+    <h1>Mutual funds that first-time investors trust enough to start</h1>
+    <p class="sub">Designing a mutual fund module inside an existing stock-trading app, for people who have never invested as much as for seasoned traders. The project stopped during design review, before development, when the client paused all outside work.</p>
+    <dl class="meta">
+      <div><dt>Client</dt><dd>An Indian stockbroking platform, via PeepalDesign</dd></div>
+      <div><dt>My role</dt><dd>Lead UX Designer, team of 2</dd></div>
+      <div><dt>Timeline</dt><dd>Jun – Sep 2021</dd></div>
+      <div><dt>Platform</dt><dd>iOS, Android</dd></div>
+    </dl>
+    <div class="impact">
+      <div><strong>2 investor types</strong><span>curious first-timers and savvy investors, one product</span></div>
+      <div><strong>5 phases</strong><span>discovery to post-investment, mapped against 3 competitors</span></div>
+      <div><strong>Paused</strong><span>before development, after a leadership change on the client side</span></div>
+    </div>
+    <div class="hero-img"><img src="img/fx-hero.jpg" alt="Three mutual fund screens: home, portfolio and SIP calculator"></div>
+  </section>
+
+  <div class="cs-body">
+    <nav class="toc" aria-label="On this page">
+      <span class="label">On this page</span>
+      <a href="#problem">The problem</a>
+      <a href="#role">My role</a>
+      <a href="#learned">What we learned</a>
+      <a href="#decisions">Key decisions</a>
+      <a href="#solution">The solution</a>
+      <a href="#impact">Validation and impact</a>
+      <a href="#reflection">Reflection</a>
+      <a href="#appendix">Process appendix</a>
+    </nav>
+
+    <main class="cs-main">
+      <section class="cs-sec" id="problem">
+        <h2>The problem</h2>
+        <div class="prose">
+          <p><strong>Most people who could invest in mutual funds don’t, because they don’t understand them or don’t trust them.</strong> The client wanted a metrics-driven way to invest in and track mutual funds, built into its existing stock-broking app.</p>
+          <p>It had to work for traditional and first-time investors, explain risk and past performance honestly, including bad years, and still feel quick for experienced investors who already trade stocks in the same app.</p>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="role">
+        <h2>My role</h2>
+        <div class="prose">
+          <ul>
+            <li><strong>Ran the alignment workshop</strong> to agree challenges, aspirations, focus areas and guiding principles with the client.</li>
+            <li><strong>Benchmarked Groww, Coin by Zerodha and Paytm Money</strong> across the five phases of investing.</li>
+            <li><strong>Wrote the job stories</strong> and user-intent document that set feature requirements.</li>
+            <li><strong>Prioritised features</strong> with a value–effort mapping session, then designed the IA, wireflows and wireframes.</li>
+            <li><strong>Led a two-person design team.</strong></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="learned">
+        <h2>What we learned</h2>
+        <div class="insights">
+          <div class="insight">
+            <div><b>New investors want to start but fear losing money.</b><p>“Everybody tells me that you should start investing early. I don’t have lumpsum to invest right now, but I want to start. I fear if I make wrong investment decision I might lose my money.” (proto-persona, first-time investor)</p></div>
+            <span class="arrow" aria-hidden="true">→</span>
+            <p class="impl">Let people look around before signing up, and explain each fund in plain terms before asking for money.</p>
+          </div>
+          <div class="insight">
+            <div><b>Savvy investors want depth, fast.</b><p>They compare holdings, returns, risk and fund managers before deciding, and switch between charts and numbers.</p></div>
+            <span class="arrow" aria-hidden="true">→</span>
+            <p class="impl">Fund detail pages carry the full breakdown, one tap away from the simple view.</p>
+          </div>
+          <div class="insight">
+            <div><b>Control matters as much as starting.</b><p>“When I plan to stop my systematic investment, I want to do so using a kill switch, so that I don’t have to find each investment separately.” (job story)</p></div>
+            <span class="arrow" aria-hidden="true">→</span>
+            <p class="impl">SIPs can be paused or stopped from one place.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="decisions">
+        <h2>Key decisions</h2>
+        <article class="decision">
+          <span class="num">Decision 1</span>
+          <h3>Guest access and a guided first look for new investors</h3>
+          <dl>
+            <dt>Chose</dt><dd>Guest login without Aadhaar, PAN or bank details, an onboarding tour that explains strategy, budget and how the app works, and a “SIP with ₹100” entry point among the top picks.</dd>
+            <dt>Why</dt><dd>Fear of a wrong decision stopped first-timers before they started. Letting them look around first lowers the cost of curiosity.</dd>
+            <dt>Trade-off</dt><dd>Guests still had to complete KYC before their first investment, so the hurdle moved rather than disappeared.</dd>
+          </dl>
+        </article>
+        <article class="decision">
+          <span class="num">Decision 2</span>
+          <h3>Ship the essentials before the novel features</h3>
+          <dl>
+            <dt>Options</dt><dd>Six hygiene features (guest login, onboarding tour, fund breakdowns, payment and SIP tracking, personalised alerts, chart or number views) and four unique ones (sharing with family and friends, linked news, voice help, reviews from real investors).</dd>
+            <dt>Chose</dt><dd>Value–effort mapping put the hygiene set in the first release; the unique features were planned for later.</dd>
+            <dt>Why</dt><dd>Trust comes from the basics working well. Novel features don’t help if tracking a SIP is confusing.</dd>
+            <dt>Trade-off</dt><dd>The features that would set the app apart from Groww and Coin came later.</dd>
+          </dl>
+        </article>
+        <article class="decision">
+          <span class="num">Decision 3</span>
+          <h3>One cart for SIPs and lump sums</h3>
+          <dl>
+            <dt>Chose</dt><dd>Investors add funds to a cart, set SIP dates and amounts or a one-time amount for each, and see a clear split between SIP and lump-sum payments before paying.</dd>
+            <dt>Why</dt><dd>From the user-intent document: investors wanted to “make a single purchase and save time”, and to see “a comprehensive understanding of the payment breakdown”.</dd>
+            <dt>Trade-off</dt><dd>One extra step for someone buying a single fund, softened by an “Invest now” button beside “Add to cart”.</dd>
+          </dl>
+        </article>
+      </section>
+
+      <section class="cs-sec" id="solution">
+        <h2>The solution</h2>
+        <div class="phones">
+          <figure><div class="frame"><img src="img/fx-mock-home.jpg" alt="Mutual funds home with popular funds, top picks and trending SIPs" loading="lazy"></div><figcaption><b>Mutual funds home.</b> Popular funds by category, and Top Picks that start with “SIP with ₹100”, a low first step for nervous investors.</figcaption></figure>
+          <figure><div class="frame"><img src="img/fx-mock-portfolio.jpg" alt="Portfolio with total value, gains and fund cards" loading="lazy"></div><figcaption><b>Portfolio.</b> Today’s gain, overall gain and invested value up top, then each fund’s invested amount, returns and day change.</figcaption></figure>
+          <figure><div class="frame"><img src="img/fx-mock-sip.jpg" alt="SIP calculator with growth bars and sliders" loading="lazy"></div><figcaption><b>SIP calculator.</b> Sliders for amount, return rate and period, with growth shown as bars, so the answer to “how much should I invest?” is visual.</figcaption></figure>
+        </div>
+        <div class="figs">
+          <figure><div class="frame tall"><img src="img/fx-fund-detail.jpg" alt="Fund detail with key facts, returns chart and invest buttons" loading="lazy"></div><figcaption><b>Fund detail.</b> Fund size, expense ratio, lock-in, exit load and risk in a scannable grid; a returns chart; an “if you had invested” calculator; deeper details in collapsible sections; Monthly SIP and One-time fixed at the bottom.</figcaption></figure>
+          <div class="prose"><p><strong>Each screen answers a job story.</strong> The fund detail serves the investor deciding go or no-go on a fund. The SIP calculator serves “how much should I invest every month?”. The portfolio serves tracking, and the mandate and order screens make the money side transparent.</p></div>
+        </div>
+        <h3 style="font-size:20px">Two rounds of review</h3>
+        <div class="pairs">
+          <figure><div class="pair"><div><span class="label">Round 1</span><img src="img/fx-dash-r1.jpg" alt="Round 1: investments dashboard" loading="lazy"></div><div><span class="label">Round 2</span><img src="img/fx-dash-r2.jpg" alt="Round 2: investments dashboard" loading="lazy"></div></div><figcaption><b>Dashboard.</b> Round 2 puts Holdings, SIPs and Watchlist on top, adds day change, and tags each fund as demat or physical and internal or external, so imported funds are clear.</figcaption></figure>
+          <figure><div class="pair"><div><span class="label">Round 1</span><img src="img/fx-mandate-r1.jpg" alt="Round 1: autopay mandate" loading="lazy"></div><div><span class="label">Round 2</span><img src="img/fx-mandate-r2.jpg" alt="Round 2: autopay mandate" loading="lazy"></div></div><figcaption><b>Autopay mandate.</b> Round 2 leads with what the investor is agreeing to (limit, frequency, dates), then the bank account, and puts UPI first among verification options.</figcaption></figure>
+          <figure><div class="pair"><div><span class="label">Round 1</span><img src="img/fx-order-r1.jpg" alt="Round 1: order status" loading="lazy"></div><div><span class="label">Round 2</span><img src="img/fx-order-r2.jpg" alt="Round 2: order status" loading="lazy"></div></div><figcaption><b>Order status.</b> Round 2 leads with the order ID and amount, shortens the timeline to two steps with a detailed view, adds “Need help?”, and shows stamp duty and the invested amount after it.</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="impact">
+        <h2>Validation and impact</h2>
+        <ul class="results">
+          <li><strong>Did not launch.</strong> Leadership changed on the client side, and the new team put all external engagements on hold. The project stopped during design review, before development.</li>
+          <li>Delivered before the pause: workshop outcomes, competitor benchmarks, job stories, a prioritised feature set, and two reviewed rounds of the core screens: dashboard, fund detail, autopay mandate and order status, plus hi-fi mockups.</li>
+        </ul>
+      </section>
+
+      <section class="cs-sec" id="reflection">
+        <h2>Reflection</h2>
+        <div class="prose"><p><strong>I leaned on reviews instead of leading.</strong> It was one of my first projects as a lead, and I went to the product and project managers for review and feedback at every stage. With what I know now, I would set up a clear process from the start: agreed milestones, review points and decision owners, so the team could move faster with fewer check-ins.</p></div>
+      </section>
+
+      <section class="cs-sec" id="appendix">
+        <details class="appendix">
+          <summary>Process appendix: journey, job stories and prioritisation</summary>
+          <div class="inner">
+            <figure><div class="frame"><img src="img/fintech-journey.jpg" alt="Five phases of mutual fund investment" loading="lazy"></div><figcaption>The five phases of investing, with the questions users ask at each.</figcaption></figure>
+            <div class="figs">
+              <figure><div class="frame"><img src="img/fintech-jobs.jpg" alt="Seven job stories" loading="lazy"></div><figcaption>Job stories: situation, motivation and outcome.</figcaption></figure>
+              <figure><div class="frame"><img src="img/fintech-valueeffort.jpg" alt="Value versus effort mapping" loading="lazy"></div><figcaption>Value–effort mapping for the investment flow.</figcaption></figure>
+            </div>
+          </div>
+        </details>
+      </section>
+    </main>
+  </div>
+
+  <nav class="next" aria-label="Next case study">
+    <a href="case-portico.html">← Portico HRMS</a>
+    <a class="btn" href="case-jeevika.html">Next: Jeevika <span class="arr">→</span></a>
+  </nav>
+</div>
+<script src="ui.js" defer></script>
+</body>
+</html>

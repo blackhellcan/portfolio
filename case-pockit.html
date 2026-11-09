@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PockIT · Azhar Shaikh</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233346e0'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='16' fill='white' text-anchor='middle'%3EAS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="case.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <a class="wordmark" href="index.html">Azhar Shaikh<span>.</span></a>
+    <nav class="topnav" aria-label="Site"><a href="index.html#journey">← Work journey</a></nav>
+  </header>
+
+  <section class="cs-hero">
+    <p class="label">Case study · Service marketplace</p>
+    <h1>Booking an IT repair as easily as a cab, for people who can’t name the problem</h1>
+    <p class="sub">PockIT connects homes and offices with field technicians for laptop, printer and Wi-Fi repairs, and sells refurbished devices. I led the design of the customer app, for homes and businesses, and the technician app that field engineers run their day from.</p>
+    <dl class="meta">
+      <div><dt>Client</dt><dd>PockIT, via PeepalDesign</dd></div>
+      <div><dt>My role</dt><dd>Lead UX Designer, with one junior designer</dd></div>
+      <div><dt>Timeline</dt><dd>Apr – Dec 2024</dd></div>
+      <div><dt>Platform</dt><dd>Mobile: customer app (B2C and B2B) and technician app</dd></div>
+    </dl>
+    <div class="impact">
+      <div><strong>2 apps</strong><span>customers (homes and businesses) and field technicians</span></div>
+      <div><strong>5 personas</strong><span>a tutor, a parent, a homemaker, an office IT admin and a field technician</span></div>
+      <div><strong>1,000+ users</strong><span>on the live app</span></div>
+    </div>
+    <div class="hero-img"><img src="img/pk-hero.jpg" alt="PockIT customer home, order details with happy code, and technician dashboard"></div>
+  </section>
+
+  <div class="cs-body">
+    <nav class="toc" aria-label="On this page">
+      <span class="label">On this page</span>
+      <a href="#problem">The problem</a>
+      <a href="#role">My role</a>
+      <a href="#learned">Who we designed for</a>
+      <a href="#decisions">Key decisions</a>
+      <a href="#solution">The solution</a>
+      <a href="#impact">Validation and impact</a>
+      <a href="#reflection">Reflection</a>
+    </nav>
+
+    <main class="cs-main">
+      <section class="cs-sec" id="problem">
+        <h2>The problem</h2>
+        <div class="prose">
+          <p><strong>When a laptop or Wi-Fi breaks, most people can’t describe what’s wrong, don’t know who to call, and fear being overcharged.</strong> They rely on neighbours or whoever is free, and technicians arrive with half the information they need.</p>
+          <p>PockIT wanted one platform for booking trusted technicians, tracking the job and paying fairly, with a separate app that lets technicians plan their day and get to customers fast. Businesses needed their own service catalogue, from CCTV and cabling to servers.</p>
+          <p><strong>The constraint:</strong> bigger, better-known players already had stronger infrastructure and more budget. We were open with the client that a full-featured app could not win head-on, so we agreed to ship a lean app quickly, build the service infrastructure behind it, and expand once it gained traction.</p>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="role">
+        <h2>My role</h2>
+        <div class="prose">
+          <ul>
+            <li><strong>Led UX across the customer and technician apps</strong>, from references and personas to hi-fi prototypes.</li>
+            <li><strong>Built five personas</strong> covering home users, an office IT admin and field technicians.</li>
+            <li><strong>Designed the information architecture</strong> through several rounds, and separate service catalogues for homes and businesses.</li>
+            <li><strong>Mapped user flows and wireflows</strong> for booking, tracking, part approval, rescheduling, cancelling and the refurbished-device shop.</li>
+            <li><strong>Set the visual direction</strong> from two moodboard routes, and built the component library.</li>
+            <li><strong>Led a two-person design team</strong> with one junior designer.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="learned">
+        <h2>Who we designed for</h2>
+        <div class="stories">
+          <article class="story"><span class="who">Sameer · tutor, 32</span><dl><dt>Says</dt><dd>“I want my focus to be on teaching, not fixing tech issues.”</dd><dt>Needs</dt><dd>Fast, trusted help when the projector or Wi-Fi fails mid-class, at a fair price.</dd></dl></article>
+          <article class="story"><span class="who">Meena · homemaker, 35</span><dl><dt>Says</dt><dd>“I need someone I can trust to fix things when they go wrong.”</dd><dt>Needs</dt><dd>Low tech knowledge; worries about being overcharged or misinformed.</dd></dl></article>
+          <article class="story"><span class="who">Prakash · office employee, 36</span><dl><dt>Says</dt><dd>“All I want is a stable Wi-Fi connection that works without constant interruptions, for my kids.”</dd><dt>Needs</dt><dd>A router installed with minimal effort and clear communication.</dd></dl></article>
+          <article class="story"><span class="who">Vivek · IT administrator, 36</span><dl><dt>Context</dt><dd>Wants transparency from vendors and prompt updates.</dd><dt>Needs</dt><dd>Visibility into vendors, prompt updates and fast fixes for his teams.</dd></dl></article>
+          <article class="story"><span class="who">Ajay · field technician, 25</span><dl><dt>Context</dt><dd>Juggles back-to-back requests across the city and tracks his hours by hand.</dd><dt>Needs</dt><dd>Less travel time, no manual tracking, and accurate descriptions before he arrives.</dd></dl></article>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="decisions">
+        <h2>Key decisions</h2>
+        <article class="decision">
+          <span class="num">Decision 1</span>
+          <h3>Name problems the way customers describe them</h3>
+          <dl>
+            <dt>Options</dt><dd>A technical catalogue (operating system, utilities, connectivity, peripherals) or one built on devices and symptoms.</dd>
+            <dt>Chose</dt><dd>Customers first pick their device (laptop, desktop, MacBook, iMac, printer, Wi-Fi), then a symptom such as “My system is slow”, “Charging issue” or “Not sure of the issue”.</dd>
+            <dt>Why</dt><dd>Early IA rounds used technical terms. A note on the board asked the deciding question: “Will the user with low tech knowledge understand these terms?” Personas like Meena would not.</dd>
+            <dt>Trade-off</dt><dd>A longer, more granular service list behind the scenes, which the team had to keep mapped to technician skills.</dd>
+          </dl>
+        </article>
+        <article class="decision">
+          <span class="num">Decision 2</span>
+          <h3>No surprise charges</h3>
+          <dl>
+            <dt>Chose</dt><dd>The full price breakdown (base price, tax, express service, visit fee) appears before payment. If a technician needs a new part, the customer gets a notification with the part and price, and approves or denies it in the app.</dd>
+            <dt>Why</dt><dd>Fear of being overcharged came up in almost every home persona.</dd>
+            <dt>Trade-off</dt><dd>An extra approval step mid-job, which can hold the technician up until the customer responds.</dd>
+          </dl>
+        </article>
+        <article class="decision">
+          <span class="num">Decision 3</span>
+          <h3>A happy code to close every job</h3>
+          <dl>
+            <dt>Chose</dt><dd>Each order shows a four-digit happy code. The technician can only close the job when the customer shares it, so work is never marked done without the customer agreeing. The assigned technician’s name, rating and jobs completed are shown too.</dd>
+            <dt>Why</dt><dd>Trust was the core problem. The customer, not the technician, decides when the job is finished.</dd>
+            <dt>Trade-off</dt><dd>One more step at the end of every visit.</dd>
+          </dl>
+        </article>
+        <article class="decision">
+          <span class="num">Decision 4</span>
+          <h3>A technician app built around the day’s route</h3>
+          <dl>
+            <dt>Chose</dt><dd>Technicians go online with one swipe and see today’s jobs with time, type and address. Each job shows the customer’s issue, contact, payment mode and a “View on map” link, and customers can upload photos of the problem when they book.</dd>
+            <dt>Why</dt><dd>Ajay’s pain points were travel time, manual tracking and vague descriptions that waste time on site.</dd>
+            <dt>Trade-off</dt><dd>Customers are asked for more detail while booking.</dd>
+          </dl>
+        </article>
+      </section>
+
+      <section class="cs-sec" id="solution">
+        <h2>The solution</h2>
+        <h3 style="font-size:20px">Customer app: from problem to booked</h3>
+        <div class="phones">
+          <figure><div class="frame"><img src="img/pk-home.jpg" alt="Customer home with popular services, offers and service categories" loading="lazy"></div><figcaption><b>Home.</b> Popular services, categories, and a Quick Book button for urgent jobs.</figcaption></figure>
+          <figure><div class="frame"><img src="img/pk-device.jpg" alt="Select device type: laptop, desktop, MacBook, iMac" loading="lazy"></div><figcaption><b>Device first.</b> Customers start from what they own, not a technical category.</figcaption></figure>
+          <figure><div class="frame"><img src="img/pk-order-overview.jpg" alt="Order overview with price breakdown and Proceed to pay" loading="lazy"></div><figcaption><b>Price up front.</b> Every charge is listed before payment.</figcaption></figure>
+        </div>
+        <h3 style="font-size:20px">Tracking, trust and approvals</h3>
+        <div class="phones">
+          <figure><div class="frame"><img src="img/pk-orders.jpg" alt="Current orders with status and time slot" loading="lazy"></div><figcaption><b>Orders.</b> Status and time slot at a glance.</figcaption></figure>
+          <figure><div class="frame"><img src="img/pk-order-details.jpg" alt="Order details with status timeline, happy code and technician" loading="lazy"></div><figcaption><b>Order details.</b> A status timeline, the happy code, and the technician’s rating and jobs completed.</figcaption></figure>
+          <figure><div class="frame"><img src="img/pk-shop.jpg" alt="Refurbished device shop with brands and latest products" loading="lazy"></div><figcaption><b>Refurbished shop.</b> Browse refurbished laptops by brand inside the same app.</figcaption></figure>
+        </div>
+        <figure>
+          <div class="frame"><img src="img/pk-part-approval.jpg" alt="Part approval flow: notification, part details with approve or deny, confirmation and updated order" loading="lazy"></div>
+          <figcaption><b>Part approval flow.</b> The customer is notified, sees the part and price, approves or denies it (with a confirmation before declining), and the order updates with the approved part.</figcaption>
+        </figure>
+        <h3 style="font-size:20px">Technician app</h3>
+        <div class="figs">
+          <figure><div class="frame"><img src="img/pk-tech-home.jpg" alt="Technician dashboard with Go online and today's jobs" loading="lazy"></div><figcaption><b>Today’s jobs.</b> Go online, then the day’s jobs in time order with addresses and earnings.</figcaption></figure>
+          <figure><div class="frame"><img src="img/pk-tech-job.jpg" alt="Job details with customer details and View on map" loading="lazy"></div><figcaption><b>Job details.</b> The issue, estimated time, payment mode and customer contact, with one tap to the map.</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="impact">
+        <h2>Validation and impact</h2>
+        <ul class="results">
+          <li><strong>Live, with 1,000+ users</strong> on the customer app.</li>
+          <li>Shipped as a deliberately lean first version, so the client could set up technicians and operations before investing in more features.</li>
+        </ul>
+      </section>
+
+      <section class="cs-sec" id="reflection">
+        <h2>Reflection</h2>
+        <div class="prose"><p><strong>The design wasn’t the hardest problem; the market was.</strong> From our research, we told the client early why a full-scale app would struggle against better-funded, better-branded competitors with stronger infrastructure. Saying that openly let us agree on a smaller, faster first release instead of a feature race we couldn’t afford. I learned that scoping to the budget and the business is part of the design job, and that a product only earns its full version once the basics work.</p></div>
+      </section>
+    </main>
+  </div>
+
+  <nav class="next" aria-label="Next case study">
+    <a href="index.html#journey">← Back to work journey</a>
+    <a class="btn" href="case-hmi.html">Next: Bajaj TFT cluster <span class="arr">→</span></a>
+  </nav>
+</div>
+<script src="ui.js" defer></script>
+</body>
+</html>
