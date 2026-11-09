@@ -8,11 +8,11 @@
 <meta property="og:description" content="Azhar Shaikh, Senior UX Designer in Mumbai. Case studies in automotive HMI, healthcare, fintech and B2B SaaS.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="img/dominar-menu-day.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23e11d1d'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='16' fill='white' text-anchor='middle'%3EAS%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233346e0'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='16' fill='white' text-anchor='middle'%3EAS%3C/text%3E%3C/svg%3E">
 <title>Azhar Shaikh Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="styles.css">
 <style>
   /* Intro: dot-grid field (VengeanceUI highlight-grid), staggered headline, contact card with a border beam */
@@ -54,7 +54,7 @@
   .rail .ri img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease); }
   .rail a:hover .ri img { transform: scale(1.05); }
   .rail .rt { padding: 14px 16px 16px; display: grid; gap: 6px; align-content: start; }
-  .rail .rt span { font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-2); }
+  .rail .rt span { font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
   .rail .rt b { font: 600 16.5px/1.28 var(--f-display); letter-spacing: -0.01em; }
 
   /* Section heads */
@@ -86,7 +86,7 @@
   .term strong { font-family: var(--f-display); font-size: 18px; font-weight: 600; letter-spacing: -0.01em; }
   /* "Now": glow border card (VengeanceUI glow-border-card) */
   .term.end { position: relative; isolation: isolate; background: var(--ink); color: var(--paper); border-color: transparent; }
-  .term.end::before { content: ""; position: absolute; inset: -3px; z-index: -1; border-radius: inherit; background: conic-gradient(from var(--ang), var(--accent), var(--accent-2), var(--accent), var(--accent)); filter: blur(10px); opacity: .7; animation: spin 5s linear infinite; }
+  .term.end::before { content: ""; position: absolute; inset: -3px; z-index: -1; border-radius: inherit; background: conic-gradient(from var(--ang), var(--accent), var(--accent-2), #39c6ff, var(--accent)); filter: blur(10px); opacity: .7; animation: spin 5s linear infinite; }
   .term.end::after { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: var(--ink); }
   .term.end .mono { color: color-mix(in srgb, var(--paper) 70%, transparent); }
 
@@ -121,7 +121,7 @@
 
   /* Project cards */
   .proj { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 18px 20px; display: grid; gap: 8px; min-width: 0; box-shadow: var(--sh-1); }
-  .proj .client { font-family: var(--f-mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-2); }
+  .proj .client { font-family: var(--f-mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
   .proj h4 { margin: 0; font: 600 19px/1.25 var(--f-display); letter-spacing: -0.01em; }
   .proj p { color: var(--muted); font-size: 15px; max-width: var(--measure); }
   .proj p.mono { justify-self: start; display: inline-flex; align-items: center; gap: 6px; opacity: 1 !important; font-size: 11.5px !important; color: var(--muted); background: var(--paper-2); border: 1px dashed var(--line-strong); border-radius: 999px; padding: 4px 10px; margin-top: 6px !important; }
@@ -136,7 +136,7 @@
   .proj.has-case:hover .thumb img { transform: scale(1.05); }
   .proj .cta { margin-top: 8px; }
   .tags { display: flex; flex-wrap: wrap; gap: 6px; }
-  .tag { font-family: var(--f-mono); font-size: 11px; padding: 4px 9px; border-radius: 999px; background: var(--paper-2); border: 1px solid var(--line); color: var(--ink-2); }
+  .tag { font-family: var(--f-mono); font-size: 11px; padding: 4px 9px; border-radius: 999px; background: var(--accent-soft); color: var(--ink-2); }
 
   .ann { border-left: 1.5px solid var(--line-strong); padding: 6px 0 6px 16px; position: relative; color: var(--muted); font-size: 14px; display: grid; gap: 3px; }
   .ann::before, .ann::after { content: ""; position: absolute; left: -1.5px; width: 10px; height: 1.5px; background: var(--line-strong); }
