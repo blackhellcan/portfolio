@@ -132,7 +132,7 @@ details.appendix .inner { padding: 0 20px 20px; display: grid; gap: 22px; }
 .stories { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 .story { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 18px 20px; display: grid; gap: 10px; align-content: start; box-shadow: var(--sh-1); transition: transform .4s var(--ease), box-shadow .4s var(--ease); }
 .story:hover { transform: translateY(-3px); box-shadow: var(--sh-3); }
-.story .who { font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.story .who { font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-2); }
 .story dl { margin: 0; display: grid; grid-template-columns: 1fr; gap: 2px; font-size: 15px; }
 .story dt { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
 .story dd { margin: 0; color: var(--ink-2); }
@@ -141,7 +141,7 @@ details.appendix .inner { padding: 0 20px 20px; display: grid; gap: 22px; }
 .ia-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--surface); padding: 20px; box-shadow: var(--sh-1); }
 .ia { display: grid; grid-auto-flow: column; grid-auto-columns: 172px; gap: 14px; align-items: start; width: max-content; }
 .ia-col { display: grid; gap: 0; }
-.ia-col h4 { margin: 0 0 8px; font: 600 14px/1.25 var(--f-display); padding: 9px 11px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #fff; border-radius: 10px; }
+.ia-col h4 { margin: 0 0 8px; font: 600 14px/1.25 var(--f-display); padding: 9px 11px; background: linear-gradient(135deg, var(--accent-strong), var(--accent-2-strong)); color: #fff; border-radius: 10px; }
 .ia-col span { font-size: 13px; line-height: 1.35; padding: 8px 11px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); position: relative; }
 .ia-col span + span { margin-top: 16px; }
 .ia-col span + span::before { content: ""; position: absolute; left: 50%; top: -15px; height: 10px; border-left: 1.5px solid var(--line-strong); }
