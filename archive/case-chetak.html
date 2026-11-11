@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chetak EV Display · Azhar Shaikh</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233346e0'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='16' fill='white' text-anchor='middle'%3EAS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="case.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <a class="wordmark" href="index.html">Azhar Shaikh<span>.</span></a>
+    <nav class="topnav" aria-label="Site"><a href="index.html#journey">← Work journey</a><a class="dl" href="../Azhar_Shaikh_Resume.pdf" download aria-label="Download resume (PDF)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Resume</span></a></nav>
+  </header>
+
+  <section class="cs-hero">
+    <p class="label">Case study · Automotive HMI · Bajaj</p>
+    <h1>Navigation and menus for the Chetak EV’s 5” display</h1>
+    <p class="sub">Working with another designer, I designed the navigation and menu system for the Chetak electric scooter’s display: what a rider can reach while moving, and what waits until they stop.</p>
+    <dl class="meta">
+      <div><dt>Client</dt><dd>Bajaj Auto (Chetak EV), via PeepalDesign</dd></div>
+      <div><dt>My role</dt><dd>UX Designer, navigation and menus</dd></div>
+      <div><dt>Timeline</dt><dd>2023, after the Mera Bajaj app</dd></div>
+      <div><dt>Platform</dt><dd>5” TFT, 800 × 480, physical buttons</dd></div>
+    </dl>
+    <div class="impact">
+      <div><strong>My part</strong><span>the menu structure and navigation, on a two-person team</span></div>
+      <div><strong>Shipped</strong><span>on Bajaj Chetak EV scooters</span></div>
+      <div><strong>3 themes</strong><span>Techno, Plano and Neo, all running on one menu structure</span></div>
+    </div>
+    <div class="hero-img"><img src="../img/chetak-hero.jpg" alt="Chetak EV scooter with its 5 inch display"></div>
+  </section>
+
+  <div class="cs-body">
+    <nav class="toc" aria-label="On this page">
+      <span class="label">On this page</span>
+      <a href="#problem">The problem</a>
+      <a href="#role">My role</a>
+      <a href="#learned">What we learned</a>
+      <a href="#decisions">Key decisions</a>
+      <a href="#solution">The solution</a>
+      <a href="#impact">Validation and impact</a>
+      <a href="#reflection">Reflection</a>
+    </nav>
+
+    <main class="cs-main">
+      <section class="cs-sec" id="problem">
+        <h2>The problem</h2>
+        <div class="prose">
+          <p><strong>A scooter display that does far more than the old speedometer, used by riders who can’t look at it for long.</strong> Chetak came back as an electric scooter with a modern-classic identity. Its 5” display had to carry battery, range, navigation, music, calls, Bluetooth, settings and vehicle documents, all through physical buttons.</p>
+          <p>The team designed three visual themes for different buyers. The navigation and menus had to work the same way in all of them.</p>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="role">
+        <h2>My role</h2>
+        <div class="prose">
+          <ul>
+            <li><strong>Designed the menu structure</strong>: how settings, navigation, music, calls, notifications, vehicle information and documents are grouped and reached.</li>
+            <li><strong>Designed the navigation behaviour</strong> while riding and while stationary.</li>
+            <li><strong>Worked alongside another designer</strong> on the display; I wasn’t the lead, and my part was the navigation and menus.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="learned">
+        <h2>What we learned</h2>
+        <div class="insights">
+          <div class="insight">
+            <div><b>Riders can’t move their eyes far.</b><p>Eye rotation beyond about 30° becomes uncomfortable, and sharp vision with colour happens only in a narrow central field.</p></div>
+            <span class="arrow" aria-hidden="true">→</span>
+            <p class="impl">Speed, battery and warnings sit in the centre; menus never cover them while riding.</p>
+          </div>
+          <div class="insight">
+            <div><b>Most riders lead with their right eye.</b><p>For right-handed riders the dominant eye is usually the right one.</p></div>
+            <span class="arrow" aria-hidden="true">→</span>
+            <p class="impl">The highest-priority glance information sits right of centre.</p>
+          </div>
+          <div class="insight">
+            <div><b>Riding and stopping are different tasks.</b><p>On the move, riders need directions and maybe music. Settings, documents and vehicle details only matter when they’re stopped.</p></div>
+            <span class="arrow" aria-hidden="true">→</span>
+            <p class="impl">Two menu states, chosen by whether the scooter is moving.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="decisions">
+        <h2>Key decisions</h2>
+        <article class="decision">
+          <span class="num">Decision 1</span>
+          <h3>The full menu opens only when stationary</h3>
+          <dl>
+            <dt>Chose</dt><dd>Settings, documents and vehicle information open only when the scooter is stopped. While riding, only navigation and music have controls.</dd>
+            <dt>Why</dt><dd>Nothing on screen should invite a long look while moving.</dd>
+            <dt>Trade-off</dt><dd>Riders can’t change settings on the move.</dd>
+          </dl>
+        </article>
+        <article class="decision">
+          <span class="num">Decision 2</span>
+          <h3>Navigation moves to the centre while riding</h3>
+          <dl>
+            <dt>Chose</dt><dd>When a route is active, directions can take the centre of the screen, inside the rider’s comfortable field of view, with speed and battery still visible.</dd>
+            <dt>Why</dt><dd>Turn-by-turn is the one thing riders need to read often while moving.</dd>
+            <dt>Trade-off</dt><dd>Secondary information gets less room during navigation.</dd>
+          </dl>
+        </article>
+        <article class="decision">
+          <span class="num">Decision 3</span>
+          <h3>One menu structure for all three themes</h3>
+          <dl>
+            <dt>Chose</dt><dd>The menu grouping, order and button behaviour stay identical across Techno, Plano and Neo; only the visual style changes.</dd>
+            <dt>Why</dt><dd>A rider who switches theme shouldn’t have to relearn where anything is.</dd>
+            <dt>Trade-off</dt><dd>Every menu screen had to be checked in all three themes.</dd>
+          </dl>
+        </article>
+      </section>
+
+      <section class="cs-sec" id="solution">
+        <h2>The solution</h2>
+                <div class="figs">
+          <figure>
+            <div class="frame"><img src="../img/chetak-angle.jpg" alt="Desk research on eye rotation and viewing angle" loading="lazy"></div>
+            <figcaption><b>Viewing-angle research</b> behind the centre-field rule.</figcaption>
+          </figure>
+          <figure>
+            <div class="frame"><img src="../img/chetak-placement.jpg" alt="Placement zones for information on the display" loading="lazy"></div>
+            <figcaption><b>Placement zones</b> for right-eye-dominant riders.</figcaption>
+          </figure>
+        </div>
+        <figure>
+          <div class="frame tall"><img src="../img/chetak-themes.jpg" alt="Display designs in Techno, Plano and Neo themes" loading="lazy"></div>
+          <figcaption><b>The display across three themes.</b> Techno, Plano and Neo share one menu structure and navigation behaviour.</figcaption>
+        </figure>
+        <figure>
+          <div class="frame"><img src="../img/chetak-system.jpg" alt="Chetak display design system: colours, type and components" loading="lazy"></div>
+          <figcaption><b>Design system.</b> The tokens and components the themes were built from.</figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-sec" id="impact">
+        <h2>Validation and impact</h2>
+        <ul class="results">
+          <li><strong>Shipped</strong> on Bajaj Chetak EV scooters, with the menu structure and navigation behaviour I designed.</li>
+          <li>Bajaj shared no formal feedback.</li>
+        </ul>
+      </section>
+
+      <section class="cs-sec" id="reflection">
+        <h2>Reflection</h2>
+        <div class="prose"><p><strong>I wanted to be more involved.</strong> I was finishing the Mera Bajaj app at the same time, so my part was limited to navigation and menus. Even so, that part shipped on every Chetak EV with this display.</p></div>
+      </section>
+    </main>
+  </div>
+
+  <nav class="next" aria-label="Next case study">
+    <a href="case-merabajaj.html">← Mera Bajaj app</a>
+    <a class="btn" href="case-hmi.html">Next: Bajaj TFT cluster <span class="arr">→</span></a>
+  </nav>
+</div>
+<script src="ui.js" defer></script>
+</body>
+</html>

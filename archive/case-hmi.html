@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bajaj Clusters · Azhar Shaikh</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233346e0'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='16' fill='white' text-anchor='middle'%3EAS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="case.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <a class="wordmark" href="index.html">Azhar Shaikh<span>.</span></a>
+    <nav class="topnav" aria-label="Site"><a href="index.html#journey">← Work journey</a><a class="dl" href="../Azhar_Shaikh_Resume.pdf" download aria-label="Download resume (PDF)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Resume</span></a></nav>
+  </header>
+
+  <section class="cs-hero">
+    <p class="label">Case study · Automotive HMI · Bajaj 2 of 3</p>
+    <h1>From an LCD to a 5” TFT: the menu system now on the Pulsar N160 SS</h1>
+    <p class="sub">Bajaj was moving its motorcycles from segment LCDs to colour TFT clusters. Designing for the Dominar 400 and the Superchamp series, my team’s information architecture, menus and navigation were chosen over a competing team’s. They shipped first on the Pulsar N160 SS in 2026, with more models to follow.</p>
+    <dl class="meta">
+      <div><dt>Client</dt><dd>Bajaj Auto, via PeepalDesign</dd></div>
+      <div><dt>My role</dt><dd>Lead UX Designer, team of 4</dd></div>
+      <div><dt>Timeline</dt><dd>Jan – Oct 2025</dd></div>
+      <div><dt>Platform</dt><dd>5” TFT, 800 × 480, handlebar buttons</dd></div>
+    </dl>
+    <div class="impact">
+      <div><strong>Shipped</strong><span>first on the Pulsar N160 SS (Aug 2026), rolling out to more Bajaj models</span></div>
+      <div><strong>Chosen</strong><span>over a second design team’s architecture, for ease of access</span></div>
+      <div><strong>4 designers</strong><span>led through on-site workshops with Bajaj engineering</span></div>
+    </div>
+    <div class="hero-img"><img src="../img/dominar-menu-day.jpg" alt="The 5 inch TFT cluster menu screens: trips, navigation, tyre pressure, music, ride mode, settings, map, vehicle controls, call history and notifications"></div>
+  </section>
+
+  <div class="cs-body">
+    <nav class="toc" aria-label="On this page">
+      <span class="label">On this page</span>
+      <a href="#problem">The problem</a>
+      <a href="#role">My role</a>
+      <a href="#learned">What we learned</a>
+      <a href="#decisions">Key decisions</a>
+      <a href="#solution">The solution</a>
+      <a href="#impact">Validation and impact</a>
+      <a href="#more">More Bajaj work</a>
+      <a href="#reflection">Reflection</a>
+      <a href="#appendix">Process appendix</a>
+    </nav>
+
+    <main class="cs-main">
+      <section class="cs-sec" id="problem">
+        <h2>The problem</h2>
+        <div class="prose">
+          <p><strong>A colour screen can show far more than a rider can safely read.</strong> The old LCD showed fixed segments: speed, fuel, odometer. The new 5” TFT had to add phone pairing, calls, music, turn-by-turn navigation, lap timers, trip data, vehicle documents and ride modes, plus a 12,000 RPM tachometer and mandatory homologation information.</p>
+          <p>All of it had to be controlled through tactile handlebar buttons on a vibrating motorcycle, by riders who said plainly that they don’t want to dig through menus on the move.</p>
+          <p>Bajaj ran two design teams in parallel. Mine was asked for a modern visual theme and a complete menu architecture.</p>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="role">
+        <h2>My role</h2>
+        <div class="prose">
+          <ul>
+            <li><strong>Led a team of 4 designers</strong> on the cluster, from research to handoff.</li>
+            <li><strong>Owned the information architecture</strong>, menu structure and navigation model, the part that shipped.</li>
+            <li><strong>Ran on-site workshops</strong> at Bajaj’s engineering facility to fit the design to hardware and mechanical constraints.</li>
+            <li><strong>Designed inputs for tactile handlebar buttons</strong> that meet OEM vibration-tolerance standards.</li>
+            <li><strong>Delivered frame-by-frame prototypes</strong> so engineers could build every state transition.</li>
+            <li><strong>Went beyond the brief:</strong> transitions and an interactive prototype weren’t in scope. We built them in Figma anyway, working in parallel with Bajaj’s developers to get every frame right.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="learned">
+        <h2>What we learned</h2>
+        <div class="insights">
+          <div class="insight">
+            <div><b>Riders don’t want menus while riding.</b><p>“He doesn’t want to navigate through complicated menus while on the move.” A touring rider wants speed, gear, fuel, trip and range at a glance.</p></div>
+            <span class="arrow" aria-hidden="true">→</span>
+            <p class="impl">Split the system into what you see while riding and what you change while stopped.</p>
+          </div>
+          <div class="insight">
+            <div><b>The phone is the reason to pair.</b><p>Riders sync their phone mainly for navigation, call alerts and music, and expect it “without causing distractions”.</p></div>
+            <span class="arrow" aria-hidden="true">→</span>
+            <p class="impl">Navigation, calls and music each get a riding control on the dashboard, not just a menu entry.</p>
+          </div>
+          <div class="insight">
+            <div><b>Some information can never wait.</b><p>Side-stand status, warnings and system alerts matter more than anything the rider chose to show.</p></div>
+            <span class="arrow" aria-hidden="true">→</span>
+            <p class="impl">A fixed priority order: safety alerts override every screen.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="decisions">
+        <h2>Key decisions</h2>
+        <article class="decision">
+          <span class="num">Decision 1</span>
+          <h3>Two modes: riding and stationary</h3>
+          <dl>
+            <dt>Chose</dt><dd>The menu is disabled while riding. When the bike is stationary, it opens to settings, navigation, music, calls, notifications, vehicle information and documents.</dd>
+            <dt>Why</dt><dd>Nothing on screen should invite a long look at speed.</dd>
+            <dt>Trade-off</dt><dd>Riders can’t change settings on the move.</dd>
+          </dl>
+        </article>
+        <article class="decision">
+          <span class="num">Decision 2</span>
+          <h3>Two paths to every common task</h3>
+          <dl>
+            <dt>Chose</dt><dd>Each phone feature has a short riding path through dashboard widgets and a full path through the menu. Music: widget → pause or next track, versus menu → playlist → song. Navigation: widget → turn-by-turn, versus menu → saved addresses → home.</dd>
+            <dt>Why</dt><dd>Riders need two or three things while moving and everything else only when stopped.</dd>
+            <dt>Trade-off</dt><dd>Every feature has two entry points to design, build and keep consistent.</dd>
+          </dl>
+        </article>
+        <article class="decision">
+          <span class="num">Decision 3</span>
+          <h3>Safety states override everything</h3>
+          <dl>
+            <dt>Chose</dt><dd>Alerts take over any screen. With the side stand open, RPM stays at 0, the bike can’t enter ride mode, and “Side stand is open” stays on screen. Calls can be auto-rejected or silenced above 80 km/h.</dd>
+            <dt>Why</dt><dd>The cluster had to stay predictable: the most important message always wins, whatever the rider set up.</dd>
+            <dt>Trade-off</dt><dd>Some calls go unanswered while riding fast.</dd>
+          </dl>
+        </article>
+      </section>
+
+      <section class="cs-sec" id="solution">
+        <h2>The solution</h2>
+        <p class="prose" style="color:var(--muted)">The menu system is public on the Pulsar N160 SS, so it is shown in full along with the information architecture and screen flows. The unreleased modern visual theme is Bajaj Auto’s intellectual property and stays blurred.</p>
+        <figure>
+          <div class="frame wide"><img src="../img/dominar-ia.jpg" alt="Information architecture of the TFT cluster: home widgets, main menu with info, navigation, music, calls, settings and notifications" loading="lazy"></div>
+          <figcaption><b>Information architecture.</b> Home and its widgets on the left; the main menu splits into Info, Navigation, Music, Calls, Settings and Notifications. Scroll sideways to see it all.</figcaption>
+        </figure>
+        <figure>
+          <div class="frame"><img src="../img/dominar-menu-day.jpg" alt="Menu screens in day mode" loading="lazy"></div>
+          <figcaption><b>The menu system, day mode.</b> Every screen keeps the gear and speed visible on the right, so a rider never loses them while changing settings. Lists use one highlighted row, moved with the handlebar buttons; toggles show their state in colour.</figcaption>
+        </figure>
+        <figure>
+          <div class="frame"><img src="../img/dominar-menu-night.jpg" alt="Menu screens in night mode" loading="lazy"></div>
+          <figcaption><b>Night mode.</b> The same structure on a dark ground, with the selected row inverted to white so it reads at a glance in the dark.</figcaption>
+        </figure>
+        <figure>
+          <div class="frame tall"><img src="../img/dominar-flows.jpg" alt="Screen flows for incoming call, music and navigation to home" loading="lazy"></div>
+          <figcaption><b>Screen flows.</b> Incoming call, music and navigation to home, each with a short riding path through widgets and a full path through the menu.</figcaption>
+        </figure>
+        <figure>
+          <div class="frame conf"><img src="../img/dominar-day.jpg" alt="Proposed 5 inch cluster visual style in day mode, with menu screens" loading="lazy"></div>
+          <figcaption><b>Our modern visual theme, day mode.</b> Approved by Bajaj’s design head; the board chose a more traditional look, so it remains unreleased.</figcaption>
+        </figure>
+        <div class="figs">
+          <figure>
+            <div class="frame conf"><img src="../img/dominar-night.jpg" alt="Proposed cluster designs in night mode" loading="lazy"></div>
+            <figcaption><b>Night mode proposals</b>, with the ride mode carried by colour on the meter arc.</figcaption>
+          </figure>
+          <figure>
+            <div class="frame conf"><img src="../img/dominar-system.jpg" alt="Cluster colour system: ride modes, indicators, neutrals and type" loading="lazy"></div>
+            <figcaption><b>Colour system.</b> One colour per ride mode, and a separate set for indicators and warnings.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="impact">
+        <h2>Validation and impact</h2>
+        <ul class="results">
+          <li><strong>In production:</strong> the menu structure, navigation and architecture are on the Pulsar N160 SS and its 5” TFT console, launched in August 2026 (<a href="https://iamabiker.com/avin/2026/bajaj-auto-launches-all-new-pulsar-n160-s-and-n160-ss-segment-leading-power-and-smart-tech-introduced-to-the-n-range/" target="_blank" rel="noopener">launch report</a>), and are coming to more Bajaj models.</li>
+          <li><strong>Won against a competing design:</strong> a second team proposed a different architecture. Bajaj chose ours for its ease of access.</li>
+          <li><strong>Visual theme:</strong> our modern design was appreciated and approved by Bajaj’s design head, but the board chose a more traditional look from the other team.</li>
+          <li><strong>Prototype built with the developers:</strong> frame-by-frame transitions in Figma, matched to what Bajaj’s developers could build.</li>
+        </ul>
+      </section>
+
+      <section class="cs-sec" id="more">
+        <h2>More Bajaj work</h2>
+        <div class="prose"><p>The cluster was the second of my three engagements with Bajaj. The first (2023) was the Mera Bajaj app, followed by the Chetak EV display. The third was a 2–4 week UI revamp of the Chetak EV owner app (Dec 2025 – Jan 2026).</p></div>
+        <div class="related">
+          <a href="case-merabajaj.html"><span>Bajaj 1 of 3 · 2023</span><b>Mera Bajaj owner app</b><span>A bike-first owner app in light and dark modes.</span></a>
+          <a href="case-chetak.html"><span>Bajaj · 2023</span><b>Chetak EV display</b><span>Navigation and menus for the scooter’s 5” display.</span></a>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="reflection">
+        <h2>Reflection</h2>
+        <div class="prose">
+          <p><strong>The architecture outlived the visuals.</strong> Our structure, how riders find and control everything, shipped. Our modern visual theme didn’t, even with the design head’s support.</p>
+          <p>We worked only with Bajaj’s designers and developers, never with the board that made the final call. Next time I would push to reach the decision makers early, understand what they want, and present the design to them myself, so the reasoning isn’t lost on the way up.</p>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="appendix">
+        <details class="appendix">
+          <summary>Process appendix: user stories, explorations and research</summary>
+          <div class="inner">
+            <div class="figs">
+              <figure><div class="frame tall"><img src="../img/dominar-stories.jpg" alt="Table of scenarios and user stories for the cluster" loading="lazy"></div><figcaption>Scenario and user-story table that defined each screen’s behaviour.</figcaption></figure>
+              <figure><div class="frame conf"><img src="../img/dominar-explore.jpg" alt="Early cluster explorations" loading="lazy"></div><figcaption>Early layout explorations.</figcaption></figure>
+              <figure><div class="frame tall"><img src="../img/dominar-mood.jpg" alt="Three moodboards: urban, tour, performance" loading="lazy"></div><figcaption>Moodboards for urban, tour and performance directions.</figcaption></figure>
+            </div>
+          </div>
+        </details>
+      </section>
+    </main>
+  </div>
+
+  <nav class="next" aria-label="Next case study">
+    <a href="case-chetak.html">← Chetak EV display</a>
+    <a class="btn" href="case-portico.html">Next: Portico HRMS <span class="arr">→</span></a>
+  </nav>
+</div>
+<script src="ui.js" defer></script>
+</body>
+</html>
