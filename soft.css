@@ -403,3 +403,24 @@ figure .frame:hover .zoomable { transform: scale(1.015); }
 .fx .w { border-radius: .15em; transition: background-color .7s; }
 .fx .w:not(.on) { opacity: 0; }
 .fx .w.hot { background-color: var(--wc); transition: none; }
+
+/* Full-width layout, as on the reference: panels run edge to edge with a 20px gutter; reading columns keep their own width */
+:root { --wrap: none; }
+.topbar { width: calc(100% - 40px); }
+section.hello { margin-inline: 0; }
+@media (min-width: 901px) {
+  #work { padding-inline: 24px; }
+  .cs-card .cs-img { aspect-ratio: auto; width: 100%; height: clamp(400px, 31vw, 580px); }
+  .hero-img img { max-height: 86vh; object-fit: cover; }
+}
+
+/* Case study body, wide screens: text stays at reading width, images widen to 1200px, carousels run to the screen edges */
+html, body { overflow-x: clip; }
+@media (min-width: 1100px) {
+  .cs-sec > figure, .cs-sec > .figs, .cs-sec > .phones, .cs-sec > .stories, .cs-sec > .ia-wrap, .cs-sec > .pairs { margin-inline: calc(50% - min(600px, 50vw - 40px)); }
+  .cs-sec > .car, .cs-sec > .insights { margin-inline: calc(50% - min(600px, 50vw - 40px)); }
+  /* Opening panel spans the wide width; its text lines up with the reading column */
+  .cs-sec:first-child { margin-inline: calc(50% - min(600px, 50vw - 40px)); padding-inline: calc(min(600px, 50vw - 40px) - 380px); }
+}
+/* Two widths only: reading column for text, wide width for everything visual */
+.cs-sec > .prose, .cs-sec > .results, .cs-sec > .related, .cs-sec:first-child .prose { max-width: none; width: 100%; }
