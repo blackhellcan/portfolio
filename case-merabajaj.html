@@ -3,19 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
 <title>Mera Bajaj App · Azhar Shaikh</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233346e0'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='16' fill='white' text-anchor='middle'%3EAS%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="case.css">
+<link rel="stylesheet" href="soft.css">
 </head>
 <body>
 <div class="wrap">
   <header class="topbar">
-    <a class="wordmark" href="index.html">Azhar Shaikh<span>.</span></a>
-    <nav class="topnav" aria-label="Site"><a href="index.html#journey">← Work journey</a><a class="dl" href="Azhar_Shaikh_Resume.pdf" download aria-label="Download resume (PDF)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Resume</span></a></nav>
+    <a class="wordmark" href="index.html"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18"/><path d="M19 45 32 18l13 27"/><circle cx="32" cy="39" r="4"/></svg><span class="wm-name">Azhar Shaikh</span></a>
+    <nav class="topnav" aria-label="Site"><a href="index.html">Home</a><a href="index.html#work">Case Studies</a><a href="index.html#about">About Me</a><div class="res"><button type="button" class="res-btn" aria-haspopup="true" aria-expanded="false">Resume<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="res-menu"><a href="Azhar_Shaikh_Resume_Visual.pdf" download><b>Visual resume</b><span>Designed layout, best for reading</span></a><a href="Azhar_Shaikh_Resume.pdf" download><b>ATS resume</b><span>Plain layout, best for job portals</span></a></div></div></nav>
   </header>
 
   <section class="cs-hero">
@@ -33,7 +34,7 @@
       <div><strong>4 competitors</strong><span>torn down, including KTM, to find what riders were struggling with</span></div>
       <div><strong>~2 years live</strong><span>as Mera Bajaj on the App Store and Google Play</span></div>
     </div>
-    <div class="hero-img"><img src="img/merabajaj-hero.jpg" alt="Mera Bajaj app home screens showing a Bajaj Pulsar N160"></div>
+    <div class="hero-img"><img src="img/hero2-merabajaj.jpg" alt="Mera Bajaj app home screens showing a Bajaj Pulsar N160"></div>
   </section>
 
   <div class="cs-body">
@@ -43,12 +44,12 @@
       <a href="#role">My role</a>
       <a href="#learned">What we learned</a>
       <a href="#stories">User stories and flows</a>
+      <a href="#process">Process</a>
       <a href="#decisions">Key decisions</a>
       <a href="#direction">Visual directions</a>
       <a href="#solution">The solution</a>
       <a href="#impact">Validation and impact</a>
       <a href="#reflection">Reflection</a>
-      <a href="#appendix">Process appendix</a>
     </nav>
 
     <main class="cs-main">
@@ -103,6 +104,25 @@
           <div class="ia-wrap" tabindex="0" aria-label="Task flows, scroll sideways"><div class="ia"><div class="ia-col"><h4>Login / Sign up</h4><span>Email and password, or Google / Facebook</span><span>Enter OTP</span><span class="note">Notification: signed in</span></div><div class="ia-col"><h4>Add vehicle</h4><span>Mobile number</span><span>Registration number</span><span>VIN</span><span>Photo of RC</span></div><div class="ia-col"><h4>Switch / delete vehicle</h4><span>Vehicle list</span><span>Switch or delete</span></div><div class="ia-col"><h4>Connect Bluetooth</h4><span>Tap Bluetooth icon</span><span>Scan for vehicle</span><span>List of vehicles found</span><span>Select one</span><span class="note">Notification: registration completed</span></div><div class="ia-col"><h4>Trips / rides</h4><span>My trips list</span><span>Switch: My trips / All trips</span><span>Trip insights</span></div><div class="ia-col"><h4>Navigation</h4><span>Source</span><span>Destination</span><span>Guided route</span></div><div class="ia-col"><h4>Service coupons</h4><span>Coupons and status</span><span>Select coupon</span></div><div class="ia-col"><h4>Book a service</h4><span>Book service</span><span>Choose service centre</span><span>Date</span><span>Time</span><span>Comment (optional)</span><span class="note">Notification: appointment booked</span></div><div class="ia-col"><h4>Cancel a booking</h4><span>Booking status</span><span>Booking history</span><span>Cancel appointment</span><span>Choose a reason</span><span class="note">Confirm, then: cancelled</span></div><div class="ia-col"><h4>Profile</h4><span>View / edit profile</span><span>Incoming calls, DND and SMS</span><span class="note">Saved or discarded</span></div><div class="ia-col"><h4>Notifications</h4><span>Notification list</span><span>Delete</span></div><div class="ia-col"><h4>FAQ · Riding tips · App tour</h4><span>List</span><span>Detail in a collapsible</span></div><div class="ia-col"><h4>License and privacy</h4><span>View</span></div></div></div>
           <figcaption><b>Information architecture as task flows.</b> Thirteen jobs, each read top to bottom. Dashed steps are the confirmation the app sends at the end. Scroll sideways to see them all.</figcaption>
         </figure>
+      </section>
+
+      <section class="cs-sec" id="process">
+        <h2>Process</h2>
+        <h3 class="proc-h">Moodboards, the old prototype, competitors, wireframes and information architecture</h3>
+            <div class="figs">
+              <figure><div class="frame"><img src="img/mb-mood-a.jpg" alt="Moodboards and inspiration for the persona Alok" loading="lazy"></div><figcaption>Moodboards and app inspiration for Alok.</figcaption></figure>
+              <figure><div class="frame"><img src="img/mb-mood-b.jpg" alt="Moodboards and inspiration for the persona Amit" loading="lazy"></div><figcaption>Moodboards and app inspiration for Amit.</figcaption></figure>
+            </div>
+            <figure><div class="frame"><img src="img/merabajaj-existing.jpg" alt="The existing Mera Bajaj prototype screens" loading="lazy"></div><figcaption>The prototype Bajaj provided.</figcaption></figure>
+            <figure><div class="frame tall"><img src="img/merabajaj-competitors.jpg" alt="Competitor app teardown" loading="lazy"></div><figcaption>Competitor teardown, with the problems found in each app.</figcaption></figure>
+            <div class="figs">
+              
+              <figure><div class="frame tall"><img src="img/merabajaj-lofi.jpg" alt="Low-fidelity wireframes" loading="lazy"></div><figcaption>Low-fidelity wireframes.</figcaption></figure>
+            </div>
+            <div class="figs">
+              <figure><div class="frame"><img src="img/merabajaj-ia.jpg" alt="Information architecture diagram of the Mera Bajaj app" loading="lazy"></div><figcaption>Information architecture of the app.</figcaption></figure>
+              <figure><div class="frame"><img src="img/merabajaj-modes.jpg" alt="Light mode and dark mode screen flows side by side" loading="lazy"></div><figcaption>Light and dark mode flows.</figcaption></figure>
+            </div>
       </section>
 
       <section class="cs-sec" id="decisions">
@@ -226,32 +246,22 @@
           <p><strong>I would push the UI further.</strong> Bajaj’s brand rules limited how far the visual design could go, and I worked within them. With what I know now, I would make a stronger case for a more distinctive UI inside those rules.</p>
         </div>
       </section>
-
-      <section class="cs-sec" id="appendix">
-        <details class="appendix">
-          <summary>Process appendix: moodboards, the old prototype, competitors and wireframes</summary>
-          <div class="inner">
-            <div class="figs">
-              <figure><div class="frame"><img src="img/mb-mood-a.jpg" alt="Moodboards and inspiration for the persona Alok" loading="lazy"></div><figcaption>Moodboards and app inspiration for Alok.</figcaption></figure>
-              <figure><div class="frame"><img src="img/mb-mood-b.jpg" alt="Moodboards and inspiration for the persona Amit" loading="lazy"></div><figcaption>Moodboards and app inspiration for Amit.</figcaption></figure>
-            </div>
-            <figure><div class="frame"><img src="img/merabajaj-existing.jpg" alt="The existing Mera Bajaj prototype screens" loading="lazy"></div><figcaption>The prototype Bajaj provided.</figcaption></figure>
-            <figure><div class="frame tall"><img src="img/merabajaj-competitors.jpg" alt="Competitor app teardown" loading="lazy"></div><figcaption>Competitor teardown, with the problems found in each app.</figcaption></figure>
-            <div class="figs">
-              
-              <figure><div class="frame tall"><img src="img/merabajaj-lofi.jpg" alt="Low-fidelity wireframes" loading="lazy"></div><figcaption>Low-fidelity wireframes.</figcaption></figure>
-            </div>
-          </div>
-        </details>
-      </section>
     </main>
   </div>
 
   <nav class="next" aria-label="Next case study">
-    <a href="index.html#journey">← Back to work journey</a>
+    <a href="index.html#work">← All case studies</a>
     <a class="btn" href="case-chetak.html">Next: Chetak EV display <span class="arr">→</span></a>
   </nav>
+  <section class="connect" aria-labelledby="connect-h">
+    <p class="label">Like what you see?</p>
+    <h2 id="connect-h">Let’s Connect!</h2>
+    <div class="connect-btns"><a class="btn solid" href="Azhar_Shaikh_Resume_Visual.pdf" download>Visual resume</a><a class="btn" href="Azhar_Shaikh_Resume.pdf" download>ATS resume</a><a class="btn" href="https://www.linkedin.com/in/mazharshaikh91" target="_blank" rel="noopener">LinkedIn</a></div>
+    <a class="mail" href="mailto:mazhar.shaikh91@outlook.in">mazhar.shaikh91@outlook.in</a>
+  </section>
+
 </div>
 <script src="ui.js" defer></script>
+<script src="fx.js" defer></script>
 </body>
 </html>

@@ -34,7 +34,7 @@
   --wrap: 1120px;
   --r-lg: 18px; --r-md: 12px; --r-sm: 8px;
 }
-:root[data-theme="dark"] {
+:root[data-az="dark"] {
   --paper: #0a0e18; --paper-2: #10162a; --surface: #131a2c; --ink: #eef1f8; --ink-2: #c9d0e2;
   --muted: #98a2b9; --line: #222b42; --line-strong: #344061;
   --accent: #8f9dff; --accent-2: #b89cff; --accent-soft: #1a2244; --on-accent: #0a0e18; --ok: #3ccf8a;

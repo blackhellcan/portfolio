@@ -22,10 +22,10 @@
   };
 
   /* Theme */
-  var saved = store.get("az-theme");
-  if (saved === "light" || saved === "dark") root.setAttribute("data-theme", saved);
+  var saved = store.get("az-theme-v2");
+  if (saved === "light" || saved === "dark") root.setAttribute("data-az", saved);
   var isDark = function () {
-    var t = root.getAttribute("data-theme");
+    var t = root.getAttribute("data-az");
     if (t) return t === "dark";
     return false; /* light is the default; dark only when chosen */
   };
@@ -41,7 +41,7 @@
       tb.type = "button"; tb.className = "theme-btn";
       var paint = function () { tb.innerHTML = isDark() ? ICON.sun : ICON.moon; tb.setAttribute("aria-label", isDark() ? "Switch to light theme" : "Switch to dark theme"); };
       paint();
-      tb.addEventListener("click", function () { var next = isDark() ? "light" : "dark"; root.setAttribute("data-theme", next); store.set("az-theme", next); paint(); });
+      tb.addEventListener("click", function () { var next = isDark() ? "light" : "dark"; root.setAttribute("data-az", next); store.set("az-theme-v2", next); paint(); });
       nav.appendChild(tb);
 
       /* Spotlight following the pointer, settling on the active link */

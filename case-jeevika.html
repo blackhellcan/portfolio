@@ -3,19 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
 <title>Jeevika · Azhar Shaikh</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233346e0'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='16' fill='white' text-anchor='middle'%3EAS%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="case.css">
+<link rel="stylesheet" href="soft.css">
 </head>
 <body>
 <div class="wrap">
   <header class="topbar">
-    <a class="wordmark" href="index.html">Azhar Shaikh<span>.</span></a>
-    <nav class="topnav" aria-label="Site"><a href="index.html#journey">← Work journey</a><a class="dl" href="Azhar_Shaikh_Resume.pdf" download aria-label="Download resume (PDF)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Resume</span></a></nav>
+    <a class="wordmark" href="index.html"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18"/><path d="M19 45 32 18l13 27"/><circle cx="32" cy="39" r="4"/></svg><span class="wm-name">Azhar Shaikh</span></a>
+    <nav class="topnav" aria-label="Site"><a href="index.html">Home</a><a href="index.html#work">Case Studies</a><a href="index.html#about">About Me</a><div class="res"><button type="button" class="res-btn" aria-haspopup="true" aria-expanded="false">Resume<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="res-menu"><a href="Azhar_Shaikh_Resume_Visual.pdf" download><b>Visual resume</b><span>Designed layout, best for reading</span></a><a href="Azhar_Shaikh_Resume.pdf" download><b>ATS resume</b><span>Plain layout, best for job portals</span></a></div></div></nav>
   </header>
 
   <section class="cs-hero">
@@ -33,7 +34,7 @@
       <div><strong>3 sides</strong><span>vendors, volunteer lawyers and CCS admins in one service</span></div>
       <div><strong>Live</strong><span>and in use by street vendors, who are growing more confident with it</span></div>
     </div>
-    <div class="hero-img"><img src="img/jeevika-hero.jpg" alt="Jeevika app screens in Hindi with illustrated lawyer characters"></div>
+    <div class="hero-img"><img src="img/hero2-jeevika.jpg" alt="Jeevika app screens in Hindi with illustrated lawyer characters"></div>
   </section>
 
   <div class="cs-body">
@@ -42,12 +43,12 @@
       <a href="#problem">The problem</a>
       <a href="#role">My role</a>
       <a href="#learned">What we learned</a>
+      <a href="#process">Process</a>
       <a href="#decisions">Key decisions</a>
       <a href="#solution">The solution</a>
       <a href="#impact">Validation and impact</a>
       <a href="#admin">Phase 2: admin panel</a>
       <a href="#reflection">Reflection</a>
-      <a href="#appendix">Process appendix</a>
     </nav>
 
     <main class="cs-main">
@@ -92,6 +93,15 @@
             <p class="impl">Self-help (rights, SOS, my cases) comes first; community and lawyer features sit one level down.</p>
           </div>
         </div>
+      </section>
+
+      <section class="cs-sec" id="process">
+        <h2>Process</h2>
+        <h3 class="proc-h">Ecosystem and How-might-we questions</h3>
+            <div class="figs">
+              <figure><div class="frame"><img src="img/jeevika-eco.jpg" alt="Ecosystem map: vendor, Jeevika, CCS, lawyers, NGOs and law enforcement" loading="lazy"></div><figcaption>Who Jeevika connects a vendor to.</figcaption></figure>
+              <figure><div class="frame"><img src="img/jeevika-hmw.jpg" alt="Six How might we questions" loading="lazy"></div><figcaption>The six How-might-we questions.</figcaption></figure>
+            </div>
       </section>
 
       <section class="cs-sec" id="decisions">
@@ -176,18 +186,6 @@
         <h2>Reflection</h2>
         <div class="prose"><p><strong>One of the most meaningful projects I have worked on.</strong> I kept everything as simple as I could for vendors new to smartphones. Next, I would run usability tests with vendors on the live app and revamp the UI around what we learn, especially around building the confidence to use it.</p></div>
       </section>
-
-      <section class="cs-sec" id="appendix">
-        <details class="appendix">
-          <summary>Process appendix: ecosystem and How-might-we questions</summary>
-          <div class="inner">
-            <div class="figs">
-              <figure><div class="frame"><img src="img/jeevika-eco.jpg" alt="Ecosystem map: vendor, Jeevika, CCS, lawyers, NGOs and law enforcement" loading="lazy"></div><figcaption>Who Jeevika connects a vendor to.</figcaption></figure>
-              <figure><div class="frame"><img src="img/jeevika-hmw.jpg" alt="Six How might we questions" loading="lazy"></div><figcaption>The six How-might-we questions.</figcaption></figure>
-            </div>
-          </div>
-        </details>
-      </section>
     </main>
   </div>
 
@@ -195,7 +193,15 @@
     <a href="case-fintech.html">← Mutual funds app</a>
     <a class="btn" href="case-hmi.html">Next: Bajaj clusters <span class="arr">→</span></a>
   </nav>
+  <section class="connect" aria-labelledby="connect-h">
+    <p class="label">Like what you see?</p>
+    <h2 id="connect-h">Let’s Connect!</h2>
+    <div class="connect-btns"><a class="btn solid" href="Azhar_Shaikh_Resume_Visual.pdf" download>Visual resume</a><a class="btn" href="Azhar_Shaikh_Resume.pdf" download>ATS resume</a><a class="btn" href="https://www.linkedin.com/in/mazharshaikh91" target="_blank" rel="noopener">LinkedIn</a></div>
+    <a class="mail" href="mailto:mazhar.shaikh91@outlook.in">mazhar.shaikh91@outlook.in</a>
+  </section>
+
 </div>
 <script src="ui.js" defer></script>
+<script src="fx.js" defer></script>
 </body>
 </html>
