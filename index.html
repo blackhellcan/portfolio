@@ -152,6 +152,13 @@
   .skills div { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 14px; padding: 12px 0; border-top: 1px solid var(--line); }
   .skills dt, .edu dt { font-family: var(--f-mono); font-size: 11.5px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; padding-top: 3px; }
   .skills dd, .edu dd { margin: 0; color: var(--ink-2); }
+  .ai-sec { margin-top: 24px; }
+  .ai-sec .lede { margin: 0; color: var(--ink-2); max-width: 68ch; }
+  .ai-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 28px; }
+  .ai-grid li { padding: 14px 0; border-top: 1px solid var(--line); display: grid; gap: 4px; align-content: start; }
+  .ai-grid strong { color: var(--ink); font-weight: 600; }
+  .ai-grid span { color: var(--muted); font-size: 14.5px; }
+  @media (max-width: 900px) { .ai-grid { grid-template-columns: 1fr; } }
   .edu { display: grid; gap: 0; margin: 0; }
   .edu div { display: grid; gap: 2px; padding: 12px 0 12px 18px; border-left: 2px solid var(--line); position: relative; }
   .edu div::before { content: ""; position: absolute; left: -6px; top: 17px; width: 10px; height: 10px; border-radius: 50%; background: var(--surface); border: 2px solid var(--accent); }
@@ -448,6 +455,7 @@
         <div><dt>Design</dt><dd>Interaction design, information architecture, design systems, HMI / cluster design, mobile and responsive web</dd></div>
         <div><dt>Research</dt><dd>Field research, usability testing, stakeholder workshops, journey mapping</dd></div>
         <div><dt>Quality</dt><dd>Accessibility, medical and homologation standards, low-literacy design</dd></div>
+        <div><dt>AI</dt><dd>Claude, Claude Design, ChatGPT, Cursor, Figma Make, Figma AI, Google Stitch, custom skills and plugins</dd></div>
         <div><dt>Tools</dt><dd>Figma, FigJam, Axure RP, Adobe XD, prototyping</dd></div>
         <div><dt>Code</dt><dd>HTML, CSS, JavaScript, Python</dd></div>
       </dl>
@@ -462,6 +470,19 @@
       </dl>
     </section>
   </div>
+
+  <section class="panel ai-sec" id="ai" aria-labelledby="ai-h">
+    <h2 id="ai-h">Designing with AI</h2>
+    <p class="lede">I build AI tools and design AI apps for clients. These are the principles I work to, drawn from Microsoft’s Human-AI Interaction guidelines and Google’s People + AI Guidebook.</p>
+    <ul class="ai-grid">
+      <li><strong>Set honest expectations</strong><span>Say what the AI can do and how well, so people don’t over-trust it.</span></li>
+      <li><strong>Explain the why</strong><span>Show the reason or source behind an output, so people can judge it.</span></li>
+      <li><strong>Keep people in control</strong><span>AI drafts and suggests. People approve, edit, dismiss or undo.</span></li>
+      <li><strong>Design for being wrong</strong><span>Plan for wrong or unsure answers, and always keep a manual path.</span></li>
+      <li><strong>Confirm before acting</strong><span>Agents ask before anything irreversible, then show what they did.</span></li>
+      <li><strong>Fair and private by default</strong><span>Test with different users, and be clear about what data is used.</span></li>
+    </ul>
+  </section>
 
   <footer class="foot">
     <span>Azhar Shaikh · Senior UX Designer</span>
