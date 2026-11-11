@@ -396,3 +396,10 @@ figure .frame:hover .zoomable { transform: scale(1.015); }
   .fx .topbar.open .topnav { max-height: 520px; }
 }
 @media (max-width: 760px) { .fx .topnav .res-menu a { display: grid !important; } .fx .res-menu span { font-size: 13.5px; } }
+
+/* Hero copy loads in word by word, each word tinted in a rotating pastel */
+:root { --w1: #cfe9ec; --w2: #fde6b8; --w3: #ddd8fb; --w4: #cdeed9; --w5: #fbd5dc; }
+:root[data-az="dark"] { --w1: #1f4a51; --w2: #5a4310; --w3: #33296b; --w4: #12492f; --w5: #5c1f33; }
+.fx .w { border-radius: .15em; transition: background-color .7s; }
+.fx .w:not(.on) { opacity: 0; }
+.fx .w.hot { background-color: var(--wc); transition: none; }

@@ -169,6 +169,47 @@
     });
   }
 
-  function init() { root.classList.add("fx"); toTop(); menu(); carousels(); reveals(); topButton(); sectionBar(); resumeMenu(); }
+  function wordsIn() {
+    if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    function split(els) {
+      var words = [];
+      els.forEach(function (el) {
+        var text = el.textContent.trim();
+        el.setAttribute("aria-label", text);
+        el.textContent = "";
+        text.split(/\s+/).forEach(function (w, i) {
+          if (i) el.appendChild(doc.createTextNode(" "));
+          var s = doc.createElement("span");
+          s.className = "w"; s.style.setProperty("--wc", "var(--w" + (words.length % 5 + 1) + ")"); s.setAttribute("aria-hidden", "true"); s.textContent = w;
+          el.appendChild(s); words.push(s);
+        });
+      });
+      return words;
+    }
+    function play(words, step) {
+      var i = 0;
+      var t = setInterval(function () {
+        if (i >= words.length) { clearInterval(t); return; }
+        var s = words[i++];
+        s.classList.add("on", "hot");
+        setTimeout(function () { s.classList.remove("hot"); }, 450);
+      }, step);
+    }
+    var hero = doc.querySelectorAll(".hello h1, .hello p");
+    if (hero.length) play(split(hero), 55);
+    var cs = doc.querySelectorAll(".cs-hero h1, .cs-hero .sub");
+    if (cs.length) play(split(cs), 40);
+    var quote = doc.querySelectorAll(".about-quote blockquote");
+    if (quote.length) {
+      var qw = split(quote);
+      if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(function (es) {
+          if (es[0].isIntersecting) { io.disconnect(); play(qw, 110); }
+        }, { threshold: 0.6 });
+        io.observe(quote[0]);
+      } else play(qw, 110);
+    }
+  }
+  function init() { root.classList.add("fx"); toTop(); menu(); carousels(); reveals(); topButton(); sectionBar(); resumeMenu(); wordsIn(); }
   if (doc.readyState === "loading") doc.addEventListener("DOMContentLoaded", init); else init();
 })();
