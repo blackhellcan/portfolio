@@ -86,7 +86,7 @@
 
   function reveals() {
     if (reduce || !("IntersectionObserver" in window)) return;
-    var els = $$(".hello > *, .sec-title, .cs-card, .col > *, .about-copy > *, .about-photo, .more > *, .jobs > *, .ai-card, .connect > *, .cs-hero > *, .car");
+    var els = $$(".hello > *, .sec-title, .offer-card, .cs-card, .col > *, .about-copy > *, .about-photo, .more > *, .jobs > *, .ai-card, .connect > *, .cs-hero > *, .car");
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("rv-in"); io.unobserve(e.target); } });
     }, { rootMargin: "0px 0px -6% 0px", threshold: 0.05 });
