@@ -210,6 +210,20 @@
       } else play(qw, 110);
     }
   }
-  function init() { root.classList.add("fx"); toTop(); menu(); carousels(); reveals(); topButton(); sectionBar(); resumeMenu(); wordsIn(); }
+  function track() {
+    doc.addEventListener("click", function (e) {
+      var a = e.target.closest ? e.target.closest("a, button") : null;
+      if (!a || typeof window.clarity !== "function") return;
+      var h = a.getAttribute("href") || "", name = "";
+      if (/Resume_Visual\.pdf/.test(h)) name = "resume_visual_download";
+      else if (/Resume\.pdf/.test(h)) name = "resume_ats_download";
+      else if (a.classList.contains("cs-card")) name = "open_" + h.replace(/\.html.*$/, "").replace(/-/g, "_");
+      else if (/linkedin\.com/.test(h)) name = "linkedin_click";
+      else if (/^mailto:/.test(h)) name = "email_click";
+      else if (a.classList.contains("res-btn")) name = "resume_menu_open";
+      if (name) window.clarity("event", name);
+    }, true);
+  }
+  function init() { root.classList.add("fx"); toTop(); menu(); carousels(); reveals(); topButton(); sectionBar(); resumeMenu(); wordsIn(); track(); }
   if (doc.readyState === "loading") doc.addEventListener("DOMContentLoaded", init); else init();
 })();
