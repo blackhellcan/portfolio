@@ -255,9 +255,6 @@ body { padding-top: 104px; }
 }
 
 /* Scroll-in: fade and rise */
-.fx .rv { opacity: 0; transform: translateY(34px); transition: opacity .8s ease, transform .9s cubic-bezier(.22, 1, .36, 1); transition-delay: var(--rd, 0ms); }
-.fx .rv.rv-in { opacity: 1; transform: none; }
-.motion [data-reveal] { transform: translateY(34px); transition-duration: .8s, .9s; }
 body { animation: pagein .5s ease both; }
 @keyframes pagein { from { opacity: 0; } to { opacity: 1; } }
 
@@ -400,9 +397,7 @@ figure .frame:hover .zoomable { transform: scale(1.015); }
 /* About quote loads in word by word, each word tinted in a rotating pastel */
 :root { --w1: #cfe9ec; --w2: #fde6b8; --w3: #ddd8fb; --w4: #cdeed9; --w5: #fbd5dc; }
 :root[data-az="dark"] { --w1: #1f4a51; --w2: #5a4310; --w3: #33296b; --w4: #12492f; --w5: #5c1f33; }
-.fx .w { border-radius: .15em; transition: background-color .7s; }
-.fx .w:not(.on) { opacity: 0; }
-.fx .w.hot { background-color: var(--wc); transition: none; }
+.w { border-radius: .15em; }
 
 /* Full-width layout, as on the reference: panels run edge to edge with a 20px gutter; reading columns keep their own width */
 :root { --wrap: none; }
@@ -424,3 +419,9 @@ html, body { overflow-x: clip; }
 }
 /* Two widths only: reading column for text, wide width for everything visual */
 .cs-sec > .prose, .cs-sec > .results, .cs-sec > .related, .cs-sec:first-child .prose { max-width: none; width: 100%; }
+
+/* GSAP motion (motion.js) */
+.gs .hello > *, .gs .cs-hero > * { visibility: hidden; }
+.gs-par { overflow: hidden; }
+.gsap .gs-tilt { transition-property: box-shadow, background, color; will-change: transform; }
+.gsap .cs-card.gs-tilt:hover, .gsap .more .proj.gs-tilt:hover { transform: none; }

@@ -78,68 +78,7 @@
     window.addEventListener("resize", onScroll);
     onScroll();
 
-    /* Stagger the main headline word by word (text unchanged; screen readers get the whole line) */
-    var h1 = $(".intro h1, .cs-hero h1");
-    if (h1 && !reduce) {
-      var label = h1.textContent.replace(/\s+/g, " ").trim();
-      var i = 0;
-      (function wrap(node) {
-        Array.prototype.slice.call(node.childNodes).forEach(function (n) {
-          if (n.nodeType === 3) {
-            var frag = doc.createDocumentFragment();
-            n.textContent.split(/(\s+)/).forEach(function (w) {
-              if (!w) return;
-              if (/^\s+$/.test(w)) { frag.appendChild(doc.createTextNode(" ")); return; }
-              var o = doc.createElement("span"); o.className = "st-w";
-              var s = doc.createElement("span"); s.textContent = w; s.style.setProperty("--i", i++);
-              o.appendChild(s); frag.appendChild(o);
-            });
-            n.parentNode.replaceChild(frag, n);
-          } else if (n.nodeType === 1) wrap(n);
-        });
-      })(h1);
-      h1.setAttribute("aria-label", label);
-      $$(".st-w", h1).forEach(function (w) { w.setAttribute("aria-hidden", "true"); });
-      requestAnimationFrame(function () { requestAnimationFrame(function () { h1.classList.add("st-on"); }); });
-    }
-
-    /* Count up the leading number of each impact stat (VengeanceUI stats-counter) */
-    $$(".impact strong").forEach(function (el) {
-      var t = el.firstChild;
-      if (!t || t.nodeType !== 3) return;
-      var m = t.textContent.match(/^(\d[\d,]*)(.*)$/s);
-      if (!m) return;
-      var target = parseInt(m[1].replace(/,/g, ""), 10), rest = m[2], comma = m[1].indexOf(",") > -1;
-      if (reduce || target < 2) return;
-      var fmt = function (v) { return comma ? v.toLocaleString("en-US") : String(v); };
-      el.setAttribute("aria-label", el.textContent);
-      var io = new IntersectionObserver(function (es) {
-        if (!es[0].isIntersecting) return; io.disconnect();
-        var t0 = performance.now(), dur = 1200;
-        (function step(now) {
-          var k = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - k, 3);
-          t.textContent = fmt(Math.round(target * e)) + rest;
-          if (k < 1) requestAnimationFrame(step);
-        })(t0);
-      }, { threshold: 0.6 });
-      t.textContent = fmt(0) + rest;
-      io.observe(el);
-    });
-
-    /* Scroll reveal */
-    if (!reduce && "IntersectionObserver" in window) {
-      var items = $$(".node, .term, .group > .node-top, .group > .lede, .filters, .proj, .panel, .rail-sec, .sec-head, .cs-sec > *, .meta, .impact > div, .hero-img, .related a, .next");
-      var seen = new IntersectionObserver(function (es) {
-        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); seen.unobserve(e.target); } });
-      }, { rootMargin: "0px 0px -8% 0px", threshold: 0.06 });
-      items.forEach(function (el) {
-        var r = el.getBoundingClientRect();
-        if (r.top < innerHeight * 0.95) return; /* already on screen: leave visible */
-        el.setAttribute("data-reveal", "");
-        seen.observe(el);
-      });
-      $$(".impact > div").forEach(function (d, k) { d.style.setProperty("--d", k * 90 + "ms"); });
-    }
+    /* Headline fade, scroll reveals and stat count-up live in motion.js (GSAP) */
 
     /* Copy buttons */
     var toast = doc.createElement("div"); toast.className = "toast"; toast.setAttribute("role", "status"); doc.body.appendChild(toast);

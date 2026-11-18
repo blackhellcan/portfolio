@@ -149,13 +149,6 @@ img { display: block; max-width: 100%; height: auto; }
 .btn.ghost { box-shadow: none; }
 
 /* Scroll reveal (only when JS + motion are available) */
-.motion [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--ease), transform .7s var(--ease); transition-delay: var(--d, 0ms); }
-.motion [data-reveal].in { opacity: 1; transform: none; }
-
-/* Stagger text (VengeanceUI staggerText): words rise from a mask */
-.st-w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .08em; margin-bottom: -.08em; }
-.st-w > span { display: inline-block; transform: translateY(110%); transition: transform .8s var(--ease); transition-delay: calc(var(--i) * 45ms + 80ms); }
-.st-on .st-w > span { transform: none; }
 
 /* Border beam (VengeanceUI border-beam): a light travelling the edge */
 .beam { position: relative; }
@@ -210,5 +203,4 @@ img { display: block; max-width: 100%; height: auto; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
-  .st-w > span { transform: none !important; }
 }
