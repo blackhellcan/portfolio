@@ -27,7 +27,7 @@
   <section class="cs-hero">
     <p class="label">Case study · EdTech</p>
     <h1>Keeping online music and dance learners practising after the first week</h1>
-    <p class="sub">YoungArtiste teaches music, dance and instruments through teacher-led online classes. Learning an art form alone is hard: there’s no one to keep you disciplined or tell you how you’re doing. I led a two-person team designing a mobile app to keep learners motivated, on track and improving. The client put the project on hold before launch.</p>
+    <p class="sub">Learning music or dance alone is hard: nobody keeps you disciplined or tells you how you’re doing, so people drift away from their practice. YoungArtiste teaches through teacher-led online classes, and I led a two-person team designing a mobile app to keep learners motivated, on track and improving. The client put the project on hold before launch.</p>
     <dl class="meta">
       <div><dt>Client</dt><dd>YoungArtiste, via PeepalDesign</dd></div>
       <div><dt>My role</dt><dd>Lead UX Designer, team of 2</dd></div>
@@ -45,63 +45,55 @@
   <div class="cs-body">
     <nav class="toc" aria-label="On this page">
       <span class="label">On this page</span>
-      <a href="#problem">The problem</a>
-      <a href="#role">My role</a>
-      <a href="#learned">What we learned</a>
-      <a href="#process">Process</a>
-      <a href="#decisions">Key decisions</a>
-      <a href="#solution">The solution</a>
-      <a href="#impact">Validation and impact</a>
-      <a href="#reflection">Reflection</a>
+      <a href="#problem">The short version</a>
+      <a href="#hard">What made it hard</a>
+      <a href="#decisions">How my thinking changed</a>
+      <a href="#process">What we left out</a>
+      <a href="#solution">What learners see</a>
+      <a href="#impact">Where it ended up</a>
+      <a href="#learned">What didn’t go to plan</a>
+      <a href="#reflection">What I’d do next</a>
     </nav>
 
     <main class="cs-main">
       <section class="cs-sec" id="problem">
-        <h2>The problem</h2>
+        <h2>The short version</h2>
         <div class="prose">
-          <p><strong>Online learners lose direction and motivation without a teacher in the room.</strong> YoungArtiste offered private, teacher-led classes with a multi-year curriculum, but students practising on their own lacked structure, discipline and anyone to interact with.</p>
-          <p>The brief: a mobile app for students, teachers and admins, with every feature of the learning portal and live classes, that helps anyone find something to learn for their time, budget, interest and level, and keeps them coming back.</p>
+          <p>Online learners lose direction and motivation without a teacher in the room. YoungArtiste offered private, teacher-led classes with a multi-year curriculum, but students practising on their own lacked structure, discipline and anyone to interact with.</p>
+          <p>The brief was a mobile app for students, teachers and admins, with every feature of the learning portal and live classes. It had to help anyone find something to learn for their time, budget, interest and level, and keep them coming back.</p>
+          <p><strong>My part:</strong> I led UX end to end, from the stakeholder alignment workshop to the hi-fi prototype, with one other designer. In the workshop we agreed business goals, user segments and the major and minor jobs for hobbyists. I benchmarked six apps, built four personas from user interviews, wrote job stories and How-might-we questions, prioritised with value-effort mapping, then designed the IA, wireflows, visual design and prototype.</p>
         </div>
       </section>
 
-      <section class="cs-sec" id="role">
-        <h2>My role</h2>
+      <section class="cs-sec" id="hard">
+        <h2>What made it hard</h2>
         <div class="prose">
           <ul>
-            <li><strong>Led UX end to end</strong>, from the stakeholder alignment workshop to the hi-fi prototype.</li>
-            <li><strong>Ran the alignment workshop</strong> to agree business goals, user segments and the major and minor jobs for hobbyists.</li>
-            <li><strong>Benchmarked six apps</strong>: Vox Guru, Riyaz, Steezy, Flowkey, Everdance and Dance With Madhuri.</li>
-            <li><strong>Built four personas</strong> from user interviews, then wrote job stories and How-might-we questions.</li>
-            <li><strong>Prioritised features</strong> with value–effort mapping, then designed the IA, wireflows, visual design and prototype.</li>
-            <li><strong>Led a two-person design team.</strong></li>
+            <li><strong>Learners couldn’t see progress.</strong> One job story put it this way: “I want to see learning-path milestones at every stage so I can see my progress.”</li>
+            <li><strong>Practice stalled without feedback.</strong> Interviews asked for sessions reviewed by experts and peers.</li>
+            <li><strong>Motivation faded fast.</strong> Interviews pointed to gamified progress and peer comparison as ways to keep people from slacking off.</li>
+            <li><strong>Four different people.</strong> Hobbyists, serious learners, external participants and teachers all needed to be served, and the brief asked for every feature of the existing portal and live classes.</li>
           </ul>
         </div>
       </section>
 
-      <section class="cs-sec" id="learned">
-        <h2>What we learned</h2>
-        <div class="insights">
-          <div class="insight">
-            <div><b>Learners need to see progress.</b><p>“When I am practising an art form, I want to see learning-path milestones at every stage so I can see my progress.” (job story)</p></div>
-            <span class="arrow" aria-hidden="true">→</span>
-            <p class="impl">Organise every course as a path of lessons, with clear milestones and completion.</p>
-          </div>
-          <div class="insight">
-            <div><b>Practice without feedback stalls.</b><p>“When I am practising an instrument, I want to receive feedback so I can improve my skills.” Interviews asked for sessions reviewed by experts and peers.</p></div>
-            <span class="arrow" aria-hidden="true">→</span>
-            <p class="impl">Build feedback into practice, from teachers, peers or the app itself.</p>
-          </div>
-          <div class="insight">
-            <div><b>Motivation fades fast.</b><p>“When I have started learning a new art form, I want to receive constant motivation so I can involve myself regularly and won’t slack off.” Interviews pointed to gamified progress and peer comparison.</p></div>
-            <span class="arrow" aria-hidden="true">→</span>
-            <p class="impl">Design for habit: short practice sessions, recognition and a reason to return tomorrow.</p>
-          </div>
+      <section class="cs-sec" id="decisions">
+        <h2>How my thinking changed along the way</h2>
+        <div class="prose">
+          <h3>A path instead of a video library</h3>
+          <p>Many competitors offer a searchable library of standalone videos, and we could have done the same. But the core problem was a lack of structure, and a library leaves the learner to decide what to watch next. So every course became ordered lessons with completion ticks, and “Continue learning” sits on the home screen. A path answers “what do I do next?” before the learner has to ask. The trade-off is less freedom for someone who just wants one song or routine.</p>
+          <h3>Build for the habit, not only the lesson</h3>
+          <p>Progress, feedback and motivation kept coming up in the interviews. That pushed us to design for short practice sessions, recognition and a reason to return tomorrow, with feedback from teachers, peers or the app itself.</p>
+          <h3>Sorting the ideas by value and effort</h3>
+          <p>Ideas ranged from habit trackers to monetisation. We mapped every feature from the six How-might-we questions by market value against development effort, which kept the first release focused on learning and motivation. Some valuable but costly ideas had to wait for later releases.</p>
         </div>
       </section>
 
       <section class="cs-sec" id="process">
-        <h2>Process</h2>
-        <h3 class="proc-h">Benchmarking, personas, research and prioritisation</h3>
+        <h2>What we left out, on purpose</h2>
+        <div class="prose">
+          <p>Before designing anything we benchmarked six learning apps, built four personas from interviews and grouped what we heard into themes. Then we turned it into six questions and sorted the ideas by value and effort. What didn’t make the first release is on the value-effort map.</p>
+        </div>
             <div class="figs">
               <figure><div class="frame"><img src="img/ya-bench.jpg" alt="Competitor benchmarking of six learning apps" loading="lazy"></div><figcaption>Competitor benchmarking.</figcaption></figure>
               <figure><div class="frame tall"><img src="img/ya-personas.jpg" alt="Four persona cards" loading="lazy"></div><figcaption>Four personas from user interviews.</figcaption></figure>
@@ -112,31 +104,11 @@
             </div>
       </section>
 
-      <section class="cs-sec" id="decisions">
-        <h2>Key decisions</h2>
-        <article class="decision">
-          <span class="num">Decision 1</span>
-          <h3>Every course is a learning path, not a video library</h3>
-          <dl>
-            <dt>Options</dt><dd>A searchable library of standalone videos, like many competitors, or structured courses with ordered lessons.</dd>
-            <dt>Chose</dt><dd>Courses broken into ordered lessons with completion ticks, and “Continue learning” on the home screen.</dd>
-            <dt>Why</dt><dd>The core problem was lack of structure. A path answers “what do I do next?” before the learner has to ask.</dd>
-            <dt>Trade-off</dt><dd>Less freedom to jump around for learners who just want one song or routine.</dd>
-          </dl>
-        </article>
-        <article class="decision">
-          <span class="num">Decision 2</span>
-          <h3>Prioritise by value and effort</h3>
-          <dl>
-            <dt>Chose</dt><dd>Every feature from the six How-might-we questions was mapped by market value against development effort, sorting ideas into what to build now and what to plan for later.</dd>
-            <dt>Why</dt><dd>Ideas ranged from habit trackers to monetisation; the map kept the first release focused on learning and motivation.</dd>
-            <dt>Trade-off</dt><dd>Some valuable but costly ideas waited for later releases.</dd>
-          </dl>
-        </article>
-      </section>
-
       <section class="cs-sec" id="solution">
-        <h2>The solution</h2>
+        <h2>What learners see</h2>
+        <div class="prose">
+          <p>Learners get a deep purple, stage-like app built around courses, lessons, live classes, practice and a profile. Here is the visual design, the wireflows and the style guide behind it.</p>
+        </div>
         <figure>
           <div class="frame tall"><img src="img/ya-visual.jpg" alt="YoungArtiste visual design: dark purple screens for courses, lessons, live classes, practice and profile" loading="lazy"></div>
           <figcaption><b>Visual design.</b> A deep purple, stage-like palette with warm accents, so performance photography stands out: courses, lessons, live classes and profile.</figcaption>
@@ -151,21 +123,30 @@
             <figcaption><b>Style guide.</b> Colour palette and an Outfit type scale.</figcaption>
           </figure>
         </div>
-      </section>
+            </section>
 
       <section class="cs-sec" id="impact">
-        <h2>Validation and impact</h2>
+        <h2>Where it ended up</h2>
         <ul class="results">
-          <li><strong>Did not launch.</strong> The client put the project on hold after the design was delivered.</li>
-          <li>Delivered: research, personas, job stories, a prioritised feature set, IA, wireflows, a style guide, the full visual design and a clickable prototype.</li>
-          <li>No formal client feedback was shared.</li>
+          <li><strong>It never launched.</strong> The client put the project on hold after the design was delivered.</li>
+          <li>What we delivered: research, personas, job stories, a prioritised feature set, IA, wireflows, a style guide, the full visual design and a clickable prototype.</li>
+          <li>No formal client feedback was shared with us.</li>
         </ul>
       </section>
 
-      <section class="cs-sec" id="reflection">
-        <h2>Reflection</h2>
-        <div class="prose"><p><strong>I would test with real students sooner.</strong> We followed a thorough process and delivered a strong UI, but it was never tested with live students. Next time I would put early prototypes in front of learners to make the app even easier for them before the visual design was final.</p></div>
+      <section class="cs-sec" id="learned">
+        <h2>What didn’t go to plan</h2>
+        <div class="prose">
+          <p><strong>The app was never tested with live students.</strong> We followed a thorough process and delivered the full design, but the client put the project on hold before launch, so I can’t say how learners would have responded.</p>
+          <p>We also never heard formal feedback from the client, so I don’t know how the design landed with them.</p>
+        </div>
       </section>
+
+      <section class="cs-sec" id="reflection">
+        <h2>What I’d do next</h2>
+        <div class="prose"><p>Put early prototypes in front of real learners sooner, before the visual design is final, and use what they say to make the app easier to use.</p></div>
+      </section>
+
     </main>
   </div>
 

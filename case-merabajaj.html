@@ -27,7 +27,7 @@
   <section class="cs-hero">
     <p class="label">Case study · Automotive · Bajaj 1 of 3</p>
     <h1>An owner app that puts the rider’s bike first</h1>
-    <p class="sub">Mera Bajaj connects Pulsar owners to their bike: pairing, trips, navigation and service. Bajaj had a working prototype that felt dated. I led the redesign into the app that has now been live on the App Store and Google Play for about two years, with over 100,000 downloads.</p>
+    <p class="sub">Connecting a phone to a bike is the first thing a rider does, and it is where the competitor apps we studied failed most. Bajaj’s prototype worked but felt dated, so I led the redesign of Mera Bajaj. It has been live on the App Store and Google Play for about two years, with over 100,000 downloads.</p>
     <dl class="meta">
       <div><dt>Client</dt><dd>Bajaj Auto, via PeepalDesign</dd></div>
       <div><dt>My role</dt><dd>Lead UX Designer, with one junior designer</dd></div>
@@ -45,75 +45,67 @@
   <div class="cs-body">
     <nav class="toc" aria-label="On this page">
       <span class="label">On this page</span>
-      <a href="#problem">The problem</a>
-      <a href="#role">My role</a>
-      <a href="#learned">What we learned</a>
-      <a href="#stories">User stories and flows</a>
-      <a href="#process">Process</a>
-      <a href="#decisions">Key decisions</a>
-      <a href="#direction">Visual directions</a>
-      <a href="#solution">The solution</a>
-      <a href="#impact">Validation and impact</a>
-      <a href="#reflection">Reflection</a>
+      <a href="#problem">The short version</a>
+      <a href="#hard">What made it hard</a>
+      <a href="#decisions">How my thinking changed</a>
+      <a href="#stories">From stories to task flows</a>
+      <a href="#process">What we cut, and what we tried</a>
+      <a href="#direction">Four visual directions</a>
+      <a href="#solution">What riders see</a>
+      <a href="#impact">What happened after launch</a>
+      <a href="#learned">What didn’t go to plan</a>
+      <a href="#reflection">What I’d do next</a>
     </nav>
 
     <main class="cs-main">
       <section class="cs-sec" id="problem">
-        <h2>The problem</h2>
+        <h2>The short version</h2>
         <div class="prose">
-          <p><strong>Bajaj’s owner app worked as a prototype but didn’t feel like a premium motorcycle brand.</strong> It covered after-sales and riding: profile, vehicles, trips, service bookings and FAQs, but the screens were plain and the flows inconsistent.</p>
-          <p>The brief was to turn it into a modern, polished app with smooth interactions and an upmarket feel, before it reached owners.</p>
+          <p>Bajaj had an owner app that worked as a prototype. It covered profile, vehicles, trips, service bookings and FAQs, but the screens were plain and the flows were inconsistent. It didn’t feel like a premium motorcycle brand.</p>
+          <p>The brief was to make it modern and polished, with smooth interactions and an upmarket feel, before it reached owners. It is the Pulsar owner app, live on the App Store and Google Play.</p>
+          <p><strong>My part:</strong> I led UX with one junior designer who had just joined, and I mentored them from kick-off to asset delivery. I read reviews of Bajaj’s existing apps, ran user research and a competitor study of four motorcycle apps including KTM, and built proto-personas and user stories for trips and riding. Then I designed the information architecture, low-fidelity wireframes and visual direction, and delivered hi-fi screens in light and dark modes, a style guide and a component library.</p>
         </div>
       </section>
 
-      <section class="cs-sec" id="role">
-        <h2>My role</h2>
+      <section class="cs-sec" id="hard">
+        <h2>What made it hard</h2>
         <div class="prose">
           <ul>
-            <li><strong>Led a two-person team</strong> from kick-off to asset delivery, mentoring a newly joined junior designer.</li>
-            <li><strong>Ran user research</strong> and read reviews of Bajaj’s existing apps to understand riders’ day-to-day use.</li>
-            <li><strong>Ran a competitor study</strong> of four motorcycle apps, including KTM, covering visual design and app flows.</li>
-            <li><strong>Built proto-personas and user stories</strong> for trips and riding.</li>
-            <li><strong>Designed the information architecture</strong>, low-fidelity wireframes and visual direction.</li>
-            <li><strong>Delivered hi-fi screens</strong> in light and dark modes, a style guide and a component library.</li>
+            <li><strong>Bluetooth is where the competitor apps fail.</strong> In our teardown, pairing often failed, took too long or dropped, and trip data wasn’t recorded.</li>
+            <li><strong>Feature-rich apps were hard to navigate.</strong> The competitors had over-complicated navigation and too much data crammed into a few modules.</li>
+            <li><strong>Errors and permissions left riders guessing.</strong> Error messages weren’t informative, and some apps captured the wrong location.</li>
+            <li><strong>Bajaj’s brand rules set the palette.</strong> That limited how far the visual design could go, and I worked inside them.</li>
           </ul>
         </div>
       </section>
 
-      <section class="cs-sec" id="learned">
-        <h2>What we learned</h2>
-        <div class="insights">
-          <div class="insight">
-            <div><b>Bluetooth is where competitor apps fail.</b><p>In the teardown, pairing often failed, took too long or dropped, and trip data wasn’t recorded.</p></div>
-            <span class="arrow" aria-hidden="true">→</span>
-            <p class="impl">Put the bike and its connection status at the top of the home screen, one tap to connect.</p>
-          </div>
-          <div class="insight">
-            <div><b>Feature-rich apps were hard to navigate.</b><p>Competitors had over-complicated navigation and too much data crammed into a few modules.</p></div>
-            <span class="arrow" aria-hidden="true">→</span>
-            <p class="impl">A small set of top-level destinations, each with one job.</p>
-          </div>
-          <div class="insight">
-            <div><b>Errors and permissions left riders guessing.</b><p>Error messages weren’t informative, and some apps captured the wrong location.</p></div>
-            <span class="arrow" aria-hidden="true">→</span>
-            <p class="impl">Explain every permission in plain words before asking for it.</p>
-          </div>
+      <section class="cs-sec" id="decisions">
+        <h2>How my thinking changed along the way</h2>
+        <div class="prose">
+          <h3>Four tabs, each with one job</h3>
+          <p>Research, personas, user stories and app-store reviews all pointed to the same few daily jobs: check the bike, plan a route, look back at a trip, book a service. So the bottom bar became Home, Navigate, Trips and Services, and everything else sits in one secondary menu: reminders, community, riding tips, FAQs and settings. An early version had a fifth tab for Music. I cut it to keep the bar to the four jobs riders named. The cost is that less-used features are one level deeper.</p>
+          <h3>The bike became the home screen</h3>
+          <p>Connecting the bike is the first thing a rider does, and the step competitors handled worst. The user story was clear: connect “in a single step, the first time”, then pair automatically on every ride. So Home opens on the owner’s bike, with photo, model, registration and a Bluetooth button on the card, followed by upcoming service and recent trips. The trade-off is that only one bike is on screen at a time. Owners with more than one switch by tapping the bike name at the top, and the connection screen lists every bike with its status and a “Connect Another Bike” button.</p>
+          <h3>Permissions needed a reason</h3>
+          <p>Riders refuse permissions they don’t understand, and without location and Bluetooth the app can’t do its main job. So each prompt says what it is for. For location, it says it shows where you are on the map and powers directions, nearby search and travel-time estimates. That means more words on screen at the moment people want to get going, and I accepted it.</p>
+          <h3>The failures needed designing too</h3>
+          <p>Competitor reviews were full of pairing that failed silently, so telling riders what went wrong, and what to do next, mattered as much as the success screen. Bluetooth pairing, navigation and adding a vehicle each have a designed “connection failed” screen, next to the searching, found and connected states. The search screen heads off the most common failure with one line: “Make sure your bike’s ignition is switched on”. It meant more screens to design and hand off for every flow.</p>
         </div>
       </section>
 
       <section class="cs-sec" id="stories">
         <h2>From user stories to task flows</h2>
-        <div class="prose"><p>Research and app-store reviews became user stories for each persona. Each story then became a task flow with the fewest steps that still collected what Bajaj needed.</p></div>
+        <div class="prose"><p>I turned the research and app-store reviews into user stories for each persona. Each story then became a task flow with the fewest steps that still collected what Bajaj needed.</p></div>
         <div class="stories"><article class="story"><span class="who">Amit · first use</span><dl><dt>When</dt><dd>I use the app for the first time</dd><dt>I want to</dt><dd>add my vehicle details easily</dd><dt>So that</dt><dd>all the necessary information is entered only once</dd></dl></article><article class="story"><span class="who">Amit · linking the bike</span><dl><dt>When</dt><dd>I am ready for a ride</dd><dt>I want to</dt><dd>connect the app to my bike in a single step, the first time</dd><dt>So that</dt><dd>it pairs automatically whenever I ride</dd></dl></article><article class="story"><span class="who">Alok · linking the phone</span><dl><dt>When</dt><dd>I connect my phone to the app</dd><dt>I want to</dt><dd>link my phone to get accurate information and notifications</dd><dt>So that</dt><dd>I don’t have to check my phone while riding</dd></dl></article><article class="story"><span class="who">Amit · planning</span><dl><dt>When</dt><dd>I am ready for a trip</dd><dt>I want to</dt><dd>set my destination in the app</dd><dt>So that</dt><dd>the bike shows the route on its dashboard</dd></dl></article><article class="story"><span class="who">Amit · on the road</span><dl><dt>When</dt><dd>I am already on a trip</dd><dt>I want to</dt><dd>add or change my destination mid-trip</dd><dt>So that</dt><dd>I have flexibility while travelling</dd></dl></article><article class="story"><span class="who">Amit · servicing</span><dl><dt>When</dt><dd>there is a problem with my bike</dd><dt>I want to</dt><dd>see nearby service centres</dd><dt>So that</dt><dd>I can contact one or book an appointment</dd></dl></article></div>
         <figure>
-          <div class="ia-wrap" tabindex="0" aria-label="Task flows, scroll sideways"><div class="ia"><div class="ia-col"><h4>Login / Sign up</h4><span>Email and password, or Google / Facebook</span><span>Enter OTP</span><span class="note">Notification: signed in</span></div><div class="ia-col"><h4>Add vehicle</h4><span>Mobile number</span><span>Registration number</span><span>VIN</span><span>Photo of RC</span></div><div class="ia-col"><h4>Switch / delete vehicle</h4><span>Vehicle list</span><span>Switch or delete</span></div><div class="ia-col"><h4>Connect Bluetooth</h4><span>Tap Bluetooth icon</span><span>Scan for vehicle</span><span>List of vehicles found</span><span>Select one</span><span class="note">Notification: registration completed</span></div><div class="ia-col"><h4>Trips / rides</h4><span>My trips list</span><span>Switch: My trips / All trips</span><span>Trip insights</span></div><div class="ia-col"><h4>Navigation</h4><span>Source</span><span>Destination</span><span>Guided route</span></div><div class="ia-col"><h4>Service coupons</h4><span>Coupons and status</span><span>Select coupon</span></div><div class="ia-col"><h4>Book a service</h4><span>Book service</span><span>Choose service centre</span><span>Date</span><span>Time</span><span>Comment (optional)</span><span class="note">Notification: appointment booked</span></div><div class="ia-col"><h4>Cancel a booking</h4><span>Booking status</span><span>Booking history</span><span>Cancel appointment</span><span>Choose a reason</span><span class="note">Confirm, then: cancelled</span></div><div class="ia-col"><h4>Profile</h4><span>View / edit profile</span><span>Incoming calls, DND and SMS</span><span class="note">Saved or discarded</span></div><div class="ia-col"><h4>Notifications</h4><span>Notification list</span><span>Delete</span></div><div class="ia-col"><h4>FAQ · Riding tips · App tour</h4><span>List</span><span>Detail in a collapsible</span></div><div class="ia-col"><h4>License and privacy</h4><span>View</span></div></div></div>
-          <figcaption><b>Information architecture as task flows.</b> Thirteen jobs, each read top to bottom. Dashed steps are the confirmation the app sends at the end. Scroll sideways to see them all.</figcaption>
+          <div class="ia-wrap" tabindex="0" aria-label="Task flows"><div class="ia"><div class="ia-col"><h4>Login / Sign up</h4><span>Email and password, or Google / Facebook</span><span>Enter OTP</span><span class="note">Notification: signed in</span></div><div class="ia-col"><h4>Add vehicle</h4><span>Mobile number</span><span>Registration number</span><span>VIN</span><span>Photo of RC</span></div><div class="ia-col"><h4>Switch / delete vehicle</h4><span>Vehicle list</span><span>Switch or delete</span></div><div class="ia-col"><h4>Connect Bluetooth</h4><span>Tap Bluetooth icon</span><span>Scan for vehicle</span><span>List of vehicles found</span><span>Select one</span><span class="note">Notification: registration completed</span></div><div class="ia-col"><h4>Trips / rides</h4><span>My trips list</span><span>Switch: My trips / All trips</span><span>Trip insights</span></div><div class="ia-col"><h4>Navigation</h4><span>Source</span><span>Destination</span><span>Guided route</span></div><div class="ia-col"><h4>Service coupons</h4><span>Coupons and status</span><span>Select coupon</span></div><div class="ia-col"><h4>Book a service</h4><span>Book service</span><span>Choose service centre</span><span>Date</span><span>Time</span><span>Comment (optional)</span><span class="note">Notification: appointment booked</span></div><div class="ia-col"><h4>Cancel a booking</h4><span>Booking status</span><span>Booking history</span><span>Cancel appointment</span><span>Choose a reason</span><span class="note">Confirm, then: cancelled</span></div><div class="ia-col"><h4>Profile</h4><span>View / edit profile</span><span>Incoming calls, DND and SMS</span><span class="note">Saved or discarded</span></div><div class="ia-col"><h4>Notifications</h4><span>Notification list</span><span>Delete</span></div><div class="ia-col"><h4>FAQ · Riding tips · App tour</h4><span>List</span><span>Detail in a collapsible</span></div><div class="ia-col"><h4>License and privacy</h4><span>View</span></div></div></div>
+          <figcaption><b>Information architecture as task flows.</b> Thirteen jobs, each read top to bottom. Dashed steps are the confirmation the app sends at the end.</figcaption>
         </figure>
       </section>
 
       <section class="cs-sec" id="process">
-        <h2>Process</h2>
-        <h3 class="proc-h">Moodboards, the old prototype, competitors, wireframes and information architecture</h3>
+        <h2>What we cut, and what we tried</h2>
+        <div class="prose"><p>Each persona got a moodboard, and I put the prototype Bajaj gave us next to the competitor teardown to see what to keep and what to drop. From there it went through low-fidelity wireframes and the information architecture, with light and dark mode flows alongside. The fifth tab was the clearest cut, and the “From wireframe to final” pairs below show it. Less-used features moved into the secondary menu.</p></div>
             <div class="figs">
               <figure><div class="frame"><img src="img/mb-mood-a.jpg" alt="Moodboards and inspiration for the persona Alok" loading="lazy"></div><figcaption>Moodboards and app inspiration for Alok.</figcaption></figure>
               <figure><div class="frame"><img src="img/mb-mood-b.jpg" alt="Moodboards and inspiration for the persona Amit" loading="lazy"></div><figcaption>Moodboards and app inspiration for Amit.</figcaption></figure>
@@ -130,49 +122,9 @@
             </div>
       </section>
 
-      <section class="cs-sec" id="decisions">
-        <h2>Key decisions</h2>
-        <article class="decision">
-          <span class="num">Decision 1</span>
-          <h3>Four tabs, each with one job</h3>
-          <dl>
-                        <dt>Chose</dt><dd>A bottom bar with Home, Navigate, Trips and Services. Everything else, such as reminders, community, riding tips, FAQs and settings, sits in one secondary menu. An early version had a fifth tab for Music; it was cut to keep the bar to the four jobs riders named.</dd>
-            <dt>Why</dt><dd>User research, personas, user stories and app-store reviews all pointed to the same few daily jobs: check the bike, plan a route, look back at a trip, book a service.</dd>
-            <dt>Trade-off</dt><dd>Less-used features are one level deeper.</dd>
-          </dl>
-        </article>
-        <article class="decision">
-          <span class="num">Decision 2</span>
-          <h3>The bike is the home screen</h3>
-          <dl>
-            <dt>Chose</dt><dd>Home opens on the owner’s bike: photo, model and registration, with a Bluetooth button on the card, followed by upcoming service and recent trips.</dd>
-            <dt>Why</dt><dd>Connecting the bike is the first thing a rider does, and the step competitors handled worst. The user story was clear: connect “in a single step, the first time”, then pair automatically on every ride.</dd>
-            <dt>Trade-off</dt><dd>Only one bike is on screen at a time. Owners with more than one switch by tapping the bike name at the top, marked with a down arrow. The connection screen lists every bike with its status and a “Connect Another Bike” button.</dd>
-          </dl>
-        </article>
-        <article class="decision">
-          <span class="num">Decision 3</span>
-          <h3>Ask for permissions with a reason</h3>
-          <dl>
-            <dt>Chose</dt><dd>Each permission prompt says what it is for. For location: it shows where you are on the map and powers directions, nearby search and travel-time estimates.</dd>
-            <dt>Why</dt><dd>Riders refuse permissions they don’t understand, and without location and Bluetooth the app can’t do its main job.</dd>
-            <dt>Trade-off</dt><dd>More words on screen at the moment users want to get going.</dd>
-          </dl>
-        </article>
-        <article class="decision">
-          <span class="num">Decision 4</span>
-          <h3>Design the failures, not just the happy path</h3>
-          <dl>
-            <dt>Chose</dt><dd>Bluetooth pairing, navigation and adding a vehicle each have a designed “connection failed” screen, alongside searching, found and connected states. The search screen also prevents the most common failure with one line: “Make sure your bike’s ignition is switched on”.</dd>
-            <dt>Why</dt><dd>Competitor reviews were full of pairing that failed silently. Telling riders what went wrong, and what to do next, was as important as the success screen.</dd>
-            <dt>Trade-off</dt><dd>More screens to design and hand off for every flow.</dd>
-          </dl>
-        </article>
-      </section>
-
       <section class="cs-sec" id="direction">
         <h2>Four visual directions, one brand</h2>
-        <div class="prose"><p><strong>We explored widely before settling.</strong> Each persona got a moodboard, and from those we built four visual routes, Solid, Dark, Glassmorphic and Gradient, each tried on the same home screen. Bajaj’s brand rules then set the final palette: Bajaj blue, in light and dark.</p></div>
+        <div class="prose"><p><strong>We explored widely before settling.</strong> From the persona moodboards I built four visual routes, Solid, Dark, Glassmorphic and Gradient, and tried each on the same home screen. Then Bajaj’s brand rules decided the final palette: Bajaj blue, in light and dark. The iterations below show the home screen moving from the four routes toward that blue.</p></div>
         <div class="figs">
           <figure>
             <div class="frame"><img src="img/mb-dir-solid-dark.jpg" alt="Solid and Dark visual directions with their palettes" loading="lazy"></div>
@@ -198,7 +150,7 @@
       </section>
 
       <section class="cs-sec" id="solution">
-        <h2>The solution</h2>
+        <h2>What riders see</h2>
         <div class="phones">
           <figure><div class="frame"><img src="img/mb-home-light.jpg" alt="Home screen in light mode with the Pulsar N160, reminders and the four-tab bar" loading="lazy"></div><figcaption><b>Bike-first home.</b> The bike, its registration and a Bluetooth button fill the top. Tapping the name, marked with a down arrow, switches or adds bikes.</figcaption></figure>
           <figure><div class="frame"><img src="img/mb-home-dark.jpg" alt="Home screen in dark mode" loading="lazy"></div><figcaption><b>Dark mode.</b> The same layout and component library on a deep navy ground.</figcaption></figure>
@@ -236,20 +188,25 @@
       </section>
 
       <section class="cs-sec" id="impact">
-        <h2>Validation and impact</h2>
+        <h2>What happened after launch</h2>
         <ul class="results">
           <li><strong>100,000+ downloads</strong> of Mera Bajaj, live for about two years on the App Store and Google Play for Pulsar owners.</li>
-          <li>Delivered hi-fi designs in light and dark themes, a style guide and a component library for development.</li>
-          <li>Bajaj ran no formal usability testing on the design.</li>
+          <li>I delivered hi-fi designs in light and dark themes, a style guide and a component library for development.</li>
           <li>Followed by the <a href="case-chetak.html">Chetak EV display</a>, and later Bajaj’s 5” TFT cluster, whose menu system now ships on the Pulsar N160 SS.</li>
         </ul>
       </section>
 
-      <section class="cs-sec" id="reflection">
-        <h2>Reflection</h2>
+      <section class="cs-sec" id="learned">
+        <h2>What didn’t go to plan</h2>
         <div class="prose">
-          <p><strong>I would push the UI further.</strong> Bajaj’s brand rules limited how far the visual design could go, and I worked within them. With what I know now, I would make a stronger case for a more distinctive UI inside those rules.</p>
+          <p><strong>There was no formal usability testing.</strong> Bajaj ran none on the design, so I can’t say how riders found it beyond the download numbers.</p>
+          <p>Bajaj’s brand rules limited how far the visual design could go, and I worked within them.</p>
         </div>
+      </section>
+
+      <section class="cs-sec" id="reflection">
+        <h2>What I’d do next</h2>
+        <div class="prose"><p>I would push the UI further. With what I know now, I would make a stronger case for a more distinctive look inside Bajaj’s brand rules.</p></div>
       </section>
     </main>
   </div>

@@ -97,14 +97,12 @@
     });
   }
 
-  /* 5. Parallax: case study images drift gently inside their frames */
+  /* 5. Parallax: case study images drift gently as you scroll (the whole frame moves, so nothing is cropped) */
   function parallax() {
-    $$(".hero-img img, figure .frame img").forEach(function (img) {
-      if (img.closest(".car, .carousel, .phones")) return;
-      var box = img.parentElement;
-      box.classList.add("gs-par");
-      gsap.fromTo(img, { yPercent: -4, scale: 1.1 }, {
-        yPercent: 4, scale: 1.1, ease: "none",
+    $$(".hero-img, figure .frame").forEach(function (box) {
+      if (box.closest(".car, .carousel, .phones")) return;
+      gsap.fromTo(box, { y: 18 }, {
+        y: -18, ease: "none",
         scrollTrigger: { trigger: box, start: "top bottom", end: "bottom top", scrub: .6 }
       });
     });

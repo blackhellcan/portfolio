@@ -62,7 +62,7 @@
 figure { margin: 0; display: grid; gap: 12px; }
 figure .frame { border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; background: var(--surface); box-shadow: var(--sh-1); transition: box-shadow .4s var(--ease), transform .4s var(--ease); }
 figure .frame:hover { box-shadow: var(--sh-3); }
-figure .frame.tall { max-height: 720px; overflow-y: auto; }
+figure .frame.tall { max-height: none; overflow: visible; }
 figure .frame img { transition: transform .6s var(--ease); }
 figcaption { font-size: 14.5px; color: var(--muted); max-width: var(--measure); line-height: 1.55; }
 figcaption b { color: var(--ink); font-weight: 600; }
@@ -119,7 +119,8 @@ details.appendix .inner { padding: 0 20px 20px; display: grid; gap: 22px; }
   font: 500 11.5px/1 var(--f-mono); letter-spacing: .04em;
   background: var(--ink); color: var(--paper); padding: 7px 10px; border-radius: 999px;
 }
-.frame.wide { overflow-x: auto; }
+.frame.wide { overflow: visible; }
+.frame.wide img { width: 100%; height: auto; }
 .frame.wide img { max-width: none; width: 1700px; }
 .related { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 .related a { display: grid; gap: 4px; padding: 18px 20px; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--surface); text-decoration: none; color: var(--ink); box-shadow: var(--sh-1); transition: transform .4s var(--ease), box-shadow .4s var(--ease); }
@@ -138,8 +139,8 @@ details.appendix .inner { padding: 0 20px 20px; display: grid; gap: 22px; }
 .story dd { margin: 0; color: var(--ink-2); }
 
 /* Task-flow IA */
-.ia-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--surface); padding: 20px; box-shadow: var(--sh-1); }
-.ia { display: grid; grid-auto-flow: column; grid-auto-columns: 172px; gap: 14px; align-items: start; width: max-content; }
+.ia-wrap { overflow: visible; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--surface); padding: 20px; box-shadow: var(--sh-1); }
+.ia { display: grid; grid-template-columns: repeat(auto-fill, minmax(172px, 1fr)); gap: 14px; align-items: start; width: 100%; }
 .ia-col { display: grid; gap: 0; }
 .ia-col h4 { margin: 0 0 8px; font: 600 14px/1.25 var(--f-display); padding: 9px 11px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #fff; border-radius: 10px; }
 .ia-col span { font-size: 13px; line-height: 1.35; padding: 8px 11px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); position: relative; }

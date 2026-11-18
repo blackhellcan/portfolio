@@ -341,7 +341,7 @@ figure .frame:hover .zoomable { transform: scale(1.015); }
 /* Process section: research and definition deliverables, always visible */
 .proc-h { font: 700 clamp(24px, 2.8vw, 32px)/1.35 var(--f-display); letter-spacing: -0.01em; margin: 0 0 6px; text-wrap: balance; }
 #process figure figcaption { font-size: 15px; color: var(--ink-2); }
-#process .frame.tall { max-height: 760px; }
+
 
 /* Back-to-top button */
 .to-top { display: none !important; }
@@ -406,7 +406,7 @@ section.hello { margin-inline: 0; }
 @media (min-width: 901px) {
   #work { padding-inline: 24px; }
   .cs-card .cs-img { aspect-ratio: auto; width: 100%; height: clamp(400px, 31vw, 580px); }
-  .hero-img img { max-height: 86vh; object-fit: cover; }
+  .hero-img img { max-height: none; object-fit: contain; }
 }
 
 /* Case study body, wide screens: text stays at reading width, images widen to 1200px, carousels run to the screen edges */
@@ -422,6 +422,5 @@ html, body { overflow-x: clip; }
 
 /* GSAP motion (motion.js) */
 .gs .hello > *, .gs .cs-hero > * { visibility: hidden; }
-.gs-par { overflow: hidden; }
 .gsap .gs-tilt { transition-property: box-shadow, background, color; will-change: transform; }
 .gsap .cs-card.gs-tilt:hover, .gsap .more .proj.gs-tilt:hover { transform: none; }

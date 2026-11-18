@@ -610,49 +610,49 @@
   {
    "id": "case-hmi",
    "title": "Bajaj Auto 5-inch TFT instrument cluster",
-   "text": "## The problem \n A colour screen can show far more than a rider can safely read. The old LCD showed fixed segments: speed, fuel, odometer. The new 5” TFT had to add phone pairing, calls, music, turn-by-turn navigation, lap timers, trip data, vehicle documents and ride modes, plus a 12,000 RPM tachometer and mandatory homologation information. \nAll of it had to be controlled through tactile handlebar buttons on a vibrating motorcycle, by riders who said plainly that they don’t want to dig through menus on the move. \nBajaj ran two design teams in parallel. Mine was asked for a modern visual theme and a complete menu architecture. \n## My role \n Led a team of 4 designers on the cluster, from research to handoff. \n Owned the information architecture , menu structure and navigation model, the part that shipped. \n Ran on-site workshops at Bajaj’s engineering facility to fit the design to hardware and mechanical constraints. \n Designed inputs for tactile handlebar buttons that meet OEM vibration-tolerance standards. \n Delivered frame-by-frame prototypes so engineers could build every state transition. \n Went beyond the brief: transitions and an interactive prototype weren’t in scope. We built them in Figma anyway, working in parallel with Bajaj’s developers to get every frame right. \n## What we learned \n Riders don’t want menus while riding. \n“He doesn’t want to navigate through complicated menus while on the move.” A touring rider wants speed, gear, fuel, trip and range at a glance. \n → \nSplit the system into what you see while riding and what you change while stopped. \n The phone is the reason to pair. \nRiders sync their phone mainly for navigation, call alerts and music, and expect it “without causing distractions”. \n → \nNavigation, calls and music each get a riding control on the dashboard, not just a menu entry. \n Some information can never wait. \nSide-stand status, warnings and system alerts matter more than anything the rider chose to show. \n → \nA fixed priority order: safety alerts override every screen. \n## Process \n## User stories, explorations and research \n## Key decisions \n Decision 1 \n## Two modes: riding and stationary \n Chose The menu is disabled while riding. When the bike is stationary, it opens to settings, navigation, music, calls, notifications, vehicle information and documents. \n Why Nothing on screen should invite a long look at speed. \n Trade-off Riders can’t change settings on the move. \n Decision 2 \n## Two paths to every common task \n Chose Each phone feature has a short riding path through dashboard widgets and a full path through the menu. Music: widget → pause or next track, versus menu → playlist → song. Navigation: widget → turn-by-turn, versus menu → saved addresses → home. \n Why Riders need two or three things while moving and everything else only when stopped. \n Trade-off Every feature has two entry points to design, build and keep consistent. \n Decision 3 \n## Safety states override everything \n Chose Alerts take over any screen. With the side stand open, RPM stays at 0, the bike can’t enter ride mode, and “Side stand is open” stays on screen. Calls can be auto-rejected or silenced above 80 km/h. \n Why The cluster had to stay predictable: the most important message always wins, whatever the rider set up. \n Trade-off Some calls go unanswered while riding fast. \n## The solution \nThe menu system is public on the Pulsar N160 SS, so it is shown in full along with the information architecture and screen flows. The unreleased modern visual theme is Bajaj Auto’s intellectual property and stays blurred. \n## Validation and impact \n In production: the menu structure, navigation and architecture are on the Pulsar N160 SS and its 5” TFT console, launched in August 2026 ( launch report ), and are coming to more Bajaj models. \n Won against a competing design: a second team proposed a different architecture. Bajaj chose ours for its ease of access. \n Visual theme: our modern design was appreciated and approved by Bajaj’s design head, but the board chose a more traditional look from the other team. \n Prototype built with the developers: frame-by-frame transitions in Figma, matched to what Bajaj’s developers could build. \n## More Bajaj work \nThe cluster was the second of my three engagements with Bajaj. The first (2023) was the Mera Bajaj app, followed by the Chetak EV display. The third was a 2–4 week UI revamp of the Chetak EV owner app (Dec 2025 – Jan 2026). \n Bajaj 1 of 3 · 2023 Mera Bajaj owner app A bike-first owner app in light and dark modes. \n Bajaj · 2023 Chetak EV display Navigation and menus for the scooter’s 5” display. \n## Reflection \n The architecture outlived the visuals. Our structure, how riders find and control everything, shipped. Our modern visual theme didn’t, even with the design head’s support. \nWe worked only with Bajaj’s designers and developers, never with the board that made the final call. Next time I would push to reach the decision makers early, understand what they want, and present the design to them myself, so the reasoning isn’t lost on the way up.",
+   "text": "## The short version \nBajaj was moving its motorcycles from segment LCDs to colour TFT clusters. The old LCD showed fixed segments: speed, fuel, odometer. The new 5” TFT had to add phone pairing, calls, music, turn-by-turn navigation, lap timers, trip data, vehicle documents and ride modes, plus a 12,000 RPM tachometer and mandatory homologation information. It all had to be controlled with tactile handlebar buttons, by riders who said plainly that they don’t want to dig through menus on the move. \nBajaj ran two design teams in parallel. Mine was asked for a modern visual theme and a complete menu architecture, for the Dominar 400 and the Superchamp series. \nThe menu structure, navigation and architecture we designed shipped first on the Pulsar N160 SS in 2026, with more models to follow. \n My part: I led a team of 4 designers on the cluster, from research to handoff. I owned the information architecture, menu structure and navigation model, which is the part that shipped. I also ran on-site workshops at Bajaj’s engineering facility, so the design would fit the hardware and mechanical constraints. \n## What made it hard \n A colour screen can show far more than a rider can safely read. Every feature on the list wanted space, and none of them could invite a long look. \n Handlebar buttons on a vibrating motorcycle. The inputs had to be tactile and meet OEM vibration-tolerance standards. \n Riders don’t want menus while riding. One persona put it as “He doesn’t want to navigate through complicated menus while on the move.” A touring rider wants speed, gear, fuel, trip and range at a glance. \n Hardware and mechanical limits. That is why we ran workshops on site with Bajaj’s engineering team. \n A second team was proposing something different, so ours had to hold up next to another architecture. \n## How my thinking changed along the way \n## Riding and stopping are two different jobs \nWe split the system into what you see while riding and what you change while stopped. The menu is disabled while riding, and when the bike is stationary it opens to settings, navigation, music, calls, notifications, vehicle information and documents. Nothing on screen should invite a long look at speed. The cost is that riders can’t change settings on the move. \n## The phone is the reason to pair, so it needed a riding path \nRiders sync their phone mainly for navigation, call alerts and music, and expect it “without causing distractions”. So a menu entry wasn’t enough. Each phone feature got a short riding path through dashboard widgets and a full path through the menu. Music is widget, then pause or next track, versus menu, then playlist, then song. Navigation is widget, then turn-by-turn, versus menu, then saved addresses, then home. The trade-off is two entry points per feature to design, build and keep consistent. \n## Safety states override everything \nSide-stand status, warnings and system alerts matter more than anything the rider chose to show, so we set a fixed priority order. Alerts take over any screen. With the side stand open, RPM stays at 0, the bike can’t enter ride mode, and “Side stand is open” stays on screen. Calls can be auto-rejected or silenced above 80 km/h. The cluster stays predictable because the most important message always wins. Some calls go unanswered while riding fast, and I accepted that. \n## Going past the brief on the prototype \nTransitions and an interactive prototype weren’t in scope. We built them in Figma anyway, frame by frame, so engineers could build every state transition. We worked in parallel with Bajaj’s developers to get every frame right and matched to what they could build. \n## What we left out, on purpose \nWe began with user stories and a scenario table that defined how each screen should behave. We also explored layouts and made moodboards for three directions: urban, tour and performance. The boards below show that early work. \n## User stories, explorations and research \n## What riders see \nThe menu system is public on the Pulsar N160 SS, so it is shown in full along with the information architecture and screen flows. The unreleased modern visual theme is Bajaj Auto’s intellectual property and stays blurred. \n## What happened after launch \n In production: the menu structure, navigation and architecture are on the Pulsar N160 SS and its 5” TFT console, launched in August 2026 ( launch report ), and are coming to more Bajaj models. \n Ours won over a competing design. A second team proposed a different architecture, and Bajaj chose ours for its ease of access. \n Our visual theme didn’t ship. Bajaj’s design head appreciated and approved our modern design, but the board chose a more traditional look from the other team. \n The prototype was built with the developers: frame-by-frame transitions in Figma, matched to what Bajaj’s developers could build. \n## More Bajaj work \nThe cluster was the second of my three engagements with Bajaj. The first (2023) was the Mera Bajaj app, followed by the Chetak EV display. The third was a UI revamp of the Chetak EV owner app, which took 2 to 4 weeks (Dec 2025 to Jan 2026). \n Bajaj 1 of 3 · 2023 Mera Bajaj owner app A bike-first owner app in light and dark modes. \n Bajaj · 2023 Chetak EV display Navigation and menus for the scooter’s 5” display. \n## What didn’t go to plan \n Our visual theme never shipped. The design head approved it, but the board chose a more traditional look, so our modern theme remains unreleased. \nWe worked only with Bajaj’s designers and developers, and never with the board that made the final call. The reasoning behind the design had to travel up without us. \nThe architecture itself carries trade-offs we chose knowingly: no settings changes on the move, two entry points for every phone feature, and some calls going unanswered at speed. \n## What I’d do next \nThe architecture outlived the visuals. How riders find and control everything shipped, and our modern theme didn’t, even with the design head’s support. \nNext time I would push to reach the decision makers early, understand what they want, and present the design to them myself, so the reasoning isn’t lost on the way up.",
    "url": "https://blackhellcan.github.io/portfolio/case-hmi.html"
   },
   {
    "id": "case-merabajaj",
    "title": "Mera Bajaj app redesign",
-   "text": "## The problem \n Bajaj’s owner app worked as a prototype but didn’t feel like a premium motorcycle brand. It covered after-sales and riding: profile, vehicles, trips, service bookings and FAQs, but the screens were plain and the flows inconsistent. \nThe brief was to turn it into a modern, polished app with smooth interactions and an upmarket feel, before it reached owners. \n## My role \n Led a two-person team from kick-off to asset delivery, mentoring a newly joined junior designer. \n Ran user research and read reviews of Bajaj’s existing apps to understand riders’ day-to-day use. \n Ran a competitor study of four motorcycle apps, including KTM, covering visual design and app flows. \n Built proto-personas and user stories for trips and riding. \n Designed the information architecture , low-fidelity wireframes and visual direction. \n Delivered hi-fi screens in light and dark modes, a style guide and a component library. \n## What we learned \n Bluetooth is where competitor apps fail. \nIn the teardown, pairing often failed, took too long or dropped, and trip data wasn’t recorded. \n → \nPut the bike and its connection status at the top of the home screen, one tap to connect. \n Feature-rich apps were hard to navigate. \nCompetitors had over-complicated navigation and too much data crammed into a few modules. \n → \nA small set of top-level destinations, each with one job. \n Errors and permissions left riders guessing. \nError messages weren’t informative, and some apps captured the wrong location. \n → \nExplain every permission in plain words before asking for it. \n## From user stories to task flows \nResearch and app-store reviews became user stories for each persona. Each story then became a task flow with the fewest steps that still collected what Bajaj needed. \n Amit · first use When I use the app for the first time I want to add my vehicle details easily So that all the necessary information is entered only once Amit · linking the bike When I am ready for a ride I want to connect the app to my bike in a single step, the first time So that it pairs automatically whenever I ride Alok · linking the phone When I connect my phone to the app I want to link my phone to get accurate information and notifications So that I don’t have to check my phone while riding Amit · planning When I am ready for a trip I want to set my destination in the app So that the bike shows the route on its dashboard Amit · on the road When I am already on a trip I want to add or change my destination mid-trip So that I have flexibility while travelling Amit · servicing When there is a problem with my bike I want to see nearby service centres So that I can contact one or book an appointment \n## Process \n## Moodboards, the old prototype, competitors, wireframes and information architecture \n## Key decisions \n Decision 1 \n## Four tabs, each with one job \n Chose A bottom bar with Home, Navigate, Trips and Services. Everything else, such as reminders, community, riding tips, FAQs and settings, sits in one secondary menu. An early version had a fifth tab for Music; it was cut to keep the bar to the four jobs riders named. \n Why User research, personas, user stories and app-store reviews all pointed to the same few daily jobs: check the bike, plan a route, look back at a trip, book a service. \n Trade-off Less-used features are one level deeper. \n Decision 2 \n## The bike is the home screen \n Chose Home opens on the owner’s bike: photo, model and registration, with a Bluetooth button on the card, followed by upcoming service and recent trips. \n Why Connecting the bike is the first thing a rider does, and the step competitors handled worst. The user story was clear: connect “in a single step, the first time”, then pair automatically on every ride. \n Trade-off Only one bike is on screen at a time. Owners with more than one switch by tapping the bike name at the top, marked with a down arrow. The connection screen lists every bike with its status and a “Connect Another Bike” button. \n Decision 3 \n## Ask for permissions with a reason \n Chose Each permission prompt says what it is for. For location: it shows where you are on the map and powers directions, nearby search and travel-time estimates. \n Why Riders refuse permissions they don’t understand, and without location and Bluetooth the app can’t do its main job. \n Trade-off More words on screen at the moment users want to get going. \n Decision 4 \n## Design the failures, not just the happy path \n Chose Bluetooth pairing, navigation and adding a vehicle each have a designed “connection failed” screen, alongside searching, found and connected states. The search screen also prevents the most common failure with one line: “Make sure your bike’s ignition is switched on”. \n Why Competitor reviews were full of pairing that failed silently. Telling riders what went wrong, and what to do next, was as important as the success screen. \n Trade-off More screens to design and hand off for every flow. \n## Four visual directions, one brand \n We explored widely before settling. Each persona got a moodboard, and from those we built four visual routes, Solid, Dark, Glassmorphic and Gradient, each tried on the same home screen. Bajaj’s brand rules then set the final palette: Bajaj blue, in light and dark. \n## The solution \n## Pairing, including when it fails \n## From wireframe to final \n## Style guide and components \n## Validation and impact \n Live for about two years as Mera Bajaj on the App Store and Google Play, for Pulsar owners. \nDelivered hi-fi designs in light and dark themes, a style guide and a component library for development. \nBajaj ran no formal usability testing on the design. \nFollowed by the Chetak EV display , and later Bajaj’s 5” TFT cluster, whose menu system now ships on the Pulsar N160 SS. \n## Reflection \n I would push the UI further. Bajaj’s brand rules limited how far the visual design could go, and I worked within them. With what I know now, I would make a stronger case for a more distinctive UI inside those rules.",
+   "text": "## The short version \nBajaj had an owner app that worked as a prototype. It covered profile, vehicles, trips, service bookings and FAQs, but the screens were plain and the flows were inconsistent. It didn’t feel like a premium motorcycle brand. \nThe brief was to make it modern and polished, with smooth interactions and an upmarket feel, before it reached owners. It is the Pulsar owner app, live on the App Store and Google Play. \n My part: I led UX with one junior designer who had just joined, and I mentored them from kick-off to asset delivery. I read reviews of Bajaj’s existing apps, ran user research and a competitor study of four motorcycle apps including KTM, and built proto-personas and user stories for trips and riding. Then I designed the information architecture, low-fidelity wireframes and visual direction, and delivered hi-fi screens in light and dark modes, a style guide and a component library. \n## What made it hard \n Bluetooth is where the competitor apps fail. In our teardown, pairing often failed, took too long or dropped, and trip data wasn’t recorded. \n Feature-rich apps were hard to navigate. The competitors had over-complicated navigation and too much data crammed into a few modules. \n Errors and permissions left riders guessing. Error messages weren’t informative, and some apps captured the wrong location. \n Bajaj’s brand rules set the palette. That limited how far the visual design could go, and I worked inside them. \n## How my thinking changed along the way \n## Four tabs, each with one job \nResearch, personas, user stories and app-store reviews all pointed to the same few daily jobs: check the bike, plan a route, look back at a trip, book a service. So the bottom bar became Home, Navigate, Trips and Services, and everything else sits in one secondary menu: reminders, community, riding tips, FAQs and settings. An early version had a fifth tab for Music. I cut it to keep the bar to the four jobs riders named. The cost is that less-used features are one level deeper. \n## The bike became the home screen \nConnecting the bike is the first thing a rider does, and the step competitors handled worst. The user story was clear: connect “in a single step, the first time”, then pair automatically on every ride. So Home opens on the owner’s bike, with photo, model, registration and a Bluetooth button on the card, followed by upcoming service and recent trips. The trade-off is that only one bike is on screen at a time. Owners with more than one switch by tapping the bike name at the top, and the connection screen lists every bike with its status and a “Connect Another Bike” button. \n## Permissions needed a reason \nRiders refuse permissions they don’t understand, and without location and Bluetooth the app can’t do its main job. So each prompt says what it is for. For location, it says it shows where you are on the map and powers directions, nearby search and travel-time estimates. That means more words on screen at the moment people want to get going, and I accepted it. \n## The failures needed designing too \nCompetitor reviews were full of pairing that failed silently, so telling riders what went wrong, and what to do next, mattered as much as the success screen. Bluetooth pairing, navigation and adding a vehicle each have a designed “connection failed” screen, next to the searching, found and connected states. The search screen heads off the most common failure with one line: “Make sure your bike’s ignition is switched on”. It meant more screens to design and hand off for every flow. \n## From user stories to task flows \nI turned the research and app-store reviews into user stories for each persona. Each story then became a task flow with the fewest steps that still collected what Bajaj needed. \n Amit · first use When I use the app for the first time I want to add my vehicle details easily So that all the necessary information is entered only once Amit · linking the bike When I am ready for a ride I want to connect the app to my bike in a single step, the first time So that it pairs automatically whenever I ride Alok · linking the phone When I connect my phone to the app I want to link my phone to get accurate information and notifications So that I don’t have to check my phone while riding Amit · planning When I am ready for a trip I want to set my destination in the app So that the bike shows the route on its dashboard Amit · on the road When I am already on a trip I want to add or change my destination mid-trip So that I have flexibility while travelling Amit · servicing When there is a problem with my bike I want to see nearby service centres So that I can contact one or book an appointment \n## What we cut, and what we tried \nEach persona got a moodboard, and I put the prototype Bajaj gave us next to the competitor teardown to see what to keep and what to drop. From there it went through low-fidelity wireframes and the information architecture, with light and dark mode flows alongside. The fifth tab was the clearest cut, and the “From wireframe to final” pairs below show it. Less-used features moved into the secondary menu. \n## Four visual directions, one brand \n We explored widely before settling. From the persona moodboards I built four visual routes, Solid, Dark, Glassmorphic and Gradient, and tried each on the same home screen. Then Bajaj’s brand rules decided the final palette: Bajaj blue, in light and dark. The iterations below show the home screen moving from the four routes toward that blue. \n## What riders see \n## Pairing, including when it fails \n## From wireframe to final \n## Style guide and components \n## What happened after launch \n 100,000+ downloads of Mera Bajaj, live for about two years on the App Store and Google Play for Pulsar owners. \nI delivered hi-fi designs in light and dark themes, a style guide and a component library for development. \nFollowed by the Chetak EV display , and later Bajaj’s 5” TFT cluster, whose menu system now ships on the Pulsar N160 SS. \n## What didn’t go to plan \n There was no formal usability testing. Bajaj ran none on the design, so I can’t say how riders found it beyond the download numbers. \nBajaj’s brand rules limited how far the visual design could go, and I worked within them. \n## What I’d do next \nI would push the UI further. With what I know now, I would make a stronger case for a more distinctive look inside Bajaj’s brand rules.",
    "url": "https://blackhellcan.github.io/portfolio/case-merabajaj.html"
   },
   {
    "id": "case-chetak",
    "title": "Chetak EV owner app revamp",
-   "text": "## The problem \n A scooter display that does far more than the old speedometer, used by riders who can’t look at it for long. Chetak came back as an electric scooter with a modern-classic identity. Its 5” display had to carry battery, range, navigation, music, calls, Bluetooth, settings and vehicle documents, all through physical buttons. \nThe team designed three visual themes for different buyers. The navigation and menus had to work the same way in all of them. \n## My role \n Designed the menu structure : how settings, navigation, music, calls, notifications, vehicle information and documents are grouped and reached. \n Designed the navigation behaviour while riding and while stationary. \n Worked alongside another designer on the display; I wasn’t the lead, and my part was the navigation and menus. \n## What we learned \n Riders can’t move their eyes far. \nEye rotation beyond about 30° becomes uncomfortable, and sharp vision with colour happens only in a narrow central field. \n → \nSpeed, battery and warnings sit in the centre; menus never cover them while riding. \n Most riders lead with their right eye. \nFor right-handed riders the dominant eye is usually the right one. \n → \nThe highest-priority glance information sits right of centre. \n Riding and stopping are different tasks. \nOn the move, riders need directions and maybe music. Settings, documents and vehicle details only matter when they’re stopped. \n → \nTwo menu states, chosen by whether the scooter is moving. \n## Key decisions \n Decision 1 \n## The full menu opens only when stationary \n Chose Settings, documents and vehicle information open only when the scooter is stopped. While riding, only navigation and music have controls. \n Why Nothing on screen should invite a long look while moving. \n Trade-off Riders can’t change settings on the move. \n Decision 2 \n## Navigation moves to the centre while riding \n Chose When a route is active, directions can take the centre of the screen, inside the rider’s comfortable field of view, with speed and battery still visible. \n Why Turn-by-turn is the one thing riders need to read often while moving. \n Trade-off Secondary information gets less room during navigation. \n Decision 3 \n## One menu structure for all three themes \n Chose The menu grouping, order and button behaviour stay identical across Techno, Plano and Neo; only the visual style changes. \n Why A rider who switches theme shouldn’t have to relearn where anything is. \n Trade-off Every menu screen had to be checked in all three themes. \n## The solution \n## Validation and impact \n Shipped on Bajaj Chetak EV scooters, with the menu structure and navigation behaviour I designed. \nBajaj shared no formal feedback. \n## Reflection \n I wanted to be more involved. I was finishing the Mera Bajaj app at the same time, so my part was limited to navigation and menus. Even so, that part shipped on every Chetak EV with this display.",
+   "text": "## The short version \nChetak came back as an electric scooter with a modern-classic look. Its 5” display had to carry battery, range, navigation, music, calls, Bluetooth, settings and vehicle documents, and the only way to control it was physical buttons. Riders can’t look at a screen for long, so every extra item was a cost. \nThe team designed three visual themes for different buyers. The navigation and menus had to work the same way in all of them. \n My part: I worked alongside another designer on the display. I wasn’t the lead. I designed the menu structure, meaning how settings, navigation, music, calls, notifications, vehicle information and documents are grouped and reached, and how navigation behaves while riding and while stationary. \n## What made it hard \n Riders can’t move their eyes far. Eye rotation beyond about 30° becomes uncomfortable, and sharp vision with colour happens only in a narrow central field. \n Physical buttons only, on a small 800 × 480 screen that has to hold a lot. \n Riding and stopping are different tasks. On the move, riders need directions and maybe music. Settings, documents and vehicle details only matter when they’re stopped. \n Three themes, one rider. Someone who switches theme shouldn’t have to relearn where anything is. \n## How my thinking changed along the way \n## Start from where the eye can go \nThe viewing-angle research set the first rule: speed, battery and warnings sit in the centre, and menus never cover them while riding. Most riders lead with their right eye, and for right-handed riders the dominant eye is usually the right one, so the highest-priority glance information sits right of centre. \n## Two menu states, chosen by whether the scooter is moving \nThe full menu opens only when the scooter is stopped. Settings, documents and vehicle information wait until then, and while riding only navigation and music have controls. Nothing on screen should invite a long look while moving. The cost is that riders can’t change settings on the move, and I accepted that. \n## Give navigation the centre \nWhen a route is active, directions can take the centre of the screen, inside the rider’s comfortable field of view, with speed and battery still visible. Turn-by-turn is the one thing riders need to read often while moving. The trade-off is that secondary information gets less room during navigation. \n## One menu structure for all three themes \nThe menu grouping, order and button behaviour stay identical across Techno, Plano and Neo, and only the visual style changes. That meant every menu screen had to be checked in all three themes, which is more work, but a rider who switches theme finds everything where they left it. \n## What the research gave us \nIn desk research I read up on eye rotation and viewing angle, then mapped placement zones on the display for right-eye-dominant riders. These two boards are the reasoning behind the centre-field rule. \n## What riders see \n## What happened after launch \n It shipped on Bajaj Chetak EV scooters, with the menu structure and navigation behaviour I designed. Bajaj shared no formal feedback, so I can’t point to numbers on how riders get on with it. \n## What didn’t go to plan \n I wasn’t the lead. I was finishing the Mera Bajaj app at the same time, so my part stayed limited to navigation and menus. \n No formal feedback came back from Bajaj, so what I know about the result is that it shipped. \n The decisions cost something. Riders can’t change settings on the move, secondary information gets less room during navigation, and every menu screen had to be checked in three themes. \n## What I’d do next \nI wanted to be more involved in the display. My part was limited to navigation and menus, and even so it shipped on every Chetak EV with this display.",
    "url": "https://blackhellcan.github.io/portfolio/case-chetak.html"
   },
   {
    "id": "case-pockit",
    "title": "PockIT repair and refurbished-device marketplace",
-   "text": "## The problem \n When a laptop or Wi-Fi breaks, most people can’t describe what’s wrong, don’t know who to call, and fear being overcharged. They rely on neighbours or whoever is free, and technicians arrive with half the information they need. \nPockIT wanted one platform for booking trusted technicians, tracking the job and paying fairly, with a separate app that lets technicians plan their day and get to customers fast. Businesses needed their own service catalogue, from CCTV and cabling to servers. \n The constraint: bigger, better-known players already had stronger infrastructure and more budget. We were open with the client that a full-featured app could not win head-on, so we agreed to ship a lean app quickly, build the service infrastructure behind it, and expand once it gained traction. \n## My role \n Led UX across the customer and technician apps , from references and personas to hi-fi prototypes. \n Built five personas covering home users, an office IT admin and field technicians. \n Designed the information architecture through several rounds, and separate service catalogues for homes and businesses. \n Mapped user flows and wireflows for booking, tracking, part approval, rescheduling, cancelling and the refurbished-device shop. \n Set the visual direction from two moodboard routes, and built the component library. \n Led a two-person design team with one junior designer. \n## Who we designed for \n Sameer · tutor, 32 Says “I want my focus to be on teaching, not fixing tech issues.” Needs Fast, trusted help when the projector or Wi-Fi fails mid-class, at a fair price. \n Meena · homemaker, 35 Says “I need someone I can trust to fix things when they go wrong.” Needs Low tech knowledge; worries about being overcharged or misinformed. \n Prakash · office employee, 36 Says “All I want is a stable Wi-Fi connection that works without constant interruptions, for my kids.” Needs A router installed with minimal effort and clear communication. \n Vivek · IT administrator, 36 Context Wants transparency from vendors and prompt updates. Needs Visibility into vendors, prompt updates and fast fixes for his teams. \n Ajay · field technician, 25 Context Juggles back-to-back requests across the city and tracks his hours by hand. Needs Less travel time, no manual tracking, and accurate descriptions before he arrives. \n## Key decisions \n Decision 1 \n## Name problems the way customers describe them \n Options A technical catalogue (operating system, utilities, connectivity, peripherals) or one built on devices and symptoms. \n Chose Customers first pick their device (laptop, desktop, MacBook, iMac, printer, Wi-Fi), then a symptom such as “My system is slow”, “Charging issue” or “Not sure of the issue”. \n Why Early IA rounds used technical terms. A note on the board asked the deciding question: “Will the user with low tech knowledge understand these terms?” Personas like Meena would not. \n Trade-off A longer, more granular service list behind the scenes, which the team had to keep mapped to technician skills. \n Decision 2 \n## No surprise charges \n Chose The full price breakdown (base price, tax, express service, visit fee) appears before payment. If a technician needs a new part, the customer gets a notification with the part and price, and approves or denies it in the app. \n Why Fear of being overcharged came up in almost every home persona. \n Trade-off An extra approval step mid-job, which can hold the technician up until the customer responds. \n Decision 3 \n## A happy code to close every job \n Chose Each order shows a four-digit happy code. The technician can only close the job when the customer shares it, so work is never marked done without the customer agreeing. The assigned technician’s name, rating and jobs completed are shown too. \n Why Trust was the core problem. The customer, not the technician, decides when the job is finished. \n Trade-off One more step at the end of every visit. \n Decision 4 \n## A technician app built around the day’s route \n Chose Technicians go online with one swipe and see today’s jobs with time, type and address. Each job shows the customer’s issue, contact, payment mode and a “View on map” link, and customers can upload photos of the problem when they book. \n Why Ajay’s pain points were travel time, manual tracking and vague descriptions that waste time on site. \n Trade-off Customers are asked for more detail while booking. \n## The solution \n## Customer app: from problem to booked \n## Tracking, trust and approvals \n## Technician app \n## Validation and impact \n Live, with 1,000+ users on the customer app. \nShipped as a deliberately lean first version, so the client could set up technicians and operations before investing in more features. \n## Reflection \n The design wasn’t the hardest problem; the market was. From our research, we told the client early why a full-scale app would struggle against better-funded, better-branded competitors with stronger infrastructure. Saying that openly let us agree on a smaller, faster first release instead of a feature race we couldn’t afford. I learned that scoping to the budget and the business is part of the design job, and that a product only earns its full version once the basics work.",
+   "text": "## The short version \nPockIT connects homes and offices with field technicians for laptop, printer and Wi-Fi repairs, and sells refurbished devices. The trouble is what happens when something breaks. Most people can’t describe what’s wrong, don’t know who to call and fear being overcharged. They rely on neighbours or whoever is free, and technicians arrive with half the information they need. \nPockIT wanted one platform for booking trusted technicians, tracking the job and paying fairly, plus a separate app for technicians to plan their day and get to customers fast. Businesses needed their own service catalogue, from CCTV and cabling to servers. We designed both apps, and the customer app is live with 1,000+ users. \n My part: I led UX across the customer and technician apps with one junior designer, from references and personas to hi-fi prototypes. I built five personas, worked through the information architecture over several rounds, and mapped flows and wireflows for booking, tracking, part approval, rescheduling, cancelling and the refurbished-device shop. I also set the visual direction from two moodboard routes and built the component library. \n## What made it hard \n Bigger players had more of everything. Better-known competitors already had stronger infrastructure and more budget, so a full-featured app could not win head-on. We were open with the client about that. \n Customers couldn’t name the problem. Many have low tech knowledge, and they worry about being overcharged or misinformed. \n There were two kinds of customer and a technician too. Homes and businesses needed separate service catalogues, and technicians needed their own app for the day’s work. \n Technicians were working with too little. Ajay juggles back-to-back requests across the city, tracks his hours by hand and gets vague descriptions of the problem. \n## Who we designed for \nThese five personas shaped most of the calls below. \n Sameer · tutor, 32 Says “I want my focus to be on teaching, not fixing tech issues.” Needs Fast, trusted help when the projector or Wi-Fi fails mid-class, at a fair price. \n Meena · homemaker, 35 Says “I need someone I can trust to fix things when they go wrong.” Needs Low tech knowledge; worries about being overcharged or misinformed. \n Prakash · office employee, 36 Says “All I want is a stable Wi-Fi connection that works without constant interruptions, for my kids.” Needs A router installed with minimal effort and clear communication. \n Vivek · IT administrator, 36 Context Wants transparency from vendors and prompt updates. Needs Visibility into vendors, prompt updates and fast fixes for his teams. \n Ajay · field technician, 25 Context Juggles back-to-back requests across the city and tracks his hours by hand. Needs Less travel time, no manual tracking, and accurate descriptions before he arrives. \n## How my thinking changed along the way \n## Technical names didn’t work for customers \nEarly IA rounds used technical terms like operating system, utilities, connectivity and peripherals. A note on the board asked the deciding question: “Will the user with low tech knowledge understand these terms?” Personas like Meena would not. So customers now pick their device first (laptop, desktop, MacBook, iMac, printer, Wi-Fi), then a symptom such as “My system is slow”, “Charging issue” or “Not sure of the issue”. The cost is a longer, more granular service list behind the scenes, which the team has to keep mapped to technician skills. \n## No surprise charges \nFear of being overcharged came up in almost every home persona. So the full price breakdown (base price, tax, express service, visit fee) appears before payment. If a technician needs a new part, the customer gets a notification with the part and price, and approves or denies it in the app. The trade-off is an extra approval step mid-job, which can hold the technician up until the customer responds. \n## Let the customer close the job \nTrust was the core problem, so the customer, not the technician, decides when the job is finished. Each order shows a four-digit happy code, and the technician can only close the job when the customer shares it. The assigned technician’s name, rating and jobs completed are shown too. It adds one more step at the end of every visit. \n## Build the technician app around the day’s route \nAjay’s pain points were travel time, manual tracking and vague descriptions that waste time on site. Technicians go online with one swipe and see today’s jobs with time, type and address. Each job shows the customer’s issue, contact, payment mode and a “View on map” link, and customers can upload photos of the problem when they book. The trade-off is that customers are asked for more detail while booking. \n## Ship lean, then grow \nFrom our research, we told the client early why a full-scale app would struggle against better-funded, better-branded competitors. Saying that openly let us agree on a smaller, faster first release: ship a lean app quickly, build the service infrastructure behind it, and expand once it gains traction. \n## What customers and technicians see \n## Customer app: from problem to booked \n## Tracking, trust and approvals \n## Technician app \n## What happened after launch \n The customer app is live, with 1,000+ users. It shipped as a deliberately lean first version, so the client could set up technicians and operations before investing in more features. \n## What didn’t go to plan \n The design wasn’t the hardest problem. The market was. A full-featured app was never going to win head-on against bigger, better-known players, so we agreed a smaller, faster first release. \nSeveral choices also cost something. The part approval step can hold a technician up, the happy code adds a step to every visit, and customers are asked for more detail when they book. The only post-launch number I have is the 1,000+ users. \n## What I’d do next \nKeep scoping to the budget and the business from day one, because that is part of the design job. A product earns its full version once the basics work, so the plan is to build out the service infrastructure and expand from the lean first release.",
    "url": "https://blackhellcan.github.io/portfolio/case-pockit.html"
   },
   {
    "id": "case-portico",
    "title": "Portico HR and payroll SaaS",
-   "text": "## The problem \n Portico worked, but every task took too long. It started as a way to digitise manual HR processes: document archive, payroll, expenses, recruitment, eLearning and payments. New features were added as needed, so each module looked and behaved differently, and common tasks sat several levels deep. \nEmployees, managers, HR and admins used the same screens for very different jobs. The mobile app tried to copy the web. Portico’s management wanted a mobile-first redesign, delivered in two phases, that would cut support queries in half. \n## My role \n Led a team of 4 designers from research to final web and mobile designs. \n Worked with Portico’s product owner and developers on scope and feasibility, and with end users for testing. \n Ran the stakeholder alignment workshop remotely on Mural during Covid-19, to agree goals, user segments and success measures. \n Led an expert review of the existing app and mapped existing flows to count the steps in each key task. \n Restructured the information architecture through card sorting, and owned the design system for web and mobile. \n## What we learned \n The menu followed the order features were built. \nFlow mapping showed common tasks buried several levels deep, with no search and no in-app guidance. \n → \nRegroup everything into clear categories, add global search, and bring frequent tasks to the front. \n Every screen looked different. \nThe expert review found inconsistent layouts, icons and button weights, low contrast and a loader on every action. \n → \nOne design system across all modules, with one clear primary action per screen. \n Each role does a few things every day. \nEmployees clock in, apply for leave and download payslips. Managers approve requests and check their team. HR and admins manage people, documents and company data. \n → \nA default home for each role, built from its daily tasks. \n## Process \n## The old product, proto-personas and full menu \n## Key decisions \n Decision 1 \n## A default home for each role, which users can customise \n Options One shared dashboard for everyone, a fixed home per role, or role-based defaults that users can change. \n Chose Separate defaults for employees, managers, HR and admins, based on each role’s daily activities. Anyone can pin their own shortcuts to Favourites. \n Why A shared dashboard would be cluttered for everyone. A fixed one would fail people whose work doesn’t match their title. \n Trade-off Four home layouts to design, test and maintain instead of one. \n Decision 2 \n## Mobile does the quick tasks, not everything the web does \n Options Port the full web product to mobile, or design mobile as its own product for tasks people do on the move. \n Chose A task-focused app: clock in, apply for leave or work from home, approve requests, view payslips and sign documents. Data-heavy areas such as document management, HR management and company administration stay on the web. \n Why Those areas carry too much data to work on a phone, and nobody needs them in a hurry. Quick tasks are what people open the app for. \n Trade-off Some users can’t do everything from their phone, and have to switch to the web for heavier work. \n Decision 3 \n## Rebuild the navigation around categories users recognise \n Chose Card sorting produced clear top-level categories: Leaves & Attendance, Payroll, Learning & Development, Documents, Reports and Company. Global search on the web covers everything, for example “Leaves, Payroll”. \n Why The old structure matched how the product was built, not how people think about their work. \n Trade-off It meant significant rework for the development team, which later limited how much of the redesign shipped (see Reflection). \n## The solution \n## Validation and impact \n 30% fewer steps across core admin tasks after the navigation was regrouped into clear categories. \n Applying for leave: 1 tap from the home screen’s frequently used tasks, against 4 through the full menu (All → Leaves & Attendance → Leaves → +). \n Approving a request: 1 tap from the notification, with no need to open the request. \n Early user testing showed the new navigation helped people find information and complete tasks. \nPost-launch figures, such as support queries, were not shared with us after the engagement ended. \n## Reflection \n I should have pushed harder for users earlier. Near the end of our engagement, Portico’s product owner left the company, and the decision on what to build passed to the developers. Facing a deadline, they chose to skip changes that meant rework, and some of the best improvements didn’t ship. \nWhat I did: I agreed a smaller scope that met their deadline, and handed over a prioritised backlog of the remaining UX improvements for them to pick up after launch. Next time I would set up that phased plan at the start, so improvements are scheduled from the beginning, not traded away at the end.",
+   "text": "## The short version \nPortico is an HR and payroll suite that began as a way to digitise manual HR processes: document archive, payroll, expenses, recruitment, eLearning and payments. It worked, but the HRMS had been built organically, feature by feature, as needs came up. So each module looked and behaved differently, and common tasks sat several levels deep. \nEmployees, managers, HR and admins used the same screens for very different jobs, and the mobile app tried to copy the web. Portico’s management wanted a mobile-first redesign, delivered in two phases, that would cut support queries in half. \n My part: I led a team of four designers from research to final web and mobile designs. I worked with Portico’s product owner and developers on scope and feasibility, and with end users for testing. I ran the stakeholder alignment workshop remotely on Mural during Covid-19 to agree goals, user segments and success measures, and led an expert review of the existing app, mapping its flows to count the steps in each task. I also restructured the information architecture through card sorting and owned the design system for web and mobile. \n## What made it hard \n The menu followed the order features were built. Flow mapping showed common tasks buried several levels deep, with no search and no in-app guidance. \n Every screen looked different. The expert review found inconsistent layouts, icons and button weights, low contrast and a loader on every action. \n Four roles shared one set of screens. Each role does a few things every day. Employees clock in, apply for leave and download payslips. Managers approve requests and check their team. HR and admins manage people, documents and company data. \n The mobile app tried to copy the web, instead of being built around what people need on the move. \n## How my thinking changed along the way \n## Rebuild the navigation around categories people recognise \nThe old structure matched how the product was built, not how people think about their work. So we ran card sorting and ended up with clear top-level categories: Leaves & Attendance, Payroll, Learning & Development, Documents, Reports and Company. We added global search on the web, which covers everything, for example “Leaves, Payroll”, and brought frequent tasks to the front. The trade-off was significant rework for the development team, which later limited how much of the redesign shipped. \n## One design system, one main action per screen \nThe expert review found inconsistent layouts, icons and button weights, low contrast and a loader on every action. So we moved every module onto one design system for web and mobile, with one clear primary action per screen. \n## A home for each role, which users can change \nI weighed one shared dashboard, a fixed home per role, and role-based defaults that users can change. A shared dashboard would be cluttered for everyone, and a fixed one would fail people whose work doesn’t match their title. So employees, managers, HR and admins each get a default built from their daily activities, and anyone can pin their own shortcuts to Favourites. The cost is four home layouts to design, test and maintain instead of one. \n## Mobile does the quick tasks, not everything the web does \nI could have ported the full web product or designed mobile as its own product. I chose the second: clock in, apply for leave or work from home, approve requests, view payslips and sign documents. Document management, HR management and company administration stay on the web, because they carry too much data for a phone and nobody needs them in a hurry. Some users will have to switch to the web for heavier work. \n## What we started from \nWe began with the existing product, then built proto-personas from the stakeholder workshop and regrouped the menu through card sorting. \n## What employees, managers and HR see \n## What happened after launch \n 30% fewer steps across core admin tasks after the navigation was regrouped into clear categories. \n Applying for leave: 1 tap from the home screen’s frequently used tasks, against 4 through the full menu (All → Leaves & Attendance → Leaves → +). \n Approving a request: 1 tap from the notification, with no need to open the request. \n Early user testing showed the new navigation helped people find information and complete tasks. \n## What didn’t go to plan \n Some of the best improvements didn’t ship. Near the end of our engagement, Portico’s product owner left the company, and the decision on what to build passed to the developers. Facing a deadline, they chose to skip changes that meant rework. \nI agreed a smaller scope that met their deadline, and handed over a prioritised backlog of the remaining UX improvements for them to pick up after launch. Post-launch figures, such as support queries, were not shared with us after the engagement ended, so I can’t say whether the support target was met. \n## What I’d do next \nI should have pushed harder for users earlier. Next time I would set up the phased plan at the start, so improvements are scheduled from the beginning, not traded away at the end.",
    "url": "https://blackhellcan.github.io/portfolio/case-portico.html"
   },
   {
    "id": "case-jeevika",
    "title": "Jeevika street-vendor legal help",
-   "text": "## The problem \n Street vendors have legal rights under the 2014 Street Vendors Act, but most don’t know them and can’t get help when they’re harassed or evicted. CCS wanted an app that tells vendors their rights, connects them to law students and lawyers, offers emergency SOS, and geo-tags vending spots as proof. \nThe users are vendors with varied literacy and little smartphone experience, working in Hindi. The service also had to reach vendors without a smartphone, and scale to other Indian cities. \n## My role \n Led UX for the vendor app and the NGO dashboard, with one junior designer. \n Turned CCS’s field research into personas. CCS interviewed vendors and shared the results as a large spreadsheet; we distilled it into personas and user needs. \n Worked closely with CCS’s team and volunteers , who were in frequent contact with vendors throughout. \n Ran the stakeholder alignment workshop with CCS to agree goals, success measures and scope. \n Benchmarked legal-help apps (Hawkers, Nyaya Bandhu, Talika, LegalKart) and public services (NASVI, PM SVANidhi, DigiLocker). \n Turned six “How might we” questions into a prioritised feature set using importance and feasibility. \n## What we learned \n Reading is the barrier, not willingness. \nThe brief called for vernacular language, low cognitive load and support for vendors who can’t read or don’t own a smartphone. \n → \nHindi by default, a picture and icon for every action, and a toll-free number for anyone without the app. \n Public apps felt cold and closed. \nBenchmarked government services had little language support, low visual appeal and no way to raise a query. \n → \nA warm, illustrated look with familiar characters (vendors, lawyers, police) instead of forms. \n Two kinds of vendor, two reasons to open the app. \nAn experienced vendor-activist wants to help others; a newer vendor, a working mother, wants to avoid trouble and protect her income. \n → \nSelf-help (rights, SOS, my cases) comes first; community and lawyer features sit one level down. \n## Process \n## Ecosystem and How-might-we questions \n## Key decisions \n Decision 1 \n## Hindi-first, illustration-led screens \n Options Standard Hindi, which fits most of north India, or Hindi in the everyday Delhi register vendors actually speak. \n Chose Delhi-flavoured Hindi as the default, with English available. Each section is introduced by an illustrated character, and every action pairs an icon with a short label. \n Why We started with standard Hindi, then moved to the local register: words vendors use daily read faster than formal ones, and a picture plus a familiar word beats a sentence. \n Trade-off Every screen and illustration would need localising before the app could scale to other cities. \n Decision 2 \n## SOS is always one tap away \n Chose SOS takes two taps: the button on the home screen, then a full-page SOS screen to confirm. A toll-free number covers vendors without the app. \n Why Harassment happens in the moment; a vendor shouldn’t have to navigate to get help. \n Trade-off One extra tap in an emergency, in exchange for no accidental alerts from a phone in a pocket or a stray touch. \n Decision 3 \n## Build what is important and feasible first \n Chose Ranked every idea from the How-might-we questions by importance and feasibility. Rights information, legal-aid requests, SOS and geo-tagging came first. \n Why These protect a vendor at the moment of harassment and build the record they need later. \n Trade-off Broader monitoring and community features came later. \n## The solution \n## Validation and impact \n Live and working. Street vendors are using the app, and they are slowly getting comfortable with it. \n The hardest problem isn’t the interface. Pressure from officials makes some vendors afraid to use it. The next challenge is motivating them to use it to stand up for their rights. \n## Phase 2: the admin panel \n A live app creates a second user: the people who run it. Right after the app was delivered, the same two-person team took on a follow-on engagement: dashboards for CCS’s management and for vendor associations, so they could see where harassment happens, act on complaints and run the programme across zones. \nWe mapped every job for two admin roles, a CCS admin and an association admin, as a story map, and marked what belonged in release 1. The admin panel is now live. \n## Reflection \n One of the most meaningful projects I have worked on. I kept everything as simple as I could for vendors new to smartphones. Next, I would run usability tests with vendors on the live app and revamp the UI around what we learn, especially around building the confidence to use it.",
+   "text": "## The short version \nCCS, a policy NGO, asked us to design an app that helps street vendors know their rights under the 2014 Street Vendors Act, reach a lawyer, and call for help when they’re harassed or evicted. The people using it read Hindi, often not fluently, and many are new to smartphones. Some don’t own one at all. \nWe designed the vendor app and, later, the dashboard CCS uses to run the programme. Both are live. \n My part: I led UX with one junior designer. CCS interviewed vendors and shared the results as a big spreadsheet; we turned it into personas and needs, ran the alignment workshop with CCS, and worked closely with their team and volunteers, who were in touch with vendors throughout. \n## What made it hard \n Reading was the real barrier. Vendors were willing to use an app, but a screen full of text, even in Hindi, would lose most of them. \n Not everyone has a smartphone, so the service had to work for vendors with no app at all. \n The government apps they knew felt cold: forms, little language support, and no way to ask a question. We looked at legal-help apps (Hawkers, Nyaya Bandhu, Talika, LegalKart) and public services (NASVI, PM SVANidhi, DigiLocker) to see this first hand. \n Two very different people would open it for different reasons. An experienced vendor-activist wants to help others. A newer vendor, a working mother, just wants to avoid trouble and keep her income safe. \n## How my thinking changed along the way \n## Standard Hindi wasn’t enough \nWe started with standard Hindi, the version that works across north India. But vendors read the words they use every day much faster than formal ones, so we switched to the everyday Delhi register, kept English as an option, and paired every action with an icon. The cost: every screen and illustration has to be localised again before Jeevika can move to another city. We chose that knowingly. \n## Forms became people \nInstead of the form-heavy look of public apps, each section is introduced by an illustrated character: vendors, lawyers and police, drawn to look like the people users meet every day. \n## One app, two reasons to open it \nWe put self-help first (rights, SOS and “my cases”), because that’s what the newer vendor needs in a bad moment. The community and lawyer features sit one level down for the activist. \n## Fast vs. safe, for SOS \nHarassment happens in the moment, so SOS sits on the home screen. But a single tap could fire from a phone in a pocket, so the button opens a full-screen SOS page to confirm. One extra tap in an emergency, in exchange for no false alarms. Vendors without the app get a toll-free number. \n## What we left out, on purpose \nWe turned six “How might we” questions into a long list of ideas, then ranked each one by how much it would help a vendor and how hard it was to build. Rights information, legal-aid requests, SOS and geo-tagging made the first release, because they protect a vendor in the moment and build the record they’ll need later. Broader monitoring and community features waited. \n## What vendors see \n## What happened after launch \n The app went live, and street vendors are using it and slowly getting more comfortable. A live app also created a second set of users: the people running it. \n## The admin panel \nRight after delivery, the same two-person team designed the admin panel for CCS and vendor associations: where harassment happens, complaints that need escalating, and running the programme zone by zone. \nWe mapped every job for two admin roles, a CCS admin and an association admin, as a story map, and marked what belonged in release 1. That panel is live too. \n## What didn’t go to plan \n The hardest problem turned out not to be the interface. Pressure from officials makes some vendors afraid to use the app at all. Good design gets a vendor through the screens, but it can’t make them feel safe standing up for their rights. That’s the next problem to solve, and it’s bigger than UI. \nWe also haven’t yet run usability tests with vendors on the live app. \n## What I’d do next \nTest with vendors on the live app, then rework the UI around what we learn, especially around giving them the confidence to use it.",
    "url": "https://blackhellcan.github.io/portfolio/case-jeevika.html"
   },
   {
    "id": "case-fintech",
    "title": "Mutual fund module in a stock-trading app",
-   "text": "## The problem \n Most people who could invest in mutual funds don’t, because they don’t understand them or don’t trust them. The client wanted a metrics-driven way to invest in and track mutual funds, built into its existing stock-broking app. \nIt had to work for traditional and first-time investors, explain risk and past performance honestly, including bad years, and still feel quick for experienced investors who already trade stocks in the same app. \n## My role \n Ran the alignment workshop to agree challenges, aspirations, focus areas and guiding principles with the client. \n Benchmarked Groww, Coin by Zerodha and Paytm Money across the five phases of investing. \n Wrote the job stories and user-intent document that set feature requirements. \n Prioritised features with a value–effort mapping session, then designed the IA, wireflows and wireframes. \n Led a two-person design team. \n## What we learned \n New investors want to start but fear losing money. \n“Everybody tells me that you should start investing early. I don’t have lumpsum to invest right now, but I want to start. I fear if I make wrong investment decision I might lose my money.” (proto-persona, first-time investor) \n → \nLet people look around before signing up, and explain each fund in plain terms before asking for money. \n Savvy investors want depth, fast. \nThey compare holdings, returns, risk and fund managers before deciding, and switch between charts and numbers. \n → \nFund detail pages carry the full breakdown, one tap away from the simple view. \n Control matters as much as starting. \n“When I plan to stop my systematic investment, I want to do so using a kill switch, so that I don’t have to find each investment separately.” (job story) \n → \nSIPs can be paused or stopped from one place. \n## Process \n## Journey, job stories and prioritisation \n## Key decisions \n Decision 1 \n## Guest access and a guided first look for new investors \n Chose Guest login without Aadhaar, PAN or bank details, an onboarding tour that explains strategy, budget and how the app works, and a “SIP with ₹100” entry point among the top picks. \n Why Fear of a wrong decision stopped first-timers before they started. Letting them look around first lowers the cost of curiosity. \n Trade-off Guests still had to complete KYC before their first investment, so the hurdle moved rather than disappeared. \n Decision 2 \n## Ship the essentials before the novel features \n Options Six hygiene features (guest login, onboarding tour, fund breakdowns, payment and SIP tracking, personalised alerts, chart or number views) and four unique ones (sharing with family and friends, linked news, voice help, reviews from real investors). \n Chose Value–effort mapping put the hygiene set in the first release; the unique features were planned for later. \n Why Trust comes from the basics working well. Novel features don’t help if tracking a SIP is confusing. \n Trade-off The features that would set the app apart from Groww and Coin came later. \n Decision 3 \n## One cart for SIPs and lump sums \n Chose Investors add funds to a cart, set SIP dates and amounts or a one-time amount for each, and see a clear split between SIP and lump-sum payments before paying. \n Why From the user-intent document: investors wanted to “make a single purchase and save time”, and to see “a comprehensive understanding of the payment breakdown”. \n Trade-off One extra step for someone buying a single fund, softened by an “Invest now” button beside “Add to cart”. \n## The solution \n Each screen answers a job story. The fund detail serves the investor deciding go or no-go on a fund. The SIP calculator serves “how much should I invest every month?”. The portfolio serves tracking, and the mandate and order screens make the money side transparent. \n## Two rounds of review \n## Validation and impact \n Did not launch. Leadership changed on the client side, and the new team put all external engagements on hold. The project stopped during design review, before development. \nDelivered before the pause: workshop outcomes, competitor benchmarks, job stories, a prioritised feature set, and two reviewed rounds of the core screens: dashboard, fund detail, autopay mandate and order status, plus hi-fi mockups. \n## Reflection \n I leaned on reviews instead of leading. It was one of my first projects as a lead, and I went to the product and project managers for review and feedback at every stage. With what I know now, I would set up a clear process from the start: agreed milestones, review points and decision owners, so the team could move faster with fewer check-ins.",
+   "text": "## The short version \nMost people who could invest in mutual funds don’t, because they don’t understand them or don’t trust them. The client wanted a metrics-driven way to invest in and track mutual funds inside its existing stock-broking app. \nThat meant one module for two kinds of investor. First-timers needed risk and past performance explained honestly, bad years included. Experienced investors who already trade stocks in the same app still needed it to feel quick. \n My part: I led a two-person design team. I ran the alignment workshop with the client to agree challenges, aspirations, focus areas and guiding principles, and benchmarked Groww, Coin by Zerodha and Paytm Money across the five phases of investing. I wrote the job stories and the user-intent document that set the feature requirements, ran a value-effort mapping session to prioritise, then designed the IA, wireflows and wireframes. \n## What made it hard \n Fear came before everything else. A first-time investor said it plainly: “I fear if I make wrong investment decision I might lose my money.” Good screens don’t help if people never get as far as opening them. \n Two audiences, one app. Savvy investors compare holdings, returns, risk and fund managers before deciding, and switch between charts and numbers. They want depth, fast. \n Honesty had to be designed. The app had to show risk and past performance openly, including bad years, to investors who already feared losing money. \n Control mattered as much as starting. One job story asked for a “kill switch” to stop a systematic investment without hunting down each one. \n## How my thinking changed along the way \n## Let people look before they commit \nThe first-timer we heard from wanted to start but was afraid of choosing wrong. So we gave new investors guest login without Aadhaar, PAN or bank details, an onboarding tour that explains strategy, budget and how the app works, and a “SIP with ₹100” entry point among the top picks. Letting them look around first lowers the cost of curiosity. The trade-off is that guests still have to complete KYC before their first investment, so the hurdle moved rather than disappeared. \n## Two views of the same fund \nSavvy investors need the full breakdown, and nervous ones need plain terms. We kept the simple view up front and put the full breakdown one tap away on the fund detail page. \n## One place to stop a SIP \nThe kill switch story shaped this one. SIPs can be paused or stopped from one place, which gives investors some control back once they’ve started. \n## Basics before the clever features \nWe had six hygiene features (guest login, onboarding tour, fund breakdowns, payment and SIP tracking, personalised alerts, chart or number views) and four unique ones (sharing with family and friends, linked news, voice help, reviews from real investors). Value-effort mapping put the hygiene set in the first release. Trust comes from the basics working well, and novel features don’t help if tracking a SIP is confusing. The cost was that the features that would set the app apart from Groww and Coin came later. \n## One cart for SIPs and lump sums \nThe user-intent document said investors wanted to “make a single purchase and save time” and see “a comprehensive understanding of the payment breakdown”. So investors add funds to a cart, set SIP dates and amounts or a one-time amount for each, and see a clear split between SIP and lump-sum payments before paying. It adds one extra step for someone buying a single fund, so we put an “Invest now” button beside “Add to cart”. \n## What we left out, on purpose \nWe mapped the five phases of investing and wrote seven job stories, then ranked every feature by value against effort. What made the first release was the set that makes the app trustworthy. The ideas that would make it stand out waited. \n## What investors see \nThese are the core screens for first-timers and experienced investors alike, followed by two rounds of review on the dashboard, autopay mandate and order status. \n Each screen answers a job story. The fund detail is for the investor deciding go or no-go on a fund. The SIP calculator answers “how much should I invest every month?”. The portfolio is for tracking, and the mandate and order screens make the money side easy to follow. \n## Two rounds of review \n## Where it ended up \n It never launched. Leadership changed on the client side, and the new team put all external engagements on hold. The project stopped during design review, before development. \nWhat we delivered before the pause: workshop outcomes, competitor benchmarks, job stories, a prioritised feature set, and two reviewed rounds of the core screens (dashboard, fund detail, autopay mandate and order status), plus hi-fi mockups. \n## What didn’t go to plan \n The project stopped before anything was built. The client paused all outside work during design review, so none of this went into development, and I have no usage figures to share. \nI also leaned on reviews instead of leading. It was one of my first projects as a lead, and I went to the product and project managers for review and feedback at every stage. \nTwo trade-offs stayed open: guests still had to complete KYC before investing, and the features that would set the app apart were pushed to later releases. \n## What I’d do next \nSet up a clear process from the start: agreed milestones, review points and decision owners, so the team can move faster with fewer check-ins.",
    "url": "https://blackhellcan.github.io/portfolio/case-fintech.html"
   },
   {
    "id": "case-youngartiste",
    "title": "YoungArtiste performing-arts learning app",
-   "text": "## The problem \n Online learners lose direction and motivation without a teacher in the room. YoungArtiste offered private, teacher-led classes with a multi-year curriculum, but students practising on their own lacked structure, discipline and anyone to interact with. \nThe brief: a mobile app for students, teachers and admins, with every feature of the learning portal and live classes, that helps anyone find something to learn for their time, budget, interest and level, and keeps them coming back. \n## My role \n Led UX end to end , from the stakeholder alignment workshop to the hi-fi prototype. \n Ran the alignment workshop to agree business goals, user segments and the major and minor jobs for hobbyists. \n Benchmarked six apps : Vox Guru, Riyaz, Steezy, Flowkey, Everdance and Dance With Madhuri. \n Built four personas from user interviews, then wrote job stories and How-might-we questions. \n Prioritised features with value–effort mapping, then designed the IA, wireflows, visual design and prototype. \n Led a two-person design team. \n## What we learned \n Learners need to see progress. \n“When I am practising an art form, I want to see learning-path milestones at every stage so I can see my progress.” (job story) \n → \nOrganise every course as a path of lessons, with clear milestones and completion. \n Practice without feedback stalls. \n“When I am practising an instrument, I want to receive feedback so I can improve my skills.” Interviews asked for sessions reviewed by experts and peers. \n → \nBuild feedback into practice, from teachers, peers or the app itself. \n Motivation fades fast. \n“When I have started learning a new art form, I want to receive constant motivation so I can involve myself regularly and won’t slack off.” Interviews pointed to gamified progress and peer comparison. \n → \nDesign for habit: short practice sessions, recognition and a reason to return tomorrow. \n## Process \n## Benchmarking, personas, research and prioritisation \n## Key decisions \n Decision 1 \n## Every course is a learning path, not a video library \n Options A searchable library of standalone videos, like many competitors, or structured courses with ordered lessons. \n Chose Courses broken into ordered lessons with completion ticks, and “Continue learning” on the home screen. \n Why The core problem was lack of structure. A path answers “what do I do next?” before the learner has to ask. \n Trade-off Less freedom to jump around for learners who just want one song or routine. \n Decision 2 \n## Prioritise by value and effort \n Chose Every feature from the six How-might-we questions was mapped by market value against development effort, sorting ideas into what to build now and what to plan for later. \n Why Ideas ranged from habit trackers to monetisation; the map kept the first release focused on learning and motivation. \n Trade-off Some valuable but costly ideas waited for later releases. \n## The solution \n## Validation and impact \n Did not launch. The client put the project on hold after the design was delivered. \nDelivered: research, personas, job stories, a prioritised feature set, IA, wireflows, a style guide, the full visual design and a clickable prototype. \nNo formal client feedback was shared. \n## Reflection \n I would test with real students sooner. We followed a thorough process and delivered a strong UI, but it was never tested with live students. Next time I would put early prototypes in front of learners to make the app even easier for them before the visual design was final.",
+   "text": "## The short version \nOnline learners lose direction and motivation without a teacher in the room. YoungArtiste offered private, teacher-led classes with a multi-year curriculum, but students practising on their own lacked structure, discipline and anyone to interact with. \nThe brief was a mobile app for students, teachers and admins, with every feature of the learning portal and live classes. It had to help anyone find something to learn for their time, budget, interest and level, and keep them coming back. \n My part: I led UX end to end, from the stakeholder alignment workshop to the hi-fi prototype, with one other designer. In the workshop we agreed business goals, user segments and the major and minor jobs for hobbyists. I benchmarked six apps, built four personas from user interviews, wrote job stories and How-might-we questions, prioritised with value-effort mapping, then designed the IA, wireflows, visual design and prototype. \n## What made it hard \n Learners couldn’t see progress. One job story put it this way: “I want to see learning-path milestones at every stage so I can see my progress.” \n Practice stalled without feedback. Interviews asked for sessions reviewed by experts and peers. \n Motivation faded fast. Interviews pointed to gamified progress and peer comparison as ways to keep people from slacking off. \n Four different people. Hobbyists, serious learners, external participants and teachers all needed to be served, and the brief asked for every feature of the existing portal and live classes. \n## How my thinking changed along the way \n## A path instead of a video library \nMany competitors offer a searchable library of standalone videos, and we could have done the same. But the core problem was a lack of structure, and a library leaves the learner to decide what to watch next. So every course became ordered lessons with completion ticks, and “Continue learning” sits on the home screen. A path answers “what do I do next?” before the learner has to ask. The trade-off is less freedom for someone who just wants one song or routine. \n## Build for the habit, not only the lesson \nProgress, feedback and motivation kept coming up in the interviews. That pushed us to design for short practice sessions, recognition and a reason to return tomorrow, with feedback from teachers, peers or the app itself. \n## Sorting the ideas by value and effort \nIdeas ranged from habit trackers to monetisation. We mapped every feature from the six How-might-we questions by market value against development effort, which kept the first release focused on learning and motivation. Some valuable but costly ideas had to wait for later releases. \n## What we left out, on purpose \nBefore designing anything we benchmarked six learning apps, built four personas from interviews and grouped what we heard into themes. Then we turned it into six questions and sorted the ideas by value and effort. What didn’t make the first release is on the value-effort map. \n## What learners see \nLearners get a deep purple, stage-like app built around courses, lessons, live classes, practice and a profile. Here is the visual design, the wireflows and the style guide behind it. \n## Where it ended up \n It never launched. The client put the project on hold after the design was delivered. \nWhat we delivered: research, personas, job stories, a prioritised feature set, IA, wireflows, a style guide, the full visual design and a clickable prototype. \nNo formal client feedback was shared with us. \n## What didn’t go to plan \n The app was never tested with live students. We followed a thorough process and delivered the full design, but the client put the project on hold before launch, so I can’t say how learners would have responded. \nWe also never heard formal feedback from the client, so I don’t know how the design landed with them. \n## What I’d do next \nPut early prototypes in front of real learners sooner, before the visual design is final, and use what they say to make the app easier to use.",
    "url": "https://blackhellcan.github.io/portfolio/case-youngartiste.html"
   }
  ],
@@ -748,57 +748,50 @@
    "title": "Bajaj Auto 5-inch TFT instrument cluster",
    "sections": {
     "problem": {
-     "h": "The problem",
-     "lead": "A colour screen can show far more than a rider can safely read. The old LCD showed fixed segments: speed, fuel, odometer.",
+     "h": "The short version",
+     "lead": "Bajaj was moving its motorcycles from segment LCDs to colour TFT clusters. The old LCD showed fixed segments: speed, fuel, odometer.",
      "points": []
     },
-    "role": {
-     "h": "My role",
+    "hard": {
+     "h": "What made it hard",
      "lead": "",
      "points": [
-      "Led a team of 4 designers on the cluster, from research to handoff.",
-      "Owned the information architecture , menu structure and navigation model, the part that shipped.",
-      "Ran on-site workshops at Bajaj’s engineering facility to fit the design to hardware and mechanical constraints.",
-      "Designed inputs for tactile handlebar buttons that meet OEM vibration-tolerance standards."
-     ]
-    },
-    "learned": {
-     "h": "What we learned",
-     "lead": "“He doesn’t want to navigate through complicated menus while on the move.” A touring rider wants speed, gear, fuel, trip and range at a glance.",
-     "points": []
-    },
-    "process": {
-     "h": "Process",
-     "lead": "",
-     "points": [
-      "User stories, explorations and research",
-      "Scenario and user-story table that defined each screen’s behaviour.",
-      "Early layout explorations.",
-      "Moodboards for urban, tour and performance directions."
+      "A colour screen can show far more than a rider can safely read. Every feature on the list wanted space, and none of them could invite a long look.",
+      "Handlebar buttons on a vibrating motorcycle. The inputs had to be tactile and meet OEM vibration-tolerance standards.",
+      "Riders don’t want menus while riding. One persona put it as “He doesn’t want to navigate through complicated menus while on the move.” A touring rider wants speed, gear, fuel, trip and range at a glance.",
+      "Hardware and mechanical limits. That is why we ran workshops on site with Bajaj’s engineering team."
      ]
     },
     "decisions": {
-     "h": "Key decisions",
-     "lead": "",
+     "h": "How my thinking changed along the way",
+     "lead": "We split the system into what you see while riding and what you change while stopped. The menu is disabled while riding, and when the bike is stationary it opens to settings, navigation, music, calls, notifications, vehicle information and documents.",
      "points": [
-      "Two modes: riding and stationary",
-      "Two paths to every common task",
-      "Safety states override everything"
+      "Riding and stopping are two different jobs",
+      "The phone is the reason to pair, so it needed a riding path",
+      "Safety states override everything",
+      "Going past the brief on the prototype"
+     ]
+    },
+    "process": {
+     "h": "What we left out, on purpose",
+     "lead": "We began with user stories and a scenario table that defined how each screen should behave. We also explored layouts and made moodboards for three directions: urban, tour and performance.",
+     "points": [
+      "User stories, explorations and research"
      ]
     },
     "solution": {
-     "h": "The solution",
+     "h": "What riders see",
      "lead": "The menu system is public on the Pulsar N160 SS, so it is shown in full along with the information architecture and screen flows. The unreleased modern visual theme is Bajaj Auto’s intellectual property and stays blurred.",
      "points": []
     },
     "impact": {
-     "h": "Validation and impact",
+     "h": "What happened after launch",
      "lead": "",
      "points": [
       "In production: the menu structure, navigation and architecture are on the Pulsar N160 SS and its 5” TFT console, launched in August 2026 ( launch report ), and are coming to more Bajaj models.",
-      "Won against a competing design: a second team proposed a different architecture. Bajaj chose ours for its ease of access.",
-      "Visual theme: our modern design was appreciated and approved by Bajaj’s design head, but the board chose a more traditional look from the other team.",
-      "Prototype built with the developers: frame-by-frame transitions in Figma, matched to what Bajaj’s developers could build."
+      "Ours won over a competing design. A second team proposed a different architecture, and Bajaj chose ours for its ease of access.",
+      "Our visual theme didn’t ship. Bajaj’s design head appreciated and approved our modern design, but the board chose a more traditional look from the other team.",
+      "The prototype was built with the developers: frame-by-frame transitions in Figma, matched to what Bajaj’s developers could build."
      ]
     },
     "more": {
@@ -806,9 +799,14 @@
      "lead": "The cluster was the second of my three engagements with Bajaj. The first (2023) was the Mera Bajaj app, followed by the Chetak EV display.",
      "points": []
     },
+    "learned": {
+     "h": "What didn’t go to plan",
+     "lead": "Our visual theme never shipped. The design head approved it, but the board chose a more traditional look, so our modern theme remains unreleased.",
+     "points": []
+    },
     "reflection": {
-     "h": "Reflection",
-     "lead": "The architecture outlived the visuals. Our structure, how riders find and control everything, shipped.",
+     "h": "What I’d do next",
+     "lead": "The architecture outlived the visuals. How riders find and control everything shipped, and our modern theme didn’t, even with the design head’s support.",
      "points": []
     }
    }
@@ -817,78 +815,71 @@
    "title": "Mera Bajaj app redesign",
    "sections": {
     "problem": {
-     "h": "The problem",
-     "lead": "Bajaj’s owner app worked as a prototype but didn’t feel like a premium motorcycle brand. It covered after-sales and riding: profile, vehicles, trips, service bookings and FAQs, but the screens were plain and the flows inconsistent.",
+     "h": "The short version",
+     "lead": "Bajaj had an owner app that worked as a prototype. It covered profile, vehicles, trips, service bookings and FAQs, but the screens were plain and the flows were inconsistent.",
      "points": []
     },
-    "role": {
-     "h": "My role",
+    "hard": {
+     "h": "What made it hard",
      "lead": "",
      "points": [
-      "Led a two-person team from kick-off to asset delivery, mentoring a newly joined junior designer.",
-      "Ran user research and read reviews of Bajaj’s existing apps to understand riders’ day-to-day use.",
-      "Ran a competitor study of four motorcycle apps, including KTM, covering visual design and app flows.",
-      "Built proto-personas and user stories for trips and riding."
-     ]
-    },
-    "learned": {
-     "h": "What we learned",
-     "lead": "In the teardown, pairing often failed, took too long or dropped, and trip data wasn’t recorded.",
-     "points": []
-    },
-    "stories": {
-     "h": "From user stories to task flows",
-     "lead": "Research and app-store reviews became user stories for each persona. Each story then became a task flow with the fewest steps that still collected what Bajaj needed.",
-     "points": []
-    },
-    "process": {
-     "h": "Process",
-     "lead": "",
-     "points": [
-      "Moodboards, the old prototype, competitors, wireframes and information architecture",
-      "Moodboards and app inspiration for Alok.",
-      "Moodboards and app inspiration for Amit.",
-      "The prototype Bajaj provided."
+      "Bluetooth is where the competitor apps fail. In our teardown, pairing often failed, took too long or dropped, and trip data wasn’t recorded.",
+      "Feature-rich apps were hard to navigate. The competitors had over-complicated navigation and too much data crammed into a few modules.",
+      "Errors and permissions left riders guessing. Error messages weren’t informative, and some apps captured the wrong location.",
+      "Bajaj’s brand rules set the palette. That limited how far the visual design could go, and I worked inside them."
      ]
     },
     "decisions": {
-     "h": "Key decisions",
-     "lead": "",
+     "h": "How my thinking changed along the way",
+     "lead": "Research, personas, user stories and app-store reviews all pointed to the same few daily jobs: check the bike, plan a route, look back at a trip, book a service. So the bottom bar became Home, Navigate, Trips and Services, and everything else sits in one secondary menu: reminders, community, riding tips, FAQs and setti",
      "points": [
       "Four tabs, each with one job",
-      "The bike is the home screen",
-      "Ask for permissions with a reason",
-      "Design the failures, not just the happy path"
+      "The bike became the home screen",
+      "Permissions needed a reason",
+      "The failures needed designing too"
      ]
+    },
+    "stories": {
+     "h": "From user stories to task flows",
+     "lead": "I turned the research and app-store reviews into user stories for each persona. Each story then became a task flow with the fewest steps that still collected what Bajaj needed.",
+     "points": []
+    },
+    "process": {
+     "h": "What we cut, and what we tried",
+     "lead": "Each persona got a moodboard, and I put the prototype Bajaj gave us next to the competitor teardown to see what to keep and what to drop. From there it went through low-fidelity wireframes and the information architecture, with light and dark mode flows alongside.",
+     "points": []
     },
     "direction": {
      "h": "Four visual directions, one brand",
-     "lead": "We explored widely before settling. Each persona got a moodboard, and from those we built four visual routes, Solid, Dark, Glassmorphic and Gradient, each tried on the same home screen.",
+     "lead": "We explored widely before settling. From the persona moodboards I built four visual routes, Solid, Dark, Glassmorphic and Gradient, and tried each on the same home screen.",
      "points": []
     },
     "solution": {
-     "h": "The solution",
+     "h": "What riders see",
      "lead": "",
      "points": [
       "Pairing, including when it fails",
       "From wireframe to final",
-      "Style guide and components",
-      "Bike-first home. The bike, its registration and a Bluetooth button fill the top. Tapping the name, marked with a down arrow, switches or adds bikes."
+      "Style guide and components"
      ]
     },
     "impact": {
-     "h": "Validation and impact",
+     "h": "What happened after launch",
      "lead": "",
      "points": [
-      "Live for about two years as Mera Bajaj on the App Store and Google Play, for Pulsar owners.",
-      "Delivered hi-fi designs in light and dark themes, a style guide and a component library for development.",
-      "Bajaj ran no formal usability testing on the design.",
+      "100,000+ downloads of Mera Bajaj, live for about two years on the App Store and Google Play for Pulsar owners.",
+      "I delivered hi-fi designs in light and dark themes, a style guide and a component library for development.",
       "Followed by the Chetak EV display , and later Bajaj’s 5” TFT cluster, whose menu system now ships on the Pulsar N160 SS."
      ]
     },
+    "learned": {
+     "h": "What didn’t go to plan",
+     "lead": "There was no formal usability testing. Bajaj ran none on the design, so I can’t say how riders found it beyond the download numbers.",
+     "points": []
+    },
     "reflection": {
-     "h": "Reflection",
-     "lead": "I would push the UI further. Bajaj’s brand rules limited how far the visual design could go, and I worked within them.",
+     "h": "What I’d do next",
+     "lead": "I would push the UI further. With what I know now, I would make a stronger case for a more distinctive look inside Bajaj’s brand rules.",
      "points": []
     }
    }
@@ -897,54 +888,57 @@
    "title": "Chetak EV owner app revamp",
    "sections": {
     "problem": {
-     "h": "The problem",
-     "lead": "A scooter display that does far more than the old speedometer, used by riders who can’t look at it for long. Chetak came back as an electric scooter with a modern-classic identity.",
+     "h": "The short version",
+     "lead": "Chetak came back as an electric scooter with a modern-classic look. Its 5” display had to carry battery, range, navigation, music, calls, Bluetooth, settings and vehicle documents, and the only way to control it was physical buttons.",
      "points": []
     },
-    "role": {
-     "h": "My role",
+    "hard": {
+     "h": "What made it hard",
      "lead": "",
      "points": [
-      "Designed the menu structure : how settings, navigation, music, calls, notifications, vehicle information and documents are grouped and reached.",
-      "Designed the navigation behaviour while riding and while stationary.",
-      "Worked alongside another designer on the display; I wasn’t the lead, and my part was the navigation and menus."
+      "Riders can’t move their eyes far. Eye rotation beyond about 30° becomes uncomfortable, and sharp vision with colour happens only in a narrow central field.",
+      "Physical buttons only, on a small 800 × 480 screen that has to hold a lot.",
+      "Riding and stopping are different tasks. On the move, riders need directions and maybe music. Settings, documents and vehicle details only matter when they’re stopped.",
+      "Three themes, one rider. Someone who switches theme shouldn’t have to relearn where anything is."
      ]
     },
-    "learned": {
-     "h": "What we learned",
-     "lead": "Eye rotation beyond about 30° becomes uncomfortable, and sharp vision with colour happens only in a narrow central field.",
-     "points": []
-    },
     "decisions": {
-     "h": "Key decisions",
-     "lead": "",
+     "h": "How my thinking changed along the way",
+     "lead": "The viewing-angle research set the first rule: speed, battery and warnings sit in the centre, and menus never cover them while riding. Most riders lead with their right eye, and for right-handed riders the dominant eye is usually the right one, so the highest-priority glance information sits right of centre.",
      "points": [
-      "The full menu opens only when stationary",
-      "Navigation moves to the centre while riding",
+      "Start from where the eye can go",
+      "Two menu states, chosen by whether the scooter is moving",
+      "Give navigation the centre",
       "One menu structure for all three themes"
      ]
     },
+    "process": {
+     "h": "What the research gave us",
+     "lead": "In desk research I read up on eye rotation and viewing angle, then mapped placement zones on the display for right-eye-dominant riders. These two boards are the reasoning behind the centre-field rule.",
+     "points": []
+    },
     "solution": {
-     "h": "The solution",
+     "h": "What riders see",
      "lead": "",
-     "points": [
-      "Viewing-angle research behind the centre-field rule.",
-      "Placement zones for right-eye-dominant riders.",
-      "The display across three themes. Techno, Plano and Neo share one menu structure and navigation behaviour.",
-      "Design system. The tokens and components the themes were built from."
-     ]
+     "points": []
     },
     "impact": {
-     "h": "Validation and impact",
+     "h": "What happened after launch",
+     "lead": "It shipped on Bajaj Chetak EV scooters, with the menu structure and navigation behaviour I designed. Bajaj shared no formal feedback, so I can’t point to numbers on how riders get on with it.",
+     "points": []
+    },
+    "learned": {
+     "h": "What didn’t go to plan",
      "lead": "",
      "points": [
-      "Shipped on Bajaj Chetak EV scooters, with the menu structure and navigation behaviour I designed.",
-      "Bajaj shared no formal feedback."
+      "I wasn’t the lead. I was finishing the Mera Bajaj app at the same time, so my part stayed limited to navigation and menus.",
+      "No formal feedback came back from Bajaj, so what I know about the result is that it shipped.",
+      "The decisions cost something. Riders can’t change settings on the move, secondary information gets less room during navigation, and every menu screen had to be checked in three themes."
      ]
     },
     "reflection": {
-     "h": "Reflection",
-     "lead": "I wanted to be more involved. I was finishing the Mera Bajaj app at the same time, so my part was limited to navigation and menus.",
+     "h": "What I’d do next",
+     "lead": "I wanted to be more involved in the display. My part was limited to navigation and menus, and even so it shipped on every Chetak EV with this display.",
      "points": []
     }
    }
@@ -953,56 +947,57 @@
    "title": "PockIT repair and refurbished-device marketplace",
    "sections": {
     "problem": {
-     "h": "The problem",
-     "lead": "When a laptop or Wi-Fi breaks, most people can’t describe what’s wrong, don’t know who to call, and fear being overcharged. They rely on neighbours or whoever is free, and technicians arrive with half the information they need.",
+     "h": "The short version",
+     "lead": "PockIT connects homes and offices with field technicians for laptop, printer and Wi-Fi repairs, and sells refurbished devices. The trouble is what happens when something breaks.",
      "points": []
     },
-    "role": {
-     "h": "My role",
+    "hard": {
+     "h": "What made it hard",
      "lead": "",
      "points": [
-      "Led UX across the customer and technician apps , from references and personas to hi-fi prototypes.",
-      "Built five personas covering home users, an office IT admin and field technicians.",
-      "Designed the information architecture through several rounds, and separate service catalogues for homes and businesses.",
-      "Mapped user flows and wireflows for booking, tracking, part approval, rescheduling, cancelling and the refurbished-device shop."
+      "Bigger players had more of everything. Better-known competitors already had stronger infrastructure and more budget, so a full-featured app could not win head-on. We were open with the client about that.",
+      "Customers couldn’t name the problem. Many have low tech knowledge, and they worry about being overcharged or misinformed.",
+      "There were two kinds of customer and a technician too. Homes and businesses needed separate service catalogues, and technicians needed their own app for the day’s work.",
+      "Technicians were working with too little. Ajay juggles back-to-back requests across the city, tracks his hours by hand and gets vague descriptions of the problem."
      ]
     },
-    "learned": {
+    "stories": {
      "h": "Who we designed for",
-     "lead": "",
+     "lead": "These five personas shaped most of the calls below.",
      "points": []
     },
     "decisions": {
-     "h": "Key decisions",
-     "lead": "",
+     "h": "How my thinking changed along the way",
+     "lead": "Early IA rounds used technical terms like operating system, utilities, connectivity and peripherals. A note on the board asked the deciding question: “Will the user with low tech knowledge understand these terms?” Personas like Meena would not.",
      "points": [
-      "Name problems the way customers describe them",
+      "Technical names didn’t work for customers",
       "No surprise charges",
-      "A happy code to close every job",
-      "A technician app built around the day’s route"
+      "Let the customer close the job",
+      "Build the technician app around the day’s route"
      ]
     },
     "solution": {
-     "h": "The solution",
+     "h": "What customers and technicians see",
      "lead": "",
      "points": [
       "Customer app: from problem to booked",
       "Tracking, trust and approvals",
-      "Technician app",
-      "Home. Popular services, categories, and a Quick Book button for urgent jobs."
+      "Technician app"
      ]
     },
     "impact": {
-     "h": "Validation and impact",
-     "lead": "",
-     "points": [
-      "Live, with 1,000+ users on the customer app.",
-      "Shipped as a deliberately lean first version, so the client could set up technicians and operations before investing in more features."
-     ]
+     "h": "What happened after launch",
+     "lead": "The customer app is live, with 1,000+ users. It shipped as a deliberately lean first version, so the client could set up technicians and operations before investing in more features.",
+     "points": []
+    },
+    "learned": {
+     "h": "What didn’t go to plan",
+     "lead": "The design wasn’t the hardest problem. The market was.",
+     "points": []
     },
     "reflection": {
-     "h": "Reflection",
-     "lead": "The design wasn’t the hardest problem; the market was. From our research, we told the client early why a full-scale app would struggle against better-funded, better-branded competitors with stronger infrastructure.",
+     "h": "What I’d do next",
+     "lead": "Keep scoping to the budget and the business from day one, because that is part of the design job. A product earns its full version once the basics work, so the plan is to build out the service infrastructure and expand from the lean first release.",
      "points": []
     }
    }
@@ -1011,56 +1006,41 @@
    "title": "Portico HR and payroll SaaS",
    "sections": {
     "problem": {
-     "h": "The problem",
-     "lead": "Portico worked, but every task took too long. It started as a way to digitise manual HR processes: document archive, payroll, expenses, recruitment, eLearning and payments.",
+     "h": "The short version",
+     "lead": "Portico is an HR and payroll suite that began as a way to digitise manual HR processes: document archive, payroll, expenses, recruitment, eLearning and payments. It worked, but the HRMS had been built organically, feature by feature, as needs came up.",
      "points": []
     },
-    "role": {
-     "h": "My role",
+    "hard": {
+     "h": "What made it hard",
      "lead": "",
      "points": [
-      "Led a team of 4 designers from research to final web and mobile designs.",
-      "Worked with Portico’s product owner and developers on scope and feasibility, and with end users for testing.",
-      "Ran the stakeholder alignment workshop remotely on Mural during Covid-19, to agree goals, user segments and success measures.",
-      "Led an expert review of the existing app and mapped existing flows to count the steps in each key task."
-     ]
-    },
-    "learned": {
-     "h": "What we learned",
-     "lead": "Flow mapping showed common tasks buried several levels deep, with no search and no in-app guidance.",
-     "points": []
-    },
-    "process": {
-     "h": "Process",
-     "lead": "",
-     "points": [
-      "The old product, proto-personas and full menu",
-      "The existing product at the start of the project.",
-      "Proto-personas built from the stakeholder workshop.",
-      "The regrouped mobile menu that came out of card sorting."
+      "The menu followed the order features were built. Flow mapping showed common tasks buried several levels deep, with no search and no in-app guidance.",
+      "Every screen looked different. The expert review found inconsistent layouts, icons and button weights, low contrast and a loader on every action.",
+      "The mobile app tried to copy the web, instead of being built around what people need on the move."
      ]
     },
     "decisions": {
-     "h": "Key decisions",
-     "lead": "",
+     "h": "How my thinking changed along the way",
+     "lead": "The old structure matched how the product was built, not how people think about their work. So we ran card sorting and ended up with clear top-level categories: Leaves & Attendance, Payroll, Learning & Development, Documents, Reports and Company.",
      "points": [
-      "A default home for each role, which users can customise",
-      "Mobile does the quick tasks, not everything the web does",
-      "Rebuild the navigation around categories users recognise"
+      "Rebuild the navigation around categories people recognise",
+      "One design system, one main action per screen",
+      "A home for each role, which users can change",
+      "Mobile does the quick tasks, not everything the web does"
      ]
+    },
+    "process": {
+     "h": "What we started from",
+     "lead": "We began with the existing product, then built proto-personas from the stakeholder workshop and regrouped the menu through card sorting.",
+     "points": []
     },
     "solution": {
-     "h": "The solution",
+     "h": "What employees, managers and HR see",
      "lead": "",
-     "points": [
-      "Employee home. Clock-in sits at the top, and Apply Leave and Apply WFH are one tap away. Service tiles show status (“3 pending”, “2 late”) before you open them.",
-      "Manager approvals. Approve or reject a leave request straight from the notification, without opening it.",
-      "Leaves. Balance by type at the top, then requests filtered by status, with a single add button.",
-      "Web leaves. My Leaves and Team Leave Requests on tabs, so managers handle their own leave and their team’s in one place."
-     ]
+     "points": []
     },
     "impact": {
-     "h": "Validation and impact",
+     "h": "What happened after launch",
      "lead": "",
      "points": [
       "30% fewer steps across core admin tasks after the navigation was regrouped into clear categories.",
@@ -1069,9 +1049,14 @@
       "Early user testing showed the new navigation helped people find information and complete tasks."
      ]
     },
+    "learned": {
+     "h": "What didn’t go to plan",
+     "lead": "Some of the best improvements didn’t ship. Near the end of our engagement, Portico’s product owner left the company, and the decision on what to build passed to the developers.",
+     "points": []
+    },
     "reflection": {
-     "h": "Reflection",
-     "lead": "I should have pushed harder for users earlier. Near the end of our engagement, Portico’s product owner left the company, and the decision on what to build passed to the developers.",
+     "h": "What I’d do next",
+     "lead": "I should have pushed harder for users earlier. Next time I would set up the phased plan at the start, so improvements are scheduled from the beginning, not traded away at the end.",
      "points": []
     }
    }
@@ -1080,67 +1065,57 @@
    "title": "Jeevika street-vendor legal help",
    "sections": {
     "problem": {
-     "h": "The problem",
-     "lead": "Street vendors have legal rights under the 2014 Street Vendors Act, but most don’t know them and can’t get help when they’re harassed or evicted. CCS wanted an app that tells vendors their rights, connects them to law students and lawyers, offers emergency SOS, and geo-tags vending spots as proof.",
+     "h": "The short version",
+     "lead": "CCS, a policy NGO, asked us to design an app that helps street vendors know their rights under the 2014 Street Vendors Act, reach a lawyer, and call for help when they’re harassed or evicted. The people using it read Hindi, often not fluently, and many are new to smartphones.",
      "points": []
     },
-    "role": {
-     "h": "My role",
+    "hard": {
+     "h": "What made it hard",
      "lead": "",
      "points": [
-      "Led UX for the vendor app and the NGO dashboard, with one junior designer.",
-      "Turned CCS’s field research into personas. CCS interviewed vendors and shared the results as a large spreadsheet; we distilled it into personas and user needs.",
-      "Worked closely with CCS’s team and volunteers , who were in frequent contact with vendors throughout.",
-      "Ran the stakeholder alignment workshop with CCS to agree goals, success measures and scope."
-     ]
-    },
-    "learned": {
-     "h": "What we learned",
-     "lead": "The brief called for vernacular language, low cognitive load and support for vendors who can’t read or don’t own a smartphone.",
-     "points": []
-    },
-    "process": {
-     "h": "Process",
-     "lead": "",
-     "points": [
-      "Ecosystem and How-might-we questions",
-      "Who Jeevika connects a vendor to.",
-      "The six How-might-we questions."
+      "Reading was the real barrier. Vendors were willing to use an app, but a screen full of text, even in Hindi, would lose most of them.",
+      "Not everyone has a smartphone, so the service had to work for vendors with no app at all.",
+      "Two very different people would open it for different reasons. An experienced vendor-activist wants to help others. A newer vendor, a working mother, just wants to avoid trouble and keep her income safe."
      ]
     },
     "decisions": {
-     "h": "Key decisions",
-     "lead": "",
+     "h": "How my thinking changed along the way",
+     "lead": "We started with standard Hindi, the version that works across north India. But vendors read the words they use every day much faster than formal ones, so we switched to the everyday Delhi register, kept English as an option, and paired every action with an icon.",
      "points": [
-      "Hindi-first, illustration-led screens",
-      "SOS is always one tap away",
-      "Build what is important and feasible first"
+      "Standard Hindi wasn’t enough",
+      "Forms became people",
+      "One app, two reasons to open it",
+      "Fast vs. safe, for SOS"
      ]
+    },
+    "process": {
+     "h": "What we left out, on purpose",
+     "lead": "We turned six “How might we” questions into a long list of ideas, then ranked each one by how much it would help a vendor and how hard it was to build. Rights information, legal-aid requests, SOS and geo-tagging made the first release, because they protect a vendor in the moment and build the record they’ll need later.",
+     "points": []
     },
     "solution": {
-     "h": "The solution",
+     "h": "What vendors see",
      "lead": "",
-     "points": [
-      "Vendor app. Registration with OTP, a home of large illustrated tiles, the SOS button, and the vendor’s documents and cases. Add English callouts on 3–4 screens so non-Hindi readers can follow",
-      "The cast. Vendors, police and lawyers, drawn to look like the people users meet every day."
-     ]
+     "points": []
     },
     "impact": {
-     "h": "Validation and impact",
-     "lead": "",
-     "points": [
-      "Live and working. Street vendors are using the app, and they are slowly getting comfortable with it.",
-      "The hardest problem isn’t the interface. Pressure from officials makes some vendors afraid to use it. The next challenge is motivating them to use it to stand up for their rights."
-     ]
+     "h": "What happened after launch",
+     "lead": "The app went live, and street vendors are using it and slowly getting more comfortable. A live app also created a second set of users: the people running it.",
+     "points": []
     },
     "admin": {
-     "h": "Phase 2: the admin panel",
-     "lead": "A live app creates a second user: the people who run it. Right after the app was delivered, the same two-person team took on a follow-on engagement: dashboards for CCS’s management and for vendor associations, so they could see where harassment happens, act on complaints and run the programme across zones.",
+     "h": "The admin panel",
+     "lead": "Right after delivery, the same two-person team designed the admin panel for CCS and vendor associations: where harassment happens, complaints that need escalating, and running the programme zone by zone.",
+     "points": []
+    },
+    "learned": {
+     "h": "What didn’t go to plan",
+     "lead": "The hardest problem turned out not to be the interface. Pressure from officials makes some vendors afraid to use the app at all.",
      "points": []
     },
     "reflection": {
-     "h": "Reflection",
-     "lead": "One of the most meaningful projects I have worked on. I kept everything as simple as I could for vendors new to smartphones.",
+     "h": "What I’d do next",
+     "lead": "Test with vendors on the live app, then rework the UI around what we learn, especially around giving them the confidence to use it.",
      "points": []
     }
    }
@@ -1149,59 +1124,57 @@
    "title": "Mutual fund module in a stock-trading app",
    "sections": {
     "problem": {
-     "h": "The problem",
-     "lead": "Most people who could invest in mutual funds don’t, because they don’t understand them or don’t trust them. The client wanted a metrics-driven way to invest in and track mutual funds, built into its existing stock-broking app.",
+     "h": "The short version",
+     "lead": "Most people who could invest in mutual funds don’t, because they don’t understand them or don’t trust them. The client wanted a metrics-driven way to invest in and track mutual funds inside its existing stock-broking app.",
      "points": []
     },
-    "role": {
-     "h": "My role",
+    "hard": {
+     "h": "What made it hard",
      "lead": "",
      "points": [
-      "Ran the alignment workshop to agree challenges, aspirations, focus areas and guiding principles with the client.",
-      "Benchmarked Groww, Coin by Zerodha and Paytm Money across the five phases of investing.",
-      "Wrote the job stories and user-intent document that set feature requirements.",
-      "Prioritised features with a value–effort mapping session, then designed the IA, wireflows and wireframes."
-     ]
-    },
-    "learned": {
-     "h": "What we learned",
-     "lead": "“Everybody tells me that you should start investing early. I don’t have lumpsum to invest right now, but I want to start.",
-     "points": []
-    },
-    "process": {
-     "h": "Process",
-     "lead": "",
-     "points": [
-      "Journey, job stories and prioritisation",
-      "The five phases of investing, with the questions users ask at each.",
-      "Job stories: situation, motivation and outcome.",
-      "Value–effort mapping for the investment flow."
+      "Fear came before everything else. A first-time investor said it plainly: “I fear if I make wrong investment decision I might lose my money.” Good screens don’t help if people never get as far as opening them.",
+      "Two audiences, one app. Savvy investors compare holdings, returns, risk and fund managers before deciding, and switch between charts and numbers. They want depth, fast.",
+      "Honesty had to be designed. The app had to show risk and past performance openly, including bad years, to investors who already feared losing money.",
+      "Control mattered as much as starting. One job story asked for a “kill switch” to stop a systematic investment without hunting down each one."
      ]
     },
     "decisions": {
-     "h": "Key decisions",
-     "lead": "",
+     "h": "How my thinking changed along the way",
+     "lead": "The first-timer we heard from wanted to start but was afraid of choosing wrong. So we gave new investors guest login without Aadhaar, PAN or bank details, an onboarding tour that explains strategy, budget and how the app works, and a “SIP with ₹100” entry point among the top picks.",
      "points": [
-      "Guest access and a guided first look for new investors",
-      "Ship the essentials before the novel features",
-      "One cart for SIPs and lump sums"
+      "Let people look before they commit",
+      "Two views of the same fund",
+      "One place to stop a SIP",
+      "Basics before the clever features"
      ]
     },
-    "solution": {
-     "h": "The solution",
-     "lead": "Each screen answers a job story. The fund detail serves the investor deciding go or no-go on a fund.",
+    "process": {
+     "h": "What we left out, on purpose",
+     "lead": "We mapped the five phases of investing and wrote seven job stories, then ranked every feature by value against effort. What made the first release was the set that makes the app trustworthy.",
      "points": []
     },
-    "impact": {
-     "h": "Validation and impact",
-     "lead": "",
+    "solution": {
+     "h": "What investors see",
+     "lead": "These are the core screens for first-timers and experienced investors alike, followed by two rounds of review on the dashboard, autopay mandate and order status.",
      "points": [
-      "Did not launch. Leadership changed on the client side, and the new team put all external engagements on hold. The project stopped during design review, before development."
+      "Two rounds of review"
      ]
     },
+    "impact": {
+     "h": "Where it ended up",
+     "lead": "",
+     "points": [
+      "It never launched. Leadership changed on the client side, and the new team put all external engagements on hold. The project stopped during design review, before development."
+     ]
+    },
+    "learned": {
+     "h": "What didn’t go to plan",
+     "lead": "The project stopped before anything was built. The client paused all outside work during design review, so none of this went into development, and I have no usage figures to share.",
+     "points": []
+    },
     "reflection": {
-     "h": "Reflection",
-     "lead": "I leaned on reviews instead of leading. It was one of my first projects as a lead, and I went to the product and project managers for review and feedback at every stage.",
+     "h": "What I’d do next",
+     "lead": "Set up a clear process from the start: agreed milestones, review points and decision owners, so the team can move faster with fewer check-ins.",
      "points": []
     }
    }
@@ -1210,64 +1183,56 @@
    "title": "YoungArtiste performing-arts learning app",
    "sections": {
     "problem": {
-     "h": "The problem",
+     "h": "The short version",
      "lead": "Online learners lose direction and motivation without a teacher in the room. YoungArtiste offered private, teacher-led classes with a multi-year curriculum, but students practising on their own lacked structure, discipline and anyone to interact with.",
      "points": []
     },
-    "role": {
-     "h": "My role",
+    "hard": {
+     "h": "What made it hard",
      "lead": "",
      "points": [
-      "Led UX end to end , from the stakeholder alignment workshop to the hi-fi prototype.",
-      "Ran the alignment workshop to agree business goals, user segments and the major and minor jobs for hobbyists.",
-      "Benchmarked six apps : Vox Guru, Riyaz, Steezy, Flowkey, Everdance and Dance With Madhuri.",
-      "Built four personas from user interviews, then wrote job stories and How-might-we questions."
-     ]
-    },
-    "learned": {
-     "h": "What we learned",
-     "lead": "“When I am practising an art form, I want to see learning-path milestones at every stage so I can see my progress.” (job story)",
-     "points": []
-    },
-    "process": {
-     "h": "Process",
-     "lead": "",
-     "points": [
-      "Benchmarking, personas, research and prioritisation",
-      "Competitor benchmarking.",
-      "Four personas from user interviews.",
-      "Interview insights, grouped into four themes."
+      "Learners couldn’t see progress. One job story put it this way: “I want to see learning-path milestones at every stage so I can see my progress.”",
+      "Practice stalled without feedback. Interviews asked for sessions reviewed by experts and peers.",
+      "Motivation faded fast. Interviews pointed to gamified progress and peer comparison as ways to keep people from slacking off.",
+      "Four different people. Hobbyists, serious learners, external participants and teachers all needed to be served, and the brief asked for every feature of the existing portal and live classes."
      ]
     },
     "decisions": {
-     "h": "Key decisions",
-     "lead": "",
+     "h": "How my thinking changed along the way",
+     "lead": "Many competitors offer a searchable library of standalone videos, and we could have done the same. But the core problem was a lack of structure, and a library leaves the learner to decide what to watch next.",
      "points": [
-      "Every course is a learning path, not a video library",
-      "Prioritise by value and effort"
+      "A path instead of a video library",
+      "Build for the habit, not only the lesson",
+      "Sorting the ideas by value and effort"
      ]
+    },
+    "process": {
+     "h": "What we left out, on purpose",
+     "lead": "Before designing anything we benchmarked six learning apps, built four personas from interviews and grouped what we heard into themes. Then we turned it into six questions and sorted the ideas by value and effort.",
+     "points": []
     },
     "solution": {
-     "h": "The solution",
-     "lead": "",
-     "points": [
-      "Visual design. A deep purple, stage-like palette with warm accents, so performance photography stands out: courses, lessons, live classes and profile.",
-      "Wireflows for login, home, courses, lessons, live classes and settings.",
-      "Style guide. Colour palette and an Outfit type scale."
-     ]
+     "h": "What learners see",
+     "lead": "Learners get a deep purple, stage-like app built around courses, lessons, live classes, practice and a profile. Here is the visual design, the wireflows and the style guide behind it.",
+     "points": []
     },
     "impact": {
-     "h": "Validation and impact",
+     "h": "Where it ended up",
      "lead": "",
      "points": [
-      "Did not launch. The client put the project on hold after the design was delivered.",
-      "Delivered: research, personas, job stories, a prioritised feature set, IA, wireflows, a style guide, the full visual design and a clickable prototype.",
-      "No formal client feedback was shared."
+      "It never launched. The client put the project on hold after the design was delivered.",
+      "What we delivered: research, personas, job stories, a prioritised feature set, IA, wireflows, a style guide, the full visual design and a clickable prototype.",
+      "No formal client feedback was shared with us."
      ]
     },
+    "learned": {
+     "h": "What didn’t go to plan",
+     "lead": "The app was never tested with live students. We followed a thorough process and delivered the full design, but the client put the project on hold before launch, so I can’t say how learners would have responded.",
+     "points": []
+    },
     "reflection": {
-     "h": "Reflection",
-     "lead": "I would test with real students sooner. We followed a thorough process and delivered a strong UI, but it was never tested with live students.",
+     "h": "What I’d do next",
+     "lead": "Put early prototypes in front of real learners sooner, before the visual design is final, and use what they say to make the app easier to use.",
      "points": []
     }
    }
