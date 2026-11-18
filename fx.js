@@ -169,7 +169,7 @@
     });
   }
 
-  function wordsIn() {
+  function wordsIn() { /* word-by-word reveal: About quote only */
     if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     function split(els) {
       var words = [];
@@ -195,10 +195,6 @@
         setTimeout(function () { s.classList.remove("hot"); }, 450);
       }, step);
     }
-    var hero = doc.querySelectorAll(".hello h1, .hello p");
-    if (hero.length) play(split(hero), 55);
-    var cs = doc.querySelectorAll(".cs-hero h1, .cs-hero .sub");
-    if (cs.length) play(split(cs), 40);
     var quote = doc.querySelectorAll(".about-quote blockquote");
     if (quote.length) {
       var qw = split(quote);
