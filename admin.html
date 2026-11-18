@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Chat admin</title>
+<style>
+  :root {
+    --bg: #f6f6f4; --card: #fff; --ink: #1d1d1b; --muted: #5f5f5a; --line: #d9d9d3;
+    --accent: #1f4fd8; --danger: #b3261e; --ok: #1e6b3a;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 16px; }
+  h1 { font-size: 1.35rem; margin: 8px 0 16px; }
+  h2 { font-size: 1rem; margin: 0 0 8px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 14px; margin-bottom: 12px; }
+  label { display: block; font-weight: 600; font-size: .9rem; margin: 10px 0 4px; }
+  input, textarea { width: 100%; font: inherit; padding: 8px 10px; border: 1px solid #8d8d86; border-radius: 6px; background: #fff; color: var(--ink); }
+  textarea { min-height: 90px; resize: vertical; }
+  button { font: inherit; padding: 8px 14px; min-height: 40px; border-radius: 6px; border: 1px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; }
+  button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  button.danger { color: var(--danger); border-color: var(--danger); }
+  button:disabled { opacity: .55; cursor: default; }
+  :focus-visible { outline: 3px solid #f0a500; outline-offset: 2px; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); margin: 16px 0 12px; overflow-x: auto; }
+  .tabs button { border: 1px solid transparent; border-bottom: 0; border-radius: 6px 6px 0 0; background: transparent; color: var(--muted); white-space: nowrap; }
+  .tabs button[aria-selected="true"] { background: var(--card); color: var(--ink); border-color: var(--line); font-weight: 600; margin-bottom: -1px; }
+  .meta { color: var(--muted); font-size: .85rem; }
+  .q { font-weight: 600; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .a { white-space: pre-wrap; overflow-wrap: anywhere; }
+  #status { min-height: 1.5em; font-size: .9rem; margin: 8px 0; }
+  #status.err { color: var(--danger); } #status.ok { color: var(--ok); }
+  .visitor { width: 100%; text-align: left; display: block; margin-bottom: 8px; padding: 10px 12px; }
+  .visitor .top { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+  .msg { padding: 8px 10px; border-radius: 6px; margin: 6px 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .msg.user { background: #e9eefc; } .msg.assistant { background: #f0f0ec; }
+  .msg b { display: block; font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+  .tag { font-weight: 400; text-transform: none; letter-spacing: 0; }
+  .empty { color: var(--muted); padding: 8px 0; }
+  .sr { position: absolute; left: -9999px; }
+  details summary { cursor: pointer; font-weight: 600; min-height: 32px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Chat admin</h1>
+
+  <details class="card" id="settings">
+    <summary>Connection settings</summary>
+    <label for="workerUrl">Worker URL</label>
+    <input id="workerUrl" type="url" inputmode="url" placeholder="https://azhar-portfolio-chat.your-name.workers.dev" autocomplete="off">
+    <label for="token">Admin token</label>
+    <input id="token" type="password" autocomplete="off">
+    <div class="row">
+      <button class="primary" id="save" type="button">Save and load</button>
+      <button id="forget" type="button">Forget on this device</button>
+    </div>
+  </details>
+
+  <div id="status" role="status" aria-live="polite"></div>
+
+  <div class="tabs" role="tablist" aria-label="Sections">
+    <button role="tab" id="tab-pending" aria-controls="panel-pending" aria-selected="true" type="button">Unanswered questions</button>
+    <button role="tab" id="tab-learned" aria-controls="panel-learned" aria-selected="false" tabindex="-1" type="button">What the bot has learned</button>
+    <button role="tab" id="tab-visitors" aria-controls="panel-visitors" aria-selected="false" tabindex="-1" type="button">Visitors</button>
+  </div>
+
+  <section id="panel-pending" role="tabpanel" aria-labelledby="tab-pending"></section>
+  <section id="panel-learned" role="tabpanel" aria-labelledby="tab-learned" hidden></section>
+  <section id="panel-visitors" role="tabpanel" aria-labelledby="tab-visitors" hidden>
+    <div class="card">
+      <h2>Download all logs</h2>
+      <label for="since">Only conversations since (optional)</label>
+      <input id="since" type="date">
+      <div class="row"><button id="download" type="button">Download Markdown</button></div>
+    </div>
+    <div id="visitorList"></div>
+  </section>
+</main>
+
+<script>
+(function () {
+  "use strict";
+  var $ = function (id) { return document.getElementById(id); };
+  var urlInput = $("workerUrl"), tokenInput = $("token"), statusEl = $("status");
+
+  function store(k, v) { try { if (v == null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) {} }
+  function load(k) { try { return localStorage.getItem(k) || ""; } catch (e) { return ""; } }
+
+  urlInput.value = load("chatAdminUrl");
+  tokenInput.value = load("chatAdminToken");
+  if (!urlInput.value || !tokenInput.value) $("settings").open = true;
+
+  function say(msg, kind) { statusEl.textContent = msg || ""; statusEl.className = kind || ""; }
+  function base() { return urlInput.value.trim().replace(/\/+$/, ""); }
+
+  function api(path, opts) {
+    opts = opts || {};
+    if (!base() || !tokenInput.value) { $("settings").open = true; return Promise.reject(new Error("Enter the Worker URL and admin token first.")); }
+    var init = { method: opts.method || "GET", headers: { "Authorization": "Bearer " + tokenInput.value.trim() } };
+    if (opts.body) { init.headers["Content-Type"] = "application/json"; init.body = JSON.stringify(opts.body); }
+    return fetch(base() + path, init).then(function (res) {
+      return res.json().catch(function () { return {}; }).then(function (data) {
+        if (res.status === 401) throw new Error("Unauthorized: the admin token is wrong.");
+        if (!res.ok) throw new Error(data.error || ("Request failed (" + res.status + ")"));
+        return data;
+      });
+    }, function () { throw new Error("Could not reach the Worker. Check the URL."); });
+  }
+
+  function el(tag, props, children) {
+    var n = document.createElement(tag);
+    Object.keys(props || {}).forEach(function (k) {
+      if (k === "text") n.textContent = props[k]; else if (k === "class") n.className = props[k]; else n.setAttribute(k, props[k]);
+    });
+    (children || []).forEach(function (c) { n.appendChild(c); });
+    return n;
+  }
+  function fmt(ts) { try { return new Date(ts).toLocaleString([], { dateStyle: "medium", timeStyle: "short" }); } catch (e) { return ""; } }
+  function clear(n) { while (n.firstChild) n.removeChild(n.firstChild); }
+  function empty(n, text) { clear(n); n.appendChild(el("p", { "class": "empty", text: text })); }
+  function who(v) { return [v.name || "Anonymous visitor", v.company].filter(Boolean).join(", "); }
+  function short(m) { var x = /haiku|sonnet|opus/i.exec(m || ""); return x ? x[0].charAt(0).toUpperCase() + x[0].slice(1).toLowerCase() : m; }
+  function fail(e) { say(e.message, "err"); }
+
+  // ----- tabs -----
+  var tabs = ["pending", "learned", "visitors"];
+  function showTab(name, focus) {
+    tabs.forEach(function (t) {
+      var sel = t === name;
+      $("tab-" + t).setAttribute("aria-selected", sel);
+      $("tab-" + t).tabIndex = sel ? 0 : -1;
+      $("panel-" + t).hidden = !sel;
+      if (sel && focus) $("tab-" + t).focus();
+    });
+    refresh(name);
+  }
+  tabs.forEach(function (t, i) {
+    $("tab-" + t).addEventListener("click", function () { showTab(t); });
+    $("tab-" + t).addEventListener("keydown", function (e) {
+      var d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+      if (d) { e.preventDefault(); showTab(tabs[(i + d + tabs.length) % tabs.length], true); }
+    });
+  });
+  function current() { return tabs.filter(function (t) { return $("tab-" + t).getAttribute("aria-selected") === "true"; })[0]; }
+  function refresh(name) { ({ pending: loadPending, learned: loadLearned, visitors: loadVisitors })[name || current()](); }
+
+  // ----- pending -----
+  function loadPending() {
+    var box = $("panel-pending");
+    api("/admin/pending").then(function (d) {
+      var items = d.pending || [];
+      if (!items.length) return empty(box, "No unanswered questions.");
+      clear(box);
+      items.forEach(function (p) {
+        var ta = el("textarea", { id: "ans-" + p.id, maxlength: "3000" });
+        var teach = el("button", { "class": "primary", type: "button", text: "Teach" });
+        var dismiss = el("button", { type: "button", text: "Dismiss" });
+        var wh = p.visitor ? who(p.visitor) : "Anonymous visitor";
+        var card = el("div", { "class": "card" }, [
+          el("div", { "class": "q", text: p.q }),
+          el("div", { "class": "meta", text: [wh, p.page, fmt(p.ts)].filter(Boolean).join(" · ") }),
+          el("label", { "for": "ans-" + p.id, text: "Your answer" }), ta,
+          el("div", { "class": "row" }, [teach, dismiss])
+        ]);
+        teach.addEventListener("click", function () {
+          var a = ta.value.trim();
+          if (!a) { say("Write an answer first.", "err"); ta.focus(); return; }
+          teach.disabled = dismiss.disabled = true;
+          api("/admin/learn", { method: "POST", body: { pendingId: p.id, q: p.q, a: a } })
+            .then(function () { say("Taught. The bot will use it from now on.", "ok"); loadPending(); })
+            .catch(function (e) { teach.disabled = dismiss.disabled = false; fail(e); });
+        });
+        dismiss.addEventListener("click", function () {
+          teach.disabled = dismiss.disabled = true;
+          api("/admin/dismiss", { method: "POST", body: { id: p.id } })
+            .then(function () { say("Dismissed.", "ok"); loadPending(); })
+            .catch(function (e) { teach.disabled = dismiss.disabled = false; fail(e); });
+        });
+        box.appendChild(card);
+      });
+    }).catch(function (e) { empty(box, ""); fail(e); });
+  }
+
+  // ----- learned -----
+  function loadLearned() {
+    var box = $("panel-learned");
+    api("/admin/learned").then(function (d) {
+      var items = (d.learned || []).slice().reverse();
+      if (!items.length) return empty(box, "Nothing learned yet.");
+      clear(box);
+      items.forEach(function (l) {
+        var del = el("button", { "class": "danger", type: "button", text: "Delete", "aria-label": "Delete answer: " + l.q.slice(0, 60) });
+        del.addEventListener("click", function () {
+          if (!confirm("Delete this learned answer?")) return;
+          del.disabled = true;
+          api("/admin/unlearn", { method: "POST", body: { id: l.id } })
+            .then(function () { say("Deleted.", "ok"); loadLearned(); })
+            .catch(function (e) { del.disabled = false; fail(e); });
+        });
+        box.appendChild(el("div", { "class": "card" }, [
+          el("div", { "class": "q", text: l.q }),
+          el("div", { "class": "a", text: l.a }),
+          el("div", { "class": "meta", text: fmt(l.ts) }),
+          el("div", { "class": "row" }, [del])
+        ]));
+      });
+    }).catch(function (e) { empty(box, ""); fail(e); });
+  }
+
+  // ----- visitors -----
+  function loadVisitors() {
+    var box = $("visitorList");
+    api("/admin/visitors").then(function (d) {
+      var items = d.visitors || [];
+      if (!items.length) return empty(box, "No visitors yet.");
+      clear(box);
+      items.forEach(function (v) {
+        var b = el("button", { type: "button", "class": "visitor", "aria-expanded": "false" }, [
+          el("span", { "class": "top" }, [
+            el("strong", { text: who(v) }),
+            el("span", { "class": "meta", text: fmt(v.last) })
+          ]),
+          el("span", { "class": "meta", text: (v.email || "no email") + " · " + v.count + (v.count === 1 ? " message" : " messages") })
+        ]);
+        var transcript = el("div", { "class": "card", hidden: "" });
+        transcript.hidden = true;
+        b.addEventListener("click", function () {
+          if (!transcript.hidden) { transcript.hidden = true; b.setAttribute("aria-expanded", "false"); return; }
+          b.setAttribute("aria-expanded", "true");
+          clear(transcript); transcript.hidden = false;
+          transcript.appendChild(el("p", { "class": "meta", text: "Loading..." }));
+          api("/admin/log?session=" + encodeURIComponent(v.session)).then(function (r) {
+            clear(transcript);
+            var msgs = (r.log && r.log.messages) || [];
+            if (!msgs.length) transcript.appendChild(el("p", { "class": "empty", text: "Transcript is empty or has expired." }));
+            msgs.forEach(function (m) {
+              transcript.appendChild(el("div", { "class": "msg " + m.role }, [
+                el("b", {}, [
+                  el("span", { text: m.role === "user" ? "Visitor" : "Bot" }),
+                  el("span", { "class": "tag", text: [m.ts ? " · " + fmt(m.ts) : "", m.page ? " · " + m.page : "",
+                    m.model ? " · " + short(m.model) + (m.thinking ? " · thinking" : "") + (m.escalated ? " (escalated)" : "") : ""].join("") })
+                ]), el("span", { text: m.content })
+              ]));
+            });
+          }).catch(function (e) { clear(transcript); transcript.appendChild(el("p", { "class": "empty", text: e.message })); });
+        });
+        box.appendChild(b); box.appendChild(transcript);
+      });
+    }).catch(function (e) { empty(box, ""); fail(e); });
+  }
+
+  // ----- download -----
+  $("download").addEventListener("click", function () {
+    var v = $("since").value, q = "?format=md";
+    if (v) q += "&since=" + encodeURIComponent(new Date(v + "T00:00:00").toISOString());
+    var btn = $("download"); btn.disabled = true; say("Preparing download...");
+    if (!base() || !tokenInput.value) { btn.disabled = false; $("settings").open = true; return say("Enter the Worker URL and admin token first.", "err"); }
+    fetch(base() + "/admin/export" + q, { headers: { "Authorization": "Bearer " + tokenInput.value.trim() } })
+      .then(function (res) {
+        if (res.status === 401) throw new Error("Unauthorized: the admin token is wrong.");
+        if (!res.ok) throw new Error("Download failed (" + res.status + ")");
+        return res.blob();
+      })
+      .then(function (blob) {
+        var a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = "portfolio-chat-logs-" + new Date().toISOString().slice(0, 10) + ".md";
+        document.body.appendChild(a); a.click(); a.remove();
+        setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+        say("Downloaded.", "ok");
+      })
+      .catch(function (e) { say(e.message === "Failed to fetch" ? "Could not reach the Worker. Check the URL." : e.message, "err"); })
+      .then(function () { btn.disabled = false; });
+  });
+
+  // ----- settings -----
+  $("save").addEventListener("click", function () {
+    store("chatAdminUrl", urlInput.value.trim());
+    store("chatAdminToken", tokenInput.value.trim());
+    say("Saved on this device.", "ok");
+    refresh();
+  });
+  $("forget").addEventListener("click", function () {
+    store("chatAdminUrl", null); store("chatAdminToken", null);
+    urlInput.value = ""; tokenInput.value = "";
+    say("Cleared from this device.", "ok");
+  });
+
+  if (urlInput.value && tokenInput.value) refresh(); else say("Enter your Worker URL and admin token to begin.");
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+name = "azhar-portfolio-chat"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+[[kv_namespaces]]
+binding = "CHAT_KV"
+id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+
+[vars]
+KB_URL = "https://blackhellcan.github.io/portfolio/chat-kb.json"
+ALLOWED_ORIGIN = "https://blackhellcan.github.io"
+# Model routing: MODEL_SMALL answers first; MODEL_MID takes complex questions and retries.
+MODEL_SMALL = "claude-haiku-5-5"
+MODEL_MID = "claude-sonnet-5-5"
+# Extended thinking budget (tokens) for the mid model. "0" turns thinking off. Minimum otherwise 1024.
+THINKING_BUDGET = "1024"
+# Optional email digest (see README): uncomment and set your address.
+# NOTIFY_EMAIL = "mazhar.shaikh91@outlook.in"
+
+[triggers]
+crons = ["0 * * * *"]
+
+# Secrets are NOT stored in this file. Set them with:
+#   wrangler secret put ANTHROPIC_API_KEY
+#   wrangler secret put ADMIN_TOKEN
+# Optional: wrangler secret put RESEND_API_KEY
