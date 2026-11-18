@@ -119,14 +119,15 @@ const WORKER_URL = "";
     return m[1].split(/\s+/).filter(function (w) { return w && !STOP.test(w.toLowerCase().replace(/[^\p{L}\p{N}]/gu, "")); }).slice(0, 4).join(" ").replace(/[?!.,;]+$/, "");
   }
   var SECT = [
-    ["problem", /\b(problem|challenge|issue|pain|brief|context|why was)/],
-    ["role", /\b(role|team|responsib|your part|what did you do|who did)/],
-    ["decisions", /\b(decision|decide|choice|chose|trade ?off|why did you)/],
-    ["reflection", /\b(learn|lesson|reflect|differently|takeaway|improve)/],
-    ["learned", /\b(insight|finding|found|discover|research show)/],
-    ["impact", /\b(impact|results?|outcomes?|metrics?|numbers|success|how many users)\b/],
-    ["process", /\b(process|approach|research|method|workshop|steps|how did you)/],
-    ["solution", /\b(solution|final design|screens?|features?|what did you (build|design|make))\b/]];
+    ["learned", /\b(didn.?t go|go(ne)? wrong|went wrong|fail|mistake|setback|didn.?t work|not to plan)/],
+    ["hard", /\b(hard|difficult|challeng|constraint|tricky|obstacle)/],
+    ["decisions", /\b(thinking|pivot|chang|decision|decide|choice|chose|trade ?off|why did you)/],
+    ["role", /\b(role|your part|what did you do|who did|your team|team size|led)\b/],
+    ["problem", /\b(short version|summary|summari[sz]e|overview|problem|brief|context|about (this|it))/],
+    ["reflection", /\b(learn|lesson|reflect|differently|takeaway|improve|next)/],
+    ["impact", /\b(impact|results?|outcomes?|metrics?|numbers|success|launch|ended up|how many users)\b/],
+    ["process", /\b(process|approach|research|method|workshop|steps|how did you|left out|cut|prioriti)/],
+    ["solution", /\b(solution|final design|screens?|features?|what (do|did) (users|riders|vendors|customers|investors|learners) see|what did you (build|design|make))\b/]];
   function curCase() { var id = pageOf(location.pathname).replace(/\.html$/, ""); return kb && kb.page_ctx && kb.page_ctx[id] ? id : ""; }
   function pageAnswer(q) {
     var cid = curCase(); if (!cid) return null;
@@ -140,7 +141,7 @@ const WORKER_URL = "";
       var sec = secs[sid]; if (!sec || (!sec.lead && !(sec.points || []).length)) continue;
       var out = ["**" + sec.h + "**"]; if (sec.lead) out.push(sec.lead);
       (sec.points || []).slice(0, 4).forEach(function (p) { out.push("- " + p); });
-      out.push("[Jump to this section](" + SITE + cid + ".html#" + sid + ")");
+      out.push("[Jump to this section](" + SITE + cid + ".html#" + (sec.anchor || sid) + ")");
       return out.join("\n");
     }
     return null;
