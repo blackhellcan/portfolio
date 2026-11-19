@@ -25,7 +25,7 @@ const WORKER_URL = "";
   /* ---------- DOM ---------- */
   var launcher = el("button", "azc-launcher"); launcher.type = "button";
   launcher.setAttribute("aria-label", "Chat with me"); launcher.setAttribute("aria-haspopup", "dialog"); launcher.setAttribute("aria-expanded", "false");
-  launcher.innerHTML = '<svg class="azc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-11.1 6.6L4 19.5l1.4-4.6A7.5 7.5 0 1 1 20 11.5z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01" stroke-width="2.6"/></svg>';
+  launcher.innerHTML = '<span class="azc-ava"><img src="img-web/azhar.webp" alt="" width="44" height="44"><i></i></span>';
   var panel = el("section", "azc-panel"); panel.id = "azc-panel"; panel.hidden = true;
   panel.setAttribute("role", "dialog"); panel.setAttribute("aria-labelledby", "azc-title"); panel.tabIndex = -1;
   var head = el("header", "azc-head"), ht = el("div", "azc-ht");

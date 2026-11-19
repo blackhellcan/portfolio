@@ -20,11 +20,11 @@
 
   /* 2. Scroll reveals: sections and cards fade and rise in as they enter */
   function reveals() {
-    var sel = ".sec-title, .offer-card, .how-note, .hw-step, .cs-card, .col > *, .about-copy > *, .more > *, .jobs > *, .ai-card, .connect > *, .car, "
+    var sel = ".how-note, .col > *, .about-copy > *, .more > *, .jobs > *, .ai-card, .connect > *, .car, "
       + ".node, .term, .group > .node-top, .group > .lede, .filters, .proj, .panel, .rail-sec, .sec-head, .cs-sec > *, .related a, .next";
     var hero = $$(".hello, .cs-hero");
     var els = $$(sel).filter(function (el) {
-      if (el.closest(".azc-panel")) return false;
+      if (el.closest(".azc-panel, .sec-title")) return false;
       if (hero.some(function (h) { return h.contains(el); })) return false;
       return el.getBoundingClientRect().top > innerHeight * .92; /* already on screen: leave as is */
     });
@@ -116,8 +116,85 @@
     });
   }
 
+
+  /* 7. Section titles: words rise out of a mask, one after another */
+  function titles() {
+    $$(".sec-title").forEach(function (h) {
+      var text = h.textContent.trim(); if (!text) return;
+      h.setAttribute("aria-label", text); h.textContent = "";
+      var inner = [];
+      text.split(/\s+/).forEach(function (w, i) {
+        if (i) h.appendChild(doc.createTextNode(" "));
+        var o = doc.createElement("span"); o.className = "gs-mask"; o.setAttribute("aria-hidden", "true");
+        var s = doc.createElement("span"); s.textContent = w; o.appendChild(s); h.appendChild(o); inner.push(s);
+      });
+      gsap.set(inner, { yPercent: 115, rotation: 4 });
+      ST.create({ trigger: h, start: "top 88%", once: true, onEnter: function () {
+        gsap.to(inner, { yPercent: 0, rotation: 0, duration: 1, ease: "power4.out", stagger: .07 });
+      } });
+    });
+  }
+
+  /* 8. Offer cards flip up from below, in a wave */
+  function offerCards() {
+    var cards = $$(".offer-card");
+    if (!cards.length) return;
+    gsap.set(cards, { autoAlpha: 0, y: 90, rotationX: -28, transformPerspective: 1000, transformOrigin: "50% 100%" });
+    ST.batch(cards, { start: "top 90%", once: true, onEnter: function (b) {
+      gsap.to(b, { autoAlpha: 1, y: 0, rotationX: 0, duration: 1.1, ease: "power3.out", stagger: .12, onComplete: function () { gsap.set(b, { clearProps: "transform,opacity,visibility" }); } });
+    } });
+  }
+
+  /* 9. Case study cards: the image wipes open and settles, then the text follows */
+  function caseCards() {
+    $$(".cs-card").forEach(function (card, i) {
+      var box = card.querySelector(".cs-img"), img = box && box.querySelector("img");
+      var text = $$(".cs-label, strong, .cs-desc", card);
+      if (!box || !img) return;
+      gsap.set(box, { clipPath: "inset(100% 0% 0% 0% round 28px)" });
+      gsap.set(img, { scale: 1.3 });
+      gsap.set(text, { autoAlpha: 0, y: 24 });
+      ST.create({ trigger: card, start: "top 85%", once: true, onEnter: function () {
+        var d = (i % 2) * .15;
+        gsap.to(box, { clipPath: "inset(0% 0% 0% 0% round 28px)", duration: 1.2, ease: "power4.inOut", delay: d, onComplete: function () { gsap.set(box, { clearProps: "clipPath" }); } });
+        gsap.to(img, { scale: 1, duration: 1.6, ease: "power3.out", delay: d, onComplete: function () { gsap.set(img, { clearProps: "transform" }); } });
+        gsap.to(text, { autoAlpha: 1, y: 0, duration: .8, ease: "power3.out", stagger: .08, delay: d + .5 });
+      } });
+    });
+  }
+
+  /* 10. How I work: on large screens the section holds still while scrolling walks through the four steps */
+  function howScroll() {
+    var sec = doc.getElementById("how"), wrap = sec && sec.querySelector(".how-tabs");
+    var tabs = $$(".hw-tab");
+    if (!wrap || tabs.length < 2) return;
+    var panels = sec.querySelector(".hw-panels");
+    gsap.set(tabs, { autoAlpha: 0, x: -60 }); gsap.set(panels, { autoAlpha: 0, x: 60 });
+    ST.create({ trigger: sec, start: "top 60%", once: true, onEnter: function () {
+      gsap.to(tabs, { autoAlpha: 1, x: 0, duration: .9, ease: "power3.out", stagger: .1, onComplete: function () { gsap.set(tabs, { clearProps: "transform" }); } });
+      gsap.to(panels, { autoAlpha: 1, x: 0, duration: 1, ease: "power3.out", delay: .2, onComplete: function () { gsap.set(panels, { clearProps: "transform" }); } });
+    } });
+    var mm = gsap.matchMedia();
+    mm.add("(min-width: 900px) and (min-height: 640px)", function () {
+      var cur = -1, n = tabs.length;
+      var st = ST.create({
+        trigger: sec, start: "top 84px", end: "+=" + (n * 55) + "%", pin: true, anticipatePin: 1,
+        onUpdate: function (s) {
+          var i = Math.min(n - 1, Math.floor(s.progress * n));
+          if (i !== cur) { cur = i; tabs[i].dispatchEvent(new CustomEvent("hw:pick")); }
+        }
+      });
+      sec.classList.add("hw-pinned");
+      var go = tabs.map(function (t, i) {
+        var f = function () { if (st.isActive) scrollTo({ top: st.start + (st.end - st.start) * (i + .5) / n, behavior: "smooth" }); };
+        t.addEventListener("click", f); return f;
+      });
+      return function () { sec.classList.remove("hw-pinned"); tabs.forEach(function (t, i) { t.removeEventListener("click", go[i]); }); };
+    });
+  }
+
   function init() {
-    reveals(); quote(); counters(); parallax(); tilt();
+    titles(); reveals(); offerCards(); caseCards(); howScroll(); quote(); counters(); parallax(); tilt();
     addEventListener("load", function () { ST.refresh(); });
   }
   if (doc.readyState === "loading") doc.addEventListener("DOMContentLoaded", init); else init();

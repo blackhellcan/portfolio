@@ -451,3 +451,9 @@ img.img-in { animation: imgIn .45s ease both; }
   .sv .sv-list li, .sv .sv-part { grid-template-columns: 1fr; gap: 2px; }
   .cs-sec:first-child { padding: 30px 22px; }
 }
+
+/* Scroll drama helpers (GSAP only) */
+.gsap .gs-mask { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .08em; margin-bottom: -.08em; }
+.gsap .gs-mask > span { display: inline-block; will-change: transform; }
+.gsap .hw-pinned .hw-list { position: relative; }
+.gsap .hw-pinned .hw-list::after { content: "Scroll to walk through the steps"; margin-top: 6px; font-size: 13px; color: var(--ink-2); padding-left: 6px; }

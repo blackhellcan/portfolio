@@ -8,6 +8,31 @@
   var ARROW = { l: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>',
                 r: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>' };
 
+  /* How I work: left list of steps, details of the chosen one on the right */
+  function howTabs() {
+    var tabs = $$(".hw-tab");
+    if (!tabs.length) return;
+    function pick(t, focus) {
+      tabs.forEach(function (b) {
+        var on = b === t, p = doc.getElementById(b.getAttribute("aria-controls"));
+        b.setAttribute("aria-selected", on ? "true" : "false"); b.tabIndex = on ? 0 : -1;
+        if (p) p.classList.toggle("on", on);
+      });
+      if (focus) t.focus();
+    }
+    tabs.forEach(function (b, i) {
+      b.addEventListener("click", function () { pick(b); });
+      b.addEventListener("hw:pick", function () { pick(b); });
+      b.addEventListener("keydown", function (e) {
+        var k = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+        if (e.key === "Home") k = -i; if (e.key === "End") k = tabs.length - 1 - i;
+        if (k === undefined) return;
+        e.preventDefault(); pick(tabs[(i + k + tabs.length) % tabs.length], true);
+      });
+    });
+    pick(tabs[0]);
+  }
+
   function menu() {
     var bar = doc.querySelector(".topbar"), nav = doc.querySelector(".topnav");
     if (!bar || !nav) return;
@@ -229,6 +254,6 @@
       if (name) window.clarity("event", name);
     }, true);
   }
-  function init() { root.classList.add("fx"); toTop(); imgLoading(); heroHook(); chatLinks(); calendly(); menu(); carousels(); topButton(); sectionBar(); resumeMenu(); track(); }
+  function init() { root.classList.add("fx"); toTop(); imgLoading(); heroHook(); chatLinks(); calendly(); howTabs(); menu(); carousels(); topButton(); sectionBar(); resumeMenu(); track(); }
   if (doc.readyState === "loading") doc.addEventListener("DOMContentLoaded", init); else init();
 })();

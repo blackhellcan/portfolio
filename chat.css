@@ -179,6 +179,6 @@
 .azc-foot a { color: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
 .azc-foot a:hover { color: var(--accent); }
 
-/* Launcher: chat icon only */
-.azc-launcher { width: 56px; height: 56px; padding: 0; gap: 0; justify-content: center; color: var(--accent); }
-.azc-launcher .azc-ico { width: 26px; height: 26px; }
+/* Launcher: my photo only */
+.azc-launcher { width: 56px; height: 56px; padding: 0; gap: 0; justify-content: center; }
+.azc-launcher .azc-ava { width: 46px; height: 46px; }

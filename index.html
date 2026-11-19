@@ -149,36 +149,44 @@
   <section id="how" class="sec how-sec" aria-labelledby="how-h">
     <h2 id="how-h" class="sec-title">How I work</h2>
     <p class="how-note">I’m not the hero of a project. The problem is, and so is the solution. My job is to keep everyone pointed at both, in four steps I repeat until the problem is solved.</p>
-    <ol class="how-grid">
-      <li class="hw-step">
-        <span class="hw-n">01</span>
-        <h3 class="hw-t">Think</h3>
+    <div class="how-tabs">
+      <div class="hw-list" role="tablist" aria-label="My process">
+        <button type="button" class="hw-tab" role="tab" id="hw-tab-0" aria-controls="hw-p-0" aria-selected="true"><span class="hw-n">01</span><span class="hw-t">Think</span></button>
+        <button type="button" class="hw-tab" role="tab" id="hw-tab-1" aria-controls="hw-p-1" aria-selected="false" tabindex="-1"><span class="hw-n">02</span><span class="hw-t">Make</span></button>
+        <button type="button" class="hw-tab" role="tab" id="hw-tab-2" aria-controls="hw-p-2" aria-selected="false" tabindex="-1"><span class="hw-n">03</span><span class="hw-t">Break</span></button>
+        <button type="button" class="hw-tab" role="tab" id="hw-tab-3" aria-controls="hw-p-3" aria-selected="false" tabindex="-1"><span class="hw-n">04</span><span class="hw-t">Repeat</span></button>
+      </div>
+      <div class="hw-panels">
+      <div class="hw-panel" role="tabpanel" id="hw-p-0" aria-labelledby="hw-tab-0" tabindex="0">
+        <h3 class="hw-ph"><span class="hw-n">01</span> Think</h3>
         <p class="hw-lead">Understand the problem before touching a screen.</p>
-        <ul class="hw-acts" aria-label="What I do"><li>Stakeholder workshops</li><li>Business requirements (BRD)</li><li>User interviews and personas</li><li>Competitor teardowns</li><li>Functional and user requirements (FRD)</li></ul>
+        <h4 class="hw-k">What I do</h4>
+        <ul class="hw-acts"><li>Stakeholder workshops</li><li>Business requirements (BRD)</li><li>User interviews and personas</li><li>Competitor teardowns</li><li>Functional and user requirements (FRD)</li></ul>
         <p class="hw-why"><b>Why:</b> So the team agrees on what we’re solving, for whom, and what success looks like.</p>
-      </li>
-      <li class="hw-step">
-        <span class="hw-n">02</span>
-        <h3 class="hw-t">Make</h3>
+      </div>
+      <div class="hw-panel" role="tabpanel" id="hw-p-1" aria-labelledby="hw-tab-1" tabindex="0">
+        <h3 class="hw-ph"><span class="hw-n">02</span> Make</h3>
         <p class="hw-lead">Turn what we learned into something people can see and react to.</p>
-        <ul class="hw-acts" aria-label="What I do"><li>Job stories and user stories</li><li>Information architecture</li><li>Task flows and wireflows</li><li>Wireframes and prototypes</li><li>Visual design and component library</li></ul>
+        <h4 class="hw-k">What I do</h4>
+        <ul class="hw-acts"><li>Job stories and user stories</li><li>Information architecture</li><li>Task flows and wireflows</li><li>Wireframes and prototypes</li><li>Visual design and component library</li></ul>
         <p class="hw-why"><b>Why:</b> Ideas are cheap to change on paper and expensive to change in code.</p>
-      </li>
-      <li class="hw-step">
-        <span class="hw-n">03</span>
-        <h3 class="hw-t">Break</h3>
+      </div>
+      <div class="hw-panel" role="tabpanel" id="hw-p-2" aria-labelledby="hw-tab-2" tabindex="0">
+        <h3 class="hw-ph"><span class="hw-n">03</span> Break</h3>
         <p class="hw-lead">Try hard to find where the design fails, before users do.</p>
-        <ul class="hw-acts" aria-label="What I do"><li>Usability tests with real users</li><li>Reviews with engineering</li><li>Accessibility checks (WCAG)</li><li>Edge cases and error states</li></ul>
+        <h4 class="hw-k">What I do</h4>
+        <ul class="hw-acts"><li>Usability tests with real users</li><li>Reviews with engineering</li><li>Accessibility checks (WCAG)</li><li>Edge cases and error states</li></ul>
         <p class="hw-why"><b>Why:</b> Every crack found here is one a user never has to hit.</p>
-      </li>
-      <li class="hw-step">
-        <span class="hw-n">04</span>
-        <h3 class="hw-t">Repeat</h3>
+      </div>
+      <div class="hw-panel" role="tabpanel" id="hw-p-3" aria-labelledby="hw-tab-3" tabindex="0">
+        <h3 class="hw-ph"><span class="hw-n">04</span> Repeat</h3>
         <p class="hw-lead">Fix what broke, ship, and keep learning.</p>
-        <ul class="hw-acts" aria-label="What I do"><li>Iterate on the findings</li><li>Handoff and specs</li><li>Stay with developers until it’s live</li><li>Learn from launch feedback</li></ul>
+        <h4 class="hw-k">What I do</h4>
+        <ul class="hw-acts"><li>Iterate on the findings</li><li>Handoff and specs</li><li>Stay with developers until it’s live</li><li>Learn from launch feedback</li></ul>
         <p class="hw-why"><b>Why:</b> The first version is never the last one. The problem decides when we’re done.</p>
-      </li>
-    </ol>
+      </div>
+      </div>
+    </div>
   </section>
 
   <section id="about" class="col" aria-labelledby="about-h">
