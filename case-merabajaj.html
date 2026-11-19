@@ -7,7 +7,8 @@
 <title>Mera Bajaj App · Azhar Shaikh</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="case.css">
 <link rel="stylesheet" href="soft.css">
@@ -15,13 +16,13 @@
 <script>
 (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zexo7ri8yc");
 </script>
-<script>document.documentElement.classList.add("gs");setTimeout(function(){document.documentElement.classList.remove("gs")},3000);</script>
+<link rel="preload" as="image" href="img-web/hero2-merabajaj.webp" fetchpriority="high">
 </head>
 <body>
 <div class="wrap">
   <header class="topbar">
     <a class="wordmark" href="index.html"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18"/><path d="M19 45 32 18l13 27"/><circle cx="32" cy="39" r="4"/></svg><span class="wm-name">Azhar Shaikh</span></a>
-    <nav class="topnav" aria-label="Site"><a href="index.html">Home</a><a href="index.html#work">Case Studies</a><a href="index.html#about">About Me</a><div class="res"><button type="button" class="res-btn" aria-haspopup="true" aria-expanded="false">Resume<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="res-menu"><a href="Azhar_Shaikh_Resume_Visual.pdf" download><b>Visual resume</b><span>Designed layout, best for reading</span></a><a href="Azhar_Shaikh_Resume.pdf" download><b>ATS resume</b><span>Plain layout, best for job portals</span></a></div></div></nav>
+    <nav class="topnav" aria-label="Site"><a href="index.html">Home</a><a href="index.html#work">Case Studies</a><a href="index.html#how">How I Work</a><a href="index.html#about">About Me</a><div class="res"><button type="button" class="res-btn" aria-haspopup="true" aria-expanded="false">Resume<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="res-menu"><a href="Azhar_Shaikh_Resume_Visual.pdf" download><b>Visual resume</b><span>Designed layout, best for reading</span></a><a href="Azhar_Shaikh_Resume.pdf" download><b>ATS resume</b><span>Plain layout, best for job portals</span></a></div></div></nav>
   </header>
 
   <section class="cs-hero">
@@ -39,7 +40,7 @@
       <div><strong>4 competitors</strong><span>torn down, including KTM, to find what riders were struggling with</span></div>
       <div><strong>100,000+ downloads</strong><span>of Mera Bajaj, live on the App Store and Google Play for about two years</span></div>
     </div>
-    <div class="hero-img"><img src="img/hero2-merabajaj.jpg" alt="Mera Bajaj app home screens showing a Bajaj Pulsar N160"></div>
+    <div class="hero-img"><img fetchpriority="high" decoding="async" width="1800" height="900" src="img-web/hero2-merabajaj.webp" alt="Mera Bajaj app home screens showing a Bajaj Pulsar N160"></div>
   </section>
 
   <div class="cs-body">
@@ -60,10 +61,14 @@
     <main class="cs-main">
       <section class="cs-sec" id="problem">
         <h2>The short version</h2>
-        <div class="prose">
-          <p>Bajaj had an owner app that worked as a prototype. It covered profile, vehicles, trips, service bookings and FAQs, but the screens were plain and the flows were inconsistent. It didn’t feel like a premium motorcycle brand.</p>
-          <p>The brief was to make it modern and polished, with smooth interactions and an upmarket feel, before it reached owners. It is the Pulsar owner app, live on the App Store and Google Play.</p>
-          <p><strong>My part:</strong> I led UX with one junior designer who had just joined, and I mentored them from kick-off to asset delivery. I read reviews of Bajaj’s existing apps, ran user research and a competitor study of four motorcycle apps including KTM, and built proto-personas and user stories for trips and riding. Then I designed the information architecture, low-fidelity wireframes and visual direction, and delivered hi-fi screens in light and dark modes, a style guide and a component library.</p>
+        <div class="prose sv">
+          <p class="sv-lead">Turning Bajaj’s prototype owner app into a premium Pulsar app.</p>
+          <ul class="sv-list">
+            <li><b>Problem</b> The app worked, but the screens were plain, the flows inconsistent, and it didn’t feel like a premium motorcycle brand.</li>
+            <li><b>Brief</b> Make it modern and polished, with smooth interactions and an upmarket feel, before it reached owners.</li>
+            <li><b>Outcome</b> Live on the App Store and Google Play, with 100,000+ downloads.</li>
+          </ul>
+          <p class="sv-part"><b>My part</b> I led UX and mentored a junior designer, from research and a competitor study to hi-fi screens, a style guide and a component library.</p>
         </div>
       </section>
 
@@ -107,18 +112,18 @@
         <h2>What we cut, and what we tried</h2>
         <div class="prose"><p>Each persona got a moodboard, and I put the prototype Bajaj gave us next to the competitor teardown to see what to keep and what to drop. From there it went through low-fidelity wireframes and the information architecture, with light and dark mode flows alongside. The fifth tab was the clearest cut, and the “From wireframe to final” pairs below show it. Less-used features moved into the secondary menu.</p></div>
             <div class="figs">
-              <figure><div class="frame"><img src="img/mb-mood-a.jpg" alt="Moodboards and inspiration for the persona Alok" loading="lazy"></div><figcaption>Moodboards and app inspiration for Alok.</figcaption></figure>
-              <figure><div class="frame"><img src="img/mb-mood-b.jpg" alt="Moodboards and inspiration for the persona Amit" loading="lazy"></div><figcaption>Moodboards and app inspiration for Amit.</figcaption></figure>
+              <figure><div class="frame"><img width="1400" height="887" src="img-web/mb-mood-a.webp" alt="Moodboards and inspiration for the persona Alok" loading="lazy"></div><figcaption>Moodboards and app inspiration for Alok.</figcaption></figure>
+              <figure><div class="frame"><img width="1400" height="1409" src="img-web/mb-mood-b.webp" alt="Moodboards and inspiration for the persona Amit" loading="lazy"></div><figcaption>Moodboards and app inspiration for Amit.</figcaption></figure>
             </div>
-            <figure><div class="frame"><img src="img/merabajaj-existing.jpg" alt="The existing Mera Bajaj prototype screens" loading="lazy"></div><figcaption>The prototype Bajaj provided.</figcaption></figure>
-            <figure><div class="frame tall"><img src="img/merabajaj-competitors.jpg" alt="Competitor app teardown" loading="lazy"></div><figcaption>Competitor teardown, with the problems found in each app.</figcaption></figure>
+            <figure><div class="frame"><img width="1200" height="840" src="img-web/merabajaj-existing.webp" alt="The existing Mera Bajaj prototype screens" loading="lazy"></div><figcaption>The prototype Bajaj provided.</figcaption></figure>
+            <figure><div class="frame tall"><img width="1200" height="1470" src="img-web/merabajaj-competitors.webp" alt="Competitor app teardown" loading="lazy"></div><figcaption>Competitor teardown, with the problems found in each app.</figcaption></figure>
             <div class="figs">
               
-              <figure><div class="frame tall"><img src="img/merabajaj-lofi.jpg" alt="Low-fidelity wireframes" loading="lazy"></div><figcaption>Low-fidelity wireframes.</figcaption></figure>
+              <figure><div class="frame tall"><img width="1200" height="1928" src="img-web/merabajaj-lofi.webp" alt="Low-fidelity wireframes" loading="lazy"></div><figcaption>Low-fidelity wireframes.</figcaption></figure>
             </div>
             <div class="figs">
-              <figure><div class="frame"><img src="img/merabajaj-ia.jpg" alt="Information architecture diagram of the Mera Bajaj app" loading="lazy"></div><figcaption>Information architecture of the app.</figcaption></figure>
-              <figure><div class="frame"><img src="img/merabajaj-modes.jpg" alt="Light mode and dark mode screen flows side by side" loading="lazy"></div><figcaption>Light and dark mode flows.</figcaption></figure>
+              <figure><div class="frame"><img width="1200" height="515" src="img-web/merabajaj-ia.webp" alt="Information architecture diagram of the Mera Bajaj app" loading="lazy"></div><figcaption>Information architecture of the app.</figcaption></figure>
+              <figure><div class="frame"><img width="1200" height="1394" src="img-web/merabajaj-modes.webp" alt="Light mode and dark mode screen flows side by side" loading="lazy"></div><figcaption>Light and dark mode flows.</figcaption></figure>
             </div>
       </section>
 
@@ -127,24 +132,24 @@
         <div class="prose"><p><strong>We explored widely before settling.</strong> From the persona moodboards I built four visual routes, Solid, Dark, Glassmorphic and Gradient, and tried each on the same home screen. Then Bajaj’s brand rules decided the final palette: Bajaj blue, in light and dark. The iterations below show the home screen moving from the four routes toward that blue.</p></div>
         <div class="figs">
           <figure>
-            <div class="frame"><img src="img/mb-dir-solid-dark.jpg" alt="Solid and Dark visual directions with their palettes" loading="lazy"></div>
+            <div class="frame"><img width="1400" height="665" src="img-web/mb-dir-solid-dark.webp" alt="Solid and Dark visual directions with their palettes" loading="lazy"></div>
             <figcaption><b>Solid and Dark.</b> Warm neutrals with a calm blue, and a dark route with an orange accent.</figcaption>
           </figure>
           <figure>
-            <div class="frame"><img src="img/mb-dir-glass-gradient.jpg" alt="Glassmorphic and Gradient visual directions with their palettes" loading="lazy"></div>
+            <div class="frame"><img width="1400" height="803" src="img-web/mb-dir-glass-gradient.webp" alt="Glassmorphic and Gradient visual directions with their palettes" loading="lazy"></div>
             <figcaption><b>Glassmorphic and Gradient.</b> Translucent purple layers, and a lighter lavender gradient.</figcaption>
           </figure>
           <figure>
-            <div class="frame"><img src="img/mb-home-variants-a.jpg" alt="Home screen tried in solid, light and dark orange styles" loading="lazy"></div>
+            <div class="frame"><img width="1400" height="1000" src="img-web/mb-home-variants-a.webp" alt="Home screen tried in solid, light and dark orange styles" loading="lazy"></div>
             <figcaption>The same home screen in the Solid and Dark routes.</figcaption>
           </figure>
           <figure>
-            <div class="frame"><img src="img/mb-home-variants-b.jpg" alt="Home screen tried in glassmorphic and gradient styles" loading="lazy"></div>
+            <div class="frame"><img width="1400" height="1013" src="img-web/mb-home-variants-b.webp" alt="Home screen tried in glassmorphic and gradient styles" loading="lazy"></div>
             <figcaption>The same home screen in the Glassmorphic and Gradient routes.</figcaption>
           </figure>
         </div>
         <figure>
-          <div class="frame tall"><img src="img/mb-iterations.jpg" alt="Rows of home screen iterations moving from the explored routes to the final Bajaj blue" loading="lazy"></div>
+          <div class="frame tall"><img width="1400" height="3086" src="img-web/mb-iterations.webp" alt="Rows of home screen iterations moving from the explored routes to the final Bajaj blue" loading="lazy"></div>
           <figcaption><b>Iterations.</b> Rows of home-screen rounds, moving from the four routes toward the final Bajaj blue and a full-width bike. Scroll inside the frame.</figcaption>
         </figure>
       </section>
@@ -152,36 +157,36 @@
       <section class="cs-sec" id="solution">
         <h2>What riders see</h2>
         <div class="phones">
-          <figure><div class="frame"><img src="img/mb-home-light.jpg" alt="Home screen in light mode with the Pulsar N160, reminders and the four-tab bar" loading="lazy"></div><figcaption><b>Bike-first home.</b> The bike, its registration and a Bluetooth button fill the top. Tapping the name, marked with a down arrow, switches or adds bikes.</figcaption></figure>
-          <figure><div class="frame"><img src="img/mb-home-dark.jpg" alt="Home screen in dark mode" loading="lazy"></div><figcaption><b>Dark mode.</b> The same layout and component library on a deep navy ground.</figcaption></figure>
-          <figure><div class="frame"><img src="img/mb-bike-details.jpg" alt="Bike details with VIN, registration number and model" loading="lazy"></div><figcaption><b>Bike details.</b> The VIN field has a scan button, so riders don’t type a 17-character number.</figcaption></figure>
+          <figure><div class="frame"><img width="480" height="1039" src="img-web/mb-home-light.webp" alt="Home screen in light mode with the Pulsar N160, reminders and the four-tab bar" loading="lazy"></div><figcaption><b>Bike-first home.</b> The bike, its registration and a Bluetooth button fill the top. Tapping the name, marked with a down arrow, switches or adds bikes.</figcaption></figure>
+          <figure><div class="frame"><img width="480" height="1039" src="img-web/mb-home-dark.webp" alt="Home screen in dark mode" loading="lazy"></div><figcaption><b>Dark mode.</b> The same layout and component library on a deep navy ground.</figcaption></figure>
+          <figure><div class="frame"><img width="480" height="1039" src="img-web/mb-bike-details.webp" alt="Bike details with VIN, registration number and model" loading="lazy"></div><figcaption><b>Bike details.</b> The VIN field has a scan button, so riders don’t type a 17-character number.</figcaption></figure>
         </div>
         <h3 style="font-size:20px">Pairing, including when it fails</h3>
         <div class="phones four">
-          <figure><div class="frame"><img src="img/mb-bt-found.jpg" alt="Connecting Bike: my bikes and bikes found" loading="lazy"></div><figcaption><b>1. Scan.</b> Your bikes on top, nearby bikes below.</figcaption></figure>
-          <figure><div class="frame"><img src="img/mb-bt-success.jpg" alt="Bajaj Dominar connected successfully" loading="lazy"></div><figcaption><b>2. Connected.</b> A plain confirmation naming the bike.</figcaption></figure>
-          <figure><div class="frame"><img src="img/mb-bt-multi.jpg" alt="Two bikes with connected and disconnected status, and Connect Another Bike" loading="lazy"></div><figcaption><b>3. More bikes.</b> Each shows its status; adding another is one button.</figcaption></figure>
-          <figure><div class="frame"><img src="img/mb-bt-failed.jpg" alt="Connection Failed screen with a Back button" loading="lazy"></div><figcaption><b>Failure.</b> A clear message and one way out, instead of silence.</figcaption></figure>
+          <figure><div class="frame"><img width="480" height="1039" src="img-web/mb-bt-found.webp" alt="Connecting Bike: my bikes and bikes found" loading="lazy"></div><figcaption><b>1. Scan.</b> Your bikes on top, nearby bikes below.</figcaption></figure>
+          <figure><div class="frame"><img width="480" height="1039" src="img-web/mb-bt-success.webp" alt="Bajaj Dominar connected successfully" loading="lazy"></div><figcaption><b>2. Connected.</b> A plain confirmation naming the bike.</figcaption></figure>
+          <figure><div class="frame"><img width="480" height="1039" src="img-web/mb-bt-multi.webp" alt="Two bikes with connected and disconnected status, and Connect Another Bike" loading="lazy"></div><figcaption><b>3. More bikes.</b> Each shows its status; adding another is one button.</figcaption></figure>
+          <figure><div class="frame"><img width="480" height="1039" src="img-web/mb-bt-failed.webp" alt="Connection Failed screen with a Back button" loading="lazy"></div><figcaption><b>Failure.</b> A clear message and one way out, instead of silence.</figcaption></figure>
         </div>
         <div class="phones">
-          <figure><div class="frame"><img src="img/mb-directions.jpg" alt="Turn-by-turn direction list with time, distance and arrival" loading="lazy"></div><figcaption><b>Navigate.</b> Next turn on top; time, distance and arrival at the bottom with End Trip.</figcaption></figure>
-          <figure><div class="frame"><img src="img/mb-trips.jpg" alt="My Trips cards with photos and distance" loading="lazy"></div><figcaption><b>Trips.</b> Each ride becomes a card with a photo the rider can add.</figcaption></figure>
-          <figure><div class="frame"><img src="img/mb-workshop.jpg" alt="Select Workshop list sorted by distance" loading="lazy"></div><figcaption><b>Book a service.</b> Nearby workshops with distance first, and a map toggle.</figcaption></figure>
+          <figure><div class="frame"><img width="480" height="1039" src="img-web/mb-directions.webp" alt="Turn-by-turn direction list with time, distance and arrival" loading="lazy"></div><figcaption><b>Navigate.</b> Next turn on top; time, distance and arrival at the bottom with End Trip.</figcaption></figure>
+          <figure><div class="frame"><img width="480" height="1039" src="img-web/mb-trips.webp" alt="My Trips cards with photos and distance" loading="lazy"></div><figcaption><b>Trips.</b> Each ride becomes a card with a photo the rider can add.</figcaption></figure>
+          <figure><div class="frame"><img width="480" height="1039" src="img-web/mb-workshop.webp" alt="Select Workshop list sorted by distance" loading="lazy"></div><figcaption><b>Book a service.</b> Nearby workshops with distance first, and a map toggle.</figcaption></figure>
         </div>
         <h3 style="font-size:20px">From wireframe to final</h3>
         <div class="pairs">
-          <figure><div class="pair"><div><span class="label">Wireframe</span><img src="img/mb-wf-home.jpg" alt="Wireframe: home screen" loading="lazy"></div><div><span class="label">Final</span><img src="img/mb-home-light.jpg" alt="Final: home screen" loading="lazy"></div></div><figcaption><b>Home.</b> A small bike card with carousel arrows became a full-width bike with a name switcher, so the rider’s own bike leads the screen.</figcaption></figure>
-          <figure><div class="pair"><div><span class="label">Wireframe</span><img src="img/mb-wf-workshop.jpg" alt="Wireframe: select workshop" loading="lazy"></div><div><span class="label">Final</span><img src="img/mb-workshop.jpg" alt="Final: select workshop" loading="lazy"></div></div><figcaption><b>Workshops.</b> The early tab bar had five tabs including Music; the final has four. The final list adds a nearby count and a map toggle, and leads with distance.</figcaption></figure>
-          <figure><div class="pair"><div><span class="label">Wireframe</span><img src="img/mb-wf-trips.jpg" alt="Wireframe: trips" loading="lazy"></div><div><span class="label">Final</span><img src="img/mb-trips.jpg" alt="Final: trips" loading="lazy"></div></div><figcaption><b>Trips.</b> A plain list of rides became photo cards, so past trips feel like memories, not records.</figcaption></figure>
+          <figure><div class="pair"><div><span class="label">Wireframe</span><img width="360" height="640" src="img-web/mb-wf-home.webp" alt="Wireframe: home screen" loading="lazy"></div><div><span class="label">Final</span><img width="480" height="1039" src="img-web/mb-home-light.webp" alt="Final: home screen" loading="lazy"></div></div><figcaption><b>Home.</b> A small bike card with carousel arrows became a full-width bike with a name switcher, so the rider’s own bike leads the screen.</figcaption></figure>
+          <figure><div class="pair"><div><span class="label">Wireframe</span><img width="360" height="640" src="img-web/mb-wf-workshop.webp" alt="Wireframe: select workshop" loading="lazy"></div><div><span class="label">Final</span><img width="480" height="1039" src="img-web/mb-workshop.webp" alt="Final: select workshop" loading="lazy"></div></div><figcaption><b>Workshops.</b> The early tab bar had five tabs including Music; the final has four. The final list adds a nearby count and a map toggle, and leads with distance.</figcaption></figure>
+          <figure><div class="pair"><div><span class="label">Wireframe</span><img width="360" height="640" src="img-web/mb-wf-trips.webp" alt="Wireframe: trips" loading="lazy"></div><div><span class="label">Final</span><img width="480" height="1039" src="img-web/mb-trips.webp" alt="Final: trips" loading="lazy"></div></div><figcaption><b>Trips.</b> A plain list of rides became photo cards, so past trips feel like memories, not records.</figcaption></figure>
         </div>
         <h3 style="font-size:20px">Style guide and components</h3>
         <div class="figs">
           <figure>
-            <div class="frame tall"><img src="img/mb-styleguide.jpg" alt="Bajaj Connect style guide: colour styles and typography styles" loading="lazy"></div>
+            <div class="frame tall"><img width="910" height="8000" src="img-web/mb-styleguide.webp" alt="Bajaj Connect style guide: colour styles and typography styles" loading="lazy"></div>
             <figcaption><b>Style guide.</b> Named colour styles for light and dark, plus status colours, and a type scale from display to button text. Scroll inside the frame to see it all.</figcaption>
           </figure>
           <figure>
-            <div class="frame"><img src="img/merabajaj-components.jpg" alt="Component library: headers, tab bar, bike cards, trip cards, buttons and permission dialogs" loading="lazy"></div>
+            <div class="frame"><img width="1200" height="1660" src="img-web/merabajaj-components.webp" alt="Component library: headers, tab bar, bike cards, trip cards, buttons and permission dialogs" loading="lazy"></div>
             <figcaption><b>Component library.</b> Tab bar, bike and trip cards, buttons and permission dialogs, each in light and dark, built on the style guide.</figcaption>
           </figure>
         </div>

@@ -184,9 +184,8 @@ details.appendix .inner { padding: 0 28px 28px; }
 .cs-sec { gap: 16px; }
 .cs-sec > h2 { font: 700 12.5px/1.5 var(--f-body); letter-spacing: .16em; text-transform: uppercase; color: var(--accent); }
 .cs-sec > h2 + .prose > p:first-child > strong:first-child { display: block; font: 700 clamp(24px, 2.8vw, 32px)/1.35 var(--f-display); letter-spacing: -0.01em; color: var(--ink); margin-bottom: 14px; text-wrap: balance; }
-.cs-sec:first-child { text-align: center; padding: 60px 56px; }
+.cs-sec:first-child { text-align: left; padding: 56px 56px; }
 .cs-sec:first-child .prose { margin-inline: auto; }
-.cs-sec:first-child .prose p:not(:first-child) { text-align: left; }
 .decision h3 { font-size: 22px; }
 @media (min-width: 1100px) {
   .cs-sec > figure, .cs-sec > .figs, .cs-sec > .phones, .cs-sec > .stories, .cs-sec > .ia-wrap, .cs-sec > .pairs, .cs-sec > .insights { margin-inline: -120px; }
@@ -421,6 +420,34 @@ html, body { overflow-x: clip; }
 .cs-sec > .prose, .cs-sec > .results, .cs-sec > .related, .cs-sec:first-child .prose { max-width: none; width: 100%; }
 
 /* GSAP motion (motion.js) */
-.gs .hello > *, .gs .cs-hero > * { visibility: hidden; }
 .gsap .gs-tilt { transition-property: box-shadow, background, color; will-change: transform; }
 .gsap .cs-card.gs-tilt:hover, .gsap .more .proj.gs-tilt:hover { transform: none; }
+
+/* Hero: soft fade on first paint, no JS needed */
+@keyframes heroIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.hello > *, .cs-hero > * { animation: heroIn .7s cubic-bezier(.22, 1, .36, 1) backwards; }
+.hello > *:nth-child(2), .cs-hero > *:nth-child(2) { animation-delay: .06s; }
+.hello > *:nth-child(3), .cs-hero > *:nth-child(3) { animation-delay: .12s; }
+.hello > *:nth-child(4), .cs-hero > *:nth-child(4) { animation-delay: .18s; }
+.hello > *:nth-child(n+5), .cs-hero > *:nth-child(n+5) { animation-delay: .24s; }
+
+/* Image loading: a soft shimmer until each image arrives, then it fades in */
+.frame, .hero-img, .cs-card .thumb, .pair div, .phones > * { background-color: color-mix(in srgb, var(--ink) 5%, transparent); }
+.img-wait { background-image: linear-gradient(100deg, transparent 30%, color-mix(in srgb, var(--paper, #fff) 70%, transparent) 50%, transparent 70%); background-size: 200% 100%; animation: imgShimmer 1.3s linear infinite; }
+@keyframes imgShimmer { from { background-position: 150% 0; } to { background-position: -50% 0; } }
+img.img-in { animation: imgIn .45s ease both; }
+@keyframes imgIn { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .hello > *, .cs-hero > *, img.img-in { animation: none; } .img-wait { animation: none; } }
+
+/* Case study "short version": lead line, labelled bullets, my part */
+.sv { display: grid; gap: 18px; }
+.sv .sv-lead { font-family: var(--f-display); font-size: clamp(22px, 2.6vw, 30px); line-height: 1.25; letter-spacing: -.015em; font-weight: 600; color: var(--ink); margin: 0; max-width: 32ch; }
+.sv .sv-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.sv .sv-list li { display: grid; grid-template-columns: 104px 1fr; gap: 16px; align-items: baseline; padding: 0; font-size: 17px; line-height: 1.55; color: var(--ink-2); }
+.sv .sv-list li::before { display: none; }
+.sv .sv-list b, .sv .sv-part b { font-family: var(--f-mono, ui-monospace, monospace); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; color: var(--accent); }
+.sv .sv-part { margin: 0; padding-top: 16px; border-top: 1px solid color-mix(in srgb, var(--ink) 10%, transparent); display: grid; grid-template-columns: 104px 1fr; gap: 16px; align-items: baseline; font-size: 16px; line-height: 1.55; color: var(--ink-2); }
+@media (max-width: 640px) {
+  .sv .sv-list li, .sv .sv-part { grid-template-columns: 1fr; gap: 2px; }
+  .cs-sec:first-child { padding: 30px 22px; }
+}

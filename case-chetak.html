@@ -7,7 +7,8 @@
 <title>Chetak EV Display · Azhar Shaikh</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="case.css">
 <link rel="stylesheet" href="soft.css">
@@ -15,13 +16,13 @@
 <script>
 (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zexo7ri8yc");
 </script>
-<script>document.documentElement.classList.add("gs");setTimeout(function(){document.documentElement.classList.remove("gs")},3000);</script>
+<link rel="preload" as="image" href="img-web/hero2-chetak.webp" fetchpriority="high">
 </head>
 <body>
 <div class="wrap">
   <header class="topbar">
     <a class="wordmark" href="index.html"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18"/><path d="M19 45 32 18l13 27"/><circle cx="32" cy="39" r="4"/></svg><span class="wm-name">Azhar Shaikh</span></a>
-    <nav class="topnav" aria-label="Site"><a href="index.html">Home</a><a href="index.html#work">Case Studies</a><a href="index.html#about">About Me</a><div class="res"><button type="button" class="res-btn" aria-haspopup="true" aria-expanded="false">Resume<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="res-menu"><a href="Azhar_Shaikh_Resume_Visual.pdf" download><b>Visual resume</b><span>Designed layout, best for reading</span></a><a href="Azhar_Shaikh_Resume.pdf" download><b>ATS resume</b><span>Plain layout, best for job portals</span></a></div></div></nav>
+    <nav class="topnav" aria-label="Site"><a href="index.html">Home</a><a href="index.html#work">Case Studies</a><a href="index.html#how">How I Work</a><a href="index.html#about">About Me</a><div class="res"><button type="button" class="res-btn" aria-haspopup="true" aria-expanded="false">Resume<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="res-menu"><a href="Azhar_Shaikh_Resume_Visual.pdf" download><b>Visual resume</b><span>Designed layout, best for reading</span></a><a href="Azhar_Shaikh_Resume.pdf" download><b>ATS resume</b><span>Plain layout, best for job portals</span></a></div></div></nav>
   </header>
 
   <section class="cs-hero">
@@ -39,7 +40,7 @@
       <div><strong>Shipped</strong><span>on Bajaj Chetak EV scooters</span></div>
       <div><strong>3 themes</strong><span>Techno, Plano and Neo, all running on one menu structure</span></div>
     </div>
-    <div class="hero-img"><img src="img/hero2-chetak.jpg" alt="Chetak EV scooter with its 5 inch display"></div>
+    <div class="hero-img"><img fetchpriority="high" decoding="async" width="1800" height="900" src="img-web/hero2-chetak.webp" alt="Chetak EV scooter with its 5 inch display"></div>
   </section>
 
   <div class="cs-body">
@@ -58,10 +59,15 @@
     <main class="cs-main">
       <section class="cs-sec" id="problem">
         <h2>The short version</h2>
-        <div class="prose">
-          <p>Chetak came back as an electric scooter with a modern-classic look. Its 5” display had to carry battery, range, navigation, music, calls, Bluetooth, settings and vehicle documents, and the only way to control it was physical buttons. Riders can’t look at a screen for long, so every extra item was a cost.</p>
-          <p>The team designed three visual themes for different buyers. The navigation and menus had to work the same way in all of them.</p>
-          <p><strong>My part:</strong> I worked alongside another designer on the display. I wasn’t the lead. I designed the menu structure, meaning how settings, navigation, music, calls, notifications, vehicle information and documents are grouped and reached, and how navigation behaves while riding and while stationary.</p>
+        <div class="prose sv">
+          <p class="sv-lead">A 5” scooter display riders can use at a glance.</p>
+          <ul class="sv-list">
+            <li><b>Problem</b> The display had to carry battery, range, navigation, music, calls, Bluetooth, settings and documents, with only physical buttons to control it.</li>
+            <li><b>Constraint</b> Riders can’t look at a screen for long, so every extra item was a cost.</li>
+            <li><b>Brief</b> Three visual themes for different buyers, with menus that work the same way in all of them.</li>
+            <li><b>Outcome</b> Shipped on Bajaj Chetak EV scooters.</li>
+          </ul>
+          <p class="sv-part"><b>My part</b> I designed the menu structure and how navigation behaves while riding and stationary, alongside another designer. I wasn’t the lead.</p>
         </div>
       </section>
 
@@ -98,11 +104,11 @@
         </div>
 <div class="figs">
           <figure>
-            <div class="frame"><img src="img/chetak-angle.jpg" alt="Desk research on eye rotation and viewing angle" loading="lazy"></div>
+            <div class="frame"><img width="1200" height="1310" src="img-web/chetak-angle.webp" alt="Desk research on eye rotation and viewing angle" loading="lazy"></div>
             <figcaption><b>Viewing-angle research</b> behind the centre-field rule.</figcaption>
           </figure>
           <figure>
-            <div class="frame"><img src="img/chetak-placement.jpg" alt="Placement zones for information on the display" loading="lazy"></div>
+            <div class="frame"><img width="1200" height="681" src="img-web/chetak-placement.webp" alt="Placement zones for information on the display" loading="lazy"></div>
             <figcaption><b>Placement zones</b> for right-eye-dominant riders.</figcaption>
           </figure>
         </div>
@@ -111,11 +117,11 @@
       <section class="cs-sec" id="solution">
         <h2>What riders see</h2>
         <figure>
-          <div class="frame tall"><img src="img/chetak-themes.jpg" alt="Display designs in Techno, Plano and Neo themes" loading="lazy"></div>
+          <div class="frame tall"><img width="1200" height="2238" src="img-web/chetak-themes.webp" alt="Display designs in Techno, Plano and Neo themes" loading="lazy"></div>
           <figcaption><b>The display across three themes.</b> Techno, Plano and Neo share one menu structure and navigation behaviour.</figcaption>
         </figure>
         <figure>
-          <div class="frame"><img src="img/chetak-system.jpg" alt="Chetak display design system: colours, type and components" loading="lazy"></div>
+          <div class="frame"><img width="1200" height="1747" src="img-web/chetak-system.webp" alt="Chetak display design system: colours, type and components" loading="lazy"></div>
           <figcaption><b>Design system.</b> The tokens and components the themes were built from.</figcaption>
         </figure>
             </section>

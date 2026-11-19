@@ -7,7 +7,8 @@
 <title>Bajaj Clusters · Azhar Shaikh</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="case.css">
 <link rel="stylesheet" href="soft.css">
@@ -15,13 +16,13 @@
 <script>
 (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zexo7ri8yc");
 </script>
-<script>document.documentElement.classList.add("gs");setTimeout(function(){document.documentElement.classList.remove("gs")},3000);</script>
+<link rel="preload" as="image" href="img-web/hero2-hmi.webp" fetchpriority="high">
 </head>
 <body>
 <div class="wrap">
   <header class="topbar">
     <a class="wordmark" href="index.html"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18"/><path d="M19 45 32 18l13 27"/><circle cx="32" cy="39" r="4"/></svg><span class="wm-name">Azhar Shaikh</span></a>
-    <nav class="topnav" aria-label="Site"><a href="index.html">Home</a><a href="index.html#work">Case Studies</a><a href="index.html#about">About Me</a><div class="res"><button type="button" class="res-btn" aria-haspopup="true" aria-expanded="false">Resume<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="res-menu"><a href="Azhar_Shaikh_Resume_Visual.pdf" download><b>Visual resume</b><span>Designed layout, best for reading</span></a><a href="Azhar_Shaikh_Resume.pdf" download><b>ATS resume</b><span>Plain layout, best for job portals</span></a></div></div></nav>
+    <nav class="topnav" aria-label="Site"><a href="index.html">Home</a><a href="index.html#work">Case Studies</a><a href="index.html#how">How I Work</a><a href="index.html#about">About Me</a><div class="res"><button type="button" class="res-btn" aria-haspopup="true" aria-expanded="false">Resume<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="res-menu"><a href="Azhar_Shaikh_Resume_Visual.pdf" download><b>Visual resume</b><span>Designed layout, best for reading</span></a><a href="Azhar_Shaikh_Resume.pdf" download><b>ATS resume</b><span>Plain layout, best for job portals</span></a></div></div></nav>
   </header>
 
   <section class="cs-hero">
@@ -39,7 +40,7 @@
       <div><strong>Chosen</strong><span>over a second design team’s architecture, for ease of access</span></div>
       <div><strong>4 designers</strong><span>led through on-site workshops with Bajaj engineering</span></div>
     </div>
-    <div class="hero-img"><img src="img/hero2-hmi.jpg" alt="The 5 inch TFT cluster menu screens: trips, navigation, tyre pressure, music, ride mode, settings, map, vehicle controls, call history and notifications"></div>
+    <div class="hero-img"><img fetchpriority="high" decoding="async" width="1800" height="900" src="img-web/hero2-hmi.webp" alt="The 5 inch TFT cluster menu screens: trips, navigation, tyre pressure, music, ride mode, settings, map, vehicle controls, call history and notifications"></div>
   </section>
 
   <div class="cs-body">
@@ -59,11 +60,15 @@
     <main class="cs-main">
       <section class="cs-sec" id="problem">
         <h2>The short version</h2>
-        <div class="prose">
-          <p>Bajaj was moving its motorcycles from segment LCDs to colour TFT clusters. The old LCD showed fixed segments: speed, fuel, odometer. The new 5” TFT had to add phone pairing, calls, music, turn-by-turn navigation, lap timers, trip data, vehicle documents and ride modes, plus a 12,000 RPM tachometer and mandatory homologation information. It all had to be controlled with tactile handlebar buttons, by riders who said plainly that they don’t want to dig through menus on the move.</p>
-          <p>Bajaj ran two design teams in parallel. Mine was asked for a modern visual theme and a complete menu architecture, for the Dominar 400 and the Superchamp series.</p>
-          <p>The menu structure, navigation and architecture we designed shipped first on the Pulsar N160 SS in 2026, with more models to follow.</p>
-          <p><strong>My part:</strong> I led a team of 4 designers on the cluster, from research to handoff. I owned the information architecture, menu structure and navigation model, which is the part that shipped. I also ran on-site workshops at Bajaj’s engineering facility, so the design would fit the hardware and mechanical constraints.</p>
+        <div class="prose sv">
+          <p class="sv-lead">Moving Bajaj’s motorcycles from segment LCDs to colour TFT clusters.</p>
+          <ul class="sv-list">
+            <li><b>Problem</b> The new 5” TFT had to add calls, music, navigation, lap timers, trip data and more, all on handlebar buttons.</li>
+            <li><b>Constraint</b> Riders said plainly they don’t want to dig through menus on the move.</li>
+            <li><b>Brief</b> Bajaj ran two design teams in parallel. Mine was asked for a modern visual theme and a complete menu architecture.</li>
+            <li><b>Outcome</b> Our menu structure and navigation shipped first on the Pulsar N160 SS in 2026.</li>
+          </ul>
+          <p class="sv-part"><b>My part</b> I led a team of 4 designers from research to handoff and owned the information architecture and navigation model, the part that shipped.</p>
         </div>
       </section>
 
@@ -101,9 +106,9 @@
         </div>
 <h3 class="proc-h">User stories, explorations and research</h3>
             <div class="figs">
-              <figure><div class="frame tall"><img src="img/dominar-stories.jpg" alt="Table of scenarios and user stories for the cluster" loading="lazy"></div><figcaption>Scenario and user-story table that defined each screen’s behaviour.</figcaption></figure>
-              <figure><div class="frame conf"><img src="img/dominar-explore.jpg" alt="Early cluster explorations" loading="lazy"></div><figcaption>Early layout explorations.</figcaption></figure>
-              <figure><div class="frame tall"><img src="img/dominar-mood.jpg" alt="Three moodboards: urban, tour, performance" loading="lazy"></div><figcaption>Moodboards for urban, tour and performance directions.</figcaption></figure>
+              <figure><div class="frame tall"><img width="792" height="1503" src="img-web/dominar-stories.webp" alt="Table of scenarios and user stories for the cluster" loading="lazy"></div><figcaption>Scenario and user-story table that defined each screen’s behaviour.</figcaption></figure>
+              <figure><div class="frame conf"><img width="1200" height="1074" src="img-web/dominar-explore.webp" alt="Early cluster explorations" loading="lazy"></div><figcaption>Early layout explorations.</figcaption></figure>
+              <figure><div class="frame tall"><img width="1200" height="2121" src="img-web/dominar-mood.webp" alt="Three moodboards: urban, tour, performance" loading="lazy"></div><figcaption>Moodboards for urban, tour and performance directions.</figcaption></figure>
             </div>
             </section>
 
@@ -111,32 +116,32 @@
         <h2>What riders see</h2>
         <p class="prose" style="color:var(--muted)">The menu system is public on the Pulsar N160 SS, so it is shown in full along with the information architecture and screen flows. The unreleased modern visual theme is Bajaj Auto’s intellectual property and stays blurred.</p>
         <figure>
-          <div class="frame wide"><img src="img/dominar-ia.jpg" alt="Information architecture of the TFT cluster: home widgets, main menu with info, navigation, music, calls, settings and notifications" loading="lazy"></div>
+          <div class="frame wide"><img width="1800" height="765" src="img-web/dominar-ia.webp" alt="Information architecture of the TFT cluster: home widgets, main menu with info, navigation, music, calls, settings and notifications" loading="lazy"></div>
           <figcaption><b>Information architecture.</b> Home and its widgets on the left; the main menu splits into Info, Navigation, Music, Calls, Settings and Notifications.</figcaption>
         </figure>
         <figure>
-          <div class="frame"><img src="img/dominar-menu-day.jpg" alt="Menu screens in day mode" loading="lazy"></div>
+          <div class="frame"><img width="1600" height="812" src="img-web/dominar-menu-day.webp" alt="Menu screens in day mode" loading="lazy"></div>
           <figcaption><b>The menu system, day mode.</b> Every screen keeps the gear and speed visible on the right, so a rider never loses them while changing settings. Lists use one highlighted row, moved with the handlebar buttons; toggles show their state in colour.</figcaption>
         </figure>
         <figure>
-          <div class="frame"><img src="img/dominar-menu-night.jpg" alt="Menu screens in night mode" loading="lazy"></div>
+          <div class="frame"><img width="1600" height="827" src="img-web/dominar-menu-night.webp" alt="Menu screens in night mode" loading="lazy"></div>
           <figcaption><b>Night mode.</b> The same structure on a dark ground, with the selected row inverted to white so it reads at a glance in the dark.</figcaption>
         </figure>
         <figure>
-          <div class="frame tall"><img src="img/dominar-flows.jpg" alt="Screen flows for incoming call, music and navigation to home" loading="lazy"></div>
+          <div class="frame tall"><img width="672" height="1691" src="img-web/dominar-flows.webp" alt="Screen flows for incoming call, music and navigation to home" loading="lazy"></div>
           <figcaption><b>Screen flows.</b> Incoming call, music and navigation to home, each with a short riding path through widgets and a full path through the menu.</figcaption>
         </figure>
         <figure>
-          <div class="frame conf"><img src="img/dominar-day.jpg" alt="Proposed 5 inch cluster visual style in day mode, with menu screens" loading="lazy"></div>
+          <div class="frame conf"><img width="1200" height="1235" src="img-web/dominar-day.webp" alt="Proposed 5 inch cluster visual style in day mode, with menu screens" loading="lazy"></div>
           <figcaption><b>Our modern visual theme, day mode.</b> Approved by Bajaj’s design head; the board chose a more traditional look, so it remains unreleased.</figcaption>
         </figure>
         <div class="figs">
           <figure>
-            <div class="frame conf"><img src="img/dominar-night.jpg" alt="Proposed cluster designs in night mode" loading="lazy"></div>
+            <div class="frame conf"><img width="1200" height="1127" src="img-web/dominar-night.webp" alt="Proposed cluster designs in night mode" loading="lazy"></div>
             <figcaption><b>Night mode proposals</b>, with the ride mode carried by colour on the meter arc.</figcaption>
           </figure>
           <figure>
-            <div class="frame conf"><img src="img/dominar-system.jpg" alt="Cluster colour system: ride modes, indicators, neutrals and type" loading="lazy"></div>
+            <div class="frame conf"><img width="1200" height="1182" src="img-web/dominar-system.webp" alt="Cluster colour system: ride modes, indicators, neutrals and type" loading="lazy"></div>
             <figcaption><b>Colour system.</b> One colour per ride mode, and a separate set for indicators and warnings.</figcaption>
           </figure>
         </div>

@@ -89,7 +89,7 @@
 .azc-bot { align-self: flex-start; margin-left: 34px; background: var(--azc-bot); color: var(--ink); border: 1px solid var(--azc-line); border-bottom-left-radius: 6px; box-shadow: inset 0 1px 0 var(--azc-edge), 0 2px 8px -4px rgba(16,24,40,.12); }
 .azc-bot::before {
   content: ""; position: absolute; left: -34px; bottom: 0; width: 26px; height: 26px; border-radius: 50%;
-  background: url("img/azhar.jpg") center / cover;
+  background: url("img-web/azhar.webp") center / cover;
 }
 .azc-bot + .azc-bot::before { display: none; }
 .azc-bot + .azc-bot, .azc-user + .azc-user { margin-top: -2px; }
@@ -178,3 +178,7 @@
 .azc-typing { align-items: center; }
 .azc-foot a { color: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
 .azc-foot a:hover { color: var(--accent); }
+
+/* Launcher: chat icon only */
+.azc-launcher { width: 56px; height: 56px; padding: 0; gap: 0; justify-content: center; color: var(--accent); }
+.azc-launcher .azc-ico { width: 26px; height: 26px; }

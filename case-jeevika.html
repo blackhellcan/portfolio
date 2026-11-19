@@ -7,7 +7,8 @@
 <title>Jeevika · Azhar Shaikh</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="case.css">
 <link rel="stylesheet" href="soft.css">
@@ -15,13 +16,13 @@
 <script>
 (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zexo7ri8yc");
 </script>
-<script>document.documentElement.classList.add("gs");setTimeout(function(){document.documentElement.classList.remove("gs")},3000);</script>
+<link rel="preload" as="image" href="img-web/hero2-jeevika.webp" fetchpriority="high">
 </head>
 <body>
 <div class="wrap">
   <header class="topbar">
     <a class="wordmark" href="index.html"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18"/><path d="M19 45 32 18l13 27"/><circle cx="32" cy="39" r="4"/></svg><span class="wm-name">Azhar Shaikh</span></a>
-    <nav class="topnav" aria-label="Site"><a href="index.html">Home</a><a href="index.html#work">Case Studies</a><a href="index.html#about">About Me</a><div class="res"><button type="button" class="res-btn" aria-haspopup="true" aria-expanded="false">Resume<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="res-menu"><a href="Azhar_Shaikh_Resume_Visual.pdf" download><b>Visual resume</b><span>Designed layout, best for reading</span></a><a href="Azhar_Shaikh_Resume.pdf" download><b>ATS resume</b><span>Plain layout, best for job portals</span></a></div></div></nav>
+    <nav class="topnav" aria-label="Site"><a href="index.html">Home</a><a href="index.html#work">Case Studies</a><a href="index.html#how">How I Work</a><a href="index.html#about">About Me</a><div class="res"><button type="button" class="res-btn" aria-haspopup="true" aria-expanded="false">Resume<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="res-menu"><a href="Azhar_Shaikh_Resume_Visual.pdf" download><b>Visual resume</b><span>Designed layout, best for reading</span></a><a href="Azhar_Shaikh_Resume.pdf" download><b>ATS resume</b><span>Plain layout, best for job portals</span></a></div></div></nav>
   </header>
 
   <section class="cs-hero">
@@ -39,7 +40,7 @@
       <div><strong>3 sides</strong><span>vendors, volunteer lawyers and CCS admins in one service</span></div>
       <div><strong>Live</strong><span>and in use by street vendors, who are growing more confident with it</span></div>
     </div>
-    <div class="hero-img"><img src="img/hero2-jeevika.jpg" alt="Jeevika app screens in Hindi with illustrated lawyer characters"></div>
+    <div class="hero-img"><img fetchpriority="high" decoding="async" width="1800" height="900" src="img-web/hero2-jeevika.webp" alt="Jeevika app screens in Hindi with illustrated lawyer characters"></div>
   </section>
 
   <div class="cs-body">
@@ -59,10 +60,15 @@
     <main class="cs-main">
       <section class="cs-sec" id="problem">
         <h2>The short version</h2>
-        <div class="prose">
-          <p>CCS, a policy NGO, asked us to design an app that helps street vendors know their rights under the 2014 Street Vendors Act, reach a lawyer, and call for help when they’re harassed or evicted. The people using it read Hindi, often not fluently, and many are new to smartphones. Some don’t own one at all.</p>
-          <p>We designed the vendor app and, later, the dashboard CCS uses to run the programme. Both are live.</p>
-          <p><strong>My part:</strong> I led UX with one junior designer. CCS interviewed vendors and shared the results as a big spreadsheet; we turned it into personas and needs, ran the alignment workshop with CCS, and worked closely with their team and volunteers, who were in touch with vendors throughout.</p>
+        <div class="prose sv">
+          <p class="sv-lead">Legal help for Delhi’s street vendors, in the Hindi they speak.</p>
+          <ul class="sv-list">
+            <li><b>Problem</b> Vendors don’t know their rights under the 2014 Street Vendors Act, and have no one to call when they’re harassed or evicted.</li>
+            <li><b>Users</b> They read Hindi, often not fluently. Many are new to smartphones and some don’t own one.</li>
+            <li><b>Brief</b> An app for rights, legal help and SOS, for CCS, a policy NGO.</li>
+            <li><b>Outcome</b> The vendor app and the CCS dashboard are both live.</li>
+          </ul>
+          <p class="sv-part"><b>My part</b> I led UX with one junior designer, turned CCS’s interview data into personas and ran the alignment workshop.</p>
         </div>
       </section>
 
@@ -98,19 +104,19 @@
           <p>We turned six “How might we” questions into a long list of ideas, then ranked each one by how much it would help a vendor and how hard it was to build. Rights information, legal-aid requests, SOS and geo-tagging made the first release, because they protect a vendor in the moment and build the record they’ll need later. Broader monitoring and community features waited.</p>
         </div>
             <div class="figs">
-              <figure><div class="frame"><img src="img/jeevika-eco.jpg" alt="Ecosystem map: vendor, Jeevika, CCS, lawyers, NGOs and law enforcement" loading="lazy"></div><figcaption>Who Jeevika connects a vendor to.</figcaption></figure>
-              <figure><div class="frame"><img src="img/jeevika-hmw.jpg" alt="Six How might we questions" loading="lazy"></div><figcaption>The six How-might-we questions.</figcaption></figure>
+              <figure><div class="frame"><img width="1200" height="755" src="img-web/jeevika-eco.webp" alt="Ecosystem map: vendor, Jeevika, CCS, lawyers, NGOs and law enforcement" loading="lazy"></div><figcaption>Who Jeevika connects a vendor to.</figcaption></figure>
+              <figure><div class="frame"><img width="1200" height="1234" src="img-web/jeevika-hmw.webp" alt="Six How might we questions" loading="lazy"></div><figcaption>The six How-might-we questions.</figcaption></figure>
             </div>
       </section>
 
       <section class="cs-sec" id="solution">
         <h2>What vendors see</h2>
         <figure>
-          <div class="frame tall"><img src="img/jeevika-keyscreens.jpg" alt="Jeevika key screens in Hindi: welcome, registration, OTP, home, SOS, profile and documents" loading="lazy"></div>
+          <div class="frame tall"><img width="1200" height="1806" src="img-web/jeevika-keyscreens.webp" alt="Jeevika key screens in Hindi: welcome, registration, OTP, home, SOS, profile and documents" loading="lazy"></div>
           <figcaption><b>Vendor app.</b> Registration with OTP, a home of large illustrated tiles, the SOS button, and the vendor’s documents and cases.</figcaption>
         </figure>
         <figure>
-          <div class="frame"><img src="img/jeevika-illus.jpg" alt="Illustrated characters: vendors, a police officer and lawyers" loading="lazy"></div>
+          <div class="frame"><img width="1200" height="503" src="img-web/jeevika-illus.webp" alt="Illustrated characters: vendors, a police officer and lawyers" loading="lazy"></div>
           <figcaption><b>The cast.</b> Vendors, police and lawyers, drawn to look like the people users meet every day.</figcaption>
         </figure>
       </section>
@@ -133,16 +139,16 @@
           <figcaption><b>Story map for the CCS admin.</b> Eight activities, each broken into tasks. The association admin gets a subset: their own vendors, analytics, reports and complaints, with escalation up to CCS and their own branding.</figcaption>
         </figure>
         <figure>
-          <div class="frame tall"><img src="img/jv-admin-dashboard.jpg" alt="Admin dashboard: user counts, complaints and SOS by month, zone and market counts, harassment by official, ratings, harassment types and a complaint heatmap of Delhi" loading="lazy"></div>
+          <div class="frame tall"><img width="1400" height="1409" src="img-web/jv-admin-dashboard.webp" alt="Admin dashboard: user counts, complaints and SOS by month, zone and market counts, harassment by official, ratings, harassment types and a complaint heatmap of Delhi" loading="lazy"></div>
           <figcaption><b>CCS admin dashboard.</b> Users by role, complaints and SOS by month, zone, market and pradhan counts, and geo-tagged vendors. Below: which officials harass most, the types of harassment, app ratings and a complaint heatmap across Delhi. Shown with sample data.</figcaption>
         </figure>
         <div class="figs">
           <figure>
-            <div class="frame"><img src="img/jv-admin-complaints.jpg" alt="Complaints and requests by source with pending, resolved and rejected counts, and an escalated complaints table" loading="lazy"></div>
+            <div class="frame"><img width="1400" height="917" src="img-web/jv-admin-complaints.webp" alt="Complaints and requests by source with pending, resolved and rejected counts, and an escalated complaints table" loading="lazy"></div>
             <figcaption><b>Complaints.</b> One card per source (vendors, SOS, leaders, lawyers, associations) with pending, resolved and rejected counts, then the escalated complaints that need action first.</figcaption>
           </figure>
           <figure>
-            <div class="frame"><img src="img/jv-admin-analytics.jpg" alt="Analytics with filters and a heatmap of complaints by area" loading="lazy"></div>
+            <div class="frame"><img width="1400" height="967" src="img-web/jv-admin-analytics.webp" alt="Analytics with filters and a heatmap of complaints by area" loading="lazy"></div>
             <figcaption><b>Analytics.</b> Filter by complaint type, who it is against, harassment type, status and location, see the result as a heatmap, then email or download it as a report.</figcaption>
           </figure>
         </div>

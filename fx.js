@@ -84,6 +84,67 @@
     });
   }
 
+
+  /* Show a shimmer behind each image until it loads, then fade it in */
+  function imgLoading() {
+    Array.prototype.forEach.call(document.querySelectorAll("main img, .cs-main img, .hero-img img, .cs-card img"), function (img) {
+      if (img.complete && img.naturalWidth) return;
+      var box = img.parentElement; box.classList.add("img-wait");
+      var done = function () { box.classList.remove("img-wait"); img.classList.add("img-in"); };
+      img.addEventListener("load", done, { once: true }); img.addEventListener("error", function () { box.classList.remove("img-wait"); }, { once: true });
+    });
+  }
+
+
+  /* On phones, the floating chat button would cover the hero buttons, so it waits until they scroll away */
+  function chatLinks() {
+    var cta = document.querySelector(".hero-cta");
+    if (cta && "IntersectionObserver" in window) {
+      new IntersectionObserver(function (es) {
+        document.documentElement.classList.toggle("cta-in-view", es[0].isIntersecting);
+      }).observe(cta);
+    }
+  }
+
+  /* Hero: the dot grid brightens around the cursor */
+  function heroHook() {
+    var hero = document.querySelector(".hello"), grid = hero && hero.querySelector(".hero-grid");
+    if (!grid || !window.matchMedia || matchMedia("(prefers-reduced-motion: reduce)").matches || !matchMedia("(pointer: fine)").matches) return;
+    var raf = 0;
+    hero.addEventListener("pointermove", function (e) {
+      if (raf) return;
+      raf = requestAnimationFrame(function () {
+        var r = hero.getBoundingClientRect();
+        grid.style.setProperty("--mx", (e.clientX - r.left) + "px");
+        grid.style.setProperty("--my", (e.clientY - r.top) + "px");
+        raf = 0;
+      });
+    });
+  }
+
+  /* "Book a call": open Calendly in a popup, loading its files only on the first click */
+  function calendly() {
+    var loading = null;
+    function load() {
+      if (loading) return loading;
+      loading = new Promise(function (ok, fail) {
+        var css = document.createElement("link"); css.rel = "stylesheet"; css.href = "https://assets.calendly.com/assets/external/widget.css"; document.head.appendChild(css);
+        var js = document.createElement("script"); js.src = "https://assets.calendly.com/assets/external/widget.js"; js.async = true;
+        js.onload = ok; js.onerror = fail; document.head.appendChild(js);
+      });
+      return loading;
+    }
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest("[data-calendly]"); if (!a) return;
+      e.preventDefault();
+      var url = a.getAttribute("href");
+      a.setAttribute("aria-busy", "true");
+      load().then(function () { window.Calendly.initPopupWidget({ url: url }); })
+        .catch(function () { window.open(url, "_blank", "noopener"); })
+        .then(function () { a.removeAttribute("aria-busy"); });
+    });
+  }
+
   function toTop() {
     if (location.hash && location.hash.length > 1) return;
     try { if ("scrollRestoration" in history) history.scrollRestoration = "manual"; } catch (e) {}
@@ -163,9 +224,11 @@
       else if (/linkedin\.com/.test(h)) name = "linkedin_click";
       else if (/^mailto:/.test(h)) name = "email_click";
       else if (a.classList.contains("res-btn")) name = "resume_menu_open";
+      else if (a.closest(".hero-cta") && h === "#work") name = "hero_see_work";
+      else if (a.hasAttribute("data-calendly")) name = "book_a_call";
       if (name) window.clarity("event", name);
     }, true);
   }
-  function init() { root.classList.add("fx"); toTop(); menu(); carousels(); topButton(); sectionBar(); resumeMenu(); track(); }
+  function init() { root.classList.add("fx"); toTop(); imgLoading(); heroHook(); chatLinks(); calendly(); menu(); carousels(); topButton(); sectionBar(); resumeMenu(); track(); }
   if (doc.readyState === "loading") doc.addEventListener("DOMContentLoaded", init); else init();
 })();

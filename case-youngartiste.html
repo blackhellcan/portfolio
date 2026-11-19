@@ -7,7 +7,8 @@
 <title>YoungArtiste · Azhar Shaikh</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="case.css">
 <link rel="stylesheet" href="soft.css">
@@ -15,13 +16,13 @@
 <script>
 (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zexo7ri8yc");
 </script>
-<script>document.documentElement.classList.add("gs");setTimeout(function(){document.documentElement.classList.remove("gs")},3000);</script>
+<link rel="preload" as="image" href="img-web/hero2-youngartiste.webp" fetchpriority="high">
 </head>
 <body>
 <div class="wrap">
   <header class="topbar">
     <a class="wordmark" href="index.html"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18"/><path d="M19 45 32 18l13 27"/><circle cx="32" cy="39" r="4"/></svg><span class="wm-name">Azhar Shaikh</span></a>
-    <nav class="topnav" aria-label="Site"><a href="index.html">Home</a><a href="index.html#work">Case Studies</a><a href="index.html#about">About Me</a><div class="res"><button type="button" class="res-btn" aria-haspopup="true" aria-expanded="false">Resume<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="res-menu"><a href="Azhar_Shaikh_Resume_Visual.pdf" download><b>Visual resume</b><span>Designed layout, best for reading</span></a><a href="Azhar_Shaikh_Resume.pdf" download><b>ATS resume</b><span>Plain layout, best for job portals</span></a></div></div></nav>
+    <nav class="topnav" aria-label="Site"><a href="index.html">Home</a><a href="index.html#work">Case Studies</a><a href="index.html#how">How I Work</a><a href="index.html#about">About Me</a><div class="res"><button type="button" class="res-btn" aria-haspopup="true" aria-expanded="false">Resume<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="res-menu"><a href="Azhar_Shaikh_Resume_Visual.pdf" download><b>Visual resume</b><span>Designed layout, best for reading</span></a><a href="Azhar_Shaikh_Resume.pdf" download><b>ATS resume</b><span>Plain layout, best for job portals</span></a></div></div></nav>
   </header>
 
   <section class="cs-hero">
@@ -39,7 +40,7 @@
       <div><strong>4 user types</strong><span>hobbyist, serious learner, external participant and teacher</span></div>
       <div><strong>6 competitors</strong><span>benchmarked across music and dance learning apps</span></div>
     </div>
-    <div class="hero-img"><img src="img/hero2-youngartiste.jpg" alt="YoungArtiste app screens: home, courses, lessons and practice"></div>
+    <div class="hero-img"><img fetchpriority="high" decoding="async" width="1800" height="900" src="img-web/hero2-youngartiste.webp" alt="YoungArtiste app screens: home, courses, lessons and practice"></div>
   </section>
 
   <div class="cs-body">
@@ -58,10 +59,15 @@
     <main class="cs-main">
       <section class="cs-sec" id="problem">
         <h2>The short version</h2>
-        <div class="prose">
-          <p>Online learners lose direction and motivation without a teacher in the room. YoungArtiste offered private, teacher-led classes with a multi-year curriculum, but students practising on their own lacked structure, discipline and anyone to interact with.</p>
-          <p>The brief was a mobile app for students, teachers and admins, with every feature of the learning portal and live classes. It had to help anyone find something to learn for their time, budget, interest and level, and keep them coming back.</p>
-          <p><strong>My part:</strong> I led UX end to end, from the stakeholder alignment workshop to the hi-fi prototype, with one other designer. In the workshop we agreed business goals, user segments and the major and minor jobs for hobbyists. I benchmarked six apps, built four personas from user interviews, wrote job stories and How-might-we questions, prioritised with value-effort mapping, then designed the IA, wireflows, visual design and prototype.</p>
+        <div class="prose sv">
+          <p class="sv-lead">Keeping online music and dance learners practising between classes.</p>
+          <ul class="sv-list">
+            <li><b>Problem</b> Students practising alone lacked structure, discipline and anyone to interact with.</li>
+            <li><b>Brief</b> A mobile app for students, teachers and admins, with the full learning portal and live classes.</li>
+            <li><b>Goal</b> Help anyone find something to learn for their time, budget, interest and level, and keep them coming back.</li>
+            <li><b>Outcome</b> On hold before launch, by the client.</li>
+          </ul>
+          <p class="sv-part"><b>My part</b> I led UX end to end with one other designer, from the alignment workshop to the hi-fi prototype.</p>
         </div>
       </section>
 
@@ -95,12 +101,12 @@
           <p>Before designing anything we benchmarked six learning apps, built four personas from interviews and grouped what we heard into themes. Then we turned it into six questions and sorted the ideas by value and effort. What didn’t make the first release is on the value-effort map.</p>
         </div>
             <div class="figs">
-              <figure><div class="frame"><img src="img/ya-bench.jpg" alt="Competitor benchmarking of six learning apps" loading="lazy"></div><figcaption>Competitor benchmarking.</figcaption></figure>
-              <figure><div class="frame tall"><img src="img/ya-personas.jpg" alt="Four persona cards" loading="lazy"></div><figcaption>Four personas from user interviews.</figcaption></figure>
-              <figure><div class="frame"><img src="img/ya-insights.jpg" alt="Insights from user interviews" loading="lazy"></div><figcaption>Interview insights, grouped into four themes.</figcaption></figure>
-              <figure><div class="frame"><img src="img/ya-hmw.jpg" alt="Six How might we questions" loading="lazy"></div><figcaption>Six How-might-we questions.</figcaption></figure>
-              <figure><div class="frame"><img src="img/ya-valueeffort.jpg" alt="Value versus effort mapping" loading="lazy"></div><figcaption>Value–effort mapping.</figcaption></figure>
-              <figure><div class="frame"><img src="img/ya-ia.jpg" alt="Information architecture" loading="lazy"></div><figcaption>Information architecture.</figcaption></figure>
+              <figure><div class="frame"><img width="1400" height="1629" src="img-web/ya-bench.webp" alt="Competitor benchmarking of six learning apps" loading="lazy"></div><figcaption>Competitor benchmarking.</figcaption></figure>
+              <figure><div class="frame tall"><img width="1400" height="3101" src="img-web/ya-personas.webp" alt="Four persona cards" loading="lazy"></div><figcaption>Four personas from user interviews.</figcaption></figure>
+              <figure><div class="frame"><img width="1400" height="770" src="img-web/ya-insights.webp" alt="Insights from user interviews" loading="lazy"></div><figcaption>Interview insights, grouped into four themes.</figcaption></figure>
+              <figure><div class="frame"><img width="1400" height="1290" src="img-web/ya-hmw.webp" alt="Six How might we questions" loading="lazy"></div><figcaption>Six How-might-we questions.</figcaption></figure>
+              <figure><div class="frame"><img width="1400" height="883" src="img-web/ya-valueeffort.webp" alt="Value versus effort mapping" loading="lazy"></div><figcaption>Value–effort mapping.</figcaption></figure>
+              <figure><div class="frame"><img width="1400" height="1154" src="img-web/ya-ia.webp" alt="Information architecture" loading="lazy"></div><figcaption>Information architecture.</figcaption></figure>
             </div>
       </section>
 
@@ -110,16 +116,16 @@
           <p>Learners get a deep purple, stage-like app built around courses, lessons, live classes, practice and a profile. Here is the visual design, the wireflows and the style guide behind it.</p>
         </div>
         <figure>
-          <div class="frame tall"><img src="img/ya-visual.jpg" alt="YoungArtiste visual design: dark purple screens for courses, lessons, live classes, practice and profile" loading="lazy"></div>
+          <div class="frame tall"><img width="1400" height="2331" src="img-web/ya-visual.webp" alt="YoungArtiste visual design: dark purple screens for courses, lessons, live classes, practice and profile" loading="lazy"></div>
           <figcaption><b>Visual design.</b> A deep purple, stage-like palette with warm accents, so performance photography stands out: courses, lessons, live classes and profile.</figcaption>
         </figure>
         <div class="figs">
           <figure>
-            <div class="frame"><img src="img/ya-wires.jpg" alt="Wireframes: login, home, course, lesson, live classes and settings" loading="lazy"></div>
+            <div class="frame"><img width="1400" height="1335" src="img-web/ya-wires.webp" alt="Wireframes: login, home, course, lesson, live classes and settings" loading="lazy"></div>
             <figcaption><b>Wireflows</b> for login, home, courses, lessons, live classes and settings.</figcaption>
           </figure>
           <figure>
-            <div class="frame"><img src="img/ya-style.jpg" alt="Colour palette and typography scale" loading="lazy"></div>
+            <div class="frame"><img width="1400" height="1086" src="img-web/ya-style.webp" alt="Colour palette and typography scale" loading="lazy"></div>
             <figcaption><b>Style guide.</b> Colour palette and an Outfit type scale.</figcaption>
           </figure>
         </div>

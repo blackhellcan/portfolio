@@ -8,8 +8,7 @@
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   var $$ = function (s, c) { return Array.prototype.slice.call((c || doc).querySelectorAll(s)); };
   var gsap = window.gsap, ST = window.ScrollTrigger;
-  function done() { root.classList.remove("gs"); }
-  if (!gsap || !ST || reduce) { done(); return; }
+  if (!gsap || !ST || reduce) { return; }
   gsap.registerPlugin(ST);
   root.classList.add("gsap");
 
@@ -17,20 +16,11 @@
   function calm(els) { els.forEach(function (el) { el.style.transition = "none"; }); }
   function release(els) { els.forEach(function (el) { el.style.transition = ""; gsap.set(el, { clearProps: "transform,opacity" }); }); }
 
-  /* 1. Hero: one soft fade-in, no word-by-word */
-  function hero() {
-    var els = $$(".hello > *, .cs-hero > *");
-    if (!els.length) { done(); return; }
-    calm(els);
-    gsap.fromTo(els, { autoAlpha: 0, y: 12 }, {
-      autoAlpha: 1, y: 0, duration: .7, ease: "power2.out", stagger: .06, delay: .05,
-      onStart: done, onComplete: function () { release(els); }
-    });
-  }
+  /* 1. Hero fade is plain CSS (soft.css) so the first screen never waits for GSAP */
 
   /* 2. Scroll reveals: sections and cards fade and rise in as they enter */
   function reveals() {
-    var sel = ".sec-title, .offer-card, .cs-card, .col > *, .about-copy > *, .more > *, .jobs > *, .ai-card, .connect > *, .car, "
+    var sel = ".sec-title, .offer-card, .how-note, .hw-step, .cs-card, .col > *, .about-copy > *, .more > *, .jobs > *, .ai-card, .connect > *, .car, "
       + ".node, .term, .group > .node-top, .group > .lede, .filters, .proj, .panel, .rail-sec, .sec-head, .cs-sec > *, .related a, .next";
     var hero = $$(".hello, .cs-hero");
     var els = $$(sel).filter(function (el) {
@@ -127,7 +117,7 @@
   }
 
   function init() {
-    hero(); reveals(); quote(); counters(); parallax(); tilt();
+    reveals(); quote(); counters(); parallax(); tilt();
     addEventListener("load", function () { ST.refresh(); });
   }
   if (doc.readyState === "loading") doc.addEventListener("DOMContentLoaded", init); else init();
