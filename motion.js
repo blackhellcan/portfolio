@@ -24,7 +24,7 @@
       + ".node, .term, .group > .node-top, .group > .lede, .filters, .proj, .panel, .rail-sec, .sec-head, .cs-sec > *, .related a, .next";
     var hero = $$(".hello, .cs-hero");
     var els = $$(sel).filter(function (el) {
-      if (el.closest(".azc-panel, .sec-title")) return false;
+      if (el.closest(".azc-panel, .sec-title, #about .about-top, #contact")) return false;
       if (hero.some(function (h) { return h.contains(el); })) return false;
       return el.getBoundingClientRect().top > innerHeight * .92; /* already on screen: leave as is */
     });
@@ -149,8 +149,9 @@
   function caseCards() {
     $$(".cs-card").forEach(function (card, i) {
       var box = card.querySelector(".cs-img"), img = box && box.querySelector("img");
-      var text = $$(".cs-label, strong, .cs-desc", card);
+      var text = $$(".cs-pills, strong, .cs-desc", card);
       if (!box || !img) return;
+      card.classList.add("bg-wait");
       gsap.set(box, { clipPath: "inset(100% 0% 0% 0% round 28px)" });
       gsap.set(img, { scale: 1.3 });
       gsap.set(text, { autoAlpha: 0, y: 24 });
@@ -158,7 +159,8 @@
         var d = (i % 2) * .15;
         gsap.to(box, { clipPath: "inset(0% 0% 0% 0% round 28px)", duration: 1.2, ease: "power4.inOut", delay: d, onComplete: function () { gsap.set(box, { clearProps: "clipPath" }); } });
         gsap.to(img, { scale: 1, duration: 1.6, ease: "power3.out", delay: d, onComplete: function () { gsap.set(img, { clearProps: "transform" }); } });
-        gsap.to(text, { autoAlpha: 1, y: 0, duration: .8, ease: "power3.out", stagger: .08, delay: d + .5 });
+        gsap.delayedCall(d + .8, function () { card.classList.add("bg-in"); });  /* image first, then its container */
+        gsap.to(text, { autoAlpha: 1, y: 0, duration: .8, ease: "power3.out", stagger: .08, delay: d + 1 });
       } });
     });
   }
@@ -193,8 +195,51 @@
     });
   }
 
+
+  /* 11. About: the section holds while its text fills from light to dark, the leading words lit in the accent colour */
+  function aboutFill() {
+    var top = doc.querySelector("#about .about-top");
+    var ps = $$("#about .about-copy p");
+    if (!top || !ps.length) return;
+    var words = [];
+    ps.forEach(function (p) {
+      var text = p.textContent; p.setAttribute("aria-label", text.trim()); p.textContent = "";
+      text.trim().split(/\s+/).forEach(function (w, i) {
+        if (i) p.appendChild(doc.createTextNode(" "));
+        var s = doc.createElement("span"); s.className = "fw"; s.setAttribute("aria-hidden", "true"); s.textContent = w;
+        p.appendChild(s); words.push(s);
+      });
+    });
+    root.classList.add("about-fill");
+    var cs = getComputedStyle(root), ink = cs.getPropertyValue("--ink").trim(), acc = cs.getPropertyValue("--accent").trim();
+    var tl = gsap.timeline({ paused: true });
+    tl.to(words, { color: function () { return acc; }, duration: .3, stagger: .06, ease: "none" })
+      .to(words, { color: function () { return ink; }, duration: .3, stagger: .06, ease: "none" }, .5);
+    var mm = gsap.matchMedia();
+    mm.add("(min-width: 900px) and (min-height: 700px)", function () {
+      ST.create({ trigger: top, start: "center center", end: "+=180%", pin: true, scrub: .5, animation: tl, anticipatePin: 1 });
+    });
+    mm.add("(max-width: 899px), (max-height: 699px)", function () {
+      ST.create({ trigger: top, start: "top 75%", end: "bottom 35%", scrub: .5, animation: tl });
+    });
+    /* clear the inline colours on theme change so dark mode reads */
+    new MutationObserver(function () {
+      var c2 = getComputedStyle(root); ink = c2.getPropertyValue("--ink").trim(); acc = c2.getPropertyValue("--accent").trim();
+      tl.invalidate(); ST.refresh();
+    }).observe(root, { attributes: true, attributeFilter: ["data-az"] });
+  }
+
+
+  /* 12. Let's Connect: the whole section slides up from the bottom as you scroll to it */
+  function connectSlide() {
+    var c = doc.getElementById("contact");
+    if (!c) return;
+    gsap.fromTo(c, { y: 220 }, { y: 0, ease: "power2.out", scrollTrigger: { trigger: c, start: "top bottom", end: "bottom bottom", scrub: .6 } });
+  }
+
+
   function init() {
-    titles(); reveals(); offerCards(); caseCards(); howScroll(); quote(); counters(); parallax(); tilt();
+    titles(); reveals(); offerCards(); caseCards(); howScroll(); aboutFill(); connectSlide(); quote(); counters(); parallax(); tilt();
     addEventListener("load", function () { ST.refresh(); });
   }
   if (doc.readyState === "loading") doc.addEventListener("DOMContentLoaded", init); else init();

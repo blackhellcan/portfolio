@@ -33,6 +33,22 @@
     pick(tabs[0]);
   }
 
+  /* Hide the header while scrolling down; show it again on any scroll up */
+  function autoHide() {
+    var last = window.scrollY, ticking = false;
+    window.addEventListener("scroll", function () {
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(function () {
+        var y = window.scrollY, d = y - last;
+        if (y < 120 || d < -4) root.classList.remove("hdr-hide");
+        else if (d > 4) root.classList.add("hdr-hide");
+        if (Math.abs(d) > 4 || y < 120) last = y;
+        ticking = false;
+      });
+    }, { passive: true });
+    doc.addEventListener("focusin", function (e) { if (e.target.closest && e.target.closest(".topbar")) root.classList.remove("hdr-hide"); });
+  }
+
   function menu() {
     var bar = doc.querySelector(".topbar"), nav = doc.querySelector(".topnav");
     if (!bar || !nav) return;
@@ -182,7 +198,7 @@
   function topButton() {
     $$(".to-top").forEach(function (b) { b.remove(); });
     var b = doc.createElement("button"); b.type = "button"; b.className = "top-btn"; b.setAttribute("aria-label", "Back to top");
-    b.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg><span>Top</span>';
+    b.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>';
     b.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" }); });
     doc.body.appendChild(b);
     var f = function () { b.classList.toggle("show", (window.scrollY || root.scrollTop) > 700); };
@@ -228,32 +244,20 @@
 
 
   /* Resume menu: two download options */
-  function resumeMenu() {
-    $$(".res").forEach(function (r) {
-      var b = r.querySelector(".res-btn");
-      var set = function (o) { r.classList.toggle("open", o); b.setAttribute("aria-expanded", String(o)); };
-      b.addEventListener("click", function (e) { e.stopPropagation(); set(!r.classList.contains("open")); });
-      doc.addEventListener("click", function (e) { if (!r.contains(e.target)) set(false); });
-      doc.addEventListener("keydown", function (e) { if (e.key === "Escape") { set(false); } });
-    });
-  }
-
   function track() {
     doc.addEventListener("click", function (e) {
       var a = e.target.closest ? e.target.closest("a, button") : null;
       if (!a || typeof window.clarity !== "function") return;
       var h = a.getAttribute("href") || "", name = "";
-      if (/Resume_Visual\.pdf/.test(h)) name = "resume_visual_download";
-      else if (/Resume\.pdf/.test(h)) name = "resume_ats_download";
+      if (/Resume\.pdf/.test(h)) name = a.classList.contains("nav-cv") ? "resume_download_header" : "resume_download";
       else if (a.classList.contains("cs-card")) name = "open_" + h.replace(/\.html.*$/, "").replace(/-/g, "_");
       else if (/linkedin\.com/.test(h)) name = "linkedin_click";
       else if (/^mailto:/.test(h)) name = "email_click";
-      else if (a.classList.contains("res-btn")) name = "resume_menu_open";
       else if (a.closest(".hero-cta") && h === "#work") name = "hero_see_work";
       else if (a.hasAttribute("data-calendly")) name = "book_a_call";
       if (name) window.clarity("event", name);
     }, true);
   }
-  function init() { root.classList.add("fx"); toTop(); imgLoading(); heroHook(); chatLinks(); calendly(); howTabs(); menu(); carousels(); topButton(); sectionBar(); resumeMenu(); track(); }
+  function init() { root.classList.add("fx"); toTop(); imgLoading(); heroHook(); chatLinks(); calendly(); autoHide(); howTabs(); menu(); carousels(); topButton(); sectionBar(); track(); }
   if (doc.readyState === "loading") doc.addEventListener("DOMContentLoaded", init); else init();
 })();

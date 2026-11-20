@@ -25,7 +25,7 @@
     "End every reply with one link to the most relevant page or section from 'My portfolio pages', in exactly this format: [See ...](URL). For a case study use [Read the case study](URL), or link straight to a section like #impact or #process when the question is about it. Never paste raw URLs. Share my email, phone, LinkedIn or resume only when the visitor asks how to contact me or for my resume.",
     "The visitor's current page is given. If they're on a case study page and the question doesn't name another project, answer about that case study and link to the matching section on it (#problem, #role, #process, #decisions, #solution, #impact, #reflection)."
   ],
-  "profile": "AZHAR SHAIKH, Senior UX Designer, Mumbai, India.\n8 years in UX and 11 years in tech (since Oct 2015). Leads product design from first research to launch for teams building complex web, mobile and in-vehicle products, and builds AI tools that make design teams faster.\nContact: book a call at https://calendly.com/azhar-aakib/portfolio-bookings | mazhar.shaikh91@outlook.in | +91 97692 11554 | https://www.linkedin.com/in/mazharshaikh91 | Portfolio https://blackhellcan.github.io/portfolio/ | Resume (ATS) https://blackhellcan.github.io/portfolio/Azhar_Shaikh_Resume.pdf | Visual resume https://blackhellcan.github.io/portfolio/Azhar_Shaikh_Resume_Visual.pdf\nLocation: based in Mumbai; open to roles in Mumbai, Pune, Bengaluru, Hyderabad, Delhi and remote.\n\nEXPERIENCE\n1) Senior UX Designer, PeepalDesign (design consultancy), Mumbai, remote. Jun 2021 to present. Leads UX on client engagements in automotive, healthcare, fintech and SaaS, often two in parallel.\n- AI tools, company website and new business (May 2026 to present): built GapScan, an internal AI tool that audits a product or website and reports its UX gaps, and a tool that reads a live website and extracts its design system; both used by the team on client work. Created Claude and ChatGPT skills and plugins for delivery, asset production, the design asset library, proposals and estimates. Designed in-house AI apps for PeepalDesign (not for clients) and redesigned the company website. Designed and launched a conversational AI assistant on my portfolio (this chat): it answers recruiters in my voice, adapts to the page they're reading, and learns from questions it can't answer.\n- Philips Displays global website (Nov 2025 to May 2026): led the redesign of the responsive website, restructured IA and navigation, built a modular pattern library for regional sites.\n- Bajaj Auto 5-inch TFT instrument cluster (Jan to Oct 2025): led a team of 4 on IA, menus and navigation for Bajaj's move from LCD to TFT clusters; chosen over a competing design team's architecture and shipped first on the Pulsar N160 SS. Designed for low cognitive load at speed and tactile handlebar buttons; ran on-site workshops at Bajaj's engineering facility; built frame-by-frame prototypes alongside Bajaj's developers.\n- Chetak EV owner app UI revamp, Bajaj Auto (Dec 2025 to Jan 2026).\n- PockIT, IT repair and refurbished-device marketplace (Apr to Dec 2024): led a customer app (B2C and B2B) and a technician app with a junior designer; five personas; flows for booking, tracking, part approval, rescheduling and cancelling; upfront pricing, in-app approval for new parts, a happy code to close each job; lean first release. Live with 1,000+ users.\n- Philips Tempus Pro, emergency care and monitoring (Dec 2023 to May 2024): designed the companion app for remote vitals monitoring; modernised the device UI to meet homologation and accessibility standards with a UI system shared across clinical devices; ran usability testing with paramedics.\n- HealthAssyst clinical management module UX (Jan to Mar 2024).\n- Bajaj Auto Mera Bajaj app and Chetak EV display (Mar to Jun 2023): led the Mera Bajaj owner app redesign for Pulsar riders (pairing, trips, navigation, service booking), mentoring a junior designer; live on the App Store and Google Play for about two years, with 100,000+ downloads. Designed the navigation and menu system for the Chetak EV 5-inch display, shipping on Chetak EV scooters.\n- YoungArtiste performing-arts learning app (Nov 2022 to Mar 2023, on hold before launch by the client).\n- Jeevika, street-vendor legal-help platform for Centre for Civil Society (May to Oct 2022): Hindi-first Android app and NGO dashboard for low-literacy users; personas from interview data; SOS with a confirmation step; follow-on live admin panel with harassment heatmaps, complaint escalations, analytics and reports.\n- Portico HR and payroll SaaS (Oct 2021 to Apr 2022): updated an HRMS that had been built organically, feature by feature, to a new and modern UX; led a team of 4 designers; card sorting, expert review, role-based homes for 4 roles, task-focused mobile app, one component library; 30% fewer steps on core admin tasks.\n- Mutual fund module in a stock-trading app (Jun to Sep 2021): led a 2-person team; workshops, benchmarking, job stories, value-effort prioritisation, IA and wireflows, one cart for SIPs and lump sums, SIP calculator, two reviewed rounds of dashboard, autopay mandate and order status screens. Paused before development when the client stopped all outside work.\n2) UX Designer, White Digital, Mumbai. Feb 2020 to Mar 2021. Led the design team at a digital marketing agency; redesigned responsive websites for Amanora Park Town, Wonder Cement and SPJIMR, from research and IA to Adobe XD prototypes.\n3) UX Designer, Infosys, Bengaluru. Nov 2018 to Dec 2019. Designed a machine-learning product that reduced dispatcher workload in IT service management, a gamification platform for internal idea-sharing, and a portal for clients' automation requirements.\n4) System Engineer, Infosys, Bengaluru. Oct 2015 to Oct 2018. Configured client networks for connectivity, performance and security.\n\nSKILLS\nProduct and UX: interaction design, information architecture, user flows, storyboards, web, iOS and Android apps, enterprise SaaS, B2C and e-commerce, HMI and cluster design.\nVisual and UI: visual design, UI design, Material Design and Apple HIG, style guides, wireframes, prototypes.\nDesign systems: multi-product systems, governance and contribution, component libraries, design tokens and variables.\nResearch: user research, usability testing, A/B testing, UX metrics, personas, journey mapping, discovery workshops, design sprints, competitor benchmarking.\nAI tools: Claude, Claude Design, ChatGPT, Cursor, Microsoft Copilot, Lovable, Figma Make, Figma AI, Google Stitch, UX Pilot, Figma MCP, building skills and plugins.\nAI design principles: human-AI interaction (Microsoft HAX, Google PAIR), calibrated trust, explainability, human oversight.\nAccessibility: WCAG, inclusive design, Hindi localisation, medical, homologation and ISO vehicle HMI standards.\nLeadership: hiring and mentoring, design critique, stakeholder management, estimates and proposals, Agile and Scrum, dev and QA handoff.\nTools and tech: Figma (incl. Dev Mode), FigJam, Axure RP, Balsamiq, Adobe XD, Photoshop, Illustrator, After Effects, Visio, JIRA, Mural, HTML, CSS, JavaScript, Python.\nIndustries: automotive HMI, healthcare and medical devices, fintech, B2B SaaS and HR tech, marketplaces and e-commerce, social impact, EdTech, digital marketing.\n\nEDUCATION\nMS, Information Technology, University of Mumbai, 2019 to 2021.\nB.Sc., Computer Science, University of Mumbai, 2012 to 2015.\nCERTIFICATIONS: Google UX Design Professional Certificate (Coursera, 2022); UXPM Level 1 and 2, UX Alliance (2021 to 2022).\nACADEMIC: Board of Studies member, Royal Higher Education Society's College, Thane, Jun 2024 to present.",
+  "profile": "AZHAR SHAIKH, Senior UX Designer, Mumbai, India.\n8 years in UX and 11 years in tech (since Oct 2015). Leads product design from first research to launch for teams building complex web, mobile and in-vehicle products, and builds AI tools that make design teams faster.\nContact: book a call at https://calendly.com/azhar-aakib/portfolio-bookings | mazhar.shaikh91@outlook.in | +91 97692 11554 | https://www.linkedin.com/in/mazharshaikh91 | Portfolio https://blackhellcan.github.io/portfolio/ | Resume https://blackhellcan.github.io/portfolio/Azhar_Shaikh_Resume.pdf\nLocation: based in Mumbai; open to roles in Mumbai, Pune, Bengaluru, Hyderabad, Delhi and remote.\n\nEXPERIENCE\n1) Senior UX Designer, PeepalDesign (design consultancy), Mumbai, remote. Jun 2021 to present. Leads UX on client engagements in automotive, healthcare, fintech and SaaS, often two in parallel.\n- AI tools, company website and new business (May 2026 to present): built GapScan, an internal AI tool that audits a product or website and reports its UX gaps, and a tool that reads a live website and extracts its design system; both used by the team on client work. Created Claude and ChatGPT skills and plugins for delivery, asset production, the design asset library, proposals and estimates. Designed in-house AI apps for PeepalDesign (not for clients) and redesigned the company website. Designed and launched a conversational AI assistant on my portfolio (this chat): it answers recruiters in my voice, adapts to the page they're reading, and learns from questions it can't answer.\n- Philips Displays global website (Nov 2025 to May 2026): led the redesign of the responsive website, restructured IA and navigation, built a modular pattern library for regional sites.\n- Bajaj Auto 5-inch TFT instrument cluster (Jan to Oct 2025): led a team of 4 on IA, menus and navigation for Bajaj's move from LCD to TFT clusters; chosen over a competing design team's architecture and shipped first on the Pulsar N160 SS. Designed for low cognitive load at speed and tactile handlebar buttons; ran on-site workshops at Bajaj's engineering facility; built frame-by-frame prototypes alongside Bajaj's developers.\n- Chetak EV owner app UI revamp, Bajaj Auto (Dec 2025 to Jan 2026).\n- PockIT, IT repair and refurbished-device marketplace (Apr to Dec 2024): led a customer app (B2C and B2B) and a technician app with a junior designer; five personas; flows for booking, tracking, part approval, rescheduling and cancelling; upfront pricing, in-app approval for new parts, a happy code to close each job; lean first release. Live with 1,000+ users.\n- Philips Tempus Pro, emergency care and monitoring (Dec 2023 to May 2024): designed the companion app for remote vitals monitoring; modernised the device UI to meet homologation and accessibility standards with a UI system shared across clinical devices; ran usability testing with paramedics.\n- HealthAssyst clinical management module UX (Jan to Mar 2024).\n- Bajaj Auto Mera Bajaj app and Chetak EV display (Mar to Jun 2023): led the Mera Bajaj owner app redesign for Pulsar riders (pairing, trips, navigation, service booking), mentoring a junior designer; live on the App Store and Google Play for about two years, with 100,000+ downloads. Designed the navigation and menu system for the Chetak EV 5-inch display, shipping on Chetak EV scooters.\n- YoungArtiste performing-arts learning app (Nov 2022 to Mar 2023, on hold before launch by the client).\n- Jeevika, street-vendor legal-help platform for Centre for Civil Society (May to Oct 2022): Hindi-first Android app and NGO dashboard for low-literacy users; personas from interview data; SOS with a confirmation step; follow-on live admin panel with harassment heatmaps, complaint escalations, analytics and reports.\n- Portico HR and payroll SaaS (Oct 2021 to Apr 2022): updated an HRMS that had been built organically, feature by feature, to a new and modern UX; led a team of 4 designers; card sorting, expert review, role-based homes for 4 roles, task-focused mobile app, one component library; 30% fewer steps on core admin tasks.\n- Mutual fund module in a stock-trading app (Jun to Sep 2021): led a 2-person team; workshops, benchmarking, job stories, value-effort prioritisation, IA and wireflows, one cart for SIPs and lump sums, SIP calculator, two reviewed rounds of dashboard, autopay mandate and order status screens. Paused before development when the client stopped all outside work.\n2) UX Designer, White Digital, Mumbai. Feb 2020 to Mar 2021. Led the design team at a digital marketing agency; redesigned responsive websites for Amanora Park Town, Wonder Cement and SPJIMR, from research and IA to Adobe XD prototypes.\n3) UX Designer, Infosys, Bengaluru. Nov 2018 to Dec 2019. Designed a machine-learning product that reduced dispatcher workload in IT service management, a gamification platform for internal idea-sharing, and a portal for clients' automation requirements.\n4) System Engineer, Infosys, Bengaluru. Oct 2015 to Oct 2018. Configured client networks for connectivity, performance and security.\n\nSKILLS\nProduct and UX: interaction design, information architecture, user flows, storyboards, web, iOS and Android apps, enterprise SaaS, B2C and e-commerce, HMI and cluster design.\nVisual and UI: visual design, UI design, Material Design and Apple HIG, style guides, wireframes, prototypes.\nDesign systems: multi-product systems, governance and contribution, component libraries, design tokens and variables.\nResearch: user research, usability testing, A/B testing, UX metrics, personas, journey mapping, discovery workshops, design sprints, competitor benchmarking.\nAI tools: Claude, Claude Design, ChatGPT, Cursor, Microsoft Copilot, Lovable, Figma Make, Figma AI, Google Stitch, UX Pilot, Figma MCP, building skills and plugins.\nAI design principles: human-AI interaction (Microsoft HAX, Google PAIR), calibrated trust, explainability, human oversight.\nAccessibility: WCAG, inclusive design, Hindi localisation, medical, homologation and ISO vehicle HMI standards.\nLeadership: hiring and mentoring, design critique, stakeholder management, estimates and proposals, Agile and Scrum, dev and QA handoff.\nTools and tech: Figma (incl. Dev Mode), FigJam, Axure RP, Balsamiq, Adobe XD, Photoshop, Illustrator, After Effects, Visio, JIRA, Mural, HTML, CSS, JavaScript, Python.\nIndustries: automotive HMI, healthcare and medical devices, fintech, B2B SaaS and HR tech, marketplaces and e-commerce, social impact, EdTech, digital marketing.\n\nEDUCATION\nMS, Information Technology, University of Mumbai, 2019 to 2021.\nB.Sc., Computer Science, University of Mumbai, 2012 to 2015.\nCERTIFICATIONS: Google UX Design Professional Certificate (Coursera, 2022); UXPM Level 1 and 2, UX Alliance (2021 to 2022).\nACADEMIC: Board of Studies member, Royal Higher Education Society's College, Thane, Jun 2024 to present.",
   "faq": [
     {
       "id": "real",
@@ -70,7 +70,7 @@
         "work experience",
         "work history"
       ],
-      "answer": "**11 years in tech, 8 in UX:**\n- Senior UX Designer, PeepalDesign (2021 to now)\n- UX Designer, White Digital (2020 to 2021)\n- UX Designer, Infosys (2018 to 2019)\n- System Engineer, Infosys (2015 to 2018)\nStarting in engineering helps me work closely with developers.\n[See my experience](https://blackhellcan.github.io/portfolio/index.html#experience)"
+      "answer": "**11 years in tech, 8 in UX:**\n- Senior UX Designer, PeepalDesign (2021 to now)\n- UX Designer, White Digital (2020 to 2021)\n- UX Designer, Infosys (2018 to 2019)\n- System Engineer, Infosys (2015 to 2018)\nStarting in engineering helps me work closely with developers.\n[See my experience](https://blackhellcan.github.io/portfolio/Azhar_Shaikh_Resume.pdf)"
     },
     {
       "id": "shipped",
@@ -124,7 +124,7 @@
         "stack",
         "toolkit"
       ],
-      "answer": "My main tools:\n- **Design:** Figma (incl. Dev Mode), FigJam, Axure RP, Balsamiq, Adobe XD\n- **Visual:** Photoshop, Illustrator, After Effects\n- **Work:** JIRA, Visio, Mural\n- **Code:** HTML, CSS, JavaScript, Python\n[See my skills and tools](https://blackhellcan.github.io/portfolio/index.html#skills)"
+      "answer": "My main tools:\n- **Design:** Figma (incl. Dev Mode), FigJam, Axure RP, Balsamiq, Adobe XD\n- **Visual:** Photoshop, Illustrator, After Effects\n- **Work:** JIRA, Visio, Mural\n- **Code:** HTML, CSS, JavaScript, Python\n[See my skills and tools](https://blackhellcan.github.io/portfolio/Azhar_Shaikh_Resume.pdf)"
     },
     {
       "id": "ai",
@@ -139,7 +139,7 @@
         "copilot",
         "machine learning"
       ],
-      "answer": "I use AI every day and build AI tools too.\n- **Tools:** Claude, ChatGPT, Cursor, Copilot, Figma Make, Lovable\n- **Built:** GapScan, an AI tool that audits a product's UX\n- **Built:** a tool that extracts a live site's design system\n- **Built:** this chat, a conversational assistant that answers in my voice\n- I design with Microsoft HAX and Google PAIR guidelines in mind\n[See how I design with AI](https://blackhellcan.github.io/portfolio/index.html#ai)"
+      "answer": "I use AI every day and build AI tools too.\n- **Tools:** Claude, ChatGPT, Cursor, Copilot, Figma Make, Lovable\n- **Built:** GapScan, an AI tool that audits a product's UX\n- **Built:** a tool that extracts a live site's design system\n- **Built:** this chat, a conversational assistant that answers in my voice\n- I design with Microsoft HAX and Google PAIR guidelines in mind\n[See how I design with AI](https://blackhellcan.github.io/portfolio/index.html#about)"
     },
     {
       "id": "industries",
@@ -164,7 +164,7 @@
         "specialize",
         "capabilities"
       ],
-      "answer": "My core skills:\n- Interaction design and information architecture\n- User research and usability testing\n- Design systems and accessibility (WCAG)\n- Web, iOS, Android and in-vehicle displays\nI'm at my best owning a project end to end.\n[See my skills](https://blackhellcan.github.io/portfolio/index.html#skills)"
+      "answer": "My core skills:\n- Interaction design and information architecture\n- User research and usability testing\n- Design systems and accessibility (WCAG)\n- Web, iOS, Android and in-vehicle displays\nI'm at my best owning a project end to end.\n[See my skills](https://blackhellcan.github.io/portfolio/Azhar_Shaikh_Resume.pdf)"
     },
     {
       "id": "research",
@@ -189,7 +189,7 @@
         "tokens",
         "pattern library"
       ],
-      "answer": "Yes, I've built and run design systems:\n- Portico: one system across web and mobile\n- Philips Displays: a modular pattern library\n- Philips clinical devices: a shared UI system\n- PockIT: a component library\n[See my skills](https://blackhellcan.github.io/portfolio/index.html#skills)"
+      "answer": "Yes, I've built and run design systems:\n- Portico: one system across web and mobile\n- Philips Displays: a modular pattern library\n- Philips clinical devices: a shared UI system\n- PockIT: a component library\n[See my skills](https://blackhellcan.github.io/portfolio/Azhar_Shaikh_Resume.pdf)"
     },
     {
       "id": "accessibility",
@@ -200,7 +200,7 @@
         "a11y",
         "inclusive"
       ],
-      "answer": "Accessibility is built into my work:\n- Designing to WCAG\n- Medical homologation standards on Philips devices\n- ISO vehicle HMI standards on Bajaj clusters\n- A Hindi-first app for low-literacy users\n[See my skills](https://blackhellcan.github.io/portfolio/index.html#skills)"
+      "answer": "Accessibility is built into my work:\n- Designing to WCAG\n- Medical homologation standards on Philips devices\n- ISO vehicle HMI standards on Bajaj clusters\n- A Hindi-first app for low-literacy users\n[See my skills](https://blackhellcan.github.io/portfolio/Azhar_Shaikh_Resume.pdf)"
     },
     {
       "id": "designdegree",
@@ -215,7 +215,7 @@
         "design education",
         "designer by education"
       ],
-      "answer": "My degrees are in Computer Science and IT, plus UX certifications.\n- Google UX Design Professional Certificate\n- UXPM Level 1 and 2\n- **8 years of UX** with shipped products\nThat technical base helps me design things that can actually be built.\n[See my education](https://blackhellcan.github.io/portfolio/index.html#education)"
+      "answer": "My degrees are in Computer Science and IT, plus UX certifications.\n- Google UX Design Professional Certificate\n- UXPM Level 1 and 2\n- **8 years of UX** with shipped products\nThat technical base helps me design things that can actually be built.\n[See my education](https://blackhellcan.github.io/portfolio/Azhar_Shaikh_Resume.pdf)"
     },
     {
       "id": "education",
@@ -230,7 +230,7 @@
         "study",
         "studied"
       ],
-      "answer": "My education:\n- MS, Information Technology, University of Mumbai (2019 to 2021)\n- B.Sc., Computer Science, University of Mumbai (2012 to 2015)\n- Google UX Design certificate and UXPM 1 and 2\n- Board of Studies member, RHES College, Thane\n[See my education](https://blackhellcan.github.io/portfolio/index.html#education)"
+      "answer": "My education:\n- MS, Information Technology, University of Mumbai (2019 to 2021)\n- B.Sc., Computer Science, University of Mumbai (2012 to 2015)\n- Google UX Design certificate and UXPM 1 and 2\n- Board of Studies member, RHES College, Thane\n[See my education](https://blackhellcan.github.io/portfolio/Azhar_Shaikh_Resume.pdf)"
     },
     {
       "id": "certs",
@@ -241,7 +241,7 @@
         "certificate",
         "courses"
       ],
-      "answer": "My certifications:\n- Google UX Design Professional Certificate (2022)\n- UXPM Level 1 and 2, UX Alliance (2021 to 2022)\n[See my education](https://blackhellcan.github.io/portfolio/index.html#education)"
+      "answer": "My certifications:\n- Google UX Design Professional Certificate (2022)\n- UXPM Level 1 and 2, UX Alliance (2021 to 2022)\n[See my education](https://blackhellcan.github.io/portfolio/Azhar_Shaikh_Resume.pdf)"
     },
     {
       "id": "contact",
@@ -330,7 +330,7 @@
         "many projects",
         "short engagements"
       ],
-      "answer": "I've been at PeepalDesign since **June 2021**, over five years.\n- The shorter dates are client projects within that one role\n- That's how a design consultancy works\n- It gave me depth across many products and industries\n[See my experience](https://blackhellcan.github.io/portfolio/index.html#experience)"
+      "answer": "I've been at PeepalDesign since **June 2021**, over five years.\n- The shorter dates are client projects within that one role\n- That's how a design consultancy works\n- It gave me depth across many products and industries\n[See my experience](https://blackhellcan.github.io/portfolio/Azhar_Shaikh_Resume.pdf)"
     },
     {
       "id": "gap",
@@ -340,7 +340,7 @@
         "career gap",
         "unemployed"
       ],
-      "answer": "No gap. I've worked continuously since **October 2015**:\n- Infosys, 2015 to 2019\n- White Digital, 2020 to 2021\n- PeepalDesign, 2021 to now\n[See my experience](https://blackhellcan.github.io/portfolio/index.html#experience)"
+      "answer": "No gap. I've worked continuously since **October 2015**:\n- Infosys, 2015 to 2019\n- White Digital, 2020 to 2021\n- PeepalDesign, 2021 to now\n[See my experience](https://blackhellcan.github.io/portfolio/Azhar_Shaikh_Resume.pdf)"
     },
     {
       "id": "agency",
@@ -376,7 +376,7 @@
         "areas of improvement",
         "drawback"
       ],
-      "answer": "Right now I'm deepening my skills in AI product design.\n- Building AI tools at PeepalDesign\n- Applying human-AI interaction guidelines in my work\n[See how I design with AI](https://blackhellcan.github.io/portfolio/index.html#ai)"
+      "answer": "Right now I'm deepening my skills in AI product design.\n- Building AI tools at PeepalDesign\n- Applying human-AI interaction guidelines in my work\n[See how I design with AI](https://blackhellcan.github.io/portfolio/index.html#about)"
     },
     {
       "id": "why",
@@ -494,7 +494,7 @@
         "paramedics",
         "medical device"
       ],
-      "answer": "**Philips Tempus Pro**\n- Companion app for remote vitals monitoring\n- Device UI to homologation and accessibility standards\n- Usability tests with paramedics\n[See more work at PeepalDesign](https://blackhellcan.github.io/portfolio/index.html#more-work)"
+      "answer": "**Philips Tempus Pro**\n- Companion app for remote vitals monitoring\n- Device UI to homologation and accessibility standards\n- Usability tests with paramedics\n[See more work at PeepalDesign](https://blackhellcan.github.io/portfolio/index.html#work)"
     },
     {
       "id": "cs-ya",
@@ -694,34 +694,14 @@
       "about": "my story and how I work"
     },
     {
-      "label": "More work at PeepalDesign",
-      "url": "https://blackhellcan.github.io/portfolio/index.html#more-work",
-      "about": "other client projects"
-    },
-    {
       "label": "Experience",
-      "url": "https://blackhellcan.github.io/portfolio/index.html#experience",
+      "url": "https://blackhellcan.github.io/portfolio/Azhar_Shaikh_Resume.pdf",
       "about": "White Digital and Infosys"
-    },
-    {
-      "label": "Skills",
-      "url": "https://blackhellcan.github.io/portfolio/index.html#skills",
-      "about": "skills, tools, accessibility"
-    },
-    {
-      "label": "Education",
-      "url": "https://blackhellcan.github.io/portfolio/index.html#education",
-      "about": "degrees and certifications"
-    },
-    {
-      "label": "Designing with AI",
-      "url": "https://blackhellcan.github.io/portfolio/index.html#ai",
-      "about": "my AI design principles"
     },
     {
       "label": "Contact",
       "url": "https://blackhellcan.github.io/portfolio/index.html#contact",
-      "about": "email, phone, LinkedIn, resumes"
+      "about": "email, phone, LinkedIn, resume"
     },
     {
       "label": "Bajaj Auto 5-inch TFT instrument cluster case study",
