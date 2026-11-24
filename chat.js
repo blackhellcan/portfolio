@@ -252,17 +252,21 @@ const WORKER_URL = "";
         if (kb.page_intro) say(kb.page_intro.replace(/\{title\}/g, kb.page_ctx[cid].title));
       }
     }
-    input.focus();
+    if (!small()) input.focus();
   }
+  /* Phones: the chat takes the whole screen, the page behind stops scrolling, and the keyboard waits for a tap */
+  function small() { return window.matchMedia && matchMedia("(max-width: 599px)").matches; }
   function open() {
     if (!panel.hidden) return;
     panel.hidden = false; launcher.hidden = true; launcher.setAttribute("aria-expanded", "true");
+    if (small()) doc.documentElement.classList.add("azc-lock");
     requestAnimationFrame(function () { panel.classList.add("azc-on"); });
     clarity("event", "chat_open"); start().then(function () { saveLog(true); });
   }
   function close() {
     if (panel.hidden) return;
     panel.classList.remove("azc-on"); panel.hidden = true; launcher.hidden = false; launcher.setAttribute("aria-expanded", "false");
+    doc.documentElement.classList.remove("azc-lock");
     saveLog(false); launcher.focus();
   }
   launcher.addEventListener("click", open);

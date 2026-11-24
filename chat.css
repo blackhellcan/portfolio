@@ -182,3 +182,10 @@
 /* Launcher: my photo only */
 .azc-launcher { width: 56px; height: 56px; padding: 0; gap: 0; justify-content: center; }
 .azc-launcher .azc-ava { width: 46px; height: 46px; }
+
+/* Phones: a solid full-screen sheet above everything, sized to the visible screen */
+@media (max-width: 599px) {
+  .azc-panel { z-index: 1000; top: 0; left: 0; right: 0; bottom: auto; width: 100%; height: 100vh; height: 100dvh; background: var(--paper); -webkit-backdrop-filter: none; backdrop-filter: none; transform-origin: 50% 100%; }
+  html.azc-lock, html.azc-lock body { overflow: hidden; overscroll-behavior: none; }
+  html.azc-lock .topbar, html.azc-lock .top-btn { visibility: hidden; }
+}
