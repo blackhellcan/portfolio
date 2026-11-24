@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<title>UX Maturity Copilot · Azhar Shaikh</title>
+<meta name="description" content="Case study: an AI-assisted tool that reads an organisation's own documents, scores its UX maturity across six areas and shows how much to trust the result.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&amp;family=Urbanist:wght@400;500;600;700&amp;display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&amp;family=Urbanist:wght@400;500;600;700&amp;display=swap"></noscript>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&amp;display=swap">
+<noscript><link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&amp;display=swap"></noscript>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="case.css">
+<link rel="stylesheet" href="soft.css">
+<link rel="stylesheet" href="chat.css">
+<script>
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zexo7ri8yc");
+</script>
+<link rel="preload" as="image" href="img-web/uxmc-hero.webp" fetchpriority="high">
+<style>
+/* Page-only components for this case study. Built on the site's own tokens, so light and dark themes both work. */
+.ux-dg{margin:0;display:grid;gap:12px}
+.ux-dg .ux-dg-box{background:var(--surface);border-radius:var(--r-md);padding:clamp(18px,3vw,28px);overflow-x:auto}
+.ux-dg svg{display:block;width:100%;height:auto;min-width:640px}
+.ux-dg svg text{font-family:var(--f-body);fill:var(--ink)}
+.ux-dg figcaption{color:var(--muted);font-size:14.5px;line-height:1.55}
+.ux-dg figcaption b{color:var(--ink);font-weight:600}
+.ux-twocol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;max-width:none}
+.ux-card{background:var(--surface);border-radius:var(--r-md);padding:22px 22px 20px;display:grid;gap:12px;align-content:start}
+.ux-card h3{font:600 20px/1.25 var(--f-display);letter-spacing:-.01em;margin:0;color:var(--ink)}
+.ux-card ul{margin:0;padding-left:18px;display:grid;gap:8px;color:var(--ink-2);font-size:15.5px;line-height:1.6}
+.ux-card li::marker{color:var(--accent)}
+.ux-card .label{margin:0}
+.ux-hyp{background:var(--tint,var(--accent-soft));border-radius:var(--r-md);padding:22px 24px;font-size:18px;line-height:1.6;color:var(--ink);max-width:var(--measure)}
+.ux-hyp b{font-weight:700}
+.ux-tbl-wrap{overflow-x:auto;background:var(--surface);border-radius:var(--r-md)}
+.ux-tbl{width:100%;min-width:620px;border-collapse:collapse;font-size:15px;line-height:1.55}
+.ux-tbl th,.ux-tbl td{text-align:left;vertical-align:top;padding:14px 18px;border-bottom:1px solid var(--line)}
+.ux-tbl thead th{font-family:var(--f-body);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.ux-tbl tbody th{font-weight:600;color:var(--ink);white-space:nowrap}
+.ux-tbl td{color:var(--ink-2)}
+.ux-tbl tr:last-child>*{border-bottom:0}
+.ux-bars{display:grid;gap:10px;margin:0;padding:0;list-style:none;max-width:var(--measure)}
+.ux-bars li{display:grid;grid-template-columns:minmax(0,1fr) 56px;gap:4px 14px;align-items:center;font-size:15px;color:var(--ink-2)}
+.ux-bars i{grid-column:1/-1;display:block;height:8px;border-radius:99px;background:var(--line)}
+.ux-bars i::after{content:"";display:block;height:100%;width:var(--w);border-radius:inherit;background:var(--accent)}
+.ux-bars b{justify-self:end;color:var(--ink);font-variant-numeric:tabular-nums}
+.ux-gate{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.ux-gate div{background:var(--surface);border-radius:var(--r-md);padding:20px;display:grid;gap:8px;align-content:start}
+.ux-gate strong{font:700 26px/1.05 var(--f-display);letter-spacing:-.02em;color:var(--ink)}
+.ux-gate span{color:var(--muted);font-size:14.5px;line-height:1.5}
+.ux-gate em{font-style:normal;font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.ux-strip .frame img{display:block;width:100%;height:auto}
+@media (max-width:820px){.ux-twocol,.ux-gate{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <a class="wordmark" href="index.html"><span class="wm-name">Azhar Shaikh</span></a>
+    <nav class="topnav" aria-label="Site"><a href="index.html">Home</a><a href="index.html#work">Case Studies</a><a href="index.html#how">How I Work</a><a href="index.html#about">About Me</a><a class="nav-cv" href="Azhar_Shaikh_Resume.pdf" download>Resume</a></nav>
+  </header>
+
+  <section class="cs-hero">
+    <p class="label">Case study · AI product</p>
+    <h1>A tool that shows organisations how mature their UX really is, and how far to trust the answer</h1>
+    <p class="sub">Most leaders can’t say how well their organisation designs for customers. I designed and built UX Maturity Copilot, an AI-assisted tool that reads an organisation’s own documents, scores it across six areas and shows how much evidence sits behind every score. It gives PeepalDesign a faster, better-informed way to start working with new clients.</p>
+    <dl class="meta">
+      <div><dt>Client</dt><dd>PeepalDesign, internal product</dd></div>
+      <div><dt>My role</dt><dd>Lead UX Designer, end to end, with Claude as build partner</dd></div>
+      <div><dt>Timeline</dt><dd>Nov 2026</dd></div>
+      <div><dt>Platform</dt><dd>Web app, plus a Claude skill for links</dd></div>
+    </dl>
+    <div class="impact">
+      <div><strong>31 practices</strong><span>checked across six areas, from leadership sponsorship to linking design to results</span></div>
+      <div><strong>3 of 6</strong><span>areas need evidence before the tool gives an overall score, so it never rates a guess</span></div>
+      <div><strong>Every finding</strong><span>cites the document it came from, with a confidence level the user can raise</span></div>
+    </div>
+    <div class="hero-img"><img fetchpriority="high" decoding="async" width="1800" height="900" src="img-web/uxmc-hero.webp" alt="UX Maturity Copilot report overview: an overall score of 3 out of 5, Moderate, with a radar chart of six areas and summary counts"></div>
+  </section>
+
+  <div class="cs-body">
+    <nav class="toc" aria-label="On this page">
+      <span class="label">On this page</span>
+      <a href="#problem">The short version</a>
+      <a href="#why">The problem</a>
+      <a href="#lean">A lean approach</a>
+      <a href="#reqs">What it had to do</a>
+      <a href="#hard">What made it hard</a>
+      <a href="#decisions">How my thinking changed</a>
+      <a href="#engine">How the engine works</a>
+      <a href="#principles">What we judge against</a>
+      <a href="#ai">Designing with AI</a>
+      <a href="#confidence">Showing confidence</a>
+      <a href="#links">When links can’t be read</a>
+      <a href="#solution">What users see</a>
+      <a href="#impact">Where it is now</a>
+      <a href="#learned">What didn’t go to plan</a>
+      <a href="#reflection">What I’d do next</a>
+    </nav>
+
+    <main class="cs-main">
+      <section class="cs-sec" id="problem">
+        <h2>The short version</h2>
+        <div class="prose sv">
+          <p class="sv-lead">Turning a consultant’s maturity assessment into something any organisation can run on itself.</p>
+          <ul class="sv-list">
+            <li><b>Problem</b> Organisations don’t know how mature their UX is, so they can’t see what to fix first or why an agency could help.</li>
+            <li><b>Users</b> Founders, product heads and CX leads who want an honest picture, and PeepalDesign consultants who follow up.</li>
+            <li><b>Brief</b> A self-serve assessment that is quick to run, grounded in evidence and open about what it doesn’t know.</li>
+            <li><b>Outcome</b> A working web app and a Claude skill for evidence that lives behind links, both now in pilot.</li>
+          </ul>
+          <p class="sv-part"><b>My part</b> I owned the whole product: problem framing, the maturity framework, the scoring logic, the AI prompts and guardrails, the UX and UI on our design system, and the build, with Claude as my pair.</p>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="why">
+        <h2>The problem</h2>
+        <div class="prose">
+          <p>In our sales conversations, the same pattern kept coming up. Leaders knew something about their product experience wasn’t working, but they couldn’t say what, or how they compared with anyone else. Some thought a design system meant they were mature. Others had strong research teams but no way of showing its value to the business.</p>
+          <p>A proper UX maturity assessment answers this, but it usually means weeks of interviews and workshops. That is too big a first step for a client who isn’t sure they have a problem. For PeepalDesign it meant long discovery before we could show any value.</p>
+          <ul>
+            <li><strong>Organisations</strong> had no quick, credible way to see where they stood or what to improve first.</li>
+            <li><strong>PeepalDesign</strong> spent its first meetings collecting basic facts instead of advising.</li>
+            <li><strong>Both sides</strong> lacked a shared language for “how good are we at design?”</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="lean">
+        <h2>A lean approach: build the smallest thing that tests the idea</h2>
+        <div class="prose">
+          <p>I ran the project as a Lean UX loop. Instead of a long requirements phase, we wrote down our assumptions, turned the riskiest into a hypothesis and built the smallest working version that could prove or disprove it. Each round of feedback, often a single comment on the live prototype, became the next change.</p>
+        </div>
+        <p class="ux-hyp"><b>We believe</b> that giving leaders a quick, evidence-based maturity score from documents they already have <b>will</b> help them see where their UX stands and what to fix first. <b>We’ll know we’re right when</b> they finish an assessment, trust the result enough to act on it, and ask PeepalDesign for help with the gaps.</p>
+        <figure class="ux-dg">
+          <div class="ux-dg-box">
+            <svg viewBox="0 0 960 300" role="img" aria-labelledby="lean-t lean-d">
+              <title id="lean-t">The Lean UX loop used on this project</title>
+              <desc id="lean-d">Four stages in a loop: Think, Build, Measure, Learn, each with what it meant for UX Maturity Copilot.</desc>
+              <defs><marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" style="fill:var(--accent)"/></marker></defs>
+              <g style="stroke:var(--accent);stroke-width:2;fill:none" marker-end="url(#ar1)">
+                <path d="M222 92 H262"/><path d="M462 92 H502"/><path d="M702 92 H742"/>
+                <path d="M840 150 V250 H120 V158" />
+              </g>
+              <g>
+                <rect x="20" y="30" width="200" height="120" rx="18" style="fill:var(--paper);stroke:var(--line-strong)"/>
+                <text x="40" y="66" style="font-weight:700;font-size:20px">1 · Think</text>
+                <text x="40" y="94" style="font-size:14px;fill:var(--ink-2)">List assumptions about</text>
+                <text x="40" y="114" style="font-size:14px;fill:var(--ink-2)">leaders, evidence and trust.</text>
+                <text x="40" y="134" style="font-size:14px;fill:var(--ink-2)">Pick the riskiest.</text>
+                <rect x="264" y="30" width="200" height="120" rx="18" style="fill:var(--paper);stroke:var(--line-strong)"/>
+                <text x="284" y="66" style="font-weight:700;font-size:20px">2 · Build</text>
+                <text x="284" y="94" style="font-size:14px;fill:var(--ink-2)">Smallest working app:</text>
+                <text x="284" y="114" style="font-size:14px;fill:var(--ink-2)">upload, score, report.</text>
+                <text x="284" y="134" style="font-size:14px;fill:var(--ink-2)">Real AI, real documents.</text>
+                <rect x="504" y="30" width="200" height="120" rx="18" style="fill:var(--paper);stroke:var(--line-strong)"/>
+                <text x="524" y="66" style="font-weight:700;font-size:20px">3 · Measure</text>
+                <text x="524" y="94" style="font-size:14px;fill:var(--ink-2)">Run it on real folders.</text>
+                <text x="524" y="114" style="font-size:14px;fill:var(--ink-2)">Collect comments on the</text>
+                <text x="524" y="134" style="font-size:14px;fill:var(--ink-2)">live prototype.</text>
+                <rect x="744" y="30" width="196" height="120" rx="18" style="fill:var(--paper);stroke:var(--line-strong)"/>
+                <text x="764" y="66" style="font-weight:700;font-size:20px">4 · Learn</text>
+                <text x="764" y="94" style="font-size:14px;fill:var(--ink-2)">Keep, change or drop.</text>
+                <text x="764" y="114" style="font-size:14px;fill:var(--ink-2)">The next assumption</text>
+                <text x="764" y="134" style="font-size:14px;fill:var(--ink-2)">goes back to Think.</text>
+              </g>
+              <text x="480" y="240" text-anchor="middle" style="font-size:14px;fill:var(--muted)">Short cycles, often within a day: each change was published and reviewed in the live prototype</text>
+            </svg>
+          </div>
+          <figcaption><b>The loop we followed.</b> It matches how I already work (Think, Make, Break, Repeat), but with an explicit hypothesis and the riskiest assumption tested first.</figcaption>
+        </figure>
+        <div class="prose">
+          <h3>The assumptions we tested, riskiest first</h3>
+          <ul>
+            <li><strong>Leaders already have enough evidence.</strong> OKRs, research reports, design-system docs and NPS exports exist in most organisations. They just aren’t read together.</li>
+            <li><strong>AI can read that evidence fairly,</strong> if we give it a clear framework and forbid it from inventing anything.</li>
+            <li><strong>People will trust a score only if they can see why.</strong> So every score needs sources, and the tool has to admit when it doesn’t know.</li>
+            <li><strong>A self-serve result opens better conversations</strong> than a cold pitch, because the client arrives with their own gaps in hand.</li>
+          </ul>
+        </div>
+        <div class="stories">
+          <article class="story"><span class="who">Founder or CEO</span><dl><dt>Says</dt><dd>“We invest in design, but I can’t tell if it’s paying off.”</dd><dt>Needs</dt><dd>One honest number, in plain words, and the few things to do next.</dd></dl></article>
+          <article class="story"><span class="who">Head of product or design</span><dl><dt>Says</dt><dd>“I need evidence to make the case for research and a design system.”</dd><dt>Needs</dt><dd>A breakdown by area, with sources, to take to leadership.</dd></dl></article>
+          <article class="story"><span class="who">PeepalDesign consultant</span><dl><dt>Context</dt><dd>Meets prospects who can’t yet describe their own problem.</dd><dt>Needs</dt><dd>A starting picture before the first meeting, so the meeting is about solutions.</dd></dl></article>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="reqs">
+        <h2>What it had to do</h2>
+        <div class="ux-twocol">
+          <div class="ux-card">
+            <p class="label">Business requirements</p>
+            <h3>Why PeepalDesign needs it</h3>
+            <ul>
+              <li>Give prospects a credible first result in minutes, not weeks.</li>
+              <li>Show PeepalDesign’s expertise before a sales call.</li>
+              <li>Turn each assessment into a warm, informed lead.</li>
+              <li>Use a framework our consultants can stand behind and explain.</li>
+              <li>Keep clients’ documents private: nothing is stored on our servers in the pilot.</li>
+              <li>Carry the PeepalDesign brand, built on our own UI kit.</li>
+            </ul>
+          </div>
+          <div class="ux-card">
+            <p class="label">Functional requirements</p>
+            <h3>What the product does</h3>
+            <ul>
+              <li>Sign up and log in; one assessment per organisation, which can be updated later.</li>
+              <li>Accept PDF, Word, text, CSV, web pages, screenshots and ZIP files, and sort them into the six areas.</li>
+              <li>Check every file before analysis: format, size, readability, and which areas are covered.</li>
+              <li>Score each area from 1 to 5 against named practices, with sources and confidence.</li>
+              <li>Produce an overview, area detail, action plan and product checks, plus a downloadable report.</li>
+              <li>Read evidence behind links (websites, Figma, decks, Notion, Confluence, Google Docs) through a companion skill.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="hard">
+        <h2>What made it hard</h2>
+        <div class="prose">
+          <ul>
+            <li><strong>AI will score anything.</strong> Give a language model three thin documents and it will still return a confident number. Our biggest design problem was stopping the product from sounding more certain than its evidence.</li>
+            <li><strong>Evidence lives behind links, and links were blocked.</strong> Much of a company’s design thinking sits in Figma, Slides, Notion and Confluence. Organisation security policies blocked the Figma connector, and the app’s sandbox can’t fetch websites. Users kept seeing “not enough readable evidence” for links they knew were full of content.</li>
+            <li><strong>Formats are messy.</strong> PowerPoint and Keynote files couldn’t be read directly, long PDFs could crowd out everything else, and screenshots carry no text.</li>
+            <li><strong>Two very different readers.</strong> A CEO wants one number and three actions. A design lead wants practice-level detail and sources. The same report had to serve both.</li>
+            <li><strong>Maturity isn’t a single snapshot.</strong> Organisations add evidence over time, so a new upload has to build on earlier findings rather than start again.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="decisions">
+        <h2>How my thinking changed along the way</h2>
+        <div class="prose">
+          <h3>From a questionnaire to the organisation’s own evidence</h3>
+          <p>My first idea was a self-assessment survey, which is quick to build and familiar. But self-reported maturity is usually optimistic, and it tells a consultant nothing new. So I chose to assess the documents organisations already have. This takes more effort from users, but the result reflects what they actually do, not what they believe they do.</p>
+          <h3>From one AI judgement to a pipeline with rules around it</h3>
+          <p>Early versions sent everything to the model and showed what came back. I moved every decision that should be predictable out of the model and into plain code: sorting files into areas, checking quality, deciding when there is enough evidence to score, and averaging the overall score. The model does the one thing only it can do, which is read documents against a rubric. Everything around it can be explained and tested.</p>
+          <h3>From hiding uncertainty to designing around it</h3>
+          <p>I first treated thin evidence as an error to block. Reviewing the prototype, I saw that “not enough readable evidence” left people at a dead end, with no way forward. So I turned it into a visible, live confidence score with specific fixes for each area. Each gap now comes with a way to close it.</p>
+          <h3>From reading links in the app to reading them where the user is signed in</h3>
+          <p>When organisation policy blocked the Figma connector, I removed link reading from the app entirely rather than leave a feature that failed silently. In its place I built uxmco, a Claude skill that works in the user’s own browser, where they are already signed in. More on this <a href="#links">below</a>.</p>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="engine">
+        <h2>How the engine works</h2>
+        <div class="prose">
+          <p><strong>Score only what the evidence shows, and show how much evidence there is.</strong> The pipeline below runs every time someone clicks Analyse. Steps in plain code are predictable and testable. The AI step is constrained by a rubric, a strict output format and a validation pass.</p>
+        </div>
+        <div class="ia-wrap" tabindex="0" aria-label="Assessment pipeline, from upload to report">
+          <div class="ia">
+            <div class="ia-col"><h4>1 · Collect</h4><span>Files: PDF, Word, text, CSV, HTML</span><span>Screenshots and images</span><span>One ZIP, unpacked in the browser</span><span>Links, through the uxmco skill</span></div>
+            <div class="ia-col"><h4>2 · Read</h4><span>Extract text from each file</span><span>PDFs: first 60 pages</span><span>Images: read by Claude’s vision</span><span class="note">Unreadable files flagged, not dropped silently</span></div>
+            <div class="ia-col"><h4>3 · Sort</h4><span>Match file names and text to keywords for each of the six areas</span><span>A file can count for more than one area</span><span class="note">Rule-based, so users can predict it</span></div>
+            <div class="ia-col"><h4>4 · Pre-check</h4><span>Area confidence from 0 to 100%</span><span>Report confidence: the average</span><span>Fixes for each gap</span><span class="note">Analyse is locked below 3 of 6 areas</span></div>
+            <div class="ia-col"><h4>5 · Pack</h4><span>Combine documents into a 40,000-character evidence pack</span><span>Fair share: short documents are kept whole, long ones are trimmed</span></div>
+            <div class="ia-col"><h4>6 · Assess (AI)</h4><span>One call per area</span><span>Rate each practice: strong, partial, mixed or none</span><span>Up to 2 cited sources per practice</span><span>Score 1–5, confidence, one action</span></div>
+            <div class="ia-col"><h4>7 · Validate</h4><span>Fewer than 2 evidenced practices means no score for that area</span><span>Scores are clamped to 1–5</span><span>Only real document names count as sources</span></div>
+            <div class="ia-col"><h4>8 · Combine</h4><span>Overall score: the average of the scored areas</span><span>Needs 3 or more scored areas</span><span>Coverage: share of practices with evidence</span></div>
+            <div class="ia-col"><h4>9 · Report</h4><span>Overview and radar chart</span><span>Six areas, with sources</span><span>Action plan and product checks</span><span>Downloadable report</span></div>
+          </div>
+        </div>
+        <div class="prose">
+          <h3>Why each rule exists</h3>
+          <ul>
+            <li><strong>Sorting by keyword.</strong> Users see instantly where each file landed and can rename a file to move it. The file naming guide teaches the pattern <code>area_document-type_team_YYYY-MM</code>.</li>
+            <li><strong>A fair-share evidence pack.</strong> The model can only read so much at once. Short documents are kept whole and long ones trimmed, so one 200-page PDF can’t drown out a one-page OKR sheet.</li>
+            <li><strong>“None” means not evidenced, not proven absent.</strong> The prompt and the interface both say this, so a missing practice reads as “we didn’t see it”, not as “you don’t do it”.</li>
+            <li><strong>Two practices before a score.</strong> A single mention of a design system doesn’t show a repeatable practice, so an area needs at least two practices with evidence before it gets a number.</li>
+            <li><strong>Updates build on earlier findings.</strong> When new evidence is added, the model gets its earlier findings and keeps them unless the new documents clearly show something different. The assessment matures with the organisation.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="principles">
+        <h2>What we judge against</h2>
+        <div class="prose">
+          <p>The framework draws on the structure of established UX maturity models, such as Nielsen Norman Group’s, which look at strategy, culture, process and outcomes. I extended it with customer research and people, because those were the gaps we saw most often with clients, and wrote every practice in plain language a CEO would recognise.</p>
+        </div>
+        <div class="ux-tbl-wrap">
+          <table class="ux-tbl">
+            <thead><tr><th scope="col">Area</th><th scope="col">The question it answers</th><th scope="col">Practices checked</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Strategy</th><td>Is customer experience part of the business plan?</td><td>Leadership sponsorship · written experience strategy · shared business goals · customer-experience vision · return on design investment</td></tr>
+              <tr><th scope="row">Customer research</th><td>Do decisions start from what customers need?</td><td>Talking to customers · testing before launch · customer profiles · customer journeys · using customer data · watching competitors</td></tr>
+              <tr><th scope="row">Design</th><td>Is the product designed with care and consistency?</td><td>Trying ideas before building · teams designing together · shared design system · accessibility · inclusive design · freedom to design well</td></tr>
+              <tr><th scope="row">People</th><td>Does the organisation have the right skills and roles?</td><td>Working across departments · owning customer satisfaction · skills and career paths · training · enough research capacity</td></tr>
+              <tr><th scope="row">Culture</th><td>Do people act on customer insight and try new ideas?</td><td>Acting on customer insight · employees suggesting ideas · time to experiment · rewarding good ideas</td></tr>
+              <tr><th scope="row">Metrics</th><td>Does the business measure the experience it delivers?</td><td>Customer satisfaction scores · product analytics · ease-of-use measures · experience goals per project · linking design to results</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="prose">
+          <h3>A five-level scale, written for leaders</h3>
+          <p>Each area, and the organisation overall, lands on one of five levels: <strong>Absent</strong> (experience is left to chance), <strong>Limited</strong> (good work depends on individuals), <strong>Emerging</strong> (good practice is repeatable in places), <strong>Structured</strong> (experience is built into how products are made) and <strong>Integrated</strong> (experience shapes strategy). The report pairs each with a plain word, from “Very early” to “Leading”.</p>
+          <h3>Product checks use established UX principles</h3>
+          <p>When the evidence includes screens or product documents, a separate pass reviews the product itself:</p>
+          <ul>
+            <li><strong>Usability:</strong> up to five problems, each mapped to one of Nielsen’s 10 usability heuristics and rated from 1 (minor) to 4 (critical).</li>
+            <li><strong>Accessibility:</strong> five basics aligned with WCAG: readable text and contrast, keyboard use, visible focus, forms anyone can complete, and screen-reader support. Each is marked good, issue or unknown.</li>
+            <li><strong>Fair design:</strong> up to three patterns that could pressure or mislead customers, presented as flags to check, not verdicts.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="ai">
+        <h2>Designing with AI, responsibly</h2>
+        <div class="prose">
+          <p>I used Anthropic’s AI Fluency framework, the “4Ds”, as a checklist for every AI decision. It kept two questions in front of me: what should the AI do, and how will people know whether to believe it?</p>
+        </div>
+        <div class="ux-twocol">
+          <div class="ux-card"><p class="label">Delegation</p><h3>Give the AI only the job it does best</h3><ul><li>AI reads documents and rates practices against a rubric.</li><li>Code handles sorting, gating, maths and storage, so results are repeatable.</li><li>People make the decisions: the client chooses what to share and the consultant interprets the result.</li></ul></div>
+          <div class="ux-card"><p class="label">Description</p><h3>Tell it exactly what good looks like</h3><ul><li>Named practices, each with a one-line definition.</li><li>Defined states (strong, partial, mixed, none) and a strict JSON reply.</li><li>Instructions to write for a busy CEO: plain words and short sentences.</li></ul></div>
+          <div class="ux-card"><p class="label">Discernment</p><h3>Check the output before anyone sees it</h3><ul><li>Validation removes scores that rest on fewer than two practices.</li><li>Sources must match real document names.</li><li>Confidence (High, Medium, Low) is shown beside every score.</li></ul></div>
+          <div class="ux-card"><p class="label">Diligence</p><h3>Be honest and careful with people’s data</h3><ul><li>Documents are treated as data, never as instructions, which guards against prompt injection.</li><li>No invented evidence, numbers or sources.</li><li>Pilot accounts and assessments stay in the user’s browser.</li></ul></div>
+        </div>
+        <div class="prose">
+          <h3>The interaction principles behind it</h3>
+          <p>Before the AI runs, the evidence page tells users what to share, how to name it and what the result will need. After it runs, every practice lists its evidence and the document it came from, so a sceptical reader can check it. Confidence sits next to every number, so a 4 based on one memo never looks like a 4 based on ten reports.</p>
+          <p>Failures always come with a next step, whether the problem is a format we can’t read, a file that is too large or a link behind a login. And users stay in charge of their data: they choose what to share, can update the assessment, and can rename or delete it at any time.</p>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="confidence">
+        <h2>Showing confidence, so users know how good the report is</h2>
+        <div class="prose">
+          <p><strong>Show the quality of the evidence before analysis starts.</strong> This was the most important design decision. As soon as files are added, each area card shows its own confidence, what was read and what to do next. The report confidence at the top updates live.</p>
+        </div>
+        <div class="ux-twocol">
+          <div class="ux-card">
+            <p class="label">Area confidence</p>
+            <h3>How each area earns its score</h3>
+            <ul class="ux-bars" aria-label="Points that make up area confidence">
+              <li>Two or more readable documents <b>60</b><i style="--w:60%"></i></li>
+              <li>3,000 or more characters of text <b>20</b><i style="--w:20%"></i></li>
+              <li>A mix of sources, such as a report and a data export <b>10</b><i style="--w:10%"></i></li>
+              <li>No problems with the files <b>10</b><i style="--w:10%"></i></li>
+            </ul>
+          </div>
+          <div class="ux-card">
+            <p class="label">File checks</p>
+            <h3>What gets flagged, and how to fix it</h3>
+            <ul>
+              <li><strong>Format not accepted</strong>: PowerPoint or Keynote. Fix: export to PDF.</li>
+              <li><strong>Too large</strong>: over 25 MB is rejected; over 10 MB is slow and may be trimmed.</li>
+              <li><strong>Thin or unreadable</strong>: scanned or image-only files. Fix: a text version or clear screenshots.</li>
+              <li><strong>Long document</strong>: only part of it fits the evidence pack. Fix: split it or upload key sections.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="ux-gate">
+          <div><em>1–2 areas</em><strong>Blocked</strong><span>Analyse stays locked: “Upload documents for at least 2 more areas to continue.”</span></div>
+          <div><em>3–5 areas</em><strong>Ready, with a nudge</strong><span>“You can analyse now. Adding Culture will raise your report confidence.”</span></div>
+          <div><em>6 areas</em><strong>Full picture</strong><span>All areas covered. Confidence now depends on the depth and mix of evidence.</span></div>
+        </div>
+        <div class="figs ux-strip">
+          <figure><div class="frame"><img width="1400" height="157" src="img-web/uxmc-sum-blocked.webp" alt="Report confidence 7%, 1 of 6 areas covered, with a message to upload documents for at least 2 more areas" loading="lazy"></div><figcaption><b>Blocked.</b> One area covered: the score would be a guess, so the tool says what’s missing.</figcaption></figure>
+          <figure><div class="frame"><img width="1400" height="157" src="img-web/uxmc-sum-ready.webp" alt="Report confidence 62%, 5 of 6 areas covered, analysis available" loading="lazy"></div><figcaption><b>Ready.</b> Five areas covered: users can analyse now, or add Culture to raise confidence.</figcaption></figure>
+        </div>
+        <figure>
+          <div class="frame"><img width="1400" height="331" src="img-web/uxmc-card-research.webp" alt="Customer Research card at 50%, Partly ready: one usability report read, one PowerPoint file not accepted, with two fixes" loading="lazy"></div>
+          <figcaption><b>An area card.</b> Each file’s status, the area’s confidence and the exact fixes: here, add one more research document and convert the deck to PDF.</figcaption>
+        </figure>
+        <div class="prose">
+          <p>The same honesty carries into the report. Areas without enough evidence say “Not rated yet” and name the documents that would allow scoring. The overall confidence is High only when most scored areas have High confidence, and Low when half or more are Low.</p>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="links">
+        <h2>When links can’t be read: the uxmco skill</h2>
+        <div class="prose">
+          <p><strong>Much of the most useful evidence isn’t a file.</strong> It is a live website, a Figma prototype, a Google Slides strategy deck or a Confluence research space. The app couldn’t reach these: its sandbox blocks outside websites, and our organisation’s policy disabled the Figma connector. Rather than ask users to export everything by hand, I designed a companion workflow as a Claude skill called uxmco.</p>
+        </div>
+        <figure class="ux-dg">
+          <div class="ux-dg-box">
+            <svg viewBox="0 0 980 330" role="img" aria-labelledby="sk-t sk-d">
+              <title id="sk-t">How the uxmco skill reads evidence behind links</title>
+              <desc id="sk-d">Get the link, read it in the user's signed-in browser, map content to six areas, show alerts and ask the user to resolve them, score, and publish a result link.</desc>
+              <defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" style="fill:var(--accent)"/></marker></defs>
+              <g style="stroke:var(--accent);stroke-width:2;fill:none" marker-end="url(#ar2)">
+                <path d="M178 80 H206"/><path d="M386 80 H414"/><path d="M594 80 H622"/><path d="M802 80 H830"/>
+                <path d="M720 130 V196"/><path d="M622 240 H594"/><path d="M414 240 H386"/>
+              </g>
+              <path d="M670 196 V172 H520 V130" style="stroke:var(--line-strong);stroke-width:2;stroke-dasharray:5 5;fill:none" marker-end="url(#ar2)"/>
+              <text x="530" y="166" style="font-size:12.5px;fill:var(--muted)">Resolve: add link, sign in, retry</text>
+              <g style="fill:var(--paper);stroke:var(--line-strong)">
+                <rect x="10" y="30" width="168" height="100" rx="16"/><rect x="208" y="30" width="178" height="100" rx="16"/><rect x="416" y="30" width="178" height="100" rx="16"/><rect x="624" y="30" width="178" height="100" rx="16"/><rect x="832" y="30" width="138" height="100" rx="16"/>
+                <rect x="624" y="198" width="178" height="100" rx="16"/><rect x="416" y="198" width="178" height="100" rx="16"/><rect x="208" y="198" width="178" height="100" rx="16" style="fill:var(--accent-soft);stroke:var(--accent)"/>
+              </g>
+              <g style="font-size:13.5px;fill:var(--ink-2)">
+                <text x="26" y="62" style="font-weight:700;font-size:16px;fill:var(--ink)">Get the link</text><text x="26" y="86">Given in the request,</text><text x="26" y="104">or the active browser tab,</text><text x="26" y="122">or ask for one</text>
+                <text x="224" y="62" style="font-weight:700;font-size:16px;fill:var(--ink)">Read it as the user</text><text x="224" y="86">Connector if available,</text><text x="224" y="104">else the signed-in browser:</text><text x="224" y="122">pages, frames, slides</text>
+                <text x="432" y="62" style="font-weight:700;font-size:16px;fill:var(--ink)">Map to 6 areas</text><text x="432" y="86">Same keywords and</text><text x="432" y="104">practices as the app</text>
+                <text x="640" y="62" style="font-weight:700;font-size:16px;fill:var(--ink)">Pre-check</text><text x="640" y="86">Blocked, thin, cut short,</text><text x="640" y="104">image-only, missing areas</text><text x="640" y="122">→ area confidence</text>
+                <text x="848" y="62" style="font-weight:700;font-size:16px;fill:var(--ink)">Blocker?</text><text x="848" y="86">Fewer than 3 areas</text><text x="848" y="104">or under 300</text><text x="848" y="122">characters</text>
+                <text x="640" y="230" style="font-weight:700;font-size:16px;fill:var(--ink)">Alerts in chat</text><text x="640" y="254">Each problem named,</text><text x="640" y="272">with options to resolve</text>
+                <text x="432" y="230" style="font-weight:700;font-size:16px;fill:var(--ink)">Score</text><text x="432" y="254">Same rubric and rules:</text><text x="432" y="272">2+ practices, 3+ areas</text>
+                <text x="224" y="230" style="font-weight:700;font-size:16px;fill:var(--ink)">Result link</text><text x="224" y="254">A private page that</text><text x="224" y="272">opens in a new tab</text>
+              </g>
+            </svg>
+          </div>
+          <figcaption><b>The uxmco flow.</b> It uses the same framework and rules as the app, but reads content through the browser the user is already signed into. The user resolves every alert before scoring.</figcaption>
+        </figure>
+        <div class="prose">
+          <ul>
+            <li><strong>Finds the link for you.</strong> It uses the link in the request, or the page open in the user’s browser, and only asks if there is neither.</li>
+            <li><strong>Reads each type properly.</strong> Websites are crawled within the same domain (up to 25 pages). Figma frames are stepped through and their text read. Decks are read slide by slide, including speaker notes. Notion and Confluence child pages are followed.</li>
+            <li><strong>Never works around security.</strong> If a page needs a sign-in, the user signs in themselves; the skill never enters credentials and never bypasses permission screens.</li>
+            <li><strong>Turns problems into choices.</strong> Alerts appear as questions in the chat: add a link, retry after signing in, skip, or continue anyway. Continuing is offered only for warnings, never for blockers.</li>
+            <li><strong>Ends with a link.</strong> The result is published as a private page with every score, source, alert and the evidence table, plus an optional ZIP the user can upload to the app.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="solution">
+        <h2>What users see</h2>
+        <div class="figs">
+          <figure><div class="frame"><img width="1400" height="875" src="img-web/uxmc-auth.webp" alt="Sign-up screen: the question 'How well does your organisation design for its customers?' beside a name, email and password form" loading="lazy"></div><figcaption><b>Sign up.</b> The question the product answers comes first. Sign-up takes three fields.</figcaption></figure>
+          <figure><div class="frame"><img width="1400" height="875" src="img-web/uxmc-dash-first.webp" alt="First-time dashboard with one search-style input for the organisation name and a Start assessment button" loading="lazy"></div><figcaption><b>First visit.</b> One field and one button, like a search page. There is also a sample result to explore first.</figcaption></figure>
+        </div>
+        <figure>
+          <div class="frame"><img width="1400" height="875" src="img-web/uxmc-evidence.webp" alt="Evidence step: a large drop zone for files or a ZIP, a file list with statuses, and a constant progress header" loading="lazy"></div>
+          <figcaption><b>Share evidence.</b> One large drop zone takes files or a single ZIP, which is unpacked and sorted in the browser. The three-step progress header stays the same throughout the app.</figcaption>
+        </figure>
+        <figure>
+          <div class="frame"><img width="1400" height="875" src="img-web/uxmc-checks.webp" alt="Report confidence 67%, then stacked area cards showing confidence, files read and fixes" loading="lazy"></div>
+          <figcaption><b>Checks before analysis.</b> Report confidence at the top, then each area stacked with its files, confidence and fixes. The footer always shows what Analyse is waiting for.</figcaption>
+        </figure>
+        <figure>
+          <div class="frame"><img width="1400" height="875" src="img-web/uxmc-guide.webp" alt="File naming guide modal with a naming pattern, a table of best evidence per area and example file names" loading="lazy"></div>
+          <figcaption><b>File naming guide.</b> The best evidence and example names for each area, plus do’s and don’ts. Good names put files in the right area and make the score more accurate.</figcaption>
+        </figure>
+        <figure>
+          <div class="frame"><img width="1400" height="875" src="img-web/uxmc-areas.webp" alt="Six areas tab: Strategy 3 out of 5, with a summary, next step and each practice's status and source" loading="lazy"></div>
+          <figcaption><b>Six areas.</b> Each area gives a plain summary, one next step and every practice with its status and source. A CEO reads the first lines; a design lead reads on.</figcaption>
+        </figure>
+        <figure>
+          <div class="frame"><img width="1400" height="875" src="img-web/uxmc-dash.webp" alt="Returning dashboard: greeting and a My assessments table with organisation, status, rating, last updated and actions" loading="lazy"></div>
+          <figcaption><b>Returning users.</b> A greeting and a table of assessments with status, rating and date. Each organisation can be opened, renamed or deleted.</figcaption>
+        </figure>
+        <div class="phones">
+          <figure><div class="frame"><img width="520" height="1125" src="img-web/uxmc-m-dash.webp" alt="Mobile first-visit dashboard" loading="lazy"></div><figcaption><b>Mobile start.</b> The same single question and field.</figcaption></figure>
+          <figure><div class="frame"><img width="520" height="1125" src="img-web/uxmc-m-checks.webp" alt="Mobile evidence checks with report confidence and the Strategy area card" loading="lazy"></div><figcaption><b>Mobile checks.</b> Confidence and fixes stay readable on a phone.</figcaption></figure>
+          <figure><div class="frame"><img width="520" height="1125" src="img-web/uxmc-m-report.webp" alt="Mobile report overview with the overall score" loading="lazy"></div><figcaption><b>Mobile report.</b> The overall score and level come first.</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="impact">
+        <h2>Where it is now</h2>
+        <ul class="results">
+          <li><strong>A working pilot</strong>, built on PeepalDesign’s UI kit: sign-up, dashboard, evidence checks, AI assessment, report and export.</li>
+          <li><strong>The uxmco skill</strong> extends the same assessment to websites, Figma, decks and workspace pages that the app can’t reach.</li>
+          <li><strong>Every comment became a change.</strong> More than 20 rounds of feedback on the live prototype shaped the flow, from the progress header to the assessments table.</li>
+          <li><strong>What we’ll measure in the pilot:</strong> sign-up to report completion, the share of reports above 60% confidence, time to first report, consultation requests, and how closely the tool’s scores match a consultant’s.</li>
+        </ul>
+      </section>
+
+      <section class="cs-sec" id="learned">
+        <h2>What didn’t go to plan</h2>
+        <div class="prose">
+          <p><strong>Reading links inside the app didn’t work.</strong> I built a Figma reader into the app, but organisation policy blocked the connector, and websites can’t be fetched from the sandbox. Users saw a feature that looked available but failed. I removed it and moved link reading into the uxmco skill, which works where the user is already signed in. It means two tools instead of one, but each works reliably.</p>
+          <p><strong>Keyword sorting is predictable, but not perfect.</strong> A research report that talks about the roadmap also counts towards Strategy. I accepted this because users can see it and fix it by renaming files, and an over-counted area can still only be scored on its practice-level evidence.</p>
+          <p><strong>No real numbers yet.</strong> The pilot accounts are stored in the browser, and we haven’t run it with enough clients to report outcomes, so this case study doesn’t claim any.</p>
+        </div>
+      </section>
+
+      <section class="cs-sec" id="reflection">
+        <h2>What I’d do next</h2>
+        <div class="prose">
+          <p>I’d start by testing the score itself: have consultants assess the same five organisations by hand and compare their ratings with the tool’s, practice by practice. If the scores match, consultants and clients have a reason to trust them. After that, I’d add proper accounts and a consultant view, so PeepalDesign can follow up with context, then AI-suggested sorting that the user confirms, and benchmarks against similar organisations.</p>
+          <p>The model was the easiest part to get working. Most of the design work sat around it: deciding what the AI should and shouldn’t do, and helping people judge when to trust its answer.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <nav class="next" aria-label="Next case study">
+    <a href="index.html#work">← All case studies</a>
+    <a class="btn" href="case-hmi.html">Next: Bajaj clusters <span class="arr">→</span></a>
+  </nav>
+  <section class="connect" aria-labelledby="connect-h">
+    <p class="label">Like what you see?</p>
+    <h2 id="connect-h">Let’s Connect!</h2>
+    <div class="connect-btns"><a class="btn btn-cv" href="Azhar_Shaikh_Resume.pdf" download>Resume</a><a class="btn" href="https://www.linkedin.com/in/mazharshaikh91" target="_blank" rel="noopener">LinkedIn</a></div>
+    <a class="mail" href="mailto:mazhar.shaikh91@outlook.in">mazhar.shaikh91@outlook.in</a>
+  </section>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="ui.js" defer></script>
+<script src="fx.js" defer></script>
+<script src="motion.js" defer></script>
+<script src="chat.js" defer></script>
+</body>
+</html>
