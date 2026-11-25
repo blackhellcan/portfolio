@@ -20,7 +20,7 @@
 
   /* 2. Scroll reveals: sections and cards fade and rise in as they enter */
   function reveals() {
-    var sel = ".how-note, .col > *, .about-copy > *, .more > *, .jobs > *, .ai-card, .connect > *, .car, "
+    var sel = ".how-note, .col > *, .certs-lede, .cert-card, .cert-next, .about-copy > *, .more > *, .jobs > *, .ai-card, .connect > *, .car, "
       + ".node, .term, .group > .node-top, .group > .lede, .filters, .proj, .panel, .rail-sec, .sec-head, .cs-sec > *, .related a, .next";
     var hero = $$(".hello, .cs-hero");
     var els = $$(sel).filter(function (el) {
@@ -217,7 +217,7 @@
       .to(words, { color: function () { return ink; }, duration: .3, stagger: .06, ease: "none" }, .5);
     var mm = gsap.matchMedia();
     mm.add("(min-width: 900px) and (min-height: 700px)", function () {
-      ST.create({ trigger: top, start: "center center", end: "+=180%", pin: true, scrub: .5, animation: tl, anticipatePin: 1 });
+      ST.create({ trigger: top, start: "center center", end: "+=100%", pin: true, scrub: .5, animation: tl, anticipatePin: 1 });
     });
     mm.add("(max-width: 899px), (max-height: 699px)", function () {
       ST.create({ trigger: top, start: "top 75%", end: "bottom 35%", scrub: .5, animation: tl });

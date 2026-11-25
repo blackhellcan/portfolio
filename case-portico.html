@@ -13,12 +13,18 @@
 <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
 <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&amp;display=swap">
 <noscript><link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&amp;display=swap"></noscript>
-<link rel="stylesheet" href="styles.css?v=20261125b">
-<link rel="stylesheet" href="case.css?v=20261125b">
-<link rel="stylesheet" href="soft.css?v=20261125b">
+<link rel="stylesheet" href="styles.css?v=20261125d">
+<link rel="stylesheet" href="case.css?v=20261125d">
+<link rel="stylesheet" href="soft.css?v=20261125d">
 <!-- Chatbot hidden: re-add <link rel="stylesheet" href="chat.css"> and the chat.js script to bring it back -->
 <script>
+/* Owner opt-out: open the site once with ?me=1 in each browser to stop Clarity counting you; ?me=0 turns counting back on. */
+(function(){var k="az-notrack",s=location.search,m=s.match(/[?&]me=([01])/);
+try{if(m){if(m[1]==="1")localStorage.setItem(k,"1");else localStorage.removeItem(k);history.replaceState(null,"",location.pathname+s.replace(/[?&]me=[01]/,"").replace(/^&/,"?")+location.hash);}}catch(e){}
+var off=/^(localhost|127\.0\.0\.1)$/.test(location.hostname);try{off=off||localStorage.getItem(k)==="1"}catch(e){}
+if(off)return;
 (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zexo7ri8yc");
+})();
 </script>
 <link rel="preload" as="image" href="img-web/hero2-portico.webp" fetchpriority="high">
 </head>
@@ -184,8 +190,8 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-<script src="ui.js?v=20261125b" defer></script>
-<script src="fx.js?v=20261125b" defer></script>
-<script src="motion.js?v=20261125b" defer></script>
+<script src="ui.js?v=20261125d" defer></script>
+<script src="fx.js?v=20261125d" defer></script>
+<script src="motion.js?v=20261125d" defer></script>
 </body>
 </html>

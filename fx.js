@@ -258,6 +258,17 @@
       if (name) window.clarity("event", name);
     }, true);
   }
-  function init() { root.classList.add("fx"); toTop(); imgLoading(); heroHook(); chatLinks(); calendly(); autoHide(); howTabs(); menu(); carousels(); topButton(); sectionBar(); track(); }
+
+  /* Certificates: lists open on desktop, folded on phones (tap a provider to open) */
+  function certFold() {
+    var cards = doc.querySelectorAll(".cert-card");
+    if (!cards.length) return;
+    var mq = window.matchMedia("(max-width: 640px)");
+    function apply() { cards.forEach(function (d) { if (mq.matches) d.removeAttribute("open"); else d.setAttribute("open", ""); }); }
+    cards.forEach(function (d) { d.querySelector("summary").addEventListener("click", function (e) { if (!mq.matches) e.preventDefault(); }); });
+    apply();
+    if (mq.addEventListener) mq.addEventListener("change", apply);
+  }
+  function init() { root.classList.add("fx"); toTop(); imgLoading(); heroHook(); chatLinks(); calendly(); autoHide(); howTabs(); menu(); carousels(); topButton(); sectionBar(); track(); certFold(); }
   if (doc.readyState === "loading") doc.addEventListener("DOMContentLoaded", init); else init();
 })();

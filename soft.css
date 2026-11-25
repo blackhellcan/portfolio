@@ -445,3 +445,6 @@ img.img-in { animation: imgIn .45s ease both; }
 .hdr-hide .topbar:not(.open) { translate: 0 -130%; }
 .hdr-hide .secbar { top: 16px; }
 .secbar { transition: opacity .3s ease, transform .45s var(--ease), top .35s cubic-bezier(.22, 1, .36, 1); }
+
+/* Dark-mode toggle: 44px tap area everywhere */
+.theme-btn { width: 44px; height: 44px; min-width: 44px; }
